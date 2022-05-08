@@ -1587,10 +1587,18 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1209974718}
+    - target: {fileID: 6571385259051904950, guid: d25f6ad689179cd4382c498161555da5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7365011734385065973, guid: f8c3a119ba6d7544ea0f5b21031a4a60, type: 3}
     - target: {fileID: 6571385260326094792, guid: d25f6ad689179cd4382c498161555da5, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1209974718}
+    - target: {fileID: 6571385260326094793, guid: d25f6ad689179cd4382c498161555da5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7365011734385065973, guid: f8c3a119ba6d7544ea0f5b21031a4a60, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d25f6ad689179cd4382c498161555da5, type: 3}
 --- !u!1001 &6881403835854402846
@@ -1600,6 +1608,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1719802451}
     m_Modifications:
+    - target: {fileID: 6881403834718423123, guid: 1179f2904ec2d8a4e927a29f58f63ebc, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6881403834718423123, guid: 1179f2904ec2d8a4e927a29f58f63ebc, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6881403834718423123, guid: 1179f2904ec2d8a4e927a29f58f63ebc, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6881403834718423123, guid: 1179f2904ec2d8a4e927a29f58f63ebc, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: f04b7e375fc355a4ba7020b55ca06dfa, type: 3}
+    - target: {fileID: 6881403834718423123, guid: 1179f2904ec2d8a4e927a29f58f63ebc, type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6881403835809021880, guid: 1179f2904ec2d8a4e927a29f58f63ebc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7365011734385065973, guid: f8c3a119ba6d7544ea0f5b21031a4a60, type: 3}
+    - target: {fileID: 6881403835809021880, guid: 1179f2904ec2d8a4e927a29f58f63ebc, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6881403835809021882, guid: 1179f2904ec2d8a4e927a29f58f63ebc, type: 3}
       propertyPath: m_Name
       value: Talk Set
