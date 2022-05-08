@@ -1,0 +1,1092 @@
+fileFormatVersion: 2
+guid: c5b2a3442fec5914a93b157a975811de
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5459135199192090414
+    second: KakaoTalk_20220423_210804591_01_0
+  - first:
+      213: -2582295965167298444
+    second: KakaoTalk_20220423_210804591_01_1
+  - first:
+      213: -1283260705846411750
+    second: KakaoTalk_20220423_210804591_01_2
+  - first:
+      213: 8825430884668558273
+    second: KakaoTalk_20220423_210804591_01_3
+  - first:
+      213: -5601237440643783780
+    second: KakaoTalk_20220423_210804591_01_4
+  - first:
+      213: 8196388779125964225
+    second: KakaoTalk_20220423_210804591_01_5
+  - first:
+      213: -9017776820695646108
+    second: KakaoTalk_20220423_210804591_01_6
+  - first:
+      213: -5889303846967305433
+    second: KakaoTalk_20220423_210804591_01_7
+  - first:
+      213: -120816357747721181
+    second: KakaoTalk_20220423_210804591_01_8
+  - first:
+      213: -1964539775638666428
+    second: KakaoTalk_20220423_210804591_01_9
+  - first:
+      213: 1831374992422817578
+    second: KakaoTalk_20220423_210804591_01_10
+  - first:
+      213: -7183721018862225524
+    second: KakaoTalk_20220423_210804591_01_11
+  - first:
+      213: -319495612345575594
+    second: KakaoTalk_20220423_210804591_01_12
+  - first:
+      213: 8976556110857058482
+    second: KakaoTalk_20220423_210804591_01_13
+  - first:
+      213: -5837597053953604148
+    second: KakaoTalk_20220423_210804591_01_14
+  - first:
+      213: -4855153780332178479
+    second: KakaoTalk_20220423_210804591_01_15
+  - first:
+      213: -1716640209106312761
+    second: KakaoTalk_20220423_210804591_01_16
+  - first:
+      213: 3804861866844832716
+    second: KakaoTalk_20220423_210804591_01_17
+  - first:
+      213: 6182171974668913651
+    second: KakaoTalk_20220423_210804591_01_18
+  - first:
+      213: 8938226602586096945
+    second: KakaoTalk_20220423_210804591_01_19
+  - first:
+      213: -7163578619615993625
+    second: KakaoTalk_20220423_210804591_01_20
+  - first:
+      213: -5006479854860514159
+    second: KakaoTalk_20220423_210804591_01_21
+  - first:
+      213: -8757656761765995261
+    second: KakaoTalk_20220423_210804591_01_22
+  - first:
+      213: 9173964731553931500
+    second: KakaoTalk_20220423_210804591_01_23
+  - first:
+      213: -8276537288825249483
+    second: KakaoTalk_20220423_210804591_01_24
+  - first:
+      213: -1102848159473791921
+    second: KakaoTalk_20220423_210804591_01_25
+  - first:
+      213: -1801498977526625861
+    second: KakaoTalk_20220423_210804591_01_26
+  - first:
+      213: -6106170131499302878
+    second: KakaoTalk_20220423_210804591_01_27
+  - first:
+      213: 7941874684407699672
+    second: KakaoTalk_20220423_210804591_01_28
+  - first:
+      213: -4473220773238421488
+    second: KakaoTalk_20220423_210804591_01_29
+  - first:
+      213: -2211653423021419154
+    second: KakaoTalk_20220423_210804591_01_30
+  - first:
+      213: 9013427817034430289
+    second: KakaoTalk_20220423_210804591_01_31
+  - first:
+      213: 1579579923701417744
+    second: KakaoTalk_20220423_210804591_01_32
+  - first:
+      213: 7000454060687006738
+    second: KakaoTalk_20220423_210804591_01_33
+  - first:
+      213: 8773864590911891070
+    second: KakaoTalk_20220423_210804591_01_34
+  - first:
+      213: -9072744910733330374
+    second: KakaoTalk_20220423_210804591_01_35
+  - first:
+      213: 2863335365588162908
+    second: SYG_TILES_0
+  - first:
+      213: 7803244918068591851
+    second: SYG_TILES_1
+  - first:
+      213: -5087470381384142209
+    second: SYG_TILES_2
+  - first:
+      213: 5240357323354270585
+    second: SYG_TILES_3
+  - first:
+      213: -2523009561670913575
+    second: SYG_TILES_4
+  - first:
+      213: 4340247288994000418
+    second: SYG_TILES_5
+  - first:
+      213: -6012807148980369513
+    second: SYG_TILES_6
+  - first:
+      213: -3835369076995886428
+    second: SYG_TILES_7
+  - first:
+      213: 3324819272135243978
+    second: SYG_TILES_8
+  - first:
+      213: 6441082297311925971
+    second: SYG_TILES_9
+  - first:
+      213: 4791562286386793751
+    second: SYG_TILES_10
+  - first:
+      213: -1230929234640138204
+    second: SYG_TILES_11
+  - first:
+      213: 1369777143096994010
+    second: SYG_TILES_12
+  - first:
+      213: -4717620987565326530
+    second: SYG_TILES_13
+  - first:
+      213: 1367590462629394982
+    second: SYG_TILES_14
+  - first:
+      213: -2150621376627059870
+    second: SYG_TILES_15
+  - first:
+      213: -5133430829267627886
+    second: SYG_TILES_16
+  - first:
+      213: -4389372856708224747
+    second: SYG_TILES_17
+  - first:
+      213: -5614366427614338764
+    second: SYG_TILES_18
+  - first:
+      213: 2543129304476335077
+    second: SYG_TILES_19
+  - first:
+      213: -641419893384733616
+    second: SYG_TILES_20
+  - first:
+      213: 5544090272980468044
+    second: SYG_TILES_21
+  - first:
+      213: 2146321884352358670
+    second: SYG_TILES_22
+  - first:
+      213: 5316214469635057793
+    second: SYG_TILES_23
+  - first:
+      213: 5627363550584273575
+    second: SYG_TILES_24
+  - first:
+      213: -6350077294689156056
+    second: SYG_TILES_25
+  - first:
+      213: -3471761916322023077
+    second: SYG_TILES_26
+  - first:
+      213: 8206587186800728134
+    second: SYG_TILES_27
+  - first:
+      213: -7727824928175916865
+    second: SYG_TILES_28
+  - first:
+      213: -1410290784716923066
+    second: SYG_TILES_29
+  - first:
+      213: 3885789580154574290
+    second: SYG_TILES_30
+  - first:
+      213: 4511357800514194150
+    second: SYG_TILES_31
+  - first:
+      213: -5086609116967985902
+    second: SYG_TILES_32
+  - first:
+      213: 1246507170080518996
+    second: SYG_TILES_33
+  - first:
+      213: 2810683768543558750
+    second: SYG_TILES_34
+  - first:
+      213: 302756685138397795
+    second: SYG_TILES_35
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SYG_TILES_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5912ba285c9cb720800000000000000
+      internalID: 2863335365588162908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_1
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: becb9dcd8e1ba4c60800000000000000
+      internalID: 7803244918068591851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_2
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f72f64884aca569b0800000000000000
+      internalID: -5087470381384142209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_3
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97be5a2983d79b840800000000000000
+      internalID: 5240357323354270585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_4
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d1f0bfcb287cfcd0800000000000000
+      internalID: -2523009561670913575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_5
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 85
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ee6d9e9e7ab3c30800000000000000
+      internalID: 4340247288994000418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 797881651c73e8ca0800000000000000
+      internalID: -6012807148980369513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_7
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a27427252806cac0800000000000000
+      internalID: -3835369076995886428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_8
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac87ef92381242e20800000000000000
+      internalID: 3324819272135243978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_9
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d6955c1932536950800000000000000
+      internalID: 6441082297311925971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_10
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d4e3f338c0f7240800000000000000
+      internalID: 4791562286386793751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_11
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 68
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42091a1026cdaeee0800000000000000
+      internalID: -1230929234640138204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad8eeb3ed0d620310800000000000000
+      internalID: 1369777143096994010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_13
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3fbd33f4b4a78eb0800000000000000
+      internalID: -4717620987565326530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_14
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62abc3ba748aaf210800000000000000
+      internalID: 1367590462629394982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_15
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26358cf90457722e0800000000000000
+      internalID: -2150621376627059870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_16
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 290d67edbd362c8b0800000000000000
+      internalID: -5133430829267627886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_17
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 51
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5192a2984a0d513c0800000000000000
+      internalID: -4389372856708224747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4312b23fa73c512b0800000000000000
+      internalID: -5614366427614338764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_19
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ebb23bd0a20b4320800000000000000
+      internalID: 2543129304476335077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_20
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05c1fee51083917f0800000000000000
+      internalID: -641419893384733616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_21
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4103bbbab090fc40800000000000000
+      internalID: 5544090272980468044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_22
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e092872d16449cd10800000000000000
+      internalID: 2146321884352358670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_23
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 34
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 188a364c4ecf6c940800000000000000
+      internalID: 5316214469635057793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aa7e8e8559681e40800000000000000
+      internalID: 5627363550584273575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_25
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82487c9385effd7a0800000000000000
+      internalID: -6350077294689156056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_26
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5975e86ee2d1dfc0800000000000000
+      internalID: -3471761916322023077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_27
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6489787e097a3e170800000000000000
+      internalID: 8206587186800728134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_28
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb87aadeb2041c490800000000000000
+      internalID: -7727824928175916865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_29
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64fd0fad004ad6ce0800000000000000
+      internalID: -1410290784716923066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d5170d09091de530800000000000000
+      internalID: 3885789580154574290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_31
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea065274009b9e30800000000000000
+      internalID: 4511357800514194150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_32
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d1cd745fbb869b0800000000000000
+      internalID: -5086609116967985902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_33
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45370aabaab7c4110800000000000000
+      internalID: 1246507170080518996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_34
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5cbeffeefd810720800000000000000
+      internalID: 2810683768543558750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SYG_TILES_35
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36a8c0fd99b933400800000000000000
+      internalID: 302756685138397795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
