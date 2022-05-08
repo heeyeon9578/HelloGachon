@@ -1,0 +1,30 @@
+/* ***PlayerRoomMap 쓰실 때 사용해주세요!!***
+ * 플레이어가 방에서 오브젝트들과 상호작용할 때 나올 대사들입니다.
+ * 플레이어 룸 맵 쓰실때 TalkManager에 추가해주세요!
+ * id를 바꾸고 싶으시면 인스펙터 창에서 해당 오브젝트의 ObjData id도 함께 바꿔주세요! (Prefab은 바꾸지 말아주세요! 코드가 꼬입니다)
+ * 오브젝트 대사들은 바꾸어 쓰셔도 괜찮습니다! 원하신다면 오브젝트도 더 추가해서 쓰셔도 됩니다!
+ * 사용되는 변수나 함수가 어떻게 쓰이는지 모르겠다면 바로 연락 주세요~
+ * 우리 팀 화이팅!!
+*/
+
+//room Obj name
+//boo:100, room_cat:200, room_guitar:300, room_mirror:400
+//room_bed:500, room_backpack:600, room_desk:700, room_door:800
+talkName.Add(100, new string[] { "곰인형" });
+talkName.Add(200, new string[] { "귤이" });
+talkName.Add(300, new string[] { "레오" });
+talkName.Add(400, new string[] { "전신거울" });
+talkName.Add(500, new string[] { "침대(장식)" });
+talkName.Add(600, new string[] { "책가방" });
+talkName.Add(700, new string[] { "책상" });
+talkName.Add(800, new string[] { "" });
+
+//room Obj talk
+talkData.Add(100, new string[] { "(말랑말랑)" });
+talkData.Add(200, new string[] { "골골골골..." });
+talkData.Add(300, new string[] { "너 때문에 흥이 다 깨져버렸으니 책임져.", "네, 알겠습니다.", "좌우징 좌우징" });
+talkData.Add(400, new string[] { "꼬질꼬질하다." });
+talkData.Add(500, new string[] { "개발자는 자지 않아" });
+talkData.Add(600, new string[] { "돌덩이같은 내 가방.." });
+talkData.Add(700, new string[] { "공부하기 싫다!" });
+talkData.Add(800, new string[] { "아직은 방에 있고 싶어." });
