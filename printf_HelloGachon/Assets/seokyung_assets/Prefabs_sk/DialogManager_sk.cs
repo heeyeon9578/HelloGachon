@@ -9,14 +9,18 @@ public class DialogManager_sk : MonoBehaviour
     public QuestManager_ots qManager;
     public GameObject dialogPanel;
     public GameObject scanObject;
+    public AudioSource playerRoomBGM;
+    public AudioSource phoneAlarm;
     public Text dialogName;
-    public Text dialogText;    
+    public Text dialogText;
     public bool isInteract;
     public int nameIndex;
     public int talkIndex;
     
     void Start()
     {
+        playerRoomBGM.Play();
+        phoneAlarm.Play();
         Debug.Log(qManager.checkQuest());
     }
 

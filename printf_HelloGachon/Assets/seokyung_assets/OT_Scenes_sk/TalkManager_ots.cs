@@ -29,9 +29,8 @@ public class TalkManager_ots : MonoBehaviour
         talkName.Add(800, new string[] { "" });
 
         //room storyObj name
-        //phone:1000, room_door:2000, player:3000
-        talkName.Add(1000, new string[] { "" });
-        talkName.Add(2000, new string[] { "[플레이어 이름]" });
+        //phone:2000
+        talkName.Add(2000, new string[] { "" });
 
         //room Obj talk
         talkData.Add(100, new string[] { "(말랑말랑)" });
@@ -44,17 +43,11 @@ public class TalkManager_ots : MonoBehaviour
         talkData.Add(800, new string[] { "아직은 방에 있고 싶어." });
 
         //room Story Obj talk
-        talkData.Add(1000, new string[] { "딱히 온 카톡은 없네.." });
-        talkData.Add(2000, new string[] { "배고프다.." });
-
+        talkData.Add(2000, new string[] { "딱히 온 카톡은 없네.." });
 
         //Quest Talk
-        //Quest1: 신입생 오리엔테이션! (questId: 10)
-        talkData.Add(10 + 1000, new string[] { "엇 컴공 공지방 카톡왔네.", "확인해보자." });
-        talkData.Add(11 + 400, new string[] { "신입생 오티가 23일에 있구나" });
-
-        //Quest2: 오티를 가 말어~ (questId: 20)
-        talkData.Add(20 + 400, new string[] { "오티를 갈까 말까" });
+        //Quest1: 카톡을 확인하자! (questId: 10)
+        talkData.Add(10 + 2000, new string[] { "엇 컴공 공지방 카톡왔네.", "확인해보자." });
     }
 
     public string getName(int id, int nameIndex)

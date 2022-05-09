@@ -1,16 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class QuestManager_ots : MonoBehaviour
 {
     Dictionary<int, QuestData_ots> questList;
+    public TalkManager_ots tManager;
     public GameObject[] questObject;
+    public GameObject dialogPanel;
+    public Text dialogName;
+    public Text dialogText;
     public bool isInteract;
     private bool isTouched = false;
     public int questId;
     public int questActionIndex;
+    public int nameIndex;
+    public int talkIndex;
     
     void Awake()
     {
@@ -26,9 +33,8 @@ public class QuestManager_ots : MonoBehaviour
     
     void generateData()
     {
-        questList.Add(10, new QuestData_ots("카톡을 확인하자", new int[] {1000, 400}));
-        questList.Add(20, new QuestData_ots("신입생 오티?", new int[] {400}));
-        questList.Add(30, new QuestData_ots("오티 씬 종료!", new int[] { 0 }));
+        questList.Add(10, new QuestData_ots("카톡을 확인하자", new int[] { 2000 }));
+        questList.Add(20, new QuestData_ots("신입생 오티?", new int[] { 0 }));
     }
 
     public int getQuestTalkIndex(int id)
@@ -79,10 +85,6 @@ public class QuestManager_ots : MonoBehaviour
                 }
                 break;
             case 20:
-                if(questActionIndex == 1) {
-                    questObject[2].SetActive(true);
-                    isInteract = true;
-                }
                 break;
             default:
                 break;
@@ -92,24 +94,25 @@ public class QuestManager_ots : MonoBehaviour
     public void touchPhone()
     {
         questObject[1].SetActive(false);
-        isInteract = false;
         isTouched = true;
+        questObject[2].SetActive(true);
     }
 
     public void onApplyBtnClick()
     {
         questObject[2].SetActive(false);
         isInteract = false;
-        Debug.Log("간다!");
+
+        //참가하면 오티에 가기 위해 가천대 맵으로 이동
+        SceneManager.LoadScene("Going_OT_Scene_sk");
     }
 
     public void onNoBtnClick()
     {
         questObject[2].SetActive(false);
         isInteract = false;
-        Debug.Log("안가!");
         
-        //참여하지 않으면 수강신청 게임 진행
+        //참가하지 않으면 수강신청 게임 진행
         SceneManager.LoadScene("MiniGame1");
     }
 }
