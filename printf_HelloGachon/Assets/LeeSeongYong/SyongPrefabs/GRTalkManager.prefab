@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8616914626608720819
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8616914626608720817}
+  - component: {fileID: 8616914626608720818}
+  m_Layer: 0
+  m_Name: GRTalkManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8616914626608720817
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616914626608720819}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -15.819199, y: 7.452486, z: -0.33380935}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8616914626608720818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8616914626608720819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9247c9ce3a39e648bcffa082035705b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portraitArr:
+  - {fileID: 6830411675861614133, guid: f02e508d9c9810c49957b9609ec98520, type: 3}
+  - {fileID: 7877403105803776743, guid: f02e508d9c9810c49957b9609ec98520, type: 3}
+  - {fileID: 1572790241719009093, guid: f02e508d9c9810c49957b9609ec98520, type: 3}
+  - {fileID: 2458176920941387167, guid: f02e508d9c9810c49957b9609ec98520, type: 3}
+  - {fileID: -782901046706239650, guid: 4c21fa2e00a75cd4d9b4ef2e9e52095e, type: 3}
+  - {fileID: 5874035509023050104, guid: 4c21fa2e00a75cd4d9b4ef2e9e52095e, type: 3}
+  - {fileID: 1401311992242464609, guid: 4c21fa2e00a75cd4d9b4ef2e9e52095e, type: 3}
+  - {fileID: 6833589109456194215, guid: 4c21fa2e00a75cd4d9b4ef2e9e52095e, type: 3}
+  - {fileID: -4147477828538500606, guid: f272440325a00594180eb2e1a1163e29, type: 3}
+  - {fileID: 790891203132084374, guid: f272440325a00594180eb2e1a1163e29, type: 3}
+  - {fileID: 348217707164647101, guid: f272440325a00594180eb2e1a1163e29, type: 3}
+  - {fileID: -1200924936218942002, guid: f272440325a00594180eb2e1a1163e29, type: 3}
+  - {fileID: -7022570500316909758, guid: 50924a93c146e854c8e6b416254f842f, type: 3}
+  - {fileID: 2893990030283755691, guid: 50924a93c146e854c8e6b416254f842f, type: 3}
+  - {fileID: 2659766980232635001, guid: 50924a93c146e854c8e6b416254f842f, type: 3}
+  - {fileID: 667798359486319992, guid: 50924a93c146e854c8e6b416254f842f, type: 3}
+  - {fileID: 21300000, guid: be7d28f383e49794bbb32977db1573eb, type: 3}
+  - {fileID: -4147477828538500606, guid: f272440325a00594180eb2e1a1163e29, type: 3}
+  - {fileID: -782901046706239650, guid: 4c21fa2e00a75cd4d9b4ef2e9e52095e, type: 3}
+  talkPanel3: {fileID: 0}
+  newStu: {fileID: 0}
+  mudang: {fileID: 0}
+  mudangQuest: {fileID: 0}
+  questManager: {fileID: 0}
+  gameManager: {fileID: 0}

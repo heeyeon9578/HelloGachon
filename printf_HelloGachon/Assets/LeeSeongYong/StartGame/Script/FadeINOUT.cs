@@ -62,7 +62,7 @@ public class FadeINOUT : MonoBehaviour
             Panel.color=color;
             yield return FadeEnd;
         }
-        SceneManager.LoadScene("MiniGame2");
+        SceneManager.LoadScene("SYGAbility");
     }
     private IEnumerator ComeBack(float start, float end){
         float currentTime=0.0f;
@@ -79,7 +79,24 @@ public class FadeINOUT : MonoBehaviour
             Panel.color=color;
             yield return FadeEnd;
         }
-        SceneManager.LoadScene("TopViewGame");
+        SceneManager.LoadScene("SYGAbility");
+    }
+    private IEnumerator HanMaum(float start, float end){
+        float currentTime=0.0f;
+       
+        Panel.gameObject.SetActive(true);
+        Color color=Panel.color;
+        while(percent<1)
+        {
+            currentTime+=Time.deltaTime;
+            percent=currentTime/fadeTime;
+
+           
+            color.a=Mathf.Lerp(start,end,percent);
+            Panel.color=color;
+            yield return FadeEnd;
+        }
+        SceneManager.LoadScene("SYGAbility");
     }
     public void startFadeOut(){
         
@@ -95,6 +112,9 @@ public class FadeINOUT : MonoBehaviour
     }
     public void ComeBackFadeOut(){
         StartCoroutine(ComeBack(0,1));
+    }
+     public void HanmaumFadeOut(){
+        StartCoroutine(HanMaum(0,1));
     }
 
     // Update is called once per frame

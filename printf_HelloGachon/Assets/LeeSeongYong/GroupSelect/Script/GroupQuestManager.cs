@@ -27,6 +27,6 @@ public class GroupQuestManager : MonoBehaviour
     public void CheckQuest(int id)
     {
         if(id==questList[questId].npcId[questActionIndex])
-            questActionIndex++;
+            questActionIndex=1;
     }
 }
