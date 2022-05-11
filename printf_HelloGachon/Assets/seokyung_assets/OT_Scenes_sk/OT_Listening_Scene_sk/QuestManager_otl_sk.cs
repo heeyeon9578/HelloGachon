@@ -13,7 +13,6 @@ public class QuestManager_otl_sk : MonoBehaviour
     public Text dialogName;
     public Text dialogText;
     public bool isInteract;
-    private bool isTouched = false;
     public int questId;
     public int questActionIndex;
     public int nameIndex;
@@ -33,7 +32,8 @@ public class QuestManager_otl_sk : MonoBehaviour
     void generateData()
     {
         questList.Add(10, new QuestData_otl_sk("선배님께 말걸자!", new int[] { 2000 }));
-        questList.Add(20, new QuestData_otl_sk("오티 듣기 씬 종료!", new int[] { 0 }));
+        questList.Add(20, new QuestData_otl_sk("오티 시작!", new int[] { 200 }));
+        questList.Add(30, new QuestData_otl_sk("오티 듣기 씬 종료!", new int[] { 0 }));
     }
 
     public int getQuestTalkIndex(int id)
@@ -68,52 +68,84 @@ public class QuestManager_otl_sk : MonoBehaviour
 
     void nextQuest()
     {
-        questId += 10;
         questActionIndex = 0;
+        questId += 10;
     }
 
-    void controlQuestObject()
+    public void controlQuestObject()
     {
         switch(questId)
         {
             case 10:
-                /*
-                if(questActionIndex == 1 && isTouched == false) {
-                    questObject[0].SetActive(false);
-                    questObject[1].SetActive(true);
-                    isInteract = true;                 
-                }
-                */
                 break;
             case 20:
+                if(questActionIndex == 1) {
+                    questObject[0].SetActive(true);
+                    isInteract = true;                 
+                }
                 break;
             default:
                 break;
         }
     }
 
-    public void touchPhone()
+    //선택지 버튼 눌렀을 때 실행되는 함수들
+    // 1.학번 및 홈페이지 2.수강신청 3.사이버캠퍼스 4.학사행정 5.비교과신청(WIND) 6.등록금 7.건너뛰기
+    public void on1BtnClick()
     {
-        questObject[1].SetActive(false);
-        isTouched = true;
-        questObject[2].SetActive(true);
-    }
-
-    public void onApplyBtnClick()
-    {
-        questObject[2].SetActive(false);
+        questObject[0].SetActive(false);
         isInteract = false;
 
-        //참가하면 오티에 가기 위해 가천대 맵으로 이동
-        SceneManager.LoadScene("Going_OT_Scene_sk");
+        //1번 누르면 학번 및 홈페이지 설명
+        Debug.Log("1번 누르면 학번 및 홈페이지 설명");
+    }
+    public void on2BtnClick()
+    {
+        questObject[0].SetActive(false);
+        isInteract = false;
+
+        //2번 누르면 수강신청 설명
+        Debug.Log("2번 누르면 수강신청 설명");
+    }
+    public void on3BtnClick()
+    {
+        questObject[0].SetActive(false);
+        isInteract = false;
+
+        //3번 누르면 사이버캠퍼스 설명
+        Debug.Log("3번 누르면 사이버캠퍼스 설명");
+    }
+    public void on4BtnClick()
+    {
+        questObject[0].SetActive(false);
+        isInteract = false;
+
+        //4번 누르면 학사행정 설명
+        Debug.Log("4번 누르면 학사행정 설명");
+    }
+    public void on5BtnClick()
+    {
+        questObject[0].SetActive(false);
+        isInteract = false;
+
+        //5번 누르면 비교과신청(WIND) 설명
+        Debug.Log("5번 누르면 비교과신청(WIND) 설명");
+    }
+    public void on6BtnClick()
+    {
+        questObject[0].SetActive(false);
+        isInteract = false;
+
+        //6번 누르면 등록금 설명
+        Debug.Log("6번 누르면 등록금 설명");
+    }
+    public void onSkipBtnClick()
+    {
+        questObject[0].SetActive(false);
+        isInteract = false;
+
+        //건너뛰기 누르면 오티 씬 종료
+        Debug.Log("건너뛰기");
     }
 
-    public void onNoBtnClick()
-    {
-        questObject[2].SetActive(false);
-        isInteract = false;
-        
-        //참가하지 않으면 수강신청 게임 진행
-        SceneManager.LoadScene("MiniGame1");
-    }
 }
