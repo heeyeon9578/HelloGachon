@@ -4,10 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class QuestManager_ots : MonoBehaviour
+public class QuestManager_otl_sk : MonoBehaviour
 {
-    Dictionary<int, QuestData_ots> questList;
-    public TalkManager_ots tManager;
+    Dictionary<int, QuestData_otl_sk> questList;
+    public TalkManager_otl_sk tManager;
     public GameObject[] questObject;
     public GameObject dialogPanel;
     public Text dialogName;
@@ -21,20 +21,19 @@ public class QuestManager_ots : MonoBehaviour
     
     void Awake()
     {
-        questList = new Dictionary<int, QuestData_ots>();
+        questList = new Dictionary<int, QuestData_otl_sk>();
         generateData();
     }
 
     void Start()
     {
         isInteract = false;
-        questObject[0].SetActive(true);
     }
     
     void generateData()
     {
-        questList.Add(10, new QuestData_ots("카톡을 확인하자", new int[] { 2000 }));
-        questList.Add(20, new QuestData_ots("신입생 오티?", new int[] { 0 }));
+        questList.Add(10, new QuestData_otl_sk("선배님께 말걸자!", new int[] { 2000 }));
+        questList.Add(20, new QuestData_otl_sk("오티 듣기 씬 종료!", new int[] { 0 }));
     }
 
     public int getQuestTalkIndex(int id)
@@ -78,11 +77,13 @@ public class QuestManager_ots : MonoBehaviour
         switch(questId)
         {
             case 10:
+                /*
                 if(questActionIndex == 1 && isTouched == false) {
                     questObject[0].SetActive(false);
                     questObject[1].SetActive(true);
                     isInteract = true;                 
                 }
+                */
                 break;
             case 20:
                 break;
@@ -104,7 +105,7 @@ public class QuestManager_ots : MonoBehaviour
         isInteract = false;
 
         //참가하면 오티에 가기 위해 가천대 맵으로 이동
-        SceneManager.LoadScene("Going_OT_sk");
+        SceneManager.LoadScene("Going_OT_Scene_sk");
     }
 
     public void onNoBtnClick()

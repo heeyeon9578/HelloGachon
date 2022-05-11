@@ -23,14 +23,14 @@ public class PlayerAction_goot_sk : MonoBehaviour
     void Update(){
 
         //Move Value
-        h=manager.isAction ? 0:Input.GetAxisRaw("Horizontal");
-        v=manager.isAction ? 0:Input.GetAxisRaw("Vertical");
+        h=(manager.isAction || manager.objectDetect) ? 0:Input.GetAxisRaw("Horizontal");
+        v=(manager.isAction || manager.objectDetect) ? 0:Input.GetAxisRaw("Vertical");
 
         //Check Button Down & up 오브젝트랑 소통할때 플레이어가 못 움직이게 한다.
-        bool hDown=manager.isAction ? false:Input.GetButtonDown("Horizontal");
-        bool vDown=manager.isAction ? false:Input.GetButtonDown("Vertical");
-        bool hUp=manager.isAction   ? false:Input.GetButtonUp("Horizontal");
-        bool vUp=manager.isAction   ? false:Input.GetButtonUp("Vertical");
+        bool hDown=(manager.isAction || manager.objectDetect) ? false:Input.GetButtonDown("Horizontal");
+        bool vDown=(manager.isAction || manager.objectDetect) ? false:Input.GetButtonDown("Vertical");
+        bool hUp=(manager.isAction || manager.objectDetect)   ? false:Input.GetButtonUp("Horizontal");
+        bool vUp=(manager.isAction || manager.objectDetect)   ? false:Input.GetButtonUp("Vertical");
         
         //Check Horizontal Move
         if(hDown)
