@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
-public class heeTalkManager : MonoBehaviour
+public class heeTalkManager4 : MonoBehaviour
 {
     
     Dictionary<int, string[]> talkData;
@@ -13,22 +13,29 @@ public class heeTalkManager : MonoBehaviour
     public Sprite[] portraitArr;
 
     public GameObject talkPanel3; // 무당이 예/ 아니오 판넬
+    public GameObject talkPanel4;
     public Text talkText3;
     public GameObject newStu; //newStu 오브젝트
     public GameObject mudang; //mudang 오브젝트
+    public GameObject friend; //friend 오브젝트
+
     public GameObject mudangQuest; // 무당이 내릴때 누르는 버튼
 
 
-    public heeQuestManager questManager;
-    public heegameManager gameManager;
+    public heeQuestManager4 questManager;
+    public heegameManager4 gameManager;
 
+    public int heeid;
 
     private Rigidbody2D rb;
-        
+    private Rigidbody2D rb2;
+    Vector3 pos2;
 
     void Awake()
     {        
         rb = mudang.GetComponent<Rigidbody2D>();
+        rb2 = friend.GetComponent<Rigidbody2D>();
+
         talkData = new Dictionary<int, string[]>(); //대화에 문장이 여러개 존재
         portraitData = new Dictionary<int, Sprite>();
         GenerateData();
@@ -36,6 +43,11 @@ public class heeTalkManager : MonoBehaviour
 
     //대화 생성하기
    void GenerateData(){
+
+           //npcs
+       //시작할 때 대사
+       talkData.Add(7000, new string[] {"중간고사 공부하느라 많이 힘들지? 간식 받고 힘내~:4","AI공학관 앞으로 나를 찾아오면 햄버거랑 콜라를 받을 수 있어~:4", 
+                                        "무당이를 타고 와도 돼!:4", "나랑 같이 가자! AI공학관에 가기 전에 나를 먼저 찾아와~!:5"});
 
        //buildings
        talkData.Add(100, new string[] {"이곳은 카페다. 카페이름은 파스쿠치이다."});
@@ -64,20 +76,6 @@ public class heeTalkManager : MonoBehaviour
        talkData.Add(600000, new string[] {"이곳은 인피니티동상이다."});
        talkData.Add(700000, new string[] {"이곳은 대운동장이다."});
 
-
-
-       //npcs
-       //시작할때 intro 대사 , 튜토리얼, npc들 익히기
-       talkData.Add(7000, new string[] {"와!!! 가천대학교 컴퓨터공학과에 합격했다!!! 아싸!!!!:1",
-                                        "입학하기 전에 학과별로 단체톡방에 들어갈 수 있구나!!! 들어가봐야지!!!!:3",
-                                        "(단톡방- 나= 안녕하세요!!:0",
-                                        "선배= 안녕하세요 반갑습니다~ 우리 학과에 온 걸 환영합니다~:4",
-                                        "친구= 반가워요! 혹시 20살이신가요?:5",
-                                        "나= 네네!:0",
-                                        "친구= 오! 동갑이시네요!!! 친하게 지내요!! 반말 사용해도 될까요?:5",
-                                        "나= 응!! 친하게 지내자!!:1",
-                                        "친구= IT대학 쪽에 서있는 나한테 와봐!):5"
-                                        });
        
        //친구 default 대사
        talkData.Add(1000, new string[] {"안녕? 나도 컴공 신입생이야!:0", 
@@ -93,18 +91,11 @@ public class heeTalkManager : MonoBehaviour
 
 
        //Quest Talk(퀘스트 넘버 + npc 넘버)
-       //Quest_1 1월  intro    
-       talkData.Add(10+ 1000, new string[] {"잘 찾아왔어!!:2","AI공학관 앞에 가서 선배님께 인사드려!!:0"});
-       talkData.Add(11+ 2000, new string[] {"오 왔니?:2", "앞으로 학교 생활에 도움을 줄게!!:0", "가천대 컴퓨터공학과에 온걸 진심으로 환영해!!:2","옆에 교수님께 인사드려!:0"});
-       talkData.Add(12+ 8000, new string[] {"허허 신입생이군요:1", "앞으로 4학년동안 열심히 공부해서 꿈을 이루길 바라요~:0","2월에 OT에서 다시 만나요~:1"}); //이후에 2월 OT씬 진행
 
+       //Quest_4 4월 간식행사 
+       talkData.Add(10+ 1000, new string[] {"잘 찾아왔어!!:0","AI공학관까지 나랑 같이 걸어가거나 무당이를 타고 가자!:1"});
+       talkData.Add(11+2000, new string[] {"잘 찾아왔어!!:0", "여기 햄버거랑 콜라 줄게!!:4", "중간고사 공부 화이팅해!!:2"});
 
-      //오리엔테이션 2월
-
-
-       //Quest_2 3월 간식행사
-       
-       //Quest_3 6월 종강파티
         
 
        //portrait Data
@@ -114,6 +105,7 @@ public class heeTalkManager : MonoBehaviour
        portraitData.Add(7000+3,portraitArr[3]);
        portraitData.Add(7000+4,portraitArr[17]); //선배
        portraitData.Add(7000+5,portraitArr[18]); //친구
+       
 
 
        portraitData.Add(1000+0,portraitArr[4]);//친구
@@ -126,7 +118,7 @@ public class heeTalkManager : MonoBehaviour
        portraitData.Add(2000+1,portraitArr[9]);
        portraitData.Add(2000+2,portraitArr[10]);
        portraitData.Add(2000+3,portraitArr[11]);
-
+       portraitData.Add(2000+4,portraitArr[19]); //선배 + 햄버거+ 콜라
 
        portraitData.Add(8000+0,portraitArr[12]); //교수
        portraitData.Add(8000+1,portraitArr[13]);
@@ -143,23 +135,27 @@ public class heeTalkManager : MonoBehaviour
    public string GetTalk(int id, int talkIndex)
    {       
 
+       Debug.Log(id);
+
        if(!talkData.ContainsKey(id)){
-           Debug.Log("잘되는디요1");
-           Debug.Log(id);
+        //    Debug.Log(id);
+
+           
+
            if((id-questManager.GetQuestTalkIndex(id))==3000){
                if(!talkData.ContainsKey(id-id%10)){
                //퀘스트 맨 처음 대사 마저 없을 때,
                //기본 대사를 가져오기      
                if(talkIndex == talkData[id-id%100].Length){
   
-                //   Debug.Log("77777777777777777777777");
+                  Debug.Log("77777777777777777777777");
                   
                   talkPanel3.SetActive(true);
                   return null;
                }                 
                else{
                     return talkData[id - id%100][talkIndex];
-                    // Debug.Log("2222222");
+                    Debug.Log("2222222");
                }
                  
            }}
@@ -193,18 +189,32 @@ public class heeTalkManager : MonoBehaviour
                   
               }
              }
+             
             
        }
 
        if(talkIndex==talkData[id].Length){ 
 
-           Debug.Log("잘되는디요2");
-            Debug.Log("555555555");
+          Debug.Log("555555555");
+
+          //퀘스트 1000일때, 실행할 것
+          if((id-questManager.GetQuestTalkIndex(id))==1000){
+
+                heeid = id;
+                rb2.constraints = RigidbodyConstraints2D.None;
+                rb2.constraints = RigidbodyConstraints2D.FreezeRotation;
+                pos2 = newStu.transform.position;
+                friend.transform.position = new Vector3(pos2.x+1,pos2.y+1, 0);
+
+           }
+
+           
+
+           
            return null;
        }
        else{
            return talkData[id][talkIndex];
-           Debug.Log("잘되는디요3");
            Debug.Log("2222222");
        }
       
@@ -218,7 +228,7 @@ public class heeTalkManager : MonoBehaviour
 //무당이를 탈 것인지 안 탈 것인지 물어보는 함수
    public void SelectTalk(string type){
 
-       var heemudangAction = mudang.GetComponent<heeMudangAction>();
+       var heemudangAction4 = mudang.GetComponent<heeMudangAction4>();
        var heeobjectdata =   mudang.GetComponent<heeObjectData>();
        Vector3 pos;
        pos = this.mudang.transform.position;
@@ -228,21 +238,36 @@ public class heeTalkManager : MonoBehaviour
                 mudangQuest.SetActive(true);
 
                 newStu.SetActive(false);
+                friend.SetActive(false);
+
                 gameManager.SetCameraTarget(mudang);
                 
-                heemudangAction.enabled = true;
+                heemudangAction4.enabled = true;
 
                 heeobjectdata.id = 12345;
                 heeobjectdata.enabled= false;
 
                 rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-                talkText3.text += "\n 무당이에서 내리고 싶을 때 상단 초록색 버튼을 클릭하면 됩니다.";
+                talkText3.text = "무당이에서 내리고 싶을 때 상단 초록색 버튼을 클릭하면 됩니다.";
                
                 break;
            case "n":  
                 talkPanel3.SetActive(false);
                 break;    
        }
+   }
+
+   public void SelectTalk2(string type){
+
+       switch(type){
+           case "y":
+                talkPanel4.SetActive(false);
+                break;
+            case "n":
+                talkPanel4.SetActive(false);
+                break;
+       }
+
    }
 }

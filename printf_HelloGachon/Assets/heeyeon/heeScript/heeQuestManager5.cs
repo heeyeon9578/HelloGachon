@@ -3,31 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class heeQuestManager : MonoBehaviour
+public class heeQuestManager5 : MonoBehaviour
 {
     public Text talkText3;
     public int questId;
     public int questActionIndex; //퀘스트 순서 정하기
     public GameObject[] questObject; 
-    Dictionary<int, heeQuestData> questList;
+    Dictionary<int, heeQuestData3> questList;
     
-    
-
-
     void Awake()
     {
-        questList = new Dictionary<int, heeQuestData>();
+        questList = new Dictionary<int, heeQuestData3>();
 
         //처음 게임 시작할 때, questMark의 default 대사
-        talkText3.text = "IT대학 앞에 서 있는 친구를 찾아가기";
+        talkText3.text = "IT대학 앞에서 친구 만나기";
         GenerateData();
     }
 
     // 퀘스트 생성 - 퀘스트 코드 공유하기!!
     void GenerateData()
     {
-        questList.Add(10, new heeQuestData("1월: npc들과 대화하며 npc 위치익히기", new int[]{1000, 2000, 8000}));
-        questList.Add(20, new heeQuestData("1월: npc들과 대화하며 npc 위치익히기끝", new int[]{0}));
+        questList.Add(10, new heeQuestData3("5월: 간식행사", new int[]{1000, 2000}));
+        questList.Add(20, new heeQuestData3("5월: 이길여 총장님 이벤트", new int[]{2000, 6000}));
+        questList.Add(30, new heeQuestData3("끝", new int[]{0}));
 
     }
 
@@ -69,22 +67,27 @@ public class heeQuestManager : MonoBehaviour
     }
 
     //퀘스트에서 사용하는 오브젝트 관리!!
-    void ControlObject()
+    public void ControlObject()
     {
         switch (questId)
         {
             case 10: 
-                if(questActionIndex ==1 ){
-                    talkText3.text = "AI공학관 앞에 가서 선배님이랑 인사하기";
-                }else if(questActionIndex ==2){
-                    talkText3.text = "선배님 옆에 계시는 교수님이랑 인사하기";                  
+                if(questActionIndex ==1){
+                    talkText3.text = "AI공학관 앞에서 선배 만나기";
+                }else if(questActionIndex==2){
+                    talkText3.text = "선배에게 말걸기";
                 }
                                    
                 break;
-            // case 20:
-            //     if(questActionIndex ==1)
 
-            //     break;
+            case 20: 
+                if(questActionIndex ==0){
+                    talkText3.text = "선배에게 말걸기";
+                }else if(questActionIndex==1){
+                    talkText3.text = "이길여 총장님 찾기";
+                }
+                                   
+                break;
 
         }
     }
