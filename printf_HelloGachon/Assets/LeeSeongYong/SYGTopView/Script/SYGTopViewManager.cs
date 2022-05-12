@@ -19,7 +19,6 @@ public class SYGTopViewManager : MonoBehaviour
     public int Month=0;
     
     private void Start() {
-        Month=GameObject.Find("GameData").GetComponent<GameData>().Day;
         if(Month==3)
             startTopView();
         else if(Month==4)

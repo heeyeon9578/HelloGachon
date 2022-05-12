@@ -6,15 +6,23 @@ public class GameData : MonoBehaviour
 {
     // Start is called before the first frame update
     public static GameData gamedata;
-    public int Day=0;
+    public string name;
+    public float major;
+    public float alchol;
+    public float health;
+    public float stress;
+    public float popular;
+    public string groupname="";
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-        if(gamedata==null)
-        {
-            gamedata=this;
-        }
+      if(gamedata!=null)
+      {
+          Destroy(gameObject);
+          return;
+      }
+      gamedata=this;
+      DontDestroyOnLoad(gameObject);
     }
 
 

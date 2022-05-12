@@ -15,6 +15,7 @@ public class GroupTalkManager : MonoBehaviour
     string[] selectEnglish={"영어공부를 할 수 있으니 좋을거야.:0","나도 가입해야 겠다.:2"};
     string[] selectVoluteer={"봉사활동을 하면 굉장히 보람찰거야.:0","나도 가입해야 겠다.:2"};
     string[] selectSports={"내가 좋아하는 운동을 하면서 건강과 재미를 챙기니 재밌을거야.:0","나도 가입해야 겠다.:2"};
+    string[] selectHobby={"내가 좋아하는 것을 다른 사람들이랑 교류하면서 노는것은 재밌을 거 같아:0","나도 내 취미와 맞는 동아리를 찾아 봐야지:2"};
     string[] aboutHealth={"우리는 운동을 하면서 친목을 다지는 동아리야.:0","혹시 관심 있니?:2"};
     string[] aboutBand={"혹시 노래부르는거나 기타나 드럼, 베이스 치는거에 관심 있니?:0","같이 악기도 배우고 공연도 해보면서 재밌게 놀지 않을래? 재밌을거야.:2"};
     string[] aboutMajor={"우리는 어플을 만드는 동아리야. 우리가 만든 어플이 잘 작동되는 걸 보면 뿌듯함도 느낄 수 있어.:0","혹시 어플만드는 거에 관심이 있니?:2","같이 공부하면서 실려도 늘려보지 않을래?:2"};
@@ -143,6 +144,7 @@ public class GroupTalkManager : MonoBehaviour
         {
             case "1":
                 EndStory=true;
+                GameData.gamedata.groupname="Music";
                 selectPanel.SetActive(false);
                 groupTalk[2011]=selectBand;
                 groupmanager.GroupTalking(2000,true);
@@ -150,6 +152,7 @@ public class GroupTalkManager : MonoBehaviour
                 break;
             case "2":
                 EndStory=true;
+                GameData.gamedata.groupname="Religion";
                 selectPanel.SetActive(false);
                 groupTalk[2011]=selectVoluteer;
                 groupmanager.GroupTalking(2000,true);
@@ -157,6 +160,7 @@ public class GroupTalkManager : MonoBehaviour
                 break;
             case "3":
                 EndStory=true;
+                GameData.gamedata.groupname="Major";
                 selectPanel.SetActive(false);
                 groupTalk[2011]=selectEnglish;
                 groupmanager.GroupTalking(2000,true);
@@ -164,6 +168,7 @@ public class GroupTalkManager : MonoBehaviour
                 break;
             case "4":
                 EndStory=true;
+                GameData.gamedata.groupname="Health";
                 selectPanel.SetActive(false);
                 groupTalk[2011]=selectSports;
                 groupmanager.GroupTalking(2000,true);
@@ -171,8 +176,17 @@ public class GroupTalkManager : MonoBehaviour
                 break;
             case "5":
                 EndStory=true;
+                GameData.gamedata.groupname="Performance";
                 selectPanel.SetActive(false);
                 groupTalk[2011]=selectMajor;
+                groupmanager.GroupTalking(2000,true);
+                Panel.SetActive(true);
+                break;
+            case "6":
+                EndStory=true;
+                GameData.gamedata.groupname="Hobby";
+                selectPanel.SetActive(false);
+                groupTalk[2011]=selectHobby;
                 groupmanager.GroupTalking(2000,true);
                 Panel.SetActive(true);
                 break;

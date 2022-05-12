@@ -10,6 +10,7 @@ public class GRManager : MonoBehaviour
     public int Count=0;
     private CinemachineVirtualCamera cmCamera;    
     public GRTalkManager talkManager;
+    public GameObject ActBtn;
     public GRQuestManager questManager;
     public GameObject talkPanel;
     public GameObject talkPanel2;
@@ -137,6 +138,7 @@ public class GRManager : MonoBehaviour
         pos2 = this.heemudang.transform.position;
         mudangDown.SetActive(false);
         heetalkPanel3.SetActive(false);
+        ActBtn.SetActive(true);
 
         var heeobjectdata = heemudang.GetComponent<heeObjectData>();
         heeobjectdata.enabled= true;

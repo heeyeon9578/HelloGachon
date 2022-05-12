@@ -1405,6 +1405,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 837705887}
     - target: {fileID: 8616914626608720818, guid: 8829afa5eaa5ea747a24b626688c7b0f, type: 3}
+      propertyPath: ActionBtn
+      value: 
+      objectReference: {fileID: 2016857554}
+    - target: {fileID: 8616914626608720818, guid: 8829afa5eaa5ea747a24b626688c7b0f, type: 3}
       propertyPath: ChoicPanel
       value: 
       objectReference: {fileID: 653209237}
@@ -1634,7 +1638,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 6024880240671614450, guid: ed353fd2f998d984c81415a576741f69, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1896,6 +1900,10 @@ PrefabInstance:
       propertyPath: Count
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5233405097700431749, guid: fd35ef054e6fa7b4b94261a739ac46be, type: 3}
+      propertyPath: ActBtn
+      value: 
+      objectReference: {fileID: 2016857554}
     - target: {fileID: 5233405097700431749, guid: fd35ef054e6fa7b4b94261a739ac46be, type: 3}
       propertyPath: cmVcam
       value: 
@@ -2454,6 +2462,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1495208908744228679, guid: 0220a80d6284cf744883f543561e9185, type: 3}
   m_PrefabInstance: {fileID: 352795498}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2016857554 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3034889622754339552, guid: 8371b6a6a0c069743b78bc28ac0b64b2, type: 3}
+  m_PrefabInstance: {fileID: 158037557}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2038095153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2636,7 +2649,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 418227012195161972, guid: 1ec80276c7bf6cc4fab080b99db9d45b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

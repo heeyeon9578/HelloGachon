@@ -37,8 +37,12 @@ public class BtnType : MonoBehaviour
         playernickname=playerInputnickname.text;
         
         if(playernickname.Length>0){
-            Debug.Log(playernickname);
-           Debug.Log(end);
+            GameData.gamedata.name=playernickname;
+            GameData.gamedata.health=50;
+            GameData.gamedata.popular=0;
+            GameData.gamedata.alchol=0;
+            GameData.gamedata.stress=0;
+            GameData.gamedata.major=0;
             GameObject.Find("Canvas").GetComponent<FadeINOUT>().startFadeOut();
             
                 //SceneManager.LoadScene("MiniGame2");

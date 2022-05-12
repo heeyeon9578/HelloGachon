@@ -12,6 +12,7 @@ public class GRTalkManager : MonoBehaviour
     //초상화 스프라이트를 저장할 배열 생성
     public Sprite[] portraitArr;
     public GameObject SeePan;
+    public GameObject ActionBtn;
     public GameObject talkPanel3; // 무당이 예/ 아니오 판넬
     public GameObject newStu; //newStu 오브젝트
     public GameObject mudang; //mudang 오브젝트
@@ -326,7 +327,7 @@ public class GRTalkManager : MonoBehaviour
 
                 newStu.SetActive(false);
                 gameManager.SetCameraTarget(mudang);
-                
+                ActionBtn.SetActive(false);
                 heemudangAction.enabled = true;
 
                 heeobjectdata.id = 12345;

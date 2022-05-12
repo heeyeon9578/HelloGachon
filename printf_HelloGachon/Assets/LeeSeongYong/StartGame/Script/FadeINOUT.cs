@@ -28,7 +28,7 @@ public class FadeINOUT : MonoBehaviour
             Panel.color=color;
             yield return FadeEnd;
         }
-        SceneManager.LoadScene("MiniGame2");
+        SceneManager.LoadScene("SYGAbility");
     }
     private IEnumerator Fade2(float start, float end){
         float currentTime=0.0f;
@@ -62,7 +62,7 @@ public class FadeINOUT : MonoBehaviour
             Panel.color=color;
             yield return FadeEnd;
         }
-        SceneManager.LoadScene("SYGAbility");
+        SceneManager.LoadScene("MiniGame2");
     }
     private IEnumerator ComeBack(float start, float end){
         float currentTime=0.0f;

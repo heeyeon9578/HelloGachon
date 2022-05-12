@@ -92,7 +92,7 @@ public class MG2Manager : MonoBehaviour
         Instantiate(listsoju[num],pos,Quaternion.identity);
     }
     public void NextStory(){
-        SceneManager.LoadScene("TopViewGame");
+        SceneManager.LoadScene("SYGAbility");
     }
    
 }
