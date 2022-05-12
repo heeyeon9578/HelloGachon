@@ -1107,6 +1107,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &739543582 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3034889622754339552, guid: 8371b6a6a0c069743b78bc28ac0b64b2, type: 3}
+  m_PrefabInstance: {fileID: 1305397460}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &926569000
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1227,6 +1232,10 @@ PrefabInstance:
       propertyPath: newStu
       value: 
       objectReference: {fileID: 1822498957}
+    - target: {fileID: 8616914626608720818, guid: 8829afa5eaa5ea747a24b626688c7b0f, type: 3}
+      propertyPath: ActionBtn
+      value: 
+      objectReference: {fileID: 739543582}
     - target: {fileID: 8616914626608720818, guid: 8829afa5eaa5ea747a24b626688c7b0f, type: 3}
       propertyPath: ChoicPanel
       value: 
@@ -2722,6 +2731,10 @@ PrefabInstance:
       propertyPath: Count
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5233405097700431749, guid: fd35ef054e6fa7b4b94261a739ac46be, type: 3}
+      propertyPath: ActBtn
+      value: 
+      objectReference: {fileID: 739543582}
     - target: {fileID: 5233405097700431749, guid: fd35ef054e6fa7b4b94261a739ac46be, type: 3}
       propertyPath: cmVcam
       value: 
