@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAction_otl_sk : MonoBehaviour
 {
-   public OTManager_sk dManager;
+    public OTManager_sk dManager;
     public QuestManager_otl_sk qManager;
     Rigidbody2D rigid;
     Animator anim;
@@ -26,13 +26,13 @@ public class PlayerAction_otl_sk : MonoBehaviour
     void Update()
     {
         //수평, 수직 이동 변수
-        h = (dManager.isInteract || dManager.objectDetect || qManager.isInteract) ? 0 : Input.GetAxisRaw("Horizontal");
-        v = (dManager.isInteract || dManager.objectDetect || qManager.isInteract) ? 0 : Input.GetAxisRaw("Vertical");
+        h = (dManager.isInteract || dManager.objectDetect || qManager.isInteract || qManager.isChoosing) ? 0 : Input.GetAxisRaw("Horizontal");
+        v = (dManager.isInteract || dManager.objectDetect || qManager.isInteract || qManager.isChoosing) ? 0 : Input.GetAxisRaw("Vertical");
 
-        bool hDown = (dManager.isInteract || dManager.objectDetect || qManager.isInteract) ? false : Input.GetButtonDown("Horizontal");
-        bool vDown = (dManager.isInteract || dManager.objectDetect || qManager.isInteract) ? false : Input.GetButtonDown("Vertical");
-        bool hUp = (dManager.isInteract || dManager.objectDetect || qManager.isInteract) ? false : Input.GetButtonUp("Horizontal");
-        bool vUp = (dManager.isInteract || dManager.objectDetect || qManager.isInteract) ? false : Input.GetButtonUp("Vertical");
+        bool hDown = (dManager.isInteract || dManager.objectDetect || qManager.isInteract || qManager.isChoosing) ? false : Input.GetButtonDown("Horizontal");
+        bool vDown = (dManager.isInteract || dManager.objectDetect || qManager.isInteract || qManager.isChoosing) ? false : Input.GetButtonDown("Vertical");
+        bool hUp = (dManager.isInteract || dManager.objectDetect || qManager.isInteract || qManager.isChoosing) ? false : Input.GetButtonUp("Horizontal");
+        bool vUp = (dManager.isInteract || dManager.objectDetect || qManager.isInteract || qManager.isChoosing) ? false : Input.GetButtonUp("Vertical");
 
         //check horizontal move (수평이동인지 체크)
         if (hDown) {
@@ -74,11 +74,14 @@ public class PlayerAction_otl_sk : MonoBehaviour
 
         //오브젝트 스캔
         if(Input.GetMouseButtonDown(0)) {
-            if(scanObject != null){
+            if(qManager.isInteract){
+                qManager.introduceTalk();
+            }
+            else if(scanObject != null){
                 dManager.interactDialog(scanObject);
             }else if(dManager.objectDetect){
                 dManager.playerMonologue();
-            }  
+            }
         }
     }
 

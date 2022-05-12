@@ -17,6 +17,7 @@ public class OTManager_sk : MonoBehaviour
     public bool objectDetect = false;
     public int nameIndex;
     public int talkIndex;
+    public int objDataId;
     
     void Start()
     {
@@ -26,8 +27,8 @@ public class OTManager_sk : MonoBehaviour
     }
     
     public void playerMonologue(){
-        string talkName2 = tManager.getName(7000, nameIndex);
-        string talkData2 = tManager.getTalk(7000, talkIndex); //처음에 게임 시작 전에 인트로가 나올 수 있도록 구성
+        string talkName2 = tManager.getName(300, nameIndex);
+        string talkData2 = tManager.getTalk(300, talkIndex); //처음에 게임 시작 전에 인트로가 나올 수 있도록 구성
 
         //End Talk
         if(talkData2 ==null){
@@ -40,7 +41,7 @@ public class OTManager_sk : MonoBehaviour
         
         dialogName.text = talkName2;
         dialogText.text = talkData2.Split(':')[0];
-        portraitImg.sprite = tManager.getPortrait(7000,int.Parse(talkData2.Split(':')[1]));
+        portraitImg.sprite = tManager.getPortrait(300,int.Parse(talkData2.Split(':')[1]));
         portraitImg.color = new Color(1,1,1,1); //맨 끝이 투명도로, npc일때만 이미지가 나오도록 설정
 
         objectDetect =  true;
@@ -54,6 +55,7 @@ public class OTManager_sk : MonoBehaviour
         //Exit Dialog
         scanObject = scanObj;
         ObjData_sk objData = scanObject.GetComponent<ObjData_sk>();
+        objDataId = objData.id;
         talk(objData.id, objData.isStoryObj);
 
         dialogPanel.SetActive(isInteract);
