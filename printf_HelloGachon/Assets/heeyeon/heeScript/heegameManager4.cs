@@ -5,11 +5,11 @@ using UnityEngine.UI;
 using UnityEditor;
 using Cinemachine;
 
-public class heegameManager : MonoBehaviour
+public class heegameManager4 : MonoBehaviour
 {
     private CinemachineVirtualCamera cmCamera;    
-    public heeTalkManager talkManager;
-    public heeQuestManager questManager;
+    public heeTalkManager4 talkManager;
+    public heeQuestManager4 questManager;
     public GameObject talkPanel;
     public GameObject talkPanel2;
     public GameObject mudangDown;
@@ -24,6 +24,7 @@ public class heegameManager : MonoBehaviour
     public GameObject heetalkPanel3; // 무당이 예/ 아니오 판넬
     public GameObject heenewStu; //newStu 오브젝트
     public GameObject heemudang; //mudang 오브젝트
+    public GameObject friend; //friend 오브젝트
     private Rigidbody2D rb2;
     
 
@@ -32,7 +33,7 @@ public class heegameManager : MonoBehaviour
     void Awake() {
         cmCamera = cmVcam.GetComponent<CinemachineVirtualCamera>();
         rb2 = heemudang.GetComponent<Rigidbody2D>();
-        Debug.Log(questManager.CheckQuest());
+        // Debug.Log(questManager.CheckQuest());
     }
 
     void Start(){
@@ -63,6 +64,8 @@ public class heegameManager : MonoBehaviour
         talkIndex++;
         
     }
+
+
     
     // 조사대상이 있을 때만 대화창 띄우기
     public void Action(GameObject scanObj)
@@ -115,7 +118,7 @@ public class heegameManager : MonoBehaviour
     }
 //마우스 클릭시 무당이를 내림
     public void noneMudang(){
-        var heemudangAction = heemudang.GetComponent<heeMudangAction>();
+        var heemudangAction4 = heemudang.GetComponent<heeMudangAction4>();
         Vector3 pos2;
         pos2 = this.heemudang.transform.position;
         mudangDown.SetActive(false);
@@ -126,9 +129,11 @@ public class heegameManager : MonoBehaviour
         heeobjectdata.id=3000;
 
         heenewStu.SetActive(true);
+        friend.SetActive(true);
+
         SetCameraTarget(heenewStu);
 
-        heemudangAction.enabled = false;
+        heemudangAction4.enabled = false;
 
         rb2.constraints = RigidbodyConstraints2D.FreezeAll;
         heenewStu.transform.position = new Vector3(pos2.x+1,pos2.y+1, 0);

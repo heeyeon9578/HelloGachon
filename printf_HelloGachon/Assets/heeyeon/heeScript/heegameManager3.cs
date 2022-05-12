@@ -5,11 +5,11 @@ using UnityEngine.UI;
 using UnityEditor;
 using Cinemachine;
 
-public class heegameManager : MonoBehaviour
+public class heegameManager3 : MonoBehaviour
 {
     private CinemachineVirtualCamera cmCamera;    
-    public heeTalkManager talkManager;
-    public heeQuestManager questManager;
+    public heeTalkManager3 talkManager;
+    public heeQuestManager3 questManager;
     public GameObject talkPanel;
     public GameObject talkPanel2;
     public GameObject mudangDown;
@@ -32,7 +32,7 @@ public class heegameManager : MonoBehaviour
     void Awake() {
         cmCamera = cmVcam.GetComponent<CinemachineVirtualCamera>();
         rb2 = heemudang.GetComponent<Rigidbody2D>();
-        Debug.Log(questManager.CheckQuest());
+        // Debug.Log(questManager.CheckQuest());
     }
 
     void Start(){
@@ -63,6 +63,8 @@ public class heegameManager : MonoBehaviour
         talkIndex++;
         
     }
+
+
     
     // 조사대상이 있을 때만 대화창 띄우기
     public void Action(GameObject scanObj)
@@ -115,7 +117,7 @@ public class heegameManager : MonoBehaviour
     }
 //마우스 클릭시 무당이를 내림
     public void noneMudang(){
-        var heemudangAction = heemudang.GetComponent<heeMudangAction>();
+        var heemudangAction3 = heemudang.GetComponent<heeMudangAction3>();
         Vector3 pos2;
         pos2 = this.heemudang.transform.position;
         mudangDown.SetActive(false);
@@ -128,7 +130,7 @@ public class heegameManager : MonoBehaviour
         heenewStu.SetActive(true);
         SetCameraTarget(heenewStu);
 
-        heemudangAction.enabled = false;
+        heemudangAction3.enabled = false;
 
         rb2.constraints = RigidbodyConstraints2D.FreezeAll;
         heenewStu.transform.position = new Vector3(pos2.x+1,pos2.y+1, 0);
