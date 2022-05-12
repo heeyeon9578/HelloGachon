@@ -227,7 +227,6 @@ public class QuestManager_otl_sk : MonoBehaviour
         isChoosing = false;
         
         //참가하지 않으면 수강신청 씬 진행
-        Debug.Log("안가!");
-        //SceneManager.LoadScene("MiniGame1");
+        SceneManager.LoadScene("BeforeMiniGame1");
     }
 }

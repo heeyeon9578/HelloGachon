@@ -4,14 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class QuestManager_ots : MonoBehaviour
+public class QuestManager_bmg1_sk : MonoBehaviour
 {
-    Dictionary<int, QuestData_ots> questList;
-    public TalkManager_ots tManager;
+    Dictionary<int, QuestData_bmg1_sk> questList;
+    public TalkManager_bmg1_sk tManager;
     public GameObject[] questObject;
-    public GameObject dialogPanel;
-    public Text dialogName;
-    public Text dialogText;
     public bool isInteract;
     private bool isTouched = false;
     public int questId;
@@ -21,20 +18,19 @@ public class QuestManager_ots : MonoBehaviour
     
     void Awake()
     {
-        questList = new Dictionary<int, QuestData_ots>();
+        questList = new Dictionary<int, QuestData_bmg1_sk>();
         generateData();
     }
 
     void Start()
     {
         isInteract = false;
-        questObject[0].SetActive(true);
     }
     
     void generateData()
     {
-        questList.Add(10, new QuestData_ots("카톡을 확인하자", new int[] { 2000 }));
-        questList.Add(20, new QuestData_ots("신입생 오티?", new int[] { 0 }));
+        questList.Add(10, new QuestData_bmg1_sk("컴퓨터를 확인하자!", new int[] { 1000 }));
+        questList.Add(20, new QuestData_bmg1_sk("수강신청 시작!", new int[] { 0 }));
     }
 
     public int getQuestTalkIndex(int id)
@@ -78,41 +74,13 @@ public class QuestManager_ots : MonoBehaviour
         switch(questId)
         {
             case 10:
-                if(questActionIndex == 1 && isTouched == false) {
-                    questObject[0].SetActive(false);
-                    questObject[1].SetActive(true);
-                    isInteract = true;                 
+                if(questActionIndex == 1) {
+                    isInteract = false;
+                    SceneManager.LoadScene("MiniGame1");                
                 }
-                break;
-            case 20:
                 break;
             default:
                 break;
         }
-    }
-
-    public void touchPhone()
-    {
-        questObject[1].SetActive(false);
-        isTouched = true;
-        questObject[2].SetActive(true);
-    }
-
-    public void onApplyBtnClick()
-    {
-        questObject[2].SetActive(false);
-        isInteract = false;
-
-        //참가하면 오티에 가기 위해 가천대 맵으로 이동
-        SceneManager.LoadScene("Going_OT_sk");
-    }
-
-    public void onNoBtnClick()
-    {
-        questObject[2].SetActive(false);
-        isInteract = false;
-        
-        //참가하지 않으면 수강신청 게임 진행
-        SceneManager.LoadScene("BeforeMiniGame1");
     }
 }
