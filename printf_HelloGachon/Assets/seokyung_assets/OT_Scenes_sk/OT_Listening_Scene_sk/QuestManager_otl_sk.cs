@@ -11,6 +11,7 @@ public class QuestManager_otl_sk : MonoBehaviour
     public TalkManager_otl_sk tManager;
     public GameObject[] questObject;
     public GameObject dialogPanel;
+    public GameObject controlSet;
     public Text dialogName;
     public Text dialogText;
     public Image portraitImg;
@@ -189,6 +190,7 @@ public class QuestManager_otl_sk : MonoBehaviour
             talkIndex = 0;
             oManager.talkIndex = 0;
             dialogPanel.SetActive(false);
+            controlSet.SetActive(true);
             if(isTalking) {
                 questActionIndex = 0;
                 controlQuestObject();
@@ -209,6 +211,7 @@ public class QuestManager_otl_sk : MonoBehaviour
         talkIndex++;
 
         dialogPanel.SetActive(true);
+        controlSet.SetActive(false);
     }
 
     public void onApplyBtnClick()
