@@ -17,9 +17,14 @@ public class TypeGameManager_mg1 : MonoBehaviour
     //**수강신청 게임 변수들 선언
     public GameObject Register;
     public GameObject registerResult;
+    public GameObject dialogPanel;
     public List<ClassNum_mg1> classNumList;
+    public Sprite[] portraitArr;
     public Text classNumTxt;
     public Text resultTxt;
+    public Text dialogName;
+    public Text dialogText;
+    public Image portraitImg;
     public InputField inputClassNum;
     public Button applyBtn;
     public Button okBtn;
@@ -91,10 +96,12 @@ public class TypeGameManager_mg1 : MonoBehaviour
             if(successCnt > 3)
             {
                 resultTxt.text = "수강신청 성공!\n" + "성공 횟수 : " + successCnt;
+                //ex) 능력치: 전공능력 + 100
             }
             else
             {
                 resultTxt.text = "수강신청 실패..\n" + "성공 횟수 : " + successCnt;
+                //ex) 능력치: 전공능력 + 50
             }
             registerResult.SetActive(true);
         }
@@ -125,9 +132,22 @@ public class TypeGameManager_mg1 : MonoBehaviour
         }
         else
         {
-            //다음 씬으로 넘어가기
-            //Debug.Log("Move to AfterMiniGame1 Scene");
-            SceneManager.LoadScene("AfterMiniGame1");
+            registerResult.SetActive(false);
+            dialogPanel.SetActive(true);
+            dialogName.text = "[플레이어 이름]";
+            
+            if(successCnt > 3)
+            {
+                dialogText.text = "와 수강신청 가볍게 성공~>_<\n3월부터는 내가 신청한대로 학교에서 수업을 들을 수 있어!\n수업이 없는 시간에는 하고 싶은 활동도 지정해서 할 수 있을거야~";
+                portraitImg.sprite = portraitArr[0];
+                //ex) 능력치: 전공능력 + 100
+            }
+            else
+            {
+                dialogText.text = "괜찮아...이번엔 실패했지만 다음엔 성공할 수 있을거야..ㅜ_ㅜ\n3월부터는 내가 신청한대로 학교에서 수업을 들을 수 있어!\n수업이 없는 시간에는 하고 싶은 활동도 지정해서 할 수 있을거야~";
+                portraitImg.sprite = portraitArr[1];
+                //ex) 능력치: 전공능력 + 50
+            }
         }        
     }
 
@@ -149,5 +169,12 @@ public class TypeGameManager_mg1 : MonoBehaviour
     public void ApplyBtnClick()
     {
         isApplyBtn = true;         
+    }
+
+    public void gotoNextScene()
+    {
+        //다음 씬으로 넘어가기
+        Debug.Log("Move to March(입학식) Scene");
+        //SceneManager.LoadScene("AfterMiniGame1");
     }
 }
