@@ -221,7 +221,7 @@ public class QuestManager_otl_sk : MonoBehaviour
 
         //참가하면 뒷풀이 씬으로 이동
         Debug.Log("참가!");
-        //SceneManager.LoadScene("Going_OT_sk");
+        SceneManager.LoadScene("OT_AfterParty_sk");
     }
 
     public void onNoBtnClick()
