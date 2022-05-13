@@ -15,6 +15,18 @@ public class MudangAction_goot_sk : MonoBehaviour
     private Animator anim;
     Vector3 dirVec;
     GameObject scanObject;
+    int upValue;
+    int downValue;
+    int rightValue;
+    int leftValue;
+    bool upDown;
+    bool upUp;
+    bool leftDown;
+    bool leftUp;
+    bool rightDown;
+    bool rightUp;
+    bool downDown;
+    bool downUp;
 
     void Awake(){
         rigid=GetComponent<Rigidbody2D>();       
@@ -23,14 +35,14 @@ public class MudangAction_goot_sk : MonoBehaviour
     void Update(){
 
         //Move Value
-        h=manager.isAction ? 0:Input.GetAxisRaw("Horizontal");
-        v=manager.isAction ? 0:Input.GetAxisRaw("Vertical");
+        h=manager.isAction ? 0: rightValue + leftValue;
+        v=manager.isAction ? 0: upValue + downValue;
 
         //Check Button Down & up 오브젝트랑 소통할때 플레이어가 못 움직이게 한다.
-        bool hDown=manager.isAction ? false:Input.GetButtonDown("Horizontal");
-        bool vDown=manager.isAction ? false:Input.GetButtonDown("Vertical");
-        bool hUp=manager.isAction   ? false:Input.GetButtonUp("Horizontal");
-        bool vUp=manager.isAction   ? false:Input.GetButtonUp("Vertical");
+        bool hDown=manager.isAction ? false: rightDown || leftDown;
+        bool vDown=manager.isAction ? false: upDown || downDown;
+        bool hUp=manager.isAction   ? false: rightUp || leftUp;
+        bool vUp=manager.isAction   ? false: upUp || downUp;
         
         //Check Horizontal Move
         if(hDown)
@@ -62,18 +74,14 @@ public class MudangAction_goot_sk : MonoBehaviour
         else if(hDown && h==1)
             dirVec=Vector3.right;
         
-        
-        
-        //Scan Object
-        if(Input.GetButtonDown("Jump"))
-        {
-            if(scanObject != null){
-                manager.Action(scanObject);
-            }else if(manager.objectDetect){
-                manager.playerMonologue();
-            }
-           
-        }
+        upDown=false;
+        upUp=false;
+        leftDown=false;
+        leftUp=false;
+        rightDown=false;
+        rightUp=false;
+        downDown=false;
+        downUp=false;
     }
     void FixedUpdate() {
         Vector2 moveVec=isHorizonMove?new Vector2(h,0):new Vector2(0,v);
@@ -86,7 +94,52 @@ public class MudangAction_goot_sk : MonoBehaviour
             scanObject=rayHit.collider.gameObject;
         }
         else
-            scanObject=null;
-        
+            scanObject=null;        
+    }
+
+    public void ButtonDown(string type)
+    {
+        switch (type)
+        {
+            case "U":
+                upValue=1;
+                upDown=true;
+                break;
+            case "D":
+                downDown=true;
+                downValue=-1;
+                break;
+            case "L":
+                leftDown=true;
+                leftValue=-1;
+                break;
+            case "R":
+                rightDown=true;
+                rightValue=1;
+                break;
+        }
+    }
+
+    public void ButtonUp(string type)
+    {
+        switch (type)
+        {
+            case "U":
+                upValue=0;
+                upUp=true;
+                break;
+            case "D":
+                downValue=0;
+                downUp=true;
+                break;
+            case "L":
+                leftValue=0;
+                leftUp=true;
+                break;
+            case "R":
+                rightValue=0;
+                rightUp=true;
+                break;
+        }
     }
 }

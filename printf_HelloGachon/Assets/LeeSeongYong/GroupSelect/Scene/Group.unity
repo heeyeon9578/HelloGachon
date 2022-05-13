@@ -5348,6 +5348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GRmudang
       objectReference: {fileID: 0}
+    - target: {fileID: 4356277845665931139, guid: 4faf6f324ed388546803ef9b42e9eb9c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4356277845665931141, guid: 4faf6f324ed388546803ef9b42e9eb9c, type: 3}
       propertyPath: mudang
       value: 

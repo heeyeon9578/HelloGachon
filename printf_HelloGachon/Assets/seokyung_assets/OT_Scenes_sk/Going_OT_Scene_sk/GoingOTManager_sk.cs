@@ -13,6 +13,7 @@ public class GoingOTManager_sk : MonoBehaviour
     public GameObject talkPanel;
     public GameObject talkPanel2;
     public GameObject mudangDown;
+    public GameObject controlSet;
     public Text talkText;
     public Text talkText2;
     public GameObject scanObject;
@@ -44,6 +45,7 @@ public class GoingOTManager_sk : MonoBehaviour
             objectDetect = false;
             talkIndex = 0;
             talkPanel.SetActive(false);
+            controlSet.SetActive(true);
             Debug.Log("End Talk");
             //Debug.Log(questManager.CheckQuest());
             return; //void 에서 return 가능(강제 종료 기능)-> return 뒤에 아무것도 안쓰면 됨
@@ -56,6 +58,7 @@ public class GoingOTManager_sk : MonoBehaviour
         objectDetect = true;
 
         talkPanel.SetActive(true);
+        controlSet.SetActive(false);
         talkIndex++;        
     }
     
@@ -67,6 +70,7 @@ public class GoingOTManager_sk : MonoBehaviour
         Talk(objData.id, objData.isNpc);
         
         talkPanel.SetActive(isAction);
+        controlSet.SetActive(!isAction);
     }
 
     public void Talk(int id, bool isNpc)
