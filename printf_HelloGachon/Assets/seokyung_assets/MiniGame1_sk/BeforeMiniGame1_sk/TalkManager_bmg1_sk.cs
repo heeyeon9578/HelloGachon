@@ -28,11 +28,11 @@ public class TalkManager_bmg1_sk : MonoBehaviour
         talkName.Add(400, new string[] { "전신거울" });
         talkName.Add(500, new string[] { "침대(장식)" });
         talkName.Add(600, new string[] { "책가방" });        
-        talkName.Add(800, new string[] { "" });
+        talkName.Add(800, new string[] { "문" });
 
         //room storyObj name
         //room_desk:1000, player:7000
-        talkName.Add(1000, new string[] { "책상" });
+        talkName.Add(1000, new string[] { "[플레이어 이름]" });
         talkName.Add(7000, new string[] { "[플레이어 이름]" });
 
         //room Obj talk

@@ -9,6 +9,7 @@ public class GameManager_bmg1_sk : MonoBehaviour
     public QuestManager_bmg1_sk qManager;
     public GameObject dialogPanel;
     public GameObject scanObject;
+    public GameObject controlSet;
     public AudioSource playerRoomBGM;
     public Text dialogName;
     public Text dialogText;
@@ -34,6 +35,7 @@ public class GameManager_bmg1_sk : MonoBehaviour
             objectDetect = false;
             talkIndex = 0;
             dialogPanel.SetActive(false);
+            controlSet.SetActive(true);
             //Debug.Log(questManager.CheckQuest());
             return; //void 에서 return 가능(강제 종료 기능)-> return 뒤에 아무것도 안쓰면 됨
         }
@@ -46,6 +48,7 @@ public class GameManager_bmg1_sk : MonoBehaviour
         objectDetect =  true;
 
         dialogPanel.SetActive(true);
+        controlSet.SetActive(false);
         talkIndex++;        
     }
 
@@ -57,6 +60,12 @@ public class GameManager_bmg1_sk : MonoBehaviour
         talk(objData.id, objData.isStoryObj);
 
         dialogPanel.SetActive(isInteract);
+        if(qManager.isInteract) {
+            controlSet.SetActive(false);
+        }
+        else {
+            controlSet.SetActive(!isInteract);
+        }
     }
 
     void talk(int id, bool isStoryObj)

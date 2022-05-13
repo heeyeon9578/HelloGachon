@@ -62,7 +62,6 @@ public class OTManager_sk : MonoBehaviour
         talk(objData.id, objData.isStoryObj);
 
         dialogPanel.SetActive(isInteract);
-        //controlSet.SetActive(!isInteract);
         
         if(qManager.isInteract) {
             controlSet.SetActive(false);

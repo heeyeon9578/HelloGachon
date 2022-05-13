@@ -92,20 +92,6 @@ public class PlayerAction_otl_sk : MonoBehaviour
         rightUp=false;
         downDown=false;
         downUp=false;
-
-        /*
-        //오브젝트 스캔
-        if(Input.GetMouseButtonDown(0)) {
-            if(qManager.isInteract){
-                qManager.introduceTalk();
-            }
-            else if(scanObject != null){
-                gManager.interactDialog(scanObject);
-            }else if(gManager.objectDetect){
-                gManager.playerMonologue();
-            }
-        }
-        */
     }
 
     void FixedUpdate() {

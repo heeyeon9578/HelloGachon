@@ -26,7 +26,7 @@ public class TalkManager_ots : MonoBehaviour
         talkName.Add(500, new string[] { "침대(장식)" });
         talkName.Add(600, new string[] { "책가방" });
         talkName.Add(700, new string[] { "책상" });
-        talkName.Add(800, new string[] { "" });
+        talkName.Add(800, new string[] { "문" });
 
         //room storyObj name
         //phone:2000
