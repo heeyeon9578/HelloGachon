@@ -8,6 +8,7 @@ public class DialogManager_sk : MonoBehaviour
     public TalkManager_ots tManager;
     public QuestManager_ots qManager;
     public GameObject dialogPanel;
+    public GameObject controlSet;
     public GameObject scanObject;
     public AudioSource playerRoomBGM;
     public AudioSource phoneAlarm;
@@ -32,6 +33,12 @@ public class DialogManager_sk : MonoBehaviour
         talk(objData.id, objData.isStoryObj);
 
         dialogPanel.SetActive(isInteract);
+        if(qManager.isInteract) {
+            controlSet.SetActive(false);
+        }
+        else {
+            controlSet.SetActive(!isInteract);
+        }        
     }
 
     void talk(int id, bool isStoryObj)

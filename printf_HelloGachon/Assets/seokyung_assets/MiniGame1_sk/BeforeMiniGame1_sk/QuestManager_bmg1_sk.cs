@@ -10,7 +10,6 @@ public class QuestManager_bmg1_sk : MonoBehaviour
     public TalkManager_bmg1_sk tManager;
     public GameObject[] questObject;
     public bool isInteract;
-    private bool isTouched = false;
     public int questId;
     public int questActionIndex;
     public int nameIndex;

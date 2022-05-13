@@ -676,7 +676,7 @@ GameObject:
   - component: {fileID: 70768410}
   - component: {fileID: 70768409}
   - component: {fileID: 70768408}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: hobbysunbae
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1568,7 +1568,7 @@ GameObject:
   - component: {fileID: 156144402}
   - component: {fileID: 156144401}
   - component: {fileID: 156144400}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: sports2sunbae
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3259,7 +3259,7 @@ GameObject:
   - component: {fileID: 306241735}
   - component: {fileID: 306241734}
   - component: {fileID: 306241736}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: sports1sunbae
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4395,7 +4395,7 @@ GameObject:
   - component: {fileID: 392322114}
   - component: {fileID: 392322113}
   - component: {fileID: 392322112}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: musicsunbae
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4830,7 +4830,7 @@ GameObject:
   - component: {fileID: 474997184}
   - component: {fileID: 474997188}
   - component: {fileID: 474997186}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Friend
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10673,7 +10673,7 @@ GameObject:
   - component: {fileID: 1382867479}
   - component: {fileID: 1382867478}
   - component: {fileID: 1382867477}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: societysunbae
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11089,7 +11089,7 @@ GameObject:
   - component: {fileID: 1406482526}
   - component: {fileID: 1406482525}
   - component: {fileID: 1406482524}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: religionsunbae
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -12622,7 +12622,7 @@ GameObject:
   - component: {fileID: 1600650584}
   - component: {fileID: 1600650583}
   - component: {fileID: 1600650582}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: performsunbae
   m_TagString: Untagged
   m_Icon: {fileID: 0}

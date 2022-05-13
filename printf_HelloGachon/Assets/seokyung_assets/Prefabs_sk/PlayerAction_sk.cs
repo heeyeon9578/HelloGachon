@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAction_sk : MonoBehaviour
 {
-    public DialogManager_sk dManager;
+    public DialogManager_sk gManager;
     public QuestManager_ots qManager;
     Rigidbody2D rigid;
     Animator anim;
@@ -14,6 +14,18 @@ public class PlayerAction_sk : MonoBehaviour
     public float playerSpeed; //플레이어의 이동속도
     bool isHorizonMove;
     Vector3 dirVec;
+    int upValue;
+    int downValue;
+    int rightValue;
+    int leftValue;
+    bool upDown;
+    bool upUp;
+    bool leftDown;
+    bool leftUp;
+    bool rightDown;
+    bool rightUp;
+    bool downDown;
+    bool downUp;
 
     // Start is called before the first frame update
     void Start()
@@ -26,13 +38,13 @@ public class PlayerAction_sk : MonoBehaviour
     void Update()
     {
         //수평, 수직 이동 변수
-        h = (dManager.isInteract || qManager.isInteract) ? 0 : Input.GetAxisRaw("Horizontal");
-        v = (dManager.isInteract || qManager.isInteract) ? 0 : Input.GetAxisRaw("Vertical");
+        h = (gManager.isInteract || qManager.isInteract) ? 0 : rightValue + leftValue;
+        v = (gManager.isInteract || qManager.isInteract) ? 0 : upValue + downValue;
 
-        bool hDown = (dManager.isInteract || qManager.isInteract) ? false : Input.GetButtonDown("Horizontal");
-        bool vDown = (dManager.isInteract || qManager.isInteract) ? false : Input.GetButtonDown("Vertical");
-        bool hUp = (dManager.isInteract || qManager.isInteract) ? false : Input.GetButtonUp("Horizontal");
-        bool vUp = (dManager.isInteract || qManager.isInteract) ? false : Input.GetButtonUp("Vertical");
+        bool hDown = (gManager.isInteract || qManager.isInteract) ? false : rightDown || leftDown;
+        bool vDown = (gManager.isInteract || qManager.isInteract) ? false : upDown || downDown;
+        bool hUp = (gManager.isInteract || qManager.isInteract) ? false : rightUp || leftUp;
+        bool vUp = (gManager.isInteract || qManager.isInteract) ? false : upUp || downUp;
 
         //check horizontal move (수평이동인지 체크)
         if (hDown) {
@@ -72,10 +84,14 @@ public class PlayerAction_sk : MonoBehaviour
             dirVec = Vector3.right;
         }
 
-        //오브젝트 스캔
-        if(Input.GetMouseButtonDown(0) && scanObject != null) {
-            dManager.interactDialog(scanObject);
-        }
+        upDown=false;
+        upUp=false;
+        leftDown=false;
+        leftUp=false;
+        rightDown=false;
+        rightUp=false;
+        downDown=false;
+        downUp=false;
     }
 
     void FixedUpdate() {
@@ -92,6 +108,62 @@ public class PlayerAction_sk : MonoBehaviour
         }
         else {
             scanObject = null;
+        }
+    }
+
+    public void ButtonDown(string type)
+    {
+        switch (type)
+        {
+            case "U":
+                upValue=1;
+                upDown=true;
+                break;
+            case "D":
+                downDown=true;
+                downValue=-1;
+                break;
+            case "L":
+                leftDown=true;
+                leftValue=-1;
+                break;
+            case "R":
+                rightDown=true;
+                rightValue=1;
+                break;
+            case "A":
+                if(scanObject!=null) {
+                    gManager.interactDialog(scanObject);
+                }
+                break;
+            case "T":
+                if(scanObject!=null) {
+                    gManager.interactDialog(scanObject);
+                }
+                break;
+        }
+    }
+
+    public void ButtonUp(string type)
+    {
+        switch (type)
+        {
+            case "U":
+                upValue=0;
+                upUp=true;
+                break;
+            case "D":
+                downValue=0;
+                downUp=true;
+                break;
+            case "L":
+                leftValue=0;
+                leftUp=true;
+                break;
+            case "R":
+                rightValue=0;
+                rightUp=true;
+                break;
         }
     }
 }

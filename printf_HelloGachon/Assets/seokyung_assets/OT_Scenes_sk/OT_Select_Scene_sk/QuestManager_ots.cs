@@ -10,6 +10,7 @@ public class QuestManager_ots : MonoBehaviour
     public TalkManager_ots tManager;
     public GameObject[] questObject;
     public GameObject dialogPanel;
+    public GameObject controlSet;
     public Text dialogName;
     public Text dialogText;
     public bool isInteract;

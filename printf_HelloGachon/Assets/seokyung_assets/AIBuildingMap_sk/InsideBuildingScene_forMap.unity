@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 6
---- !u!1001 &1396647462
+--- !u!1001 &1760640197
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
