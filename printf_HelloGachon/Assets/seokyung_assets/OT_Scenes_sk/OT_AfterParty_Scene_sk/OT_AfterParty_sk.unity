@@ -162,15 +162,14 @@ MonoBehaviour:
   - "\uCD5C\uAC15~~~~"
   - "\uCEF4\uACF5!!!!!!!!!!!!!!!!!"
   portraitArr:
-  - {fileID: -4147477828538500606, guid: f272440325a00594180eb2e1a1163e29, type: 3}
-  - {fileID: 348217707164647101, guid: f272440325a00594180eb2e1a1163e29, type: 3}
-  - {fileID: 7877403105803776743, guid: f02e508d9c9810c49957b9609ec98520, type: 3}
+  - {fileID: 7244340746289524946, guid: c62e90be83434b048bd9c8b58fd65181, type: 3}
+  - {fileID: 7244340746289524946, guid: c62e90be83434b048bd9c8b58fd65181, type: 3}
+  - {fileID: 7428864690613006699, guid: c62e90be83434b048bd9c8b58fd65181, type: 3}
   dialogPanel: {fileID: 2090091004}
   dialogName: {fileID: 2090091008}
   dialogText: {fileID: 2090091007}
   portraitImg: {fileID: 2090091006}
   glassCling: {fileID: 166548190}
-  index: 0
 --- !u!4 &166548189
 Transform:
   m_ObjectHideFlags: 0
@@ -644,6 +643,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1561380744}
     m_Modifications:
+    - target: {fileID: 59221217223867030, guid: b02d341234ca5664bbffbbf62f7402f8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 753388789605291790, guid: b02d341234ca5664bbffbbf62f7402f8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7428864690613006699, guid: c62e90be83434b048bd9c8b58fd65181, type: 3}
     - target: {fileID: 6872252871884595952, guid: b02d341234ca5664bbffbbf62f7402f8, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
