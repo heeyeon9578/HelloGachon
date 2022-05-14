@@ -416,7 +416,6 @@ GameObject:
   - component: {fileID: 6872252873468278850}
   - component: {fileID: 6872252873468278848}
   - component: {fileID: 6872252873468278851}
-  - component: {fileID: 1823734675}
   m_Layer: 5
   m_Name: dialog_panel
   m_TagString: Untagged
@@ -485,18 +484,3 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!111 &1823734675
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6872252873468278845}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0

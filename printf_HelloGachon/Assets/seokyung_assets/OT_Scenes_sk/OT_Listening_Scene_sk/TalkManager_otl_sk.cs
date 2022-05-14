@@ -25,12 +25,12 @@ public class TalkManager_otl_sk : MonoBehaviour
 
         //bigclassroom storyObj name
         //bigclassroom_playerSeat:200, sunabe:2000, player:7000
-        talkName.Add(200, new string[] { "" });
+        talkName.Add(200, new string[] { "컴공 회장" });
         talkName.Add(2000, new string[] { "선배" });
         talkName.Add(300, new string[] { "[플레이어 이름]" });
 
         //bigclassroom Obj talk
-        talkData.Add(100, new string[] { "아직은 나갈 수 없어" });
+        talkData.Add(100, new string[] { "아직은 나갈 수 없어. 선배에게 말을 걸어보자." });
 
         //bigclassroom Story Obj talk
         talkData.Add(200, new string[] { "여긴 내 자리이다.:4" });
@@ -64,7 +64,7 @@ public class TalkManager_otl_sk : MonoBehaviour
 
 
         //quest 시작 전 플레이어 독백
-        talkData.Add(300, new string[] {"여기가 오티장소인가?:0", "엇 저기 선배님이 계신다!:1", "가서 말걸어보자.:0"});
+        talkData.Add(300, new string[] {"여기가 오티장소인가?:0", "엇 저기 선배님이 계신다!:1", "가서 말 걸어보자.:0"});
 
         //Quest Talk
         //Quest1: 선배님께 말걸자! (questId: 10)
