@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SJ_CodeManager : MonoBehaviour
+public class SJ_CodeManager2 : MonoBehaviour
 {
     public InputField funcBody;
     // Start is called before the first frame update
