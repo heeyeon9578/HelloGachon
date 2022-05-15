@@ -19,12 +19,16 @@ public class TypeGameManager_mg1 : MonoBehaviour
     public GameObject registerResult;
     public GameObject dialogPanel;
     public List<ClassNum_mg1> classNumList;
+    public string[] successTalkList;
+    public string[] failTalkList;
     public Sprite[] portraitArr;
+    public Sprite[] scheduleArr;
     public Text classNumTxt;
     public Text resultTxt;
     public Text dialogName;
     public Text dialogText;
     public Image portraitImg;
+    public Image scheduleImg;
     public InputField inputClassNum;
     public Button applyBtn;
     public Button okBtn;
@@ -36,6 +40,7 @@ public class TypeGameManager_mg1 : MonoBehaviour
     public int currentClassNum;
     public int successCnt = 0;
     private int loop = 0;
+    private int index = 0;
 
     void Start()
     {
@@ -132,22 +137,8 @@ public class TypeGameManager_mg1 : MonoBehaviour
         }
         else
         {
-            registerResult.SetActive(false);
             dialogPanel.SetActive(true);
-            dialogName.text = "[플레이어 이름]";
-            
-            if(successCnt > 3)
-            {
-                dialogText.text = "와 수강신청 가볍게 성공~>_<\n3월부터는 내가 신청한대로 학교에서 수업을 들을 수 있어!\n수업이 없는 시간에는 하고 싶은 활동도 지정해서 할 수 있을거야~";
-                portraitImg.sprite = portraitArr[0];
-                //ex) 능력치: 전공능력 + 100
-            }
-            else
-            {
-                dialogText.text = "괜찮아...이번엔 실패했지만 다음엔 성공할 수 있을거야..ㅜ_ㅜ\n3월부터는 내가 신청한대로 학교에서 수업을 들을 수 있어!\n수업이 없는 시간에는 하고 싶은 활동도 지정해서 할 수 있을거야~";
-                portraitImg.sprite = portraitArr[1];
-                //ex) 능력치: 전공능력 + 50
-            }
+            resultTalk();
         }        
     }
 
@@ -171,10 +162,60 @@ public class TypeGameManager_mg1 : MonoBehaviour
         isApplyBtn = true;         
     }
 
-    public void gotoNextScene()
+    public void resultTalk()
     {
-        //다음 씬으로 넘어가기
-        Debug.Log("Move to March(입학식) Scene");
-        //SceneManager.LoadScene("AfterMiniGame1");
+        registerResult.SetActive(false);
+        dialogName.text = "[플레이어 이름]";
+
+        if(successCnt > 3)
+        {
+            if(index == successTalkList.Length){
+                dialogPanel.SetActive(false);
+                //다음 씬으로 넘어가기
+                Debug.Log("Move to March(입학식) Scene");
+                return;
+            }
+            dialogText.text = successTalkList[index];
+            portraitImg.sprite = portraitArr[0];
+            scheduleImg.sprite = scheduleArr[0];
+
+            dialogPanel.SetActive(true);
+            index++;
+
+            if(index == 2) {
+                portraitImg.sprite = portraitArr[2];
+            }
+            else if (index == 3 || index == 4) {
+                portraitImg.sprite = portraitArr[4];
+            }
+            else if (index == 5) {
+                portraitImg.sprite = portraitArr[5];
+            }
+        }
+        else
+        {
+            if(index == failTalkList.Length){
+                dialogPanel.SetActive(false);
+                //다음 씬으로 넘어가기
+                Debug.Log("Move to March(입학식) Scene");
+                return;
+            }
+            dialogText.text = failTalkList[index];
+            portraitImg.sprite = portraitArr[1];
+            scheduleImg.sprite = scheduleArr[1];
+
+            dialogPanel.SetActive(true);
+            index++;
+
+            if(index == 2) {
+                portraitImg.sprite = portraitArr[3];
+            }
+            else if (index == 3 || index == 4) {
+                portraitImg.sprite = portraitArr[4];
+            }
+            else if (index == 5) {
+                portraitImg.sprite = portraitArr[5];
+            }
+        }
     }
 }

@@ -1,31 +1,25 @@
 fileFormatVersion: 2
-guid: 4c21fa2e00a75cd4d9b4ef2e9e52095e
+guid: a2bb48c186c992341abb11dfcac4df81
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2268433977382761516
-    second: friendDot_0
+      213: -2809393655776098860
+    second: schedule_ui_sk_0
   - first:
-      213: 8671556082205837778
-    second: friendDot_1
+      213: 8715125181459809170
+    second: schedule_ui_sk_1
   - first:
-      213: -547565491307279857
-    second: friendDot_2
+      213: -3343712367229668536
+    second: schedule_ui_sk_2
   - first:
-      213: 6399489681590975048
-    second: friendDot_3
+      213: 3150359454196242762
+    second: schedule_ui_sk_3
   - first:
-      213: -782901046706239650
-    second: heefriendDot_0
+      213: 1790653917182570371
+    second: schedule_ui_sk_4
   - first:
-      213: 5874035509023050104
-    second: heefriendDot_1
-  - first:
-      213: 1401311992242464609
-    second: heefriendDot_2
-  - first:
-      213: 6833589109456194215
-    second: heefriendDot_3
+      213: -5325113577015600991
+    second: schedule_ui_sk_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -70,7 +64,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,85 +121,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: heefriendDot_0
+      name: schedule_ui_sk_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 46
-        width: 34
-        height: 43
+        y: 17
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 3, z: 2, w: 3}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e570bc065a39225f0800000000000000
-      internalID: -782901046706239650
+      spriteID: 4d5ca39da570309d0800000000000000
+      internalID: -2809393655776098860
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heefriendDot_1
+      name: schedule_ui_sk_1
       rect:
         serializedVersion: 2
-        x: 35
-        y: 46
-        width: 34
-        height: 43
+        x: 17
+        y: 17
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 4, z: 2, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87989596c24c48150800000000000000
-      internalID: 5874035509023050104
+      spriteID: 29349f58d2852f870800000000000000
+      internalID: 8715125181459809170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heefriendDot_2
+      name: schedule_ui_sk_2
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 3, z: 1, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 843f138515fb891d0800000000000000
+      internalID: -3343712367229668536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: schedule_ui_sk_3
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 34
-        height: 43
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 4, z: 3, w: 3}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1676b1d15d5727310800000000000000
-      internalID: 1401311992242464609
+      spriteID: a4919267b3358bb20800000000000000
+      internalID: 3150359454196242762
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heefriendDot_3
+      name: schedule_ui_sk_4
       rect:
         serializedVersion: 2
-        x: 35
+        x: 17
         y: 0
-        width: 34
-        height: 43
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 4, z: 3, w: 3}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7aa4d12d619c5de50800000000000000
-      internalID: 6833589109456194215
+      spriteID: 38f2459104ea9d810800000000000000
+      internalID: 1790653917182570371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: schedule_ui_sk_5
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 4, z: 3, w: 3}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a810655a656916b0800000000000000
+      internalID: -5325113577015600991
       vertices: []
       indices: 
       edges: []

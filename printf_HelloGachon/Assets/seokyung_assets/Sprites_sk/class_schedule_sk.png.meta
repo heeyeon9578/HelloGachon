@@ -1,31 +1,13 @@
 fileFormatVersion: 2
-guid: 4c21fa2e00a75cd4d9b4ef2e9e52095e
+guid: f48f4bf5a1c911e429cdb03ccc0fbda2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2268433977382761516
-    second: friendDot_0
+      213: -4197245751668621446
+    second: class_schedule_sk_0
   - first:
-      213: 8671556082205837778
-    second: friendDot_1
-  - first:
-      213: -547565491307279857
-    second: friendDot_2
-  - first:
-      213: 6399489681590975048
-    second: friendDot_3
-  - first:
-      213: -782901046706239650
-    second: heefriendDot_0
-  - first:
-      213: 5874035509023050104
-    second: heefriendDot_1
-  - first:
-      213: 1401311992242464609
-    second: heefriendDot_2
-  - first:
-      213: 6833589109456194215
-    second: heefriendDot_3
+      213: 2758327901634466351
+    second: class_schedule_sk_1
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -70,7 +52,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -127,55 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: heefriendDot_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 46
-        width: 34
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e570bc065a39225f0800000000000000
-      internalID: -782901046706239650
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: heefriendDot_1
-      rect:
-        serializedVersion: 2
-        x: 35
-        y: 46
-        width: 34
-        height: 43
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 87989596c24c48150800000000000000
-      internalID: 5874035509023050104
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: heefriendDot_2
+      name: class_schedule_sk_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 34
-        height: 43
+        width: 41
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +123,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1676b1d15d5727310800000000000000
-      internalID: 1401311992242464609
+      spriteID: a7f36c01a3360c5c0800000000000000
+      internalID: -4197245751668621446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: heefriendDot_3
+      name: class_schedule_sk_1
       rect:
         serializedVersion: 2
-        x: 35
+        x: 42
         y: 0
-        width: 34
-        height: 43
+        width: 41
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,8 +144,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7aa4d12d619c5de50800000000000000
-      internalID: 6833589109456194215
+      spriteID: f2298febc9c874620800000000000000
+      internalID: 2758327901634466351
       vertices: []
       indices: 
       edges: []
