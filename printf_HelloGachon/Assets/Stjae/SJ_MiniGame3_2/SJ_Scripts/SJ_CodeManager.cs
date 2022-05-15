@@ -31,6 +31,7 @@ public class SJ_CodeManager : MonoBehaviour
         string[] codeSegments = rawCode.Split('(');
         string codeSegmentLeft = codeSegments[0];
         string[] codeSegmentRight = {""};
+        bool semiColon = false;
 
         string funcName = "";
         string argument = "";
@@ -41,9 +42,12 @@ public class SJ_CodeManager : MonoBehaviour
             funcName = codeSegmentLeft;
         }
 
-        if (codeSegmentRight.Length > 1 && codeSegmentRight[1] != ";")
+        if (codeSegmentRight.Length > 1 && codeSegmentRight[1] == ";")
         {
-            Debug.Log("Error: ';' is missing");
+            semiColon = true;
+        } else
+        {
+            semiColon = false;
         }
             
         if (codeSegmentRight[0] != "")  // 인수 존재
@@ -51,7 +55,7 @@ public class SJ_CodeManager : MonoBehaviour
             argument = codeSegmentRight[0];
         }
 
-        if (funcName == "printf" && argument != "")
+        if (funcName == "printf" && argument != "" && semiColon)
         {
             HandlePrint(argument);
         }
