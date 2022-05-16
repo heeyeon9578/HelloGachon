@@ -15,6 +15,7 @@ public class TypeGameManager_mg1 : MonoBehaviour
     private float getSetTime;
 
     //**수강신청 게임 변수들 선언
+    public FadeInOut_sk fade;
     public GameObject Register;
     public GameObject registerResult;
     public GameObject dialogPanel;
@@ -172,7 +173,8 @@ public class TypeGameManager_mg1 : MonoBehaviour
             if(index == successTalkList.Length){
                 dialogPanel.SetActive(false);
                 //다음 씬으로 넘어가기
-                Debug.Log("Move to March(입학식) Scene");
+                fade.fadeOut();
+                SceneManager.LoadScene("heeRoom3"); 
                 return;
             }
             dialogText.text = successTalkList[index];
@@ -197,7 +199,7 @@ public class TypeGameManager_mg1 : MonoBehaviour
             if(index == failTalkList.Length){
                 dialogPanel.SetActive(false);
                 //다음 씬으로 넘어가기
-                Debug.Log("Move to March(입학식) Scene");
+                SceneManager.LoadScene("heeRoom3"); 
                 return;
             }
             dialogText.text = failTalkList[index];

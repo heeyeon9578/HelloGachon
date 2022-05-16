@@ -9,12 +9,6 @@ public class FadeInOut_sk : MonoBehaviour
     float time = 0f;
     float fTime = 1f;
 
-    void Start()
-    {
-        //fadeOut();
-        fadeIn();
-    }
-
     public void fadeIn()
     {
         StartCoroutine(fadeInFlow());
