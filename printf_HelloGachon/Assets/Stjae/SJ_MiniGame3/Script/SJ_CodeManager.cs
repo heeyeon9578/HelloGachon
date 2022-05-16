@@ -55,6 +55,11 @@ public class SJ_CodeManager : MonoBehaviour
             this.num++;
         }
 
+        public Loop(string argument) : base(argument)
+        {
+            Debug.Log("Loop() only supports integer as input");
+        }
+
         public override dynamic Body()
         {
             for(int i = 0; i < arg_int; i++)
@@ -123,21 +128,31 @@ public class SJ_CodeManager : MonoBehaviour
     {
         if(searchFunc(funcName))
         {
-            Debug.Log("함수 사용, 인수 X");
-            new Loop();
+            Debug.Log($"{funcName} 함수 사용, 인수 X");
         }
         else
             Debug.Log("no function found");
     }
 
-    void ExecFunc(string funcName, string argument)
+    void ExecFunc(string funcName, string str_arg)
     {
         if(searchFunc(funcName))
         {
-            Debug.Log("함수 사용, 인수 O");
+            int int_arg = 0;
+            object funcObj;
+
+            Debug.Log($"{funcName} 함수 사용, 인수 O");
             Type funcType = Type.GetType($"SJ_CodeManager+{funcName}");
             MethodInfo methodInfo = funcType.GetMethod("Body");
-            object funcObj = Activator.CreateInstance(funcType, Int32.Parse(argument));
+
+            bool result = int.TryParse(str_arg, out int_arg);
+            if(result)
+            {
+                funcObj = Activator.CreateInstance(funcType, int_arg);      // funcName 과 동일한 이름을 가진 타입의 클래스 인스턴스를 동적 생성
+            }
+            else
+                funcObj = Activator.CreateInstance(funcType, str_arg);
+
             methodInfo.Invoke(funcObj, null);
         }
         else
