@@ -15,6 +15,20 @@ public class PlayerAction_hee6 : MonoBehaviour
     bool isHorizonMove;
     Vector3 dirVec;
 
+    //방향키나 스페이스가 아닌, 버튼으로 조종하기 위해 추가해주어야 하는 변수들
+    int upValue=0;
+    int downValue=0;
+    int rightValue=0;
+    int leftValue=0;
+    bool upDown=false;
+    bool upUp=false;
+    bool leftDown=false;
+    bool leftUp=false;
+    bool rightDown=false;
+    bool rightUp=false;
+    bool downDown=false;
+    bool downUp=false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,13 +40,13 @@ public class PlayerAction_hee6 : MonoBehaviour
     void Update()
     {
         //수평, 수직 이동 변수
-        h = (dManager.isInteract || qManager.isInteract) ? 0 : Input.GetAxisRaw("Horizontal");
-        v = (dManager.isInteract || qManager.isInteract) ? 0 : Input.GetAxisRaw("Vertical");
+        h = (dManager.isInteract || qManager.isInteract) ? 0 : rightValue+leftValue;
+        v = (dManager.isInteract || qManager.isInteract) ? 0 : upValue+downValue;
 
-        bool hDown = (dManager.isInteract || qManager.isInteract) ? false : Input.GetButtonDown("Horizontal");
-        bool vDown = (dManager.isInteract || qManager.isInteract) ? false : Input.GetButtonDown("Vertical");
-        bool hUp = (dManager.isInteract || qManager.isInteract) ? false : Input.GetButtonUp("Horizontal");
-        bool vUp = (dManager.isInteract || qManager.isInteract) ? false : Input.GetButtonUp("Vertical");
+        bool hDown = (dManager.isInteract || qManager.isInteract) ? false : rightDown||leftDown;
+        bool vDown = (dManager.isInteract || qManager.isInteract) ? false : upDown||downDown;
+        bool hUp = (dManager.isInteract || qManager.isInteract) ? false : rightUp||leftUp;
+        bool vUp = (dManager.isInteract || qManager.isInteract) ? false : upUp||downUp;
 
         //check horizontal move (수평이동인지 체크)
         if (hDown) {
@@ -72,10 +86,16 @@ public class PlayerAction_hee6 : MonoBehaviour
             dirVec = Vector3.right;
         }
 
-        //오브젝트 스캔
-        if(Input.GetMouseButtonDown(0) && scanObject != null) {
-            dManager.interactDialog(scanObject);
-        }
+        //ScanObject - 방향키나 스페이스가 아닌, 버튼으로 조종하기 위해 추가
+        upDown=false;
+        upUp=false;
+        leftDown=false;
+        leftUp=false;
+        rightDown=false;
+        rightUp=false;
+        downDown=false;
+        downUp=false;
+
     }
 
     void FixedUpdate() {
@@ -92,6 +112,66 @@ public class PlayerAction_hee6 : MonoBehaviour
         }
         else {
             scanObject = null;
+        }
+    }
+
+    //방향키나 스페이스가 아닌, 버튼으로 조종하기 위해 추가해 준 함수들
+    public void ButtonDown2(string type)
+    {
+        switch (type)
+        {
+            case "U":
+                upValue=1;
+                upDown=true;
+                break;
+            case "D":
+                downDown=true;
+                downValue=-1;
+                break;
+            case "L":
+                leftDown=true;
+                leftValue=-1;
+                break;
+            case "R":
+                rightDown=true;
+                rightValue=1;
+                break;
+            case "A":
+                if(scanObject != null) {
+                dManager.interactDialog(scanObject);
+            }
+                break;
+        }
+    }
+    public void ButtonUp2(string type)
+    {
+        switch (type)
+        {
+            case "U":
+                upValue=0;
+                upUp=true;
+                break;
+            case "D":
+                downValue=0;
+                downUp=true;
+                break;
+            case "L":
+                leftValue=0;
+                leftUp=true;
+                break;
+            case "R":
+                rightValue=0;
+                rightUp=true;
+                break;
+
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision) {
+        
+        if(collision.gameObject.tag=="Freedom")
+        {
+            Debug.Log("free");
+            GameObject.Find("Canvas").GetComponent<FadeINOUT>().startFadeOut2();
         }
     }
 }

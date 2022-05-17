@@ -32,9 +32,9 @@ public class QuestManager_heeots1 : MonoBehaviour
     
     void generateData()
     {
-        questList.Add(10, new QuestData_heeots3("카톡을 확인하자", new int[] {1000, 400}));
-        questList.Add(20, new QuestData_heeots3("신입생 오티?", new int[] {400}));
-        questList.Add(30, new QuestData_heeots3("오티 씬 종료!", new int[] { 0 }));
+        questList.Add(10, new QuestData_heeots3("카톡을 확인하자", new int[] {1000}));
+        questList.Add(20, new QuestData_heeots3("인트로 종료", new int[] {0}));
+
     }
 
     public int getQuestTalkIndex(int id)
@@ -78,26 +78,34 @@ public class QuestManager_heeots1 : MonoBehaviour
         switch(questId)
         {
             case 10:
-                if(questActionIndex == 1 && isTouched == false) {
+                if(questActionIndex == 1 ) {
+
+                   
                     questObject[0].SetActive(false);
                     questObject[1].SetActive(true);
                     isInteract = true;                 
                 }
                 break;
-            // case 20:
-            //     if(questActionIndex == 1) {
-            //         questObject[2].SetActive(true);
-            //         isInteract = true;
-            //     }
-            //     break;
+
             default:
                 break;
         }
     }
-    //폰 화면 나오고 꺼질때 쓰이는 함수
+    //phonePanel에서 phonePanel2로 넘어가기 위한 함수
     public void touchPhone()
     {
+        
+
+        questObject[3].SetActive(true);
+        questObject[4].SetActive(false);
+
+    }
+
+    //phonePanel2를 끄기 위한 함수
+    public void touchPhone2()
+    {
         questObject[1].SetActive(false);
+
         isInteract = false;
         isTouched = true;
         talkPanel.SetActive(true);
@@ -109,48 +117,8 @@ public class QuestManager_heeots1 : MonoBehaviour
         questObject[2].SetActive(false);
         isInteract = false;
         Debug.Log("간다!");
-        //참여한다고 하면 바로 메인맵으로 이동 후, 입학식 진행
+        //참여한다고 하면 바로 메인맵으로 이동 후, 튜토리얼 진행
         SceneManager.LoadScene("heeMonth1");
-    }
-
-    //3월 맵 씬으로 넘어가기 위한 함수
-    public void onApplyBtnClick()
-    {
-        questObject[2].SetActive(false);
-        isInteract = false;
-        Debug.Log("간다!");
-        //참여한다고 하면 바로 메인맵으로 이동 후, 입학식 진행
-        SceneManager.LoadScene("heeMonth3");
-    }
-
-    //4월 맵 씬으로 넘어가기 위한 함수
-        public void onApplyBtnClick4()
-    {
-        questObject[2].SetActive(false);
-        isInteract = false;
-        Debug.Log("간다!");
-        //참여한다고 하면 바로 메인맵으로 이동 후, 4월 간식행사 진행
-        SceneManager.LoadScene("heeMonth4");
-    }
-
-        //5월 맵 씬으로 넘어가기 위한 함수
-        public void onApplyBtnClick5()
-    {
-        questObject[2].SetActive(false);
-        isInteract = false;
-        Debug.Log("간다!");
-        //참여한다고 하면 바로 메인맵으로 이동 후, 5월 간식행사 진행
-        SceneManager.LoadScene("heeMonth5");
-    }
-
-    public void onNoBtnClick()
-    {
-        questObject[2].SetActive(false);
-        isInteract = false;
-        Debug.Log("안가!");
-        
-        //참여하지 않으면 3월 수업 퀘스트 진행
-        // SceneManager.LoadScene("MiniGame1");
     }
 
     public void onNoBtnClick1()
@@ -159,27 +127,8 @@ public class QuestManager_heeots1 : MonoBehaviour
         isInteract = false;
         Debug.Log("안가!");
         
-        //참여하지 않으면 3월 수업 퀘스트 진행
-        // SceneManager.LoadScene("MiniGame1");
+        //참여하지 않으면 2월 오티가기 전으로 넘어감
+        SceneManager.LoadScene("OT_Select_sk");
     }
 
-        public void onNoBtnClick4()
-    {
-        questObject[2].SetActive(false);
-        isInteract = false;
-        Debug.Log("안가!");
-        
-        //참여하지 않으면 4월 수업 퀘스트 진행
-        // SceneManager.LoadScene("MiniGame1");
-    }
-
-            public void onNoBtnClick5()
-    {
-        questObject[2].SetActive(false);
-        isInteract = false;
-        Debug.Log("안가!");
-        
-        //참여하지 않으면 5월 퀘스트 진행
-        // SceneManager.LoadScene("MiniGame1");
-    }
 }

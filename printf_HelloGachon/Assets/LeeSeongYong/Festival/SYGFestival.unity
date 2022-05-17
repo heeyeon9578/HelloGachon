@@ -621,7 +621,7 @@ GameObject:
   - component: {fileID: 416538558}
   - component: {fileID: 416538557}
   - component: {fileID: 416538556}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: SYG_Friend_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2482,7 +2482,7 @@ GameObject:
   - component: {fileID: 1867023388}
   - component: {fileID: 1867023387}
   - component: {fileID: 1867023386}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: SYG_sunbae_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}

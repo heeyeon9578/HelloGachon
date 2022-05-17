@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
+
 public class heeTalkManager3 : MonoBehaviour
 {
     
@@ -18,7 +21,8 @@ public class heeTalkManager3 : MonoBehaviour
     public GameObject newStu; //newStu 오브젝트
     public GameObject mudang; //mudang 오브젝트
     public GameObject mudangQuest; // 무당이 내릴때 누르는 버튼
-
+    private AudioSource audioSource;
+    public AudioClip audioClip;
 
     public heeQuestManager3 questManager;
     public heegameManager3 gameManager;
@@ -30,6 +34,7 @@ public class heeTalkManager3 : MonoBehaviour
     void Awake()
     {        
         rb = mudang.GetComponent<Rigidbody2D>();
+        audioSource = this.GetComponent<AudioSource>();
         talkData = new Dictionary<int, string[]>(); //대화에 문장이 여러개 존재
         portraitData = new Dictionary<int, Sprite>();
         GenerateData();
@@ -84,17 +89,10 @@ public class heeTalkManager3 : MonoBehaviour
 
 
        //Quest Talk(퀘스트 넘버 + npc 넘버)
-       //Quest_3 3월 입학식    
+       //3월 입학식    
        talkData.Add(10+ 2000, new string[] {"잘 찾아왔어!!:0","AI공학관에 들어가서 입학식에 참여해!!:1"});
        talkData.Add(11+500, new string[] {"AI공학관에 들어가시겠습니까?"});
 
-
-      //오리엔테이션 2월
-
-
-       //Quest_2 4월 간식행사
-       
-       //Quest_3 6월 종강파티
         
 
        //portrait Data
@@ -149,15 +147,14 @@ public class heeTalkManager3 : MonoBehaviour
                //퀘스트 맨 처음 대사 마저 없을 때,
                //기본 대사를 가져오기      
                if(talkIndex == talkData[id-id%100].Length){
-  
-                  Debug.Log("77777777777777777777777");
+
                   
                   talkPanel3.SetActive(true);
                   return null;
                }                 
                else{
                     return talkData[id - id%100][talkIndex];
-                    Debug.Log("2222222");
+
                }
                  
            }}
@@ -167,25 +164,25 @@ public class heeTalkManager3 : MonoBehaviour
                //기본 대사를 가져오기      
                if(talkIndex == talkData[id-id%100].Length){
                     
-                  Debug.Log("333333");
+
                  
                   return null;
                }                 
                else{
                     return talkData[id - id%100][talkIndex];
-                    Debug.Log("2222222");
+
                }
                  
            }else{
                //해당 퀘스트 진행 순서 중 대사가 없을 때
                //퀘스트 맨 처음 대사를 가져옴
                if(talkIndex == talkData[id-id%10].Length){                  
-                  Debug.Log("44444444444");
+
                   return null;
                   }                 
                else{
                    return talkData[id - id%10][talkIndex];
-                   Debug.Log("2222222");
+
                   }
                   
                   
@@ -197,12 +194,12 @@ public class heeTalkManager3 : MonoBehaviour
        }
 
        if(talkIndex==talkData[id].Length){ 
-            Debug.Log("555555555");
+
            return null;
        }
        else{
            return talkData[id][talkIndex];
-           Debug.Log("2222222");
+
        }
       
    }
@@ -221,6 +218,9 @@ public class heeTalkManager3 : MonoBehaviour
        pos = this.mudang.transform.position;
        switch(type){
            case "y": 
+                audioSource.clip = audioClip;
+                audioSource.loop = false;               
+                audioSource.Play();
                 talkPanel3.SetActive(false);
                 mudangQuest.SetActive(true);
 
@@ -248,6 +248,7 @@ public class heeTalkManager3 : MonoBehaviour
        switch(type){
            case "y":
                 talkPanel4.SetActive(false);
+                SceneManager.LoadScene("heeFin3");
                 break;
             case "n":
                 talkPanel4.SetActive(false);

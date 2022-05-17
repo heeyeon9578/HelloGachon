@@ -76,7 +76,7 @@ public class GRMudangAction : MonoBehaviour
         
         
         //Scan Object
-         upDown=false;
+        upDown=false;
         upUp=false;
         leftDown=false;
         leftUp=false;
