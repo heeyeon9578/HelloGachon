@@ -14,6 +14,7 @@ public class GoingOTManager_sk : MonoBehaviour
     public GameObject talkPanel2;
     public GameObject mudangDown;
     public GameObject controlSet;
+    public GameObject actionKey;
     public Text talkText;
     public Text talkText2;
     public GameObject scanObject;
@@ -25,6 +26,7 @@ public class GoingOTManager_sk : MonoBehaviour
     public GameObject heetalkPanel3; // 무당이 예/ 아니오 판넬
     public GameObject heenewStu; //newStu 오브젝트
     public GameObject heemudang; //mudang 오브젝트
+    public GameObject mudangBorderline;
     private Rigidbody2D rb2;
   
     void Awake() {
@@ -118,6 +120,8 @@ public class GoingOTManager_sk : MonoBehaviour
         pos2 = this.heemudang.transform.position;
         mudangDown.SetActive(false);
         heetalkPanel3.SetActive(false);
+        actionKey.SetActive(true);
+        mudangBorderline.SetActive(false);
 
         var heeobjectdata = heemudang.GetComponent<heeObjectData>();
         heeobjectdata.enabled= true;

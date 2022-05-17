@@ -1392,19 +1392,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2031403126273435179, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 2031403126273435179, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 2031403126273435179, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2031403126273435179, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2031403126273435179, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1484,6 +1484,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 721763933}
     m_Modifications:
+    - target: {fileID: 2776650005853847159, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 770
+      objectReference: {fileID: 0}
     - target: {fileID: 2776650006662771876, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
       propertyPath: m_Name
       value: Phone_panel
@@ -1506,19 +1510,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2776650006662771879, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 2776650006662771879, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 2776650006662771879, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2776650006662771879, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2776650006662771879, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
       propertyPath: m_SizeDelta.x

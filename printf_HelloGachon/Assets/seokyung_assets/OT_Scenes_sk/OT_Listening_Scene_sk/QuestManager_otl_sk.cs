@@ -190,12 +190,12 @@ public class QuestManager_otl_sk : MonoBehaviour
             talkIndex = 0;
             oManager.talkIndex = 0;
             dialogPanel.SetActive(false);
-            controlSet.SetActive(true);
             if(isTalking) {
                 questActionIndex = 0;
                 controlQuestObject();
             }
             else {                
+                controlSet.SetActive(true);
                 questActionIndex = 1;
                 controlQuestObject();             
             }            

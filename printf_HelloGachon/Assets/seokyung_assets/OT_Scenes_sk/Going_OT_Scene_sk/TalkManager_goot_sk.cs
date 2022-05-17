@@ -13,6 +13,8 @@ Dictionary<int, string[]> talkData;
     public GameObject newStu; //newStu 오브젝트
     public GameObject mudang; //mudang 오브젝트
     public GameObject mudangQuest; // 무당이 내릴때 누르는 버튼
+    public GameObject mudangBorderline;
+    public GameObject actionKey;
     public QuestManager_goot_sk questManager;
     public GoingOTManager_sk gameManager;
     private Rigidbody2D rb;
@@ -140,6 +142,8 @@ Dictionary<int, string[]> talkData;
            case "y": 
                 talkPanel3.SetActive(false);
                 mudangQuest.SetActive(true);
+                actionKey.SetActive(false);
+                mudangBorderline.SetActive(true);
 
                 newStu.SetActive(false);
                 gameManager.SetCameraTarget(mudang);
