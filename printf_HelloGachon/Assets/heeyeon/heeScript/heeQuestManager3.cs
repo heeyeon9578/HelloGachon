@@ -80,6 +80,13 @@ public class heeQuestManager3 : MonoBehaviour
                                    
                 break;
 
+            case 20: 
+                if(questActionIndex ==0){
+                  questObject[0].SetActive(true);
+                }
+                                   
+                break;
+
         }
     }
 }

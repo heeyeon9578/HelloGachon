@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class heeQuestManager : MonoBehaviour
 {
@@ -78,13 +79,12 @@ public class heeQuestManager : MonoBehaviour
                     talkText3.text = "AI공학관 앞에 가서 선배님이랑 인사하기";
                 }else if(questActionIndex ==2){
                     talkText3.text = "선배님 옆에 계시는 교수님이랑 인사하기";                  
+                }else if(questActionIndex ==3){
+                    SceneManager.LoadScene("OT_Select_sk");
                 }
                                    
                 break;
-            // case 20:
-            //     if(questActionIndex ==1)
 
-            //     break;
 
         }
     }

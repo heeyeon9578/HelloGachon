@@ -27,7 +27,7 @@ public class DialogManager_hee1 : MonoBehaviour
 
     public void TestSub(){
         string talkData2 = tManager.getTalk(3000, talkIndex); //처음에 게임 시작 전에 인트로가 나올 수 있도록 구성
-
+        string talkName2 = tManager.getName(3000, nameIndex);
         //End Talk
         if(talkData2 ==null){
             objectDetect = false;
@@ -38,6 +38,7 @@ public class DialogManager_hee1 : MonoBehaviour
 
         }
         
+        dialogName.text = talkName2;
         dialogText.text = talkData2.Split(':')[0];
         portraitImg.sprite = tManager.GetPortrait(3000,int.Parse(talkData2.Split(':')[1]));
         portraitImg.color = new Color(1,1,1,1); //맨 끝이 투명도로, npc일때만 이미지가 나오도록 설정
@@ -48,7 +49,7 @@ public class DialogManager_hee1 : MonoBehaviour
         talkIndex++;
         
     }
-
+    // 조사대상이 있을 때만 대화창 띄우기
     public void interactDialog(GameObject scanObj)
     {
         //Exit Dialog
@@ -70,7 +71,7 @@ public class DialogManager_hee1 : MonoBehaviour
         if(talkData ==null){
             isInteract = false;
             talkIndex = 0;
-            // Debug.Log(qManager.CheckQuest(id));
+            Debug.Log(qManager.checkQuest(id));
             // dialogPanel.SetActive(false);
 
             return; //void 에서 return 가능(강제 종료 기능)-> return 뒤에 아무것도 안쓰면 됌

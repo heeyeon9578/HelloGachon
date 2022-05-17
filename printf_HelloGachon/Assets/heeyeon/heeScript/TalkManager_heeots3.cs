@@ -26,7 +26,7 @@ public class TalkManager_heeots3 : MonoBehaviour
         talkName.Add(500, new string[] { "침대(장식)" });
         talkName.Add(600, new string[] { "책가방" });
         talkName.Add(700, new string[] { "책상" });
-        talkName.Add(800, new string[] { "" });
+        talkName.Add(800, new string[] { "방 문" });
 
         //room storyObj name
         //phone:1000, room_door:2000, player:3000
@@ -51,10 +51,7 @@ public class TalkManager_heeots3 : MonoBehaviour
         //Quest Talk
         //Quest1: 3월_입학식(questId: 10)
         talkData.Add(10 + 1000, new string[] { "엇 컴공 공지방 카톡왔네.", "확인해보자." });
-        // talkData.Add(11 + 400, new string[] { "입학식이 3월 2일에 있구나" });
 
-        //Quest2: 오티를 가 말어~ (questId: 20)
-        // talkData.Add(20 + 400, new string[] { "오티를 갈까 말까" });
     }
 
     public string getName(int id, int nameIndex)

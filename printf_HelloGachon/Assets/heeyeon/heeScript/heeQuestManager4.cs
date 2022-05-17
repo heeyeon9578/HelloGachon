@@ -16,7 +16,7 @@ public class heeQuestManager4 : MonoBehaviour
         questList = new Dictionary<int, heeQuestData3>();
 
         //처음 게임 시작할 때, questMark의 default 대사
-        talkText3.text = "AI공학관 앞에서 선배 만나기";
+        talkText3.text = "IT대학 앞에 있는 친구 만나기";
         GenerateData();
     }
 
@@ -24,7 +24,8 @@ public class heeQuestManager4 : MonoBehaviour
     void GenerateData()
     {
         questList.Add(10, new heeQuestData3("4월: 간식행사", new int[]{1000, 2000}));
-        questList.Add(20, new heeQuestData3("4월: 간식행사끝", new int[]{0}));
+        questList.Add(20, new heeQuestData3("4월: 중간고사시작", new int[]{8000}));
+        questList.Add(30, new heeQuestData3("4월: 끝", new int[]{0}));
 
     }
 
@@ -72,7 +73,16 @@ public class heeQuestManager4 : MonoBehaviour
         {
             case 10: 
                 if(questActionIndex ==1){
-                    talkText3.text = "AI공학관에 들어가기";
+                    talkText3.text = "AI공학관 앞에서 선배 만나기";
+                }else if(questActionIndex ==2){
+                    talkText3.text = "교수님께 가서 중간고사 진행하기";
+                }
+                                   
+                break;
+
+            case 20: 
+                if(questActionIndex == 1){
+                    questObject[0].SetActive(true);
                 }
                                    
                 break;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class heeQuestManager5 : MonoBehaviour
 {
@@ -85,10 +86,18 @@ public class heeQuestManager5 : MonoBehaviour
                     talkText3.text = "선배에게 말걸기";
                 }else if(questActionIndex==1){
                     talkText3.text = "이길여 총장님 찾기";
+                }else if(questActionIndex==2){
+                    questObject[1].SetActive(true);
                 }
                                    
                 break;
 
         }
     }
+
+    public void clickYes(){
+        // 6월 수업씬으로 이동
+        // SceneManager.LoadScene("");
+    }
+    
 }

@@ -33,9 +33,9 @@ public class QuestManager_heeots6 : MonoBehaviour
     
     void generateData()
     {
-        questList.Add(10, new QuestData_heeots3("카톡을 확인하자", new int[] {1000, 400}));
-        questList.Add(20, new QuestData_heeots3("신입생 오티?", new int[] {400}));
-        questList.Add(30, new QuestData_heeots3("오티 씬 종료!", new int[] { 0 }));
+        questList.Add(10, new QuestData_heeots3("카톡을 확인하자", new int[] {1000}));
+        questList.Add(20, new QuestData_heeots3("끝", new int[] {0}));
+        
     }
 
     public int getQuestTalkIndex(int id)
@@ -85,12 +85,7 @@ public class QuestManager_heeots6 : MonoBehaviour
                     isInteract = true;                 
                 }
                 break;
-            // case 20:
-            //     if(questActionIndex == 1) {
-            //         questObject[2].SetActive(true);
-            //         isInteract = true;
-            //     }
-            //     break;
+
             default:
                 break;
         }
@@ -104,83 +99,30 @@ public class QuestManager_heeots6 : MonoBehaviour
         talkPanel.SetActive(true);
     }
 
-    //3월 맵 씬으로 넘어가기 위한 함수
-    public void onApplyBtnClick()
+    //종강파티 이미지로 넘어가기 위한 함수
+    public void onApplyBtnClick6()
     {
         questObject[2].SetActive(false);
         isInteract = false;
         Debug.Log("간다!");
-        //참여한다고 하면 바로 메인맵으로 이동 후, 입학식 진행
-        SceneManager.LoadScene("heeMonth3");
-    }
-
-    //4월 맵 씬으로 넘어가기 위한 함수
-        public void onApplyBtnClick4()
-    {
-        questObject[2].SetActive(false);
-        isInteract = false;
-        Debug.Log("간다!");
-        //참여한다고 하면 바로 메인맵으로 이동 후, 4월 간식행사 진행
-        SceneManager.LoadScene("heeMonth4");
-    }
-
-    //5월 맵 씬으로 넘어가기 위한 함수
-        public void onApplyBtnClick5()
-    {
-        questObject[2].SetActive(false);
-        isInteract = false;
-        Debug.Log("간다!");
-        //참여한다고 하면 바로 메인맵으로 이동 후, 5월 간식행사 진행
-        SceneManager.LoadScene("heeMonth5");
-    }
-
-    //6월 맵 씬으로 넘어가기 위한 함수
-        public void onApplyBtnClick6()
-    {
-        questObject[2].SetActive(false);
-        isInteract = false;
-        Debug.Log("간다!");
-        //참여한다고 하면 바로 메인맵으로 이동 후, 5월 간식행사 진행
+        //참여한다고 하면 종강파티 이미지 보여줌
         FinishImage.SetActive(true);
     }
 
-    public void onNoBtnClick()
-    {
-        questObject[2].SetActive(false);
-        isInteract = false;
-        Debug.Log("안가!");
-        
-        //참여하지 않으면 3월 수업 퀘스트 진행
-        // SceneManager.LoadScene("MiniGame1");
+    //종강파티 이미지를 클릭하면, 성적확인 엔딩 장면
+    public void onApplyBtnClick6_1(){
+        FinishImage.SetActive(false);
+        // SceneManager.LoadScene("");
     }
+    
 
-    public void onNoBtnClick4()
+    public void onNoBtnClick6()
     {
         questObject[2].SetActive(false);
         isInteract = false;
         Debug.Log("안가!");
         
-        //참여하지 않으면 4월 수업 퀘스트 진행
-        // SceneManager.LoadScene("MiniGame1");
-    }
-
-    public void onNoBtnClick5()
-    {
-        questObject[2].SetActive(false);
-        isInteract = false;
-        Debug.Log("안가!");
-        
-        //참여하지 않으면 5월 퀘스트 진행
-        // SceneManager.LoadScene("MiniGame1");
-    }
-
-        public void onNoBtnClick6()
-    {
-        questObject[2].SetActive(false);
-        isInteract = false;
-        Debug.Log("안가!");
-        
-        //참여하지 않으면 5월 퀘스트 진행
-        // SceneManager.LoadScene("MiniGame1");
+        //참여하지 않으면 성적 확인 엔딩 장면
+        // SceneManager.LoadScene("");
     }
 }

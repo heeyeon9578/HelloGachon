@@ -85,7 +85,7 @@ public class GRMudangAction : MonoBehaviour
         GameData.gamedata.mudangpos=mudang.transform.position;
         
         //Scan Object
-         upDown=false;
+        upDown=false;
         upUp=false;
         leftDown=false;
         leftUp=false;

@@ -19,7 +19,8 @@ public class heeTalkManager5 : MonoBehaviour
     public GameObject mudang; //mudang 오브젝트
     public GameObject friend; //friend 오브젝트
     public GameObject gilyae; //gilyae 오브젝트
-
+    private AudioSource audioSource;
+    public AudioClip audioClip;
     public GameObject mudangQuest; // 무당이 내릴때 누르는 버튼
 
 
@@ -36,6 +37,7 @@ public class heeTalkManager5 : MonoBehaviour
     {        
         rb = mudang.GetComponent<Rigidbody2D>();
         rb2 = friend.GetComponent<Rigidbody2D>();
+        audioSource = this.GetComponent<AudioSource>();
 
         talkData = new Dictionary<int, string[]>(); //대화에 문장이 여러개 존재
         portraitData = new Dictionary<int, Sprite>();
@@ -98,8 +100,9 @@ public class heeTalkManager5 : MonoBehaviour
        talkData.Add(11+2000, new string[] {"잘 찾아왔어!!:0", "여기 던킨도너츠랑 커피를 줄게!!:4", "기말고사 공부 화이팅해!!:2"});
 
        //Quest_5 5월 이길여 총장님 이벤트
-       talkData.Add(20+2000, new string[] {"그거 아니?:0", "가천대학교 이길여 총장님께서는 가끔 학교에 오셔 :1", "가천대학교에서 제일 높은 건물 쪽에 자주 보이신데:2"});
-       talkData.Add(21+6000, new string[] {"어서와요~^^ 호호호:0", " 저는 이길여 총장입니다~:0", "스가이~에 드는 명문 가천에 오신걸 진심으로 축하드려요~^^ 호호:0"});
+       talkData.Add(20+2000, new string[] {"그거 아니?:0", "이길여총장님께서는 가끔 학교에 오셔 :1", "가천대학교에서 제일 높은 건물 쪽에 자주 보이신데:2"});
+       talkData.Add(21+6000, new string[] {"어서와요~^^ 호호호:0", " 저는 이길여 총장입니다~:0", "스가이에 드는 명문 가천에 오신걸 진심으로 축하드려요~^^ :0", 
+                                           "1학기 마지막 수업도 잘 듣고, 기말고사에서 좋은 성적 거두길 바랄게요~:0"});
 
 
 
@@ -156,15 +159,13 @@ public class heeTalkManager5 : MonoBehaviour
                //퀘스트 맨 처음 대사 마저 없을 때,
                //기본 대사를 가져오기      
                if(talkIndex == talkData[id-id%100].Length){
-  
-                  Debug.Log("77777777777777777777777");
                   
                   talkPanel3.SetActive(true);
                   return null;
                }                 
                else{
                     return talkData[id - id%100][talkIndex];
-                    Debug.Log("2222222");
+
                }
                  
            }}
@@ -172,27 +173,25 @@ public class heeTalkManager5 : MonoBehaviour
                if(!talkData.ContainsKey(id-id%10)){
                //퀘스트 맨 처음 대사 마저 없을 때,
                //기본 대사를 가져오기      
-               if(talkIndex == talkData[id-id%100].Length){
-                    
-                  Debug.Log("333333");
+               if(talkIndex == talkData[id-id%100].Length){                   
                  
                   return null;
                }                 
                else{
                     return talkData[id - id%100][talkIndex];
-                    Debug.Log("2222222");
+
                }
                  
            }else{
                //해당 퀘스트 진행 순서 중 대사가 없을 때
                //퀘스트 맨 처음 대사를 가져옴
                if(talkIndex == talkData[id-id%10].Length){                  
-                  Debug.Log("44444444444");
+
                   return null;
                   }                 
                else{
                    return talkData[id - id%10][talkIndex];
-                   Debug.Log("2222222");
+
                   }
                   
                   
@@ -204,7 +203,7 @@ public class heeTalkManager5 : MonoBehaviour
 
        if(talkIndex==talkData[id].Length){ 
 
-          Debug.Log("555555555");
+
 
           //퀘스트 1000일때, 실행할 것
           if((id-questManager.GetQuestTalkIndex(id))==1000){
@@ -217,21 +216,11 @@ public class heeTalkManager5 : MonoBehaviour
 
            }
 
-        //    if((id-questManager.GetQuestTalkIndex(id))==6000){
-
-        //         heeid = id;
-        //         gilyae.SetActive(true);
-
-        //    }
-
-           
-
-           
            return null;
        }
        else{
            return talkData[id][talkIndex];
-           Debug.Log("2222222");
+
        }
       
    }
@@ -250,6 +239,9 @@ public class heeTalkManager5 : MonoBehaviour
        pos = this.mudang.transform.position;
        switch(type){
            case "y": 
+                audioSource.clip = audioClip;
+                audioSource.loop = false;               
+                audioSource.Play();
                 talkPanel3.SetActive(false);
                 mudangQuest.SetActive(true);
 
@@ -265,7 +257,7 @@ public class heeTalkManager5 : MonoBehaviour
 
                 rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-                talkText3.text += "\n 무당이에서 내리고 싶을 때 상단 초록색 버튼을 클릭하면 됩니다.";
+                talkText3.text += "\n무당이에서 내리고 싶을 때 상단 초록색 버튼을 클릭하면 됩니다.";
                
                 break;
            case "n":  
