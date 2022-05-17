@@ -1,6 +1,7 @@
 using System;
 using System.Reflection;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using UnityEngine;
 using TMPro;
 
@@ -16,6 +17,19 @@ public class SJ_CodeManager : MonoBehaviour
         protected string name;
         protected string arg_str;
         protected int arg_int;
+        private bool bracket;
+
+        public bool requireBracket
+        {
+            get
+            {
+                return bracket;
+            }
+            set
+            {
+                bracket = value;
+            }
+        }
 
         public abstract dynamic Body();
 
@@ -53,6 +67,7 @@ public class SJ_CodeManager : MonoBehaviour
         {
             this.arg_int = argument;
             this.num++;
+            this.requireBracket = true;
         }
 
         public Loop(string argument) : base(argument)
@@ -70,92 +85,111 @@ public class SJ_CodeManager : MonoBehaviour
         }
     }
 
-    void Start()
+    public struct CodeContext
     {
+        public bool isFunction;     // 함수의 사용인지 정의인지 판단필요
+        public bool isAssignment;
+        public bool isOperation;
 
+        public string funcName;
+        public string argument;
     }
 
-    void Update()
+    // void Start()
+    // {
+
+    // }
+
+    // void Update()
+    // {
+
+    // }
+
+    public void FetchCodeInput()  // InputField 에 입력된 코드를 받아옴
     {
-        GetCodeLines();
+        TokenizeCode(userInputCode.text);
     }
 
-    void GetCodeLines()  // InputField 에 입력된 코드를 받아옴
+    void TokenizeCode(string inputCode)
     {
-        string[] codeLines = userInputCode.text.Split('\n');
+        Regex regex = new Regex(@"(\w+\-*)|\(([^()]*)\)|\{([^{}]*)\}");
+        MatchCollection matches = regex.Matches(inputCode);
+
+        foreach(Match match in matches)
+            Regex.Replace(match.Value, @"\s", "");
+
+        parseCode(matches);
+    }
+
+    void parseCode(MatchCollection tokens)   // 코드의 종류(변수, 함수, 루프..) 분석
+    {
+        CodeContext context = new CodeContext();    // 코드 정보(함수이름, 인자 등)를 저장
+
+        foreach(Match token in tokens)  // Group[1]: 함수 이름, Group[2]: 함수 인풋, Group[3]: 함수 바디
+        {
+            Debug.Log($"토큰 값: {token.Value}, 다음 토큰 값: {token.NextMatch()}");
+        }
+
+        // List<string> nameTokens = new List<string>();
+
+        // if (codeSegmentLeft != "" && codeSegments.Length > 1)   // 문자열 및 '(' 이 입력된 경우
+        // {
+        //     codeSegmentRight = codeSegments[1].Split(')');  // ')' 기준으로 자른 오른쪽 문자열을 codeSegmentRight 변수에 대입
+        //     funcName = codeSegmentLeft;                     // '(' 이전 문자열은 함수 이름으로 저장
+
+        //     codeContext.funcName = funcName;
+        // }
         
-        foreach (string code in codeLines)
-            DetectCode(code);
+        // if (codeSegmentRight.Length > 1 && codeSegmentRight[0].Trim() == "")  // 인수 X
+        // {
+        //     codeContext.codeNextFunc = codeSegmentRight[1];
+
+        //     searchFunc(codeContext);
+        // }
+
+        // if (codeSegmentRight.Length > 1 && codeSegmentRight[0].Trim() != "")   // 인수 O
+        // {
+        //     argument = codeSegmentRight[0];
+
+        //     codeContext.argument = argument;
+        //     codeContext.codeNextFunc = codeSegmentRight[1];
+
+        //     searchFunc(codeContext);
+        // }
     }
 
-    void DetectCode(string rawCode)   // 코드의 종류(변수, 함수, 루프..) 탐지
+    void searchFunc(CodeContext code)
     {
-        string[] codeSegments = rawCode.Split('(');
-        string codeSegmentLeft = codeSegments[0];
-        string[] codeSegmentRight = {""};
-        string funcName = "";
-        string argument = "";
-
-        if (codeSegmentLeft != "" && codeSegments.Length > 1)   // 문자열 및 '(' 이 입력된 경우
-        {
-            codeSegmentRight = codeSegments[1].Split(')');  // ')' 기준으로 자른 오른쪽 문자열을 codeSegmentRight 변수에 대입
-            funcName = codeSegmentLeft;                     // '(' 이전 문자열은 함수 이름으로 저장
-        }
-        
-        if (codeSegmentRight.Length > 1 && codeSegmentRight[1] == "" && codeSegmentRight[0].Trim() == "")   // 인수 X
-        {
-            ExecFunc(funcName);
-        }
-
-        if (codeSegmentRight.Length > 1 && codeSegmentRight[1] == "" && codeSegmentRight[0].Trim() != "")   // 인수 O
-        {
-            argument = codeSegmentRight[0];
-            ExecFunc(funcName, argument);
-        }
-    }
-
-    bool searchFunc(string funcName)
-    {
-        if(funcList.Exists(x => x.getName() == funcName))  // funcName 리스트 중 실행하려는 함수가 있다면 true
-            return true;
-        else if(Array.Exists(preDefinedFunc, x => x == funcName))
-            return true;
+        if(funcList.Exists(x => x.getName() == code.funcName) || Array.Exists(preDefinedFunc, x => x == code.funcName))
+            ExecFunc(code);
         else
-            return false;
+            Debug.Log("No Function Found");
     }
 
-    void ExecFunc(string funcName)
+    void ExecFunc(CodeContext code)
     {
-        if(searchFunc(funcName))
+        int int_arg = 0;
+        object funcObj;
+        bool requireBracket = false;
+
+        Type funcType = Type.GetType($"SJ_CodeManager+{code.funcName}");
+        MethodInfo methodInfo = funcType.GetMethod("Body");
+        PropertyInfo propInfo = funcType.GetProperty("requireBracket");
+
+        bool result = int.TryParse(code.argument, out int_arg);
+        if(result)
         {
-            Debug.Log($"{funcName} 함수 사용, 인수 X");
+            funcObj = Activator.CreateInstance(funcType, int_arg);      // funcName 과 동일한 이름을 가진 타입의 클래스 인스턴스를 동적 생성
         }
         else
-            Debug.Log("no function found");
-    }
+            funcObj = Activator.CreateInstance(funcType, code.argument);
 
-    void ExecFunc(string funcName, string str_arg)
-    {
-        if(searchFunc(funcName))
+        methodInfo.Invoke(funcObj, null);
+        requireBracket = (bool)propInfo.GetValue(funcObj, null);
+
+        if(requireBracket)
         {
-            int int_arg = 0;
-            object funcObj;
-
-            Debug.Log($"{funcName} 함수 사용, 인수 O");
-            Type funcType = Type.GetType($"SJ_CodeManager+{funcName}");
-            MethodInfo methodInfo = funcType.GetMethod("Body");
-
-            bool result = int.TryParse(str_arg, out int_arg);
-            if(result)
-            {
-                funcObj = Activator.CreateInstance(funcType, int_arg);      // funcName 과 동일한 이름을 가진 타입의 클래스 인스턴스를 동적 생성
-            }
-            else
-                funcObj = Activator.CreateInstance(funcType, str_arg);
-
-            methodInfo.Invoke(funcObj, null);
+            
         }
-        else
-            Debug.Log("no function found");
     }
 }
