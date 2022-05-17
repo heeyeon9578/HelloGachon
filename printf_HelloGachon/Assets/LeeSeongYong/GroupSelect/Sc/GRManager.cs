@@ -10,11 +10,13 @@ public class GRManager : MonoBehaviour
     public int Count=0;
     private CinemachineVirtualCamera cmCamera;    
     public GRTalkManager talkManager;
+    public GameObject mudangborder;
     public GameObject ActBtn;
     public GRQuestManager questManager;
     public GameObject talkPanel;
     public GameObject talkPanel2;
     public GameObject mudangDown;
+    public GameObject friend;
     public Text talkText;
     public Text talkText2;
     public GameObject scanObject;
@@ -29,6 +31,7 @@ public class GRManager : MonoBehaviour
     private Rigidbody2D rb2;
     public string talkData2;
     public int IdData;
+    public bool success=false;
 
 
   
@@ -39,7 +42,9 @@ public class GRManager : MonoBehaviour
     }
 
     void Start(){
-        if(Count==0)
+        //Debug.Log(GameData.gamedata.talkend);
+        success=GameData.gamedata.talkend;
+        if(Count==0&&!success)
             TestSub();
         else if(Count==1)
             TestSub();
@@ -61,6 +66,9 @@ public class GRManager : MonoBehaviour
             objectDetect = false;
             talkPanel.SetActive(false);
             talkIndex = 0;
+            success=true;
+            GameData.gamedata.talkend=success;
+            Debug.Log(GameData.gamedata.talkend);
             // Debug.Log(questManager.CheckQuest(id));
             return; //void 에서 return 가능(강제 종료 기능)-> return 뒤에 아무것도 안쓰면 됌
 
@@ -98,7 +106,7 @@ public class GRManager : MonoBehaviour
         if(talkData ==null){
             isAction = false;
             talkIndex = 0;
-            //Debug.Log(questManager.CheckQuest(id));
+            Debug.Log(questManager.CheckQuest(id));
             return; //void 에서 return 가능(강제 종료 기능)-> return 뒤에 아무것도 안쓰면 됌
         }
 
@@ -145,6 +153,8 @@ public class GRManager : MonoBehaviour
         heeobjectdata.id=3000;
 
         heenewStu.SetActive(true);
+        friend.SetActive(true);
+        mudangborder.SetActive(false);
         SetCameraTarget(heenewStu);
 
         heemudangAction.enabled = false;

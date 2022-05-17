@@ -5,9 +5,11 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class SYGAbilityManager : MonoBehaviour
 {
+    public AudioPlay bgm;
     public int Count=5;
     public string getGroup;
     public GameObject grsel;
+    public GameObject option;
     public Text nametext;
     public Text majortext;
     public Text stresstext;
@@ -23,6 +25,9 @@ public class SYGAbilityManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        bgm.sliderA.value=GameData.gamedata.bgmSlider;
+        bgm.sound=GameData.gamedata.bgmSound;
+        bgm.SetStart();
         nametext.text=GameData.gamedata.name;
         majortext.text="전공 : "+GameData.gamedata.major;
         stresstext.text="스트레스 : "+GameData.gamedata.stress;
@@ -48,6 +53,10 @@ public class SYGAbilityManager : MonoBehaviour
         alcholtext.text="알코올 분해력 : "+getAlchol;
         majortext.text="전공 : "+getMajor;
         stresstext.text="스트레스 : "+getStress;
+    }
+    public void ActiveOption()
+    {
+        option.SetActive(true);
     }
     public void abilityChange(string type)
     {
@@ -142,6 +151,6 @@ public class SYGAbilityManager : MonoBehaviour
         GameData.gamedata.major=getMajor;
         GameData.gamedata.popular=getPopular;
         GameData.gamedata.stress=getStress;
-        SceneManager.LoadScene("Group");
+        GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Group");
     }
 }

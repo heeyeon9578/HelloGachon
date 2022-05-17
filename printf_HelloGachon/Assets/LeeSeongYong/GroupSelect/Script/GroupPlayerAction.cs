@@ -15,6 +15,9 @@ public class GroupPlayerAction : MonoBehaviour
     private Animator anim;
     Vector3 dirVec;
     GameObject scanObject;
+    public GameObject player;
+    public GameObject option;
+    public Scene curscene;
     int upValue=0;
     int downValue=0;
     int rightValue=0;
@@ -30,7 +33,14 @@ public class GroupPlayerAction : MonoBehaviour
     void Awake(){
         rigid=GetComponent<Rigidbody2D>();
         anim=GetComponent<Animator>();
+        curscene=SceneManager.GetActiveScene();
         
+    }
+    private void Start() {
+        if(GameData.gamedata.loadscenename==curscene.name)
+        {
+            Going();
+        }
     }
     void Update(){
         h=manager.isGroup ? 0 :rightValue+leftValue;
@@ -65,9 +75,13 @@ public class GroupPlayerAction : MonoBehaviour
         else if(hDown && h==1)
             dirVec=Vector3.right;
         
-        
-            
-        
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            option.SetActive(true);
+            //Debug.Log(player.transform.position.x);
+           // Debug.Log(player.transform.position.y);
+        }
+        GameData.gamedata.playerpos=player.transform.position;
         upDown=false;
         upUp=false;
         leftDown=false;
@@ -78,6 +92,10 @@ public class GroupPlayerAction : MonoBehaviour
         downUp=false;
         
         
+    }
+    void Going()
+    {
+        player.transform.position=new Vector3(GameData.gamedata.playerpos.x,GameData.gamedata.playerpos.y,0);
     }
     void FixedUpdate() {
         Vector2 moveVec=isHorizonMove?new Vector2(h,0):new Vector2(0,v);

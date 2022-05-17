@@ -502,7 +502,7 @@ public class GroupTalkManager : MonoBehaviour
             }
              if(EndStory){
                        
-                        GameObject.Find("Canvas").GetComponent<FadeINOUT>().ComeBackFadeOut();
+                        GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("MTStart");
                     }
              if(id-id%10==3010)
             {

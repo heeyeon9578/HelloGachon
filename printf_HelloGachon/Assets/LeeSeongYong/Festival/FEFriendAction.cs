@@ -2,16 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using UnityEngine.SceneManagement;
-public class GRMudangAction : MonoBehaviour
+
+public class FEFriendAction : MonoBehaviour
 {    
     float h;
     float v;
 
     Rigidbody2D rigid;
     public float speed;
-    public Scene curscene;
-    public GameObject mudang;
     public GRManager manager;
     bool isHorizonMove;
     private Animator anim;
@@ -32,7 +30,6 @@ public class GRMudangAction : MonoBehaviour
     void Awake(){
         rigid=GetComponent<Rigidbody2D>();       
         anim=GetComponent<Animator>();
-        curscene=SceneManager.GetActiveScene();
     }
     void Update(){
 
@@ -75,17 +72,8 @@ public class GRMudangAction : MonoBehaviour
             dirVec=Vector3.left;
         else if(hDown && h==1)
             dirVec=Vector3.right;
-
-        // if(Input.GetKey(KeyCode.Escape))
-        // {
-        //     option.SetActive(true);
-        //     //Debug.Log(player.transform.position.x);
-        //    // Debug.Log(player.transform.position.y);
-        // }
-        GameData.gamedata.mudangpos=mudang.transform.position;
         
-        //Scan Object
-         upDown=false;
+        upDown=false;
         upUp=false;
         leftDown=false;
         leftUp=false;
@@ -93,28 +81,19 @@ public class GRMudangAction : MonoBehaviour
         rightUp=false;
         downDown=false;
         downUp=false;
-    }
-    void FixedUpdate() {
-        Vector2 moveVec=isHorizonMove?new Vector2(h,0):new Vector2(0,v);
-        rigid.velocity=moveVec*speed;
-
-        Debug.DrawRay(rigid.position,dirVec*0.7f,new Color(0,1,0));
-        RaycastHit2D rayHit=Physics2D.Raycast(rigid.position,dirVec,0.7f,LayerMask.GetMask("Object"));
-
-        if(rayHit.collider!=null){
-            scanObject=rayHit.collider.gameObject;
-        }
-        else
-            scanObject=null;
         
+        // //Scan Object
+        // if(Input.GetButtonDown("Jump"))
+        // {
+        //     if(scanObject != null){
+        //         manager.Action(scanObject);
+        //     }else if(manager.objectDetect){
+        //         manager.TestSub();
+        //     }
+           
+        // }
     }
-       void Going()
-    {
-        float x=GameData.gamedata.mudangh;
-        float y=GameData.gamedata.mudangv;
-        //mudang.transform.position=new Vector3(x,y,0);
-    }
-    public void MUButtonDown(string type)
+    public void ButtonDown3(string type)
     {
         switch (type)
         {
@@ -143,7 +122,7 @@ public class GRMudangAction : MonoBehaviour
                 break;
         }
     }
-    public void MUButtonUp(string type)
+    public void ButtonUp3(string type)
     {
         switch (type)
         {
@@ -167,4 +146,18 @@ public class GRMudangAction : MonoBehaviour
                 break;
         }
     }
+    // void FixedUpdate() {
+    //     Vector2 moveVec=isHorizonMove?new Vector2(h,0):new Vector2(0,v);
+    //     rigid.velocity=moveVec*speed;
+
+    //     Debug.DrawRay(rigid.position,dirVec*0.7f,new Color(0,1,0));
+    //     RaycastHit2D rayHit=Physics2D.Raycast(rigid.position,dirVec,0.7f,LayerMask.GetMask("Object"));
+
+    //     if(rayHit.collider!=null){
+    //         scanObject=rayHit.collider.gameObject;
+    //     }
+    //     else
+    //         scanObject=null;
+        
+    // }
 }

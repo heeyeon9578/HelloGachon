@@ -55,7 +55,9 @@ public class MG2Manager : MonoBehaviour
     {
         playerlife=GameObject.Find("SYMG2Player").GetComponent<MG2PlayerAction>().life;
         GameTime=GameObject.Find("SYMG2Timer").GetComponent<SYMG2Timer>().EndTime;
+        
        if(playerlife==0){
+        
         StopCoroutine(coroutine);
         panel.SetActive(true);
         panelbutton.SetActive(false);
@@ -63,6 +65,7 @@ public class MG2Manager : MonoBehaviour
         Endtext.text="게임 오버";
        }
        if(isWin){
+            
             StopCoroutine(coroutine);
             panel.SetActive(true);
             panelbutton.SetActive(false);
@@ -77,7 +80,7 @@ public class MG2Manager : MonoBehaviour
         {
             num=Random.Range(0,2);
             CreateSoju(num);
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.3f);
 
         }
         
@@ -92,7 +95,7 @@ public class MG2Manager : MonoBehaviour
         Instantiate(listsoju[num],pos,Quaternion.identity);
     }
     public void NextStory(){
-        SceneManager.LoadScene("SYGAbility");
+        GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("SYGFestivalStart");
     }
    
 }

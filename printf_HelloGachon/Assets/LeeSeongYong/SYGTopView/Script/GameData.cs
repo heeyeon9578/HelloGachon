@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+[System.Serializable]
 public class GameData : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -13,7 +13,17 @@ public class GameData : MonoBehaviour
     public float stress;
     public float popular;
     public string groupname="";
-
+    public float h;
+    public float v;
+    public Vector3 playerpos;
+    public Vector3 mudangpos;
+    public Vector3 friendpos;
+    public float mudangh;
+    public float mudangv;
+    public bool talkend;
+    public string loadscenename;
+    public float bgmSound;
+    public float bgmSlider;
     void Awake()
     {
       if(gamedata!=null)

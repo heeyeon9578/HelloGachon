@@ -18,11 +18,12 @@ public class GRQuestManager : MonoBehaviour
     // 퀘스트 생성 - 퀘스트 코드 공유하기!!
     void GenerateData()
     {
-        questList.Add(10, new GRQuestData("npc들과 대화하기.", new int[]{1000, 2000}));
+        questList.Add(10, new GRQuestData("npc들과 대화하기.", new int[]{1000, 2000,2000}));
         questList.Add(20, new GRQuestData("오리엔테이션 하러가기", new int[]{2000, 5000, 500}));
         questList.Add(30, new GRQuestData("오리엔테이션 끝나고 뒷풀이 참석하기", new int[]{2000, 1000}));
         questList.Add(40, new GRQuestData("간식행사 하러가기", new int[]{2000, 5000, 500}));
         questList.Add(50, new GRQuestData("종강파티 하러가기", new int[]{2000, 5000, 500}));
+        questList.Add(120, new GRQuestData("한마음페스티벌",new int[]{70,5}));
     }
 
     public int GetQuestTalkIndex(int id)

@@ -2,13 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-
+using UnityEngine.SceneManagement;
 public class GRPlayerAction : MonoBehaviour
 {
     
     float h;
     float v;
-
+    public Scene curscene;
+    public GameObject friend;
+    public GameObject play;
+    public GameObject mudang;
+    public GRQuestManager quset;
+    public GRTalkManager talk;
+    //public GameObject option;
     Rigidbody2D rigid;
     public float speed;
     public GRManager manager;
@@ -32,6 +38,13 @@ public class GRPlayerAction : MonoBehaviour
     void Awake(){
         rigid=GetComponent<Rigidbody2D>();       
         anim=GetComponent<Animator>();
+        curscene=SceneManager.GetActiveScene();
+    }
+    private void Start() {
+        if(GameData.gamedata.loadscenename==curscene.name)
+        {
+            Going();
+        }
     }
     void Update(){
 
@@ -75,7 +88,28 @@ public class GRPlayerAction : MonoBehaviour
         else if(hDown && h==1)
             dirVec=Vector3.right;
         
-         
+        
+        if(talk.frId==1000){
+            Vector3 pos2= play.transform.position;
+            var heeFriendAction = friend.GetComponent<FEFriendAction>();
+
+            //Debug.Log("퀘스트번호가 1010일 때, 친구의 포지션을 주인공 옆으로 계속 업데이트");
+            // friend.transform.Translate(Vector3(pos2.x+1,pos2.y+1, 0));
+            friend.transform.position = new Vector3(pos2.x+1,pos2.y+1, 0);
+            heeFriendAction.enabled = true;
+        }
+        //  if(Input.GetKey(KeyCode.Escape))
+        // {
+        //     option.SetActive(true);
+        //     //Debug.Log(player.transform.position.x);
+        //    // Debug.Log(player.transform.position.y);
+        // }
+        GameData.gamedata.h=play.transform.position.x;
+        GameData.gamedata.v=play.transform.position.y;
+        GameData.gamedata.mudangh=mudang.transform.position.x;
+        GameData.gamedata.mudangv=mudang.transform.position.y;
+        GameData.gamedata.playerpos=play.transform.position;
+        GameData.gamedata.mudangpos=mudang.transform.position;
         upDown=false;
         upUp=false;
         leftDown=false;
@@ -108,6 +142,12 @@ public class GRPlayerAction : MonoBehaviour
         else
             scanObject=null;
         
+    }
+    void Going()
+    {
+        play.transform.position=new Vector3(GameData.gamedata.playerpos.x,GameData.gamedata.playerpos.y,0);
+        mudang.transform.position=new Vector3(GameData.gamedata.mudangpos.x,GameData.gamedata.mudangpos.y,0);
+       
     }
     public void ButtonDown2(string type)
     {
