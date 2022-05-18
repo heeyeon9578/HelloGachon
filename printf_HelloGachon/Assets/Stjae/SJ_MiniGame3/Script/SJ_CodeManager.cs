@@ -15,6 +15,7 @@ public class SJ_CodeManager : MonoBehaviour
 
     private static List<Function> funcList = new List<Function>();
     private static string[] reservedFunc = {"Loop","Print"};
+    private static Dictionary<string, string> varDict = new Dictionary<string, string>();
     
     abstract class Function
     {
@@ -119,28 +120,62 @@ public class SJ_CodeManager : MonoBehaviour
 
     static void TokenizeCode(string inputCode)
     {
-        Regex regex = new Regex(@"(\w+\-*)|\(([^()]*)\)|\{([\s\S]*)\}");
+        // (\w+\-*)|\(([^()]*)\)|\{([\s\S]*)\}
+
+        Regex regex = new Regex(@"(\w+ *=? *\w+)|\(([^()]*)\)|\{([\s\S]*)\}");
         MatchCollection matches = regex.Matches(inputCode);
 
         parseCode(matches);
     }
 
-    static void parseCode(MatchCollection tokens)   // 코드의 종류(변수, 함수, 루프..) 분석
+    static void parseCode(MatchCollection tokens)   // 코드 분석
     {
         foreach(Match token in tokens)  // Group[1]: 함수 이름, Group[2]: 함수 인풋, Group[3]: 함수 바디
         {
             // Debug.Log($"토큰 값: {token}, 다음 토큰 값: {token.NextMatch()}, {token.NextMatch().Groups[1].Success}");
-            if(token.NextMatch().Groups[2].Success)
+            if(token.NextMatch().Groups[2].Success)     // 문자열 우측에 ()이 존재한다면 문자열로 함수를 검색
                 searchFunc(token);
+            else if(token.Groups[1].Success && token.Value.Contains("="))
+                AssignValue(token.Value);
         }
     }
 
     static void searchFunc(Match token)
     {
         if(funcList.Exists(x => x.GetName() == token.Value) || Array.Exists(reservedFunc, x => x == token.Value))
+        {
             ExecFunc(token);
+        }
         else
             Debug.Log("No Function Found");
+    }
+
+    static void AssignValue(string value)
+    {
+        int result = 0;
+        string[] values = value.Split('=');
+        string Lvalue = values[0].Trim();
+        string Rvalue = values[1].Trim();
+
+        if(int.TryParse(Lvalue, out result))     // 좌측이 숫자일 경우
+            Debug.Log("Lvalue should be string or character");
+        else
+        {
+            try
+            {
+                varDict.Add(Lvalue, Rvalue);
+            }
+            catch
+            {
+                varDict[Lvalue] = Rvalue;
+            }
+            
+        }
+
+        foreach(KeyValuePair<string, string> variable in varDict)
+        {
+            Debug.Log($"{variable.Key}, {variable.Value}");
+        }
     }
 
     static void ExecFunc(Match token)
