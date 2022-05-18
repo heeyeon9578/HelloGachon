@@ -8,8 +8,10 @@ using TMPro;
 public class SJ_CodeManager : MonoBehaviour
 {
     public TMP_InputField userInputCode;
-    public static GameObject tmpObj;
-    public static TMP_Text tmpText;
+    public static GameObject[] tmpObj;
+    public static TMP_Text tmpOutput;
+    public static TMP_Text tmpError;
+
     public static bool initConsole = false;
     public static string output = "";
 
@@ -70,7 +72,7 @@ public class SJ_CodeManager : MonoBehaviour
 
         public Loop(string argument) : base(argument)
         {
-            Debug.Log("Loop() only supports integer as input");
+            tmpError.text = "Error: function \"Loop()\" only supports integer as input";
         }
 
         public override dynamic Body(dynamic param)
@@ -100,8 +102,16 @@ public class SJ_CodeManager : MonoBehaviour
         {
             output += $"{body}\n";
             UpdateOutput(output);
+
             return null;
         }
+    }
+
+    void Start()
+    {
+        tmpObj = GameObject.FindGameObjectsWithTag("TMP_text");
+        tmpOutput = tmpObj[0].GetComponent<TMP_Text>();
+        tmpError = tmpObj[1].GetComponent<TMP_Text>();
     }
 
     string prevInput = "";
@@ -120,8 +130,6 @@ public class SJ_CodeManager : MonoBehaviour
 
     static void TokenizeCode(string inputCode)
     {
-        // (\w+\-*)|\(([^()]*)\)|\{([\s\S]*)\}
-
         Regex regex = new Regex(@"(\w+ *[^\d()]? *\w+)|\(([^()]*)\)|\{([\s\S]*)\}");
         MatchCollection matches = regex.Matches(inputCode);
 
@@ -147,7 +155,7 @@ public class SJ_CodeManager : MonoBehaviour
             ExecFunc(token);
         }
         else
-            Debug.Log("No Function Found");
+            tmpError.text = $"Error: no function name \"{token.Value}\" is found";
     }
 
     static void OperateValue(string value)
@@ -169,7 +177,7 @@ public class SJ_CodeManager : MonoBehaviour
             Rvalue = values[1].Trim();
 
             if(int.TryParse(Lvalue, out result))     // 좌측이 숫자일 경우
-                Debug.Log("Lvalue should be string or character");
+                tmpError.text = "Error: Lvalue should be string or character";
             else
             {
                 try
@@ -184,10 +192,10 @@ public class SJ_CodeManager : MonoBehaviour
             break;
         }
 
-        foreach(KeyValuePair<string, string> variable in varDict)
-        {
-            Debug.Log($"{variable.Key}, {variable.Value}");
-        }
+        // foreach(KeyValuePair<string, string> variable in varDict)
+        // {
+        //     Debug.Log($"{variable.Key}, {variable.Value}");
+        // }
 
     }
 
@@ -228,7 +236,7 @@ public class SJ_CodeManager : MonoBehaviour
 
         if(requireBracket && acquiredBracket == false)
         {
-            Debug.Log($"function {funcName} require bracket");
+            tmpError.text = $"Error: function \"{funcName}()\" requires bracket";
         }
         else if(requireBracket && acquiredBracket)
         {
@@ -240,13 +248,10 @@ public class SJ_CodeManager : MonoBehaviour
 
     static void UpdateOutput(string output)
     {
-        tmpObj = GameObject.FindGameObjectWithTag("TMP_text");
-        tmpText = tmpObj.GetComponent<TMP_Text>();
-
-        if(tmpText.text != output)
+        if(tmpOutput.text != output)
         {
-            tmpText.text = "";
-            tmpText.text = output;
+            tmpOutput.text = "";
+            tmpOutput.text = output;
         }
     }
 }
