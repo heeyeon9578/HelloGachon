@@ -10,14 +10,15 @@ public class SJ_CodeManager : MonoBehaviour
     public TMP_InputField userInputCode;
 
     private static List<Function> funcList = new List<Function>();
-    private string[] reservedFunc = {"Loop"};
+    private static string[] reservedFunc = {"Loop","Print"};
     
     abstract class Function
     {
         protected string name;
         protected string arg_str;
         protected int arg_int;
-        private bool bracket;
+        private bool bracket = false;
+        protected string body;
 
         public bool requireBracket
         {
@@ -31,7 +32,19 @@ public class SJ_CodeManager : MonoBehaviour
             }
         }
 
-        public abstract dynamic Body();
+        public string bodyInput
+        {
+            get 
+            {
+                return body;
+            }
+            set
+            {
+                body = value;
+            }
+        }
+
+        public abstract dynamic Body(dynamic param);
 
         public Function()
         {
@@ -56,17 +69,9 @@ public class SJ_CodeManager : MonoBehaviour
 
     private class Loop : Function
     {
-        private int num = 0;
-
-        public Loop()
-        {
-            this.num++;
-        }
-
         public Loop(int argument) : base(argument)
         {
             this.arg_int = argument;
-            this.num++;
             this.requireBracket = true;
         }
 
@@ -75,35 +80,36 @@ public class SJ_CodeManager : MonoBehaviour
             Debug.Log("Loop() only supports integer as input");
         }
 
-        public override dynamic Body()
+        public override dynamic Body(dynamic param)
         {
-            for(int i = 0; i < arg_int; i++)
+            for(int i=0; i<arg_int; i++)
             {
-                Debug.Log($"Loop {i}");
+                TokenizeCode(body);
             }
+            
             return null;
         }
     }
 
-    // public struct CodeContext
-    // {
-    //     public bool isFunction;     // 함수의 사용인지 정의인지 판단필요
-    //     public bool isAssignment;
-    //     public bool isOperation;
+    private class Print : Function
+    {
+        public Print(int argument) : base(argument)
+        {
+            this.arg_int = argument;
+        }
 
-    //     public string funcName;
-    //     public string argument;
-    // }
+        public Print(string argument) : base(argument)
+        {
+            this.arg_str = argument;
+        }
 
-    // void Start()
-    // {
+        public override dynamic Body(dynamic param)
+        {
+            Debug.Log(body);
+            return null;
+        }
+    }
 
-    // }
-
-    // void Update()
-    // {
-
-    // }
     string prevInput = "";
 
     public void FetchCodeInput()  // InputField 에 입력된 코드를 받아옴
@@ -116,15 +122,15 @@ public class SJ_CodeManager : MonoBehaviour
         }
     }
 
-    void TokenizeCode(string inputCode)
+    static void TokenizeCode(string inputCode)
     {
-        Regex regex = new Regex(@"(\w+\-*)|\(([^()]*)\)|\{([^{}]*)\}");
+        Regex regex = new Regex(@"(\w+\-*)|\(([^()]*)\)|\{([\s\S]*)\}");
         MatchCollection matches = regex.Matches(inputCode);
 
         parseCode(matches);
     }
 
-    void parseCode(MatchCollection tokens)   // 코드의 종류(변수, 함수, 루프..) 분석
+    static void parseCode(MatchCollection tokens)   // 코드의 종류(변수, 함수, 루프..) 분석
     {
         // CodeContext context = new CodeContext();    // 코드 정보(함수이름, 인자 등)를 저장
 
@@ -136,7 +142,7 @@ public class SJ_CodeManager : MonoBehaviour
         }
     }
 
-    void searchFunc(Match token)
+    static void searchFunc(Match token)
     {
         if(funcList.Exists(x => x.GetName() == token.Value) || Array.Exists(reservedFunc, x => x == token.Value))
             ExecFunc(token);
@@ -144,41 +150,49 @@ public class SJ_CodeManager : MonoBehaviour
             Debug.Log("No Function Found");
     }
 
-    void ExecFunc(Match token)
+    static void ExecFunc(Match token)
     {
         string funcName = token.Value;
         int int_arg = 0;
+        string str_arg = "";
         object funcObj;
         bool requireBracket = false;
         bool acquiredBracket = false;
 
         Type funcType = Type.GetType($"SJ_CodeManager+{funcName}");
         MethodInfo Body = funcType.GetMethod("Body");
-        PropertyInfo propInfo = funcType.GetProperty("requireBracket");
+        PropertyInfo bracketInfo = funcType.GetProperty("requireBracket");
+        PropertyInfo bodyInfo = funcType.GetProperty("bodyInput");
 
-        string str_arg = token.NextMatch().Groups[2].Value;
-        // Debug.Log(str_arg);
+        str_arg = token.NextMatch().Groups[2].Value;
 
         bool result = int.TryParse(str_arg, out int_arg);
+
         if(result)
         {
-            funcObj = Activator.CreateInstance(funcType, int_arg);      // funcName 과 동일한 이름을 가진 타입의 클래스 인스턴스 생성
+            funcObj = Activator.CreateInstance(funcType, int_arg);                      // 함수이름과 동일한 이름을 가진 타입의 클래스 인스턴스 생성
         }
         else
             funcObj = Activator.CreateInstance(funcType, str_arg);
 
-        requireBracket = (bool)propInfo.GetValue(funcObj, null);
-        acquiredBracket = token.NextMatch().NextMatch().Groups[3].Success;
+        requireBracket = (bool)bracketInfo.GetValue(funcObj, null);                     // 함수가 실행되기 위해 {} 이 필요한지에 대한 여부를 받아옴
+        acquiredBracket = token.NextMatch().NextMatch().Groups[3].Success;              // {} 안의 내용을 받아옴
+
+        if(requireBracket)
+            bodyInfo.SetValue(funcObj, token.NextMatch().NextMatch().Groups[3].Value);  // 실행할 함수의 body 정보에 {} 안의 내용을 입력
+        else
+            bodyInfo.SetValue(funcObj, token.NextMatch().Groups[2].Value);              // 실행할 함수의 body 정보에 () 안의 내용을 입력
 
         if(requireBracket && acquiredBracket == false)
         {
+
             Debug.Log($"function {funcName} require bracket");
         }
         else if(requireBracket && acquiredBracket)
         {
-            Body.Invoke(funcObj, null);
+            Body.Invoke(funcObj, new object[] { funcObj });
         }
         else
-            Body.Invoke(funcObj, null);
+            Body.Invoke(funcObj, new object[] { null });
     }
 }
