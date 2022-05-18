@@ -186,6 +186,7 @@ public class SJ_CodeManager : MonoBehaviour
         object funcObj;
         bool requireBracket = false;
         bool acquiredBracket = false;
+        string varInDict = "";
 
         Type funcType = Type.GetType($"SJ_CodeManager+{funcName}");
         MethodInfo Body = funcType.GetMethod("Body");
@@ -207,6 +208,8 @@ public class SJ_CodeManager : MonoBehaviour
 
         if(requireBracket)
             bodyInfo.SetValue(funcObj, token.NextMatch().NextMatch().Groups[3].Value);                  // 실행할 함수의 body 정보에 {} 안의 내용을 입력
+        else if(varDict.TryGetValue(token.NextMatch().Groups[2].Value, out varInDict))
+            bodyInfo.SetValue(funcObj, varInDict);
         else
             bodyInfo.SetValue(funcObj, token.NextMatch().Groups[2].Value);                              // 실행할 함수의 body 정보에 () 안의 내용을 입력
 
