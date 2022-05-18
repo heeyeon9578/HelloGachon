@@ -8,6 +8,10 @@ using TMPro;
 public class SJ_CodeManager : MonoBehaviour
 {
     public TMP_InputField userInputCode;
+    public static GameObject tmpObj;
+    public static TMP_Text tmpText;
+    public static bool initConsole = false;
+    public static string output = "";
 
     private static List<Function> funcList = new List<Function>();
     private static string[] reservedFunc = {"Loop","Print"};
@@ -22,26 +26,14 @@ public class SJ_CodeManager : MonoBehaviour
 
         public bool requireBracket
         {
-            get
-            {
-                return bracket;
-            }
-            set
-            {
-                bracket = value;
-            }
+            get { return bracket; }
+            set { bracket = value; }
         }
 
         public string bodyInput
         {
-            get 
-            {
-                return body;
-            }
-            set
-            {
-                body = value;
-            }
+            get { return body; }
+            set { body = value; }
         }
 
         public abstract dynamic Body(dynamic param);
@@ -105,7 +97,8 @@ public class SJ_CodeManager : MonoBehaviour
 
         public override dynamic Body(dynamic param)
         {
-            Debug.Log(body);
+            output += $"{body}\n";
+            UpdateOutput(output);
             return null;
         }
     }
@@ -115,8 +108,10 @@ public class SJ_CodeManager : MonoBehaviour
     public void FetchCodeInput()  // InputField 에 입력된 코드를 받아옴
     {
         string newInput = Regex.Replace(userInputCode.text, @"\s+", string.Empty);
+
         if(prevInput != newInput)
         {
+            output = "";
             prevInput = newInput;
             TokenizeCode(userInputCode.text);
         }
@@ -132,11 +127,9 @@ public class SJ_CodeManager : MonoBehaviour
 
     static void parseCode(MatchCollection tokens)   // 코드의 종류(변수, 함수, 루프..) 분석
     {
-        // CodeContext context = new CodeContext();    // 코드 정보(함수이름, 인자 등)를 저장
-
         foreach(Match token in tokens)  // Group[1]: 함수 이름, Group[2]: 함수 인풋, Group[3]: 함수 바디
         {
-            // Debug.Log($"토큰 값: {token}, 다음 토큰 값: {token.NextMatch()}");
+            // Debug.Log($"토큰 값: {token}, 다음 토큰 값: {token.NextMatch()}, {token.NextMatch().Groups[1].Success}");
             if(token.NextMatch().Groups[2].Success)
                 searchFunc(token);
         }
@@ -165,27 +158,25 @@ public class SJ_CodeManager : MonoBehaviour
         PropertyInfo bodyInfo = funcType.GetProperty("bodyInput");
 
         str_arg = token.NextMatch().Groups[2].Value;
-
         bool result = int.TryParse(str_arg, out int_arg);
 
         if(result)
         {
-            funcObj = Activator.CreateInstance(funcType, int_arg);                      // 함수이름과 동일한 이름을 가진 타입의 클래스 인스턴스 생성
+            funcObj = Activator.CreateInstance(funcType, int_arg);                                      // 함수이름과 동일한 이름을 가진 타입의 클래스 인스턴스 생성
         }
         else
             funcObj = Activator.CreateInstance(funcType, str_arg);
 
-        requireBracket = (bool)bracketInfo.GetValue(funcObj, null);                     // 함수가 실행되기 위해 {} 이 필요한지에 대한 여부를 받아옴
-        acquiredBracket = token.NextMatch().NextMatch().Groups[3].Success;              // {} 안의 내용을 받아옴
+        requireBracket = (bool)bracketInfo.GetValue(funcObj, null);                                     // 함수가 실행되기 위해 {} 이 필요한지에 대한 여부를 받아옴
+        acquiredBracket = token.NextMatch().NextMatch().Groups[3].Success;                              // {} 안의 내용을 받아옴
 
         if(requireBracket)
-            bodyInfo.SetValue(funcObj, token.NextMatch().NextMatch().Groups[3].Value);  // 실행할 함수의 body 정보에 {} 안의 내용을 입력
+            bodyInfo.SetValue(funcObj, token.NextMatch().NextMatch().Groups[3].Value);                  // 실행할 함수의 body 정보에 {} 안의 내용을 입력
         else
-            bodyInfo.SetValue(funcObj, token.NextMatch().Groups[2].Value);              // 실행할 함수의 body 정보에 () 안의 내용을 입력
+            bodyInfo.SetValue(funcObj, token.NextMatch().Groups[2].Value);                              // 실행할 함수의 body 정보에 () 안의 내용을 입력
 
         if(requireBracket && acquiredBracket == false)
         {
-
             Debug.Log($"function {funcName} require bracket");
         }
         else if(requireBracket && acquiredBracket)
@@ -194,5 +185,17 @@ public class SJ_CodeManager : MonoBehaviour
         }
         else
             Body.Invoke(funcObj, new object[] { null });
+    }
+
+    static void UpdateOutput(string output)
+    {
+        tmpObj = GameObject.FindGameObjectWithTag("TMP_text");
+        tmpText = tmpObj.GetComponent<TMP_Text>();
+
+        if(tmpText.text != output)
+        {
+            tmpText.text = "";
+            tmpText.text = output;
+        }
     }
 }
