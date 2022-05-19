@@ -13,7 +13,7 @@ public class TalkManager_ots : MonoBehaviour
     {
         talkName = new Dictionary<int, string[]>();
         talkData = new Dictionary<int, string[]>();
-        portraitData = new Dictionary<int, Sprite>();
+        portraitData = new Dictionary<int, Sprite>();        
         generateData();
     }
 
@@ -33,7 +33,8 @@ public class TalkManager_ots : MonoBehaviour
 
         //room storyObj name
         //phone:2000
-        talkName.Add(2000, new string[] { "" });
+        string playerName = GameData.gamedata.name;
+        talkName.Add(2000, new string[] { playerName });
 
         //room Obj talk
         talkData.Add(100, new string[] { "(말랑말랑)" });

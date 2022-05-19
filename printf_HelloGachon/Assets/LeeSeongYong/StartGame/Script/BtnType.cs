@@ -81,9 +81,6 @@ public class BtnType : MonoBehaviour
            
                 //heeRoo1
                 //SceneManager.LoadScene("MiniGame2");
-            
-            
-        }
     }
     public void ContinueGame(){
         Debug.Log("이어하기");
