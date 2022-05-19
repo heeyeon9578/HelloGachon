@@ -19,15 +19,16 @@ public class TalkManager_otl_sk : MonoBehaviour
 
     void generateData()
     {
+        string playerName = GameData.gamedata.playerName;
+
         //bigclassroom Obj name
         //bigclassroom_door:100
-        talkName.Add(100, new string[] { "" });        
+        talkName.Add(100, new string[] { playerName });        
 
         //bigclassroom storyObj name
-        //bigclassroom_playerSeat:200, sunabe:2000, player:7000
+        //bigclassroom_playerSeat:200, sunabe:2000, player:7000;
         talkName.Add(200, new string[] { "컴공 회장" });
         talkName.Add(2000, new string[] { "선배" });
-        string playerName = GameData.gamedata.playerName;
         talkName.Add(300, new string[] { playerName });
 
         //bigclassroom Obj talk

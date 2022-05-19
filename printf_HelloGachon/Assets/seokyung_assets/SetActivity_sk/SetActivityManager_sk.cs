@@ -38,9 +38,6 @@ public class SetActivityManager_sk : MonoBehaviour
     public GameObject activityPanel;
     public GameObject player;
     
-    private void Awake() {
-        audioSource = this.GetComponent<AudioSource>(); 
-    }
     void Start()
     {
         //GameData 사용 시 코드

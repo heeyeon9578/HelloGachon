@@ -34,8 +34,4 @@ public class AudioPlay : MonoBehaviour
     //Debug.Log(Mathf.Log10(sliderValue)*20);
     
     }
-
-
-    
-    
 }
