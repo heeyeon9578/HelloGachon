@@ -1,10 +1,9 @@
+using System;
 using System.Collections;
+using System.Reflection;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using TMPro;
-using System.Text.RegularExpressions;
 
 public class SJ_SceneManager : MonoBehaviour
 {
@@ -12,9 +11,10 @@ public class SJ_SceneManager : MonoBehaviour
     public SJ_DialManager dialManager;
     public SJ_CodeManager codeManager;
     public Dictionary<string, string> varDict = SJ_CodeManager.varDict;
+    public List<object> funcObjList = SJ_CodeManager.objList;
 
     // internal
-    string sceneName;
+    string month;
     public Text dialText;
     public Class currentClass;
 
@@ -30,21 +30,31 @@ public class SJ_SceneManager : MonoBehaviour
             this.dialSize = dialogue.GetDialDictSize();
         }
 
+        public void AddDial(int key, string value)
+        {
+            dialogue.AddDial(key, value);
+        }
+
         public string GetDial(int dialNumber)
         {
             return dialogue.GetDial(dialNumber);
         }
     }
 
+    void Awake()
+    {
+        // month = GameData.gamedata.month;
+        month = "중간";
+    }
+
     void Start()
     {
-        sceneName = SceneManager.GetActiveScene().name;
-        if (sceneName == "Class_1")
+        if (month == "3월")
             currentClass = new Class(dialManager.Dial_Class_1);
-        else if(sceneName == "Class_2")
+        else if(month == "4월")
             currentClass = new Class(dialManager.Dial_Class_2);
-        else if(sceneName == "Class_3")
-            currentClass = new Class(dialManager.Dial_Class_3);
+        else if(month == "중간")
+            currentClass = new Class(dialManager.Dial_Exam_1);
 
         dialText.text = currentClass.GetDial(0);
     }
@@ -56,13 +66,16 @@ public class SJ_SceneManager : MonoBehaviour
 
     public void EndCursorOnClick()
     {
-        if (sceneName == "Class_1") EventHandlerClass1();
-        if (sceneName == "Class_2") EventHandlerClass2();
-        if (sceneName == "Class_3") EventHandlerClass3();
+        if (month == "3월") EventHandlerClass1();
+        if (month == "4월") EventHandlerClass2();
+        if (month == "중간") EventHandlerExam1();
+        if (month == "5월") EventHandlerClass3();
+        if (month == "6월") EventHandlerClass4();
+        if (month == "기말") EventHandlerExam2();
     }
 
     public void EventHandlerClass1()
-    {
+    {       
         switch(currentClass.dialNumber)
         {
             case 6:
@@ -72,8 +85,12 @@ public class SJ_SceneManager : MonoBehaviour
 
             default:
                 if (currentClass.dialNumber < currentClass.dialSize-1)
-                {
                     ++currentClass.dialNumber;
+                else
+                {
+                    // GameData.gamedata.month = "4월";
+                    // ModGameDataAfterClass();
+                    Debug.Log("3월 수업 종료");
                 }
             break;
         }
@@ -81,7 +98,6 @@ public class SJ_SceneManager : MonoBehaviour
 
     public void EventHandlerClass2()
     {
-        Debug.Log(SJ_CodeManager.tmpOutput.text);
         switch(currentClass.dialNumber)
         {
             case 7:
@@ -92,11 +108,115 @@ public class SJ_SceneManager : MonoBehaviour
             default:
                 if (currentClass.dialNumber < currentClass.dialSize-1)
                     ++currentClass.dialNumber;
+                else
+                {
+                    // GameData.gamedata.month = "중간";
+                    // ModGameDataAfterClass();
+                    Debug.Log("4월 수업 종료");
+                }
+            break;
+        }
+    }
+
+    public void EventHandlerExam1()
+    {
+        List<string> stringArgumentList = new List<string>();
+        Type funcType = Type.GetType($"SJ_CodeManager+Print");
+        PropertyInfo stringArgumentInfo = funcType.GetProperty("stringArgument");
+
+        foreach(object obj in funcObjList)
+        {
+            stringArgumentList.Add((string)stringArgumentInfo.GetValue(funcObjList[0], null));
+        }
+
+        switch(currentClass.dialNumber)
+        {
+            case 0:
+                string variable = "";
+                foreach(string str in stringArgumentList)
+                {
+                    bool result = false;
+                    try
+                    {
+                        result = varDict.TryGetValue(str, out variable);
+                    }
+                    catch
+                    {
+                    }
+                    
+                    if (result)
+                    {
+                        currentClass.AddDial(1, "<color=blue>정답입니다!</color>");
+                        ++currentClass.dialNumber;
+                        // ModGameDataAfterExam1(true);
+                    }
+                    else
+                    {
+                        currentClass.AddDial(1, "<color=red>틀렸습니다!</color>");
+                        ++currentClass.dialNumber;
+                        // ModGameDataAfterExam1(false);
+                    }
+                }
+            break;
+
+            default:
+                if (currentClass.dialNumber < currentClass.dialSize-1)
+                    ++currentClass.dialNumber;
+                else
+                {
+                    // GameData.gamedata.month = "5월";
+                    // ModGameDataAfterClass();
+                    Debug.Log("중간고사 종료");
+                }
             break;
         }
     }
 
     public void EventHandlerClass3()
+    {       
+        switch(currentClass.dialNumber)
+        {
+            case 6:
+                if (varDict.Count > 0)
+                    ++currentClass.dialNumber;
+            break;
+
+            default:
+                if (currentClass.dialNumber < currentClass.dialSize-1)
+                    ++currentClass.dialNumber;
+                else
+                {
+                    // GameData.gamedata.month = "6월";
+                    // ModGameDataAfterClass();
+                    Debug.Log("5월 수업 종료");
+                }
+            break;
+        }
+    }
+
+    public void EventHandlerClass4()
+    {       
+        switch(currentClass.dialNumber)
+        {
+            case 6:
+                if (varDict.Count > 0)
+                    ++currentClass.dialNumber;
+            break;
+
+            default:
+                if (currentClass.dialNumber < currentClass.dialSize-1)
+                    ++currentClass.dialNumber;
+                else
+                {
+                    // GameData.gamedata.month = "기말";
+                    // ModGameDataAfterClass();
+                    Debug.Log("6월 수업 종료");
+                }
+            break;
+        }
+    }
+
+    public void EventHandlerExam2()
     {
         switch(currentClass.dialNumber)
         {
@@ -109,7 +229,42 @@ public class SJ_SceneManager : MonoBehaviour
             default:
                 if (currentClass.dialNumber < currentClass.dialSize-1)
                     ++currentClass.dialNumber;
+                else
+                {
+                    // GameData.gamedata.month = "방학";
+                    // ModGameDataAfterClass();
+                    Debug.Log("기말고사 종료");
+                }
             break;
         }
+    }
+
+    void ModGameDataAfterClass()
+    {
+        GameData.gamedata.major += 5;
+        GameData.gamedata.health -= 5;
+        GameData.gamedata.stress += 5;
+    }
+
+    void ModGameDataAfterExam1(bool correct)
+    {
+        if (correct)
+        {
+            GameData.gamedata.major += 15;
+            GameData.gamedata.scoreExam1 += 100;
+        } 
+        else
+        {
+            GameData.gamedata.stress += 10;
+            GameData.gamedata.scoreExam1 += 50;
+        }
+    }
+
+    void ModGameDataAfterExam2(bool correct)
+    {
+        //전공+15, 점수+100 
+        GameData.gamedata.major += 15;
+        GameData.gamedata.scoreExam2 += 100;
+        GameData.gamedata.stress += 5;
     }
 }

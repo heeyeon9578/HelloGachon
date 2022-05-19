@@ -8,6 +8,7 @@ public class SJ_DialManager : MonoBehaviour
     public Dialogue Dial_Class_1 = new Dialogue();
     public Dialogue Dial_Class_2 = new Dialogue();
     public Dialogue Dial_Class_3 = new Dialogue();
+    public Dialogue Dial_Exam_1 = new Dialogue();
 
     public class Dialogue
     {
@@ -50,7 +51,9 @@ public class SJ_DialManager : MonoBehaviour
         Dial_Class_2.AddDial(++Dial_Class_2.dialNum, "이름에서 알 수 있듯이 입력한 값을 화면에 보여주는 아주 간단한 함수야");
         Dial_Class_2.AddDial(++Dial_Class_2.dialNum, "함수를 사용하려면 함수 이름 뒤에 소괄호\"()\"를 붙이고 그 안에 원하는 값을 넣으면 돼");
         Dial_Class_2.AddDial(++Dial_Class_2.dialNum, "그럼 Print() 함수를 사용해서 아무 값이나 화면에 출력해보자");
-        Dial_Class_2.AddDial(++Dial_Class_2.dialNum, "아주 훌륭해! 오늘 수업은 여기까지다");
+        Dial_Class_2.AddDial(++Dial_Class_2.dialNum, "아주 훌륭해! 오늘 수업은 여기까지다\n다음은 중간고사니까 공부 열심히 해와!");
+
+        Dial_Exam_1.AddDial(Dial_Exam_1.dialNum, "중간고사: 변수와 Print() 함수를 사용하여 값을 출력하라!<color=red>(✻대화창 클릭시 답안 제출✻)</color>");
 
         Dial_Class_3.AddDial(Dial_Class_3.dialNum, "세번째 프로그래밍 수업에 온 걸 환영한다");
         Dial_Class_3.AddDial(++Dial_Class_3.dialNum, "이번 수업에서는 \"반복문\"이라는 것에 대해 배워보자");

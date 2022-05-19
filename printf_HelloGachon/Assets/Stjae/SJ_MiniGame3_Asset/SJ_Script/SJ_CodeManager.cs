@@ -18,6 +18,7 @@ public class SJ_CodeManager : MonoBehaviour
     private static List<Function> funcList = new List<Function>();
     private static string[] reservedFunc = {"Loop","Print"};
     public static Dictionary<string, string> varDict = new Dictionary<string, string>();
+    public static List<object> objList = new List<object>();
     
     abstract class Function
     {
@@ -38,6 +39,13 @@ public class SJ_CodeManager : MonoBehaviour
             get { return body; }
             set { body = value; }
         }
+
+        public string stringArgument
+        {
+            get { return arg_str; }
+            set { }
+        }
+
 
         public abstract dynamic Body(dynamic param);
 
@@ -233,6 +241,7 @@ public class SJ_CodeManager : MonoBehaviour
             bodyInfo.SetValue(funcObj, varInDict);
         else
             bodyInfo.SetValue(funcObj, token.NextMatch().Groups[2].Value);                              // 실행할 함수의 body 정보에 () 안의 내용을 입력
+            objList.Add(funcObj);
 
         if(requireBracket && acquiredBracket == false)
         {
