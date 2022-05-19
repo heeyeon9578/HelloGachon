@@ -80,11 +80,14 @@ public class DialogManager_hee1 : MonoBehaviour
         
         //Continue Talk
         if (isStoryObj) {
+
+            dialogName.text = talkName;
             dialogText.text = talkData.Split(':')[0];
             portraitImg.sprite = tManager.GetPortrait(id,int.Parse(talkData.Split(':')[1]));
             portraitImg.color = new Color(1,1,1,1); //맨 끝이 투명도로, npc일때만 이미지가 나오도록 설정
         }
         else {
+            dialogName.text = talkName;
             dialogText.text = talkData;
             portraitImg.color = new Color(1,1,1,0);
         }

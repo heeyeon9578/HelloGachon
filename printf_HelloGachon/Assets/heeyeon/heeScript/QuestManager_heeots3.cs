@@ -115,7 +115,7 @@ public class QuestManager_heeots3 : MonoBehaviour
         Debug.Log("안가!");
         
         //참여하지 않으면 3월 수업 퀘스트 진행
-        // SceneManager.LoadScene("MiniGame1");
+        SceneManager.LoadScene("MiniGame3");
     }
 
 

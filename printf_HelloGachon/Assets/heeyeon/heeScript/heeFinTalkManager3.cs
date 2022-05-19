@@ -25,9 +25,10 @@ public class heeFinTalkManager3 : MonoBehaviour
 
         //bigclassroom storyObj name
         //bigclassroom_playerSeat:200, sunabe:2000, player:7000
+        string playerName = GameData.gamedata.playerName;
         talkName.Add(200, new string[] { "" });
         talkName.Add(2000, new string[] { "선배" });
-        talkName.Add(300, new string[] { "[플레이어 이름]" });
+        talkName.Add(300, new string[] {  playerName});
 
         //bigclassroom Obj talk
         talkData.Add(100, new string[] { "아직은 나갈 수 없어. 선배한테 말을 걸자." });

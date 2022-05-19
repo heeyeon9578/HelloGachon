@@ -14,6 +14,9 @@ public class DialogManager_hee6 : MonoBehaviour
     public bool isInteract;
     public int nameIndex;
     public int talkIndex;
+
+    public Image portraitImg;
+    public bool objectDetect = false;
     
     void Start()
     {
@@ -48,12 +51,16 @@ public class DialogManager_hee6 : MonoBehaviour
         
         //Continue Talk
         if (isStoryObj) {
+
             dialogName.text = talkName;
-            dialogText.text = talkData;
+            dialogText.text = talkData.Split(':')[0];
+            portraitImg.sprite = tManager.GetPortrait(id,int.Parse(talkData.Split(':')[1]));
+            portraitImg.color = new Color(1,1,1,1); //맨 끝이 투명도로, npc일때만 이미지가 나오도록 설정
         }
         else {
             dialogName.text = talkName;
             dialogText.text = talkData;
+            portraitImg.color = new Color(1,1,1,0);
         }
 
         isInteract = true;

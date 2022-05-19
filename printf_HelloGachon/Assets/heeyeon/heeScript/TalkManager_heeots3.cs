@@ -6,11 +6,15 @@ public class TalkManager_heeots3 : MonoBehaviour
 {
     Dictionary<int, string[]> talkName;
     Dictionary<int, string[]> talkData;
+    Dictionary<int, Sprite> portraitData;
+    public Sprite[] portraitArr;
+
 
     void Awake()
     {
         talkName = new Dictionary<int, string[]>();
         talkData = new Dictionary<int, string[]>();
+        portraitData = new Dictionary<int, Sprite>();
         generateData();
     }
 
@@ -30,8 +34,9 @@ public class TalkManager_heeots3 : MonoBehaviour
 
         //room storyObj name
         //phone:1000, room_door:2000, player:3000
-        talkName.Add(1000, new string[] { "" });
-        talkName.Add(2000, new string[] { "[플레이어 이름]" });
+        
+        string playerName = GameData.gamedata.playerName;
+        talkName.Add(1000, new string[] { playerName});
 
         //room Obj talk
         talkData.Add(100, new string[] { "(말랑말랑)" });
@@ -45,14 +50,24 @@ public class TalkManager_heeots3 : MonoBehaviour
 
         //room Story Obj talk
         talkData.Add(1000, new string[] { "딱히 온 카톡은 없네.." });
-        talkData.Add(2000, new string[] { "배고프다.." });
+
 
 
         //Quest Talk
         //Quest1: 3월_입학식(questId: 10)
-        talkData.Add(10 + 1000, new string[] { "엇 컴공 공지방 카톡왔네.", "확인해보자." });
+        talkData.Add(10 + 1000, new string[] { "엇 컴공 공지방 카톡왔네.:0", "확인해보자.:1" });
 
+        //portrait Data
+        portraitData.Add(1000+0,portraitArr[0]); //플레이어 및 인트로에 쓰일 선배와 친구
+        portraitData.Add(1000+1,portraitArr[1]);
+        portraitData.Add(1000+2,portraitArr[2]);
+        portraitData.Add(1000+3,portraitArr[3]);
     }
+
+    public Sprite GetPortrait(int id, int portraitIndex)
+   {
+       return portraitData[id+portraitIndex];
+   }
 
     public string getName(int id, int nameIndex)
     {

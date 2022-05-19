@@ -10,6 +10,12 @@ public class AudioPlay : MonoBehaviour
     public AudioMixer mixer;
     public Slider sliderA; 
     public float sound;
+
+    void Start(){
+        sliderA.value=GameData.gamedata.bgmSlider;
+        sound=GameData.gamedata.bgmSound;
+        SetStart();
+    }
     
     public void SetLever(float sliderValue){
         //Debug.Log(sliderA.value);
@@ -28,6 +34,8 @@ public class AudioPlay : MonoBehaviour
     //Debug.Log(Mathf.Log10(sliderValue)*20);
     
     }
+
+
     
     
 }

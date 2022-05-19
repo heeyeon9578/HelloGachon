@@ -680,6 +680,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 721763933}
     m_Modifications:
+    - target: {fileID: 2896216346604749690, guid: 1883a23fb7313be42b2fe1ca8771e737, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 206.942
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896216346604749690, guid: 1883a23fb7313be42b2fe1ca8771e737, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 193.856
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896216346604749690, guid: 1883a23fb7313be42b2fe1ca8771e737, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -69.471
+      objectReference: {fileID: 0}
+    - target: {fileID: 2896216346604749690, guid: 1883a23fb7313be42b2fe1ca8771e737, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -24.928
+      objectReference: {fileID: 0}
     - target: {fileID: 2896216346604749691, guid: 1883a23fb7313be42b2fe1ca8771e737, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -885,6 +901,22 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PlayerAction_hee4, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 7088387057386552669, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 299.433
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088387057386552669, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 298.039
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088387057386552669, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -363.85828
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088387057386552669, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -82.44501
+      objectReference: {fileID: 0}
     - target: {fileID: 7088387057756924732, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
       propertyPath: m_Name
       value: heeControlSet
@@ -955,11 +987,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7088387057756924735, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 93
+      value: 182
       objectReference: {fileID: 0}
     - target: {fileID: 7088387057756924735, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 41.6
       objectReference: {fileID: 0}
     - target: {fileID: 7088387057756924735, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -973,6 +1005,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7088387058034747106, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 298.039
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088387058034747106, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 298.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088387058034747106, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.5549927
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088387058034747106, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -82.444
+      objectReference: {fileID: 0}
     - target: {fileID: 7088387058034747109, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1005,6 +1053,22 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PlayerAction_hee4, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 7088387058073162000, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 298.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088387058073162000, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 297.662
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088387058073162000, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -4.5558
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088387058073162000, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 277.80524
+      objectReference: {fileID: 0}
     - target: {fileID: 7088387058073162003, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -1036,6 +1100,22 @@ PrefabInstance:
     - target: {fileID: 7088387058073162003, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: PlayerAction_hee4, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088387059032195158, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 298.895
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088387059032195158, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 298.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088387059032195158, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 356.80615
+      objectReference: {fileID: 0}
+    - target: {fileID: 7088387059032195158, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -82.444
       objectReference: {fileID: 0}
     - target: {fileID: 7088387059032195161, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.size
@@ -1359,7 +1439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6872252872713556108, guid: b02d341234ca5664bbffbbf62f7402f8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6872252873468278845, guid: b02d341234ca5664bbffbbf62f7402f8, type: 3}
       propertyPath: m_IsActive

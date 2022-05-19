@@ -40,9 +40,11 @@ public class TalkManager_heeots1 : MonoBehaviour
 
         //room storyObj name
         //phone:1000, room_door:2000, player:3000
-        talkName.Add(1000, new string[] { "" });
+        
+        string playerName = GameData.gamedata.playerName;
+        talkName.Add(3000, new string[] { playerName });
+        talkName.Add(1000, new string[] { playerName });
 
-        talkName.Add(3000, new string[] { "플레이어 이름" });
         //room Obj talk
         talkData.Add(100, new string[] { "(말랑말랑)" });
         talkData.Add(200, new string[] { "골골골골..." });

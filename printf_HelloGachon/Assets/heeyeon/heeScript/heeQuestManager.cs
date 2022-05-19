@@ -80,7 +80,8 @@ public class heeQuestManager : MonoBehaviour
                 }else if(questActionIndex ==2){
                     talkText3.text = "선배님 옆에 계시는 교수님이랑 인사하기";                  
                 }else if(questActionIndex ==3){
-                    SceneManager.LoadScene("OT_Select_sk");
+                    GameObject.Find("heeCanvas").GetComponent<FadeINOUT>().LoadFadeOut("OT_Select_sk");
+                    
                 }
                                    
                 break;

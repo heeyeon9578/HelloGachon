@@ -18,6 +18,7 @@ public class DialogManager_hee4 : MonoBehaviour
 
     public Image portraitImg;
     public bool objectDetect = false; 
+    private string[] talkNameList=new string[3]{"교수님","교수님",GameData.gamedata.playerName};
 
     void Start()
     {
@@ -38,7 +39,7 @@ public class DialogManager_hee4 : MonoBehaviour
 
         }
         
-        dialogName.text = talkName2;
+        dialogName.text = talkNameList[talkIndex];
         dialogText.text = talkData2.Split(':')[0];
         portraitImg.sprite = tManager.GetPortrait(3000,int.Parse(talkData2.Split(':')[1]));
         portraitImg.color = new Color(1,1,1,1); //맨 끝이 투명도로, npc일때만 이미지가 나오도록 설정
@@ -80,11 +81,13 @@ public class DialogManager_hee4 : MonoBehaviour
         
         //Continue Talk
         if (isStoryObj) {
+            dialogName.text = talkName;
             dialogText.text = talkData.Split(':')[0];
             portraitImg.sprite = tManager.GetPortrait(id,int.Parse(talkData.Split(':')[1]));
             portraitImg.color = new Color(1,1,1,1); //맨 끝이 투명도로, npc일때만 이미지가 나오도록 설정
         }
         else {
+            dialogName.text = talkName;
             dialogText.text = talkData;
             portraitImg.color = new Color(1,1,1,0);
         }

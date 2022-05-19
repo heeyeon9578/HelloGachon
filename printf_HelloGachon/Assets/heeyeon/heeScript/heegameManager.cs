@@ -10,6 +10,10 @@ public class heegameManager : MonoBehaviour
     private CinemachineVirtualCamera cmCamera;    
     public heeTalkManager talkManager;
     public heeQuestManager questManager;
+    
+    public Text dialogName;
+    public int nameIndex;
+
     public GameObject talkPanel;
     public GameObject talkPanel2;
     public GameObject mudangDown;
@@ -41,6 +45,8 @@ public class heegameManager : MonoBehaviour
 
 
     public void TestSub(){
+
+        string talkName2 = talkManager.getName(7000, nameIndex);
         string talkData2 = talkManager.GetTalk(7000, talkIndex); //처음에 게임 시작 전에 인트로가 나올 수 있도록 구성
 
         //End Talk
@@ -52,7 +58,7 @@ public class heegameManager : MonoBehaviour
             return; //void 에서 return 가능(강제 종료 기능)-> return 뒤에 아무것도 안쓰면 됌
 
         }
-        
+        dialogName.text = talkName2;
         talkText.text = talkData2.Split(':')[0];
         portraitImg.sprite = talkManager.GetPortrait(7000,int.Parse(talkData2.Split(':')[1]));
         portraitImg.color = new Color(1,1,1,1); //맨 끝이 투명도로, npc일때만 이미지가 나오도록 설정
@@ -79,6 +85,7 @@ public class heegameManager : MonoBehaviour
     {
         //Set Talk Data
         int questTalkIndex = questManager.GetQuestTalkIndex(id);
+        string talkName = talkManager.getName(id, nameIndex);
         string talkData = talkManager.GetTalk(id+questTalkIndex, talkIndex);
 
         //End Talk
@@ -90,10 +97,12 @@ public class heegameManager : MonoBehaviour
         }
 
         if(isNpc){
+            dialogName.text = talkName;
             talkText.text = talkData.Split(':')[0];
             portraitImg.sprite = talkManager.GetPortrait(id,int.Parse(talkData.Split(':')[1]));
             portraitImg.color = new Color(1,1,1,1); //맨 끝이 투명도로, npc일때만 이미지가 나오도록 설정
         }else{
+            dialogName.text = talkName;
             talkText.text = talkData;
             portraitImg.color = new Color(1,1,1,0);
         }

@@ -91,7 +91,7 @@ public class QuestManager_heeots4 : MonoBehaviour
         isInteract = false;
         Debug.Log("간다!");
         //참여한다고 하면 바로 4월 수업 이벤트 진행, 필수(성재님 수업이벤트)
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("MiniGame3");
     }
 
 

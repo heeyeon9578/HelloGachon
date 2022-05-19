@@ -39,8 +39,6 @@ public class TalkManager_heeots5 : MonoBehaviour
         talkName.Add(800, new string[] { "방 문" });
 
         //room storyObj name
-        //phone:1000, room_door:2000, player:3000
-        talkName.Add(1000, new string[] { "" });
 
         talkName.Add(3000, new string[] { "" });
         //room Obj talk
@@ -51,7 +49,7 @@ public class TalkManager_heeots5 : MonoBehaviour
         talkData.Add(500, new string[] { "개발자는 자지 않아" });
         talkData.Add(600, new string[] { "돌덩이같은 내 가방.." });
         talkData.Add(700, new string[] { "공부하기 싫다!" });
-
+        talkData.Add(800, new string[] { "아직은 방에 있고 싶어." });
 
 
         //npcs
