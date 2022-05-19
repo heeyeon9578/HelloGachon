@@ -28,6 +28,8 @@ public class GameEndingManager_sk : MonoBehaviour
     private float endstress;
     private float endpopular;
     private float endalchol;
+    private string endname;
+    private int testScore;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,11 +40,13 @@ public class GameEndingManager_sk : MonoBehaviour
         popularscore.text=""+GameData.gamedata.popular;
         alcholscore.text=""+GameData.gamedata.alchol;
 
+        endname=GameData.gamedata.name;
         endmajor=GameData.gamedata.major;
         endhealth=GameData.gamedata.health;
         endstress=100-GameData.gamedata.stress;
         endpopular=GameData.gamedata.popular;
         endalchol=GameData.gamedata.alchol;
+        testScore=(GameData.gamedata.scoreExam1+GameData.gamedata.scoreExam2)/2;
 
     }
 
@@ -56,6 +60,7 @@ public class GameEndingManager_sk : MonoBehaviour
         SetAlchol();
         SetStress();
         SetHealth();
+        SetTestScore();
         if(Input.GetMouseButtonDown(0))
         {
             GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Ending_Credit_scene_sk");
@@ -66,6 +71,44 @@ public class GameEndingManager_sk : MonoBehaviour
     {
         total=endmajor*0.3f+endhealth*0.25f+endpopular*0.1f+endalchol*0.1f+endstress*0.25f;
         //Debug.Log(endmajor*0.3f+endhealth*0.25f+endpopular*0.1f+endalchol*0.1f);
+    }
+    void SetTestScore()
+    {
+        if(testScore>=90){
+            playerName.text=""+GameData.gamedata.playerName+" 시험 성적 : A+";
+            
+        }else if(testScore>=80&&testScore<90)
+        {
+            playerName.text=""+GameData.gamedata.playerName+" 시험 성적 : A";
+           
+        }else if(testScore>=75&&testScore<80)
+        {
+            playerName.text=""+GameData.gamedata.playerName+" 시험 성적 : B+";
+           
+        }else if(testScore>=70&&testScore<75)
+        {
+            playerName.text=""+GameData.gamedata.playerName+" 시험 성적 : B";
+           
+        }else if(testScore>=65&&testScore<70)
+        { 
+            playerName.text=""+GameData.gamedata.playerName+" 시험 성적 : C+";
+            
+        }else if(testScore>=60&&testScore<65)
+        {
+            playerName.text=""+GameData.gamedata.playerName+" 시험 성적 : C";
+            
+        }else if(testScore>=55&&testScore<60)
+        {
+            playerName.text=""+GameData.gamedata.playerName+" 시험 성적 : D+";
+            
+        }else if(testScore>=50&&testScore<55)
+        {
+            playerName.text=""+GameData.gamedata.playerName+" 시험 성적 : D";
+            
+        }else
+        {
+            playerName.text=""+GameData.gamedata.playerName+" 시험 성적 : F";
+        }
     }
     void SetTotal()
     {

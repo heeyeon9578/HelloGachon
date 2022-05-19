@@ -21,6 +21,8 @@ public class GameData : MonoBehaviour
     public float bgmSound=0;
     public float bgmSlider=-80;
     public string month;
+    public int scoreExam1;
+    public int scoreExam2;
     void Awake()
     {
       if(gamedata!=null)
