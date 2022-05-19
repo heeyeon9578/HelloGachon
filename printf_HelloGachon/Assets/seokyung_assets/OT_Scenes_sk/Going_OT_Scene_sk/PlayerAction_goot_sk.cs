@@ -82,18 +82,6 @@ public class PlayerAction_goot_sk : MonoBehaviour
         rightUp=false;
         downDown=false;
         downUp=false;
-        
-        /*
-        //Scan Object
-        if(Input.GetButtonDown("Jump"))
-        {
-            if(scanObject != null){
-                manager.Action(scanObject);
-            }else if(manager.objectDetect){
-                manager.playerMonologue();
-            }           
-        }
-        */
     }
     void FixedUpdate() {
         Vector2 moveVec=isHorizonMove?new Vector2(h,0):new Vector2(0,v);

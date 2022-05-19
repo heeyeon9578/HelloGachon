@@ -15,11 +15,13 @@ public class GoingOTManager_sk : MonoBehaviour
     public GameObject mudangDown;
     public GameObject controlSet;
     public GameObject actionKey;
+    public Text dialogName;
     public Text talkText;
     public Text talkText2;
     public GameObject scanObject;
     public bool isAction;
-    public bool objectDetect = false; 
+    public bool objectDetect = false;
+    public int nameIndex;
     public int talkIndex;
     public Image portraitImg;
     public GameObject cmVcam;   // cm카메라 오브젝트
@@ -40,6 +42,7 @@ public class GoingOTManager_sk : MonoBehaviour
     }
 
     public void playerMonologue(){
+        string talkName2 = talkManager.getName(7000, nameIndex);
         string talkData2 = talkManager.GetTalk(7000, talkIndex); //처음에 게임 시작 전에 인트로가 나올 수 있도록 구성
 
         //End Talk
@@ -48,11 +51,11 @@ public class GoingOTManager_sk : MonoBehaviour
             talkIndex = 0;
             talkPanel.SetActive(false);
             controlSet.SetActive(true);
-            Debug.Log("End Talk");
             //Debug.Log(questManager.CheckQuest());
             return; //void 에서 return 가능(강제 종료 기능)-> return 뒤에 아무것도 안쓰면 됨
         }
-        
+
+        dialogName.text = talkName2;
         talkText.text = talkData2.Split(':')[0];
         portraitImg.sprite = talkManager.GetPortrait(7000,int.Parse(talkData2.Split(':')[1]));
         portraitImg.color = new Color(1,1,1,1); //맨 끝이 투명도로, npc일때만 이미지가 나오도록 설정
@@ -79,6 +82,8 @@ public class GoingOTManager_sk : MonoBehaviour
     {
         //Set Talk Data
         int questTalkIndex = questManager.GetQuestTalkIndex(id);
+
+        string talkName = talkManager.getName(id, nameIndex);
         string talkData = talkManager.GetTalk(id+questTalkIndex, talkIndex);
 
         //End Talk
@@ -90,10 +95,12 @@ public class GoingOTManager_sk : MonoBehaviour
         }
 
         if(isNpc){
+            dialogName.text = talkName;
             talkText.text = talkData.Split(':')[0];
             portraitImg.sprite = talkManager.GetPortrait(id,int.Parse(talkData.Split(':')[1]));
             portraitImg.color = new Color(1,1,1,1); //맨 끝이 투명도로, npc일때만 이미지가 나오도록 설정
         }else{
+            dialogName.text = talkName;
             talkText.text = talkData;
             portraitImg.color = new Color(1,1,1,0);
         }

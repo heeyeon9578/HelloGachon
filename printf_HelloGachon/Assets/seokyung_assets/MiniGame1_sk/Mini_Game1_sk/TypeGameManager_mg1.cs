@@ -165,7 +165,8 @@ public class TypeGameManager_mg1 : MonoBehaviour
     public void resultTalk()
     {
         registerResult.SetActive(false);
-        dialogName.text = "[플레이어 이름]";
+        string playerName = GameData.gamedata.playerName;
+        dialogName.text = playerName;
 
         if(successCnt > 3)
         {

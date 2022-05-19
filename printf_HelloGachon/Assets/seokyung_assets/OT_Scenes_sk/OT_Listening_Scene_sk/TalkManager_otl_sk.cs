@@ -27,7 +27,8 @@ public class TalkManager_otl_sk : MonoBehaviour
         //bigclassroom_playerSeat:200, sunabe:2000, player:7000
         talkName.Add(200, new string[] { "컴공 회장" });
         talkName.Add(2000, new string[] { "선배" });
-        talkName.Add(300, new string[] { "[플레이어 이름]" });
+        string playerName = GameData.gamedata.playerName;
+        talkName.Add(300, new string[] { playerName });
 
         //bigclassroom Obj talk
         talkData.Add(100, new string[] { "아직은 나갈 수 없어. 선배에게 말을 걸어보자." });

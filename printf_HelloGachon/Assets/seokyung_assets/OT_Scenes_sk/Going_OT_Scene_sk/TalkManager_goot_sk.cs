@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class TalkManager_goot_sk : MonoBehaviour
 {
-Dictionary<int, string[]> talkData;
+    Dictionary<int, string[]> talkName;
+    Dictionary<int, string[]> talkData;
     Dictionary<int, Sprite> portraitData;
 
     //초상화 스프라이트를 저장할 배열 생성
@@ -23,8 +24,11 @@ Dictionary<int, string[]> talkData;
     void Awake()
     {        
         rb = mudang.GetComponent<Rigidbody2D>();
+
+        talkName = new Dictionary<int, string[]>();
         talkData = new Dictionary<int, string[]>(); //대화에 문장이 여러개 존재
         portraitData = new Dictionary<int, Sprite>();
+
         GenerateData();
     }
 
@@ -57,6 +61,39 @@ Dictionary<int, string[]> talkData;
        talkData.Add(600000, new string[] {"이곳은 인피니티동상이다."});
        talkData.Add(700000, new string[] {"이곳은 대운동장이다."});
 
+       //buildings name
+       talkName.Add(100, new string[] {"카페"});
+       talkName.Add(200, new string[] {"IT대학"});
+       talkName.Add(300, new string[] {"비전타워"});
+       talkName.Add(400, new string[] {"비전타워"});
+       talkName.Add(500, new string[] {"AI공학관"});
+       talkName.Add(600, new string[] {"바이오나노연구원"});
+       talkName.Add(700, new string[] {"한의과대학"});
+       talkName.Add(800, new string[] {"산학관"});
+       talkName.Add(900, new string[] {"바이오나노대학"});
+       talkName.Add(10000, new string[] {"체육대학2"});
+       talkName.Add(20000, new string[] {"학군단"});
+       talkName.Add(30000, new string[] {" 기숙사"});
+       talkName.Add(40000, new string[] {"편의점"});
+       talkName.Add(50000, new string[] {"학생회관"});
+       talkName.Add(60000, new string[] {"중앙도서관"});
+       talkName.Add(70000, new string[] {"교육대학원"});
+       talkName.Add(80000, new string[] {"전자정보도서관"});
+       talkName.Add(90000, new string[] {"글로벌센터"});
+       talkName.Add(100000, new string[] {"체육대학1"});
+       talkName.Add(200000, new string[] {"대학원"});
+       talkName.Add(300000, new string[] {"공과대학2"});
+       talkName.Add(400000, new string[] {"프리덤광장"});
+       talkName.Add(500000, new string[] {"가천관"});
+       talkName.Add(600000, new string[] {"인피니티동상"});
+       talkName.Add(700000, new string[] {"대운동장"});
+
+
+       string playerName = GameData.gamedata.playerName;
+       talkName.Add(7000, new string[] {  playerName });
+       talkName.Add(3000, new string[] { "무당이" });
+       
+
        //npcs
        //시작할때 intro 대사 , 튜토리얼, npc들 익히기
        talkData.Add(7000, new string[] {"오티 장소가 AI공학관이었지?:0", "무당이를 타고 이동하자!:1"});
@@ -72,6 +109,11 @@ Dictionary<int, string[]> talkData;
        portraitData.Add(7000+0,portraitArr[0]);
        portraitData.Add(7000+1,portraitArr[1]);
    }
+
+    public string getName(int id, int nameIndex)
+    {
+        return talkName[id][nameIndex];
+    }
 
    public string GetTalk(int id, int talkIndex)
    {       

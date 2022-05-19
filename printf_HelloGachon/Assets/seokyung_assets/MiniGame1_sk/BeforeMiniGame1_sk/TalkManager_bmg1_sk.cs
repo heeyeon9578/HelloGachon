@@ -32,8 +32,9 @@ public class TalkManager_bmg1_sk : MonoBehaviour
 
         //room storyObj name
         //room_desk:1000, player:7000
-        talkName.Add(1000, new string[] { "[플레이어 이름]" });
-        talkName.Add(7000, new string[] { "[플레이어 이름]" });
+        string playerName = GameData.gamedata.playerName;
+        talkName.Add(1000, new string[] { playerName });
+        talkName.Add(7000, new string[] { playerName });
 
         //room Obj talk
         talkData.Add(100, new string[] { "(말랑말랑)" });

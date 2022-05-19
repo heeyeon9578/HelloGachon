@@ -1064,6 +1064,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3351722054413876879, guid: 4c139c0a96fc5aa4aa58b3740ee0411c, type: 3}
   m_PrefabInstance: {fileID: 911303014}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &934634113 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6872252872713556114, guid: b02d341234ca5664bbffbbf62f7402f8, type: 3}
+  m_PrefabInstance: {fileID: 1972301777}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &987824056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10212,11 +10223,13 @@ MonoBehaviour:
   mudangDown: {fileID: 2031088805}
   controlSet: {fileID: 1688003516}
   actionKey: {fileID: 1616228425}
+  dialogName: {fileID: 934634113}
   talkText: {fileID: 1972301779}
   talkText2: {fileID: 1329530450}
   scanObject: {fileID: 0}
   isAction: 0
   objectDetect: 0
+  nameIndex: 0
   talkIndex: 0
   portraitImg: {fileID: 1657255698}
   cmVcam: {fileID: 1855419566}
