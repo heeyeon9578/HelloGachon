@@ -60,14 +60,19 @@ public class MG2Manager : MonoBehaviour
         
         StopCoroutine(coroutine);
         panel.SetActive(true);
+        GameData.gamedata.alchol+=15;
+        GameData.gamedata.health-=10;
+        GameData.gamedata.popular-=10;
         panelbutton.SetActive(false);
         panelbutton2.SetActive(true);
         Endtext.text="게임 오버";
        }
        if(isWin){
-            
+            //player.SetActive(false);
             StopCoroutine(coroutine);
             panel.SetActive(true);
+            GameData.gamedata.alchol+=10;
+            GameData.gamedata.popular+=3;
             panelbutton.SetActive(false);
             panelbutton2.SetActive(true);
             Endtext.text="게임 승리";
@@ -95,7 +100,7 @@ public class MG2Manager : MonoBehaviour
         Instantiate(listsoju[num],pos,Quaternion.identity);
     }
     public void NextStory(){
-        GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("SYGFestivalStart");
+        GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Set_Activity_sk");
     }
    
 }

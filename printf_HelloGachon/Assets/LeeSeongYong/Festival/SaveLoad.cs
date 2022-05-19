@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class Data
 {
     public string svname=GameData.gamedata.name;
+    public string svmonth=GameData.gamedata.month;
     public float svmajor=GameData.gamedata.major;
     public float svalchol=GameData.gamedata.alchol;
     public float svhealth=GameData.gamedata.health;
@@ -14,10 +15,10 @@ public class Data
     public float svpopular=GameData.gamedata.popular;
     public string svgroupname=GameData.gamedata.groupname;
     public string savescene;
-    public float PlayerX;
-    public float PlayerY;
-    public float MudangX;
-    public float MudangY;
+    // public float PlayerX;
+    // public float PlayerY;
+    // public float MudangX;
+    // public float MudangY;
     public Vector3 PlayerPos;
     public Vector3 MudangPos;
     public Vector3 FriendPos;
@@ -44,10 +45,10 @@ public class SaveLoad : MonoBehaviour
     {
         Data loaddata=new Data();
         Scene scenename=SceneManager.GetActiveScene();
-        loaddata.PlayerX=GameData.gamedata.h;
-        loaddata.PlayerY=GameData.gamedata.v;
-        loaddata.MudangX=GameData.gamedata.mudangh;
-        loaddata.MudangY=GameData.gamedata.mudangv;
+        // loaddata.PlayerX=GameData.gamedata.h;
+        // loaddata.PlayerY=GameData.gamedata.v;
+        // loaddata.MudangX=GameData.gamedata.mudangh;
+        // loaddata.MudangY=GameData.gamedata.mudangv;
         loaddata.PlayerPos=GameData.gamedata.playerpos;
         loaddata.MudangPos=GameData.gamedata.mudangpos;
         loaddata.FriendPos=GameData.gamedata.friendpos;
@@ -81,6 +82,7 @@ public class SaveLoad : MonoBehaviour
             Data data4=JsonUtility.FromJson<Data>(jdata);
             Debug.Log("From json: "+data4.svname);
             GameData.gamedata.name=data4.svname;
+            GameData.gamedata.month=data4.svmonth;
             GameData.gamedata.major=data4.svmajor;
             GameData.gamedata.alchol=data4.svalchol;
             GameData.gamedata.health=data4.svhealth;
@@ -90,10 +92,10 @@ public class SaveLoad : MonoBehaviour
             GameData.gamedata.playerpos=data4.PlayerPos;
             GameData.gamedata.mudangpos=data4.MudangPos;
             GameData.gamedata.friendpos=data4.FriendPos;
-            GameData.gamedata.h=data4.PlayerX;
-            GameData.gamedata.v=data4.PlayerY;
-            GameData.gamedata.mudangh=data4.MudangX;
-            GameData.gamedata.mudangv=data4.MudangY;
+            // GameData.gamedata.h=data4.PlayerX;
+            // GameData.gamedata.v=data4.PlayerY;
+            // GameData.gamedata.mudangh=data4.MudangX;
+            // GameData.gamedata.mudangv=data4.MudangY;
             GameData.gamedata.talkend=data4.Endtalk;
             GameData.gamedata.loadscenename=data4.savescene;
             GameData.gamedata.bgmSlider=data4.svbgmSlider;

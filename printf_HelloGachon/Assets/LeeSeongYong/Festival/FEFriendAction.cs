@@ -10,6 +10,7 @@ public class FEFriendAction : MonoBehaviour
 
     Rigidbody2D rigid;
     public float speed;
+    public GameObject friend;
     public GRManager manager;
     bool isHorizonMove;
     private Animator anim;
@@ -81,7 +82,7 @@ public class FEFriendAction : MonoBehaviour
         rightUp=false;
         downDown=false;
         downUp=false;
-        
+        GameData.gamedata.friendpos=friend.transform.position;
         // //Scan Object
         // if(Input.GetButtonDown("Jump"))
         // {

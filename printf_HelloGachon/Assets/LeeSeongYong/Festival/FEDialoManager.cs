@@ -16,9 +16,13 @@ public class FEDialoManager : MonoBehaviour
     public bool isInteract;
     public int nameIndex;
     public int talkIndex;
-    
+    public AudioPlay bgm;
+
     void Start()
     {
+        bgm.sliderA.value=GameData.gamedata.bgmSlider;
+        bgm.sound=GameData.gamedata.bgmSound;
+        bgm.SetStart();
         playerRoomBGM.Play();
         phoneAlarm.Play();
         Debug.Log(qManager.checkQuest());

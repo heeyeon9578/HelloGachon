@@ -262,7 +262,7 @@ public class GRTalkManager : MonoBehaviour
            if(talkData[id]==GoMT)
                 GameObject.Find("Canvas").GetComponent<FadeINOUT>().MTstartFadeOut();
             else if(talkData[id]==NoMT)
-                GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("SYGFestivalStart");
+                GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Set_Activity_sk");
             if(talkData[id]==StartaHan)
             {
                 frId=1000;
@@ -277,7 +277,7 @@ public class GRTalkManager : MonoBehaviour
             }
             if(talkData[id]==yesHan||talkData[id]==noHan)
             {
-                GameObject.Find("Canvas").GetComponent<FadeINOUT>().HanmaumFadeOut();
+                GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("heeRoom5");
             }
            Debug.Log("12345");
            return null;
@@ -309,6 +309,8 @@ public class GRTalkManager : MonoBehaviour
             else if(ChoiceCount==1)
             {
                 talkData[40]=YesMT;
+                GameData.gamedata.health-=5;
+                GameData.gamedata.popular+=10;
                 Portal.SetActive(true);
                 ChoicPanel.SetActive(false);
                 GameObject.Find("GRGameManager").GetComponent<GRManager>().TestSub();
@@ -316,6 +318,9 @@ public class GRTalkManager : MonoBehaviour
             else if(ChoiceCount==3)
             {
                 talkData[2012]=yesHan;
+                GameData.gamedata.stress-=5;
+                GameData.gamedata.health-=5;
+                GameData.gamedata.popular+=5;
                 ChoicPanel.SetActive(false);
                 GameObject.Find("GRGameManager").GetComponent<GRManager>().Talk(2000,true);
                 SeePan.SetActive(true);

@@ -17,6 +17,7 @@ public class MG2PlayerAction : MonoBehaviour
     public int life;
     public Image[] lifeIcon=null;
     public Sprite changelife;
+    public GameObject player;
     private float WinTime;
     public bool LeftMove=false;
     public bool RightMove=false;
@@ -125,12 +126,15 @@ public class MG2PlayerAction : MonoBehaviour
         if(collision.gameObject.tag=="Soju")
         {
             sfxButton();
-            life--;
-            UpdateIcon(life);
+            if(life>0){
+                life--;
+                UpdateIcon(life);
+            }  
+            
             
             if(life<=0){
                 sfxButton();
-                Destroy(collision.gameObject);
+                //player.SetActive(false);
                 GameObject.Find("MG2Manager").GetComponent<MG2Manager>().GameOver();
             }
             Destroy(collision.gameObject);

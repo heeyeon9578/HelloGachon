@@ -104,10 +104,10 @@ public class GRPlayerAction : MonoBehaviour
         //     //Debug.Log(player.transform.position.x);
         //    // Debug.Log(player.transform.position.y);
         // }
-        GameData.gamedata.h=play.transform.position.x;
-        GameData.gamedata.v=play.transform.position.y;
-        GameData.gamedata.mudangh=mudang.transform.position.x;
-        GameData.gamedata.mudangv=mudang.transform.position.y;
+        // GameData.gamedata.h=play.transform.position.x;
+        // GameData.gamedata.v=play.transform.position.y;
+        // GameData.gamedata.mudangh=mudang.transform.position.x;
+        // GameData.gamedata.mudangv=mudang.transform.position.y;
         GameData.gamedata.playerpos=play.transform.position;
         GameData.gamedata.mudangpos=mudang.transform.position;
         upDown=false;

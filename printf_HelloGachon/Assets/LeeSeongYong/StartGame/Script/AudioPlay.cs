@@ -13,13 +13,13 @@ public class AudioPlay : MonoBehaviour
     
     public void SetLever(float sliderValue){
         //Debug.Log(sliderA.value);
-        Debug.Log(sound);
+        //Debug.Log(sound);
         GameData.gamedata.bgmSlider=sliderA.value;
         GameData.gamedata.bgmSound=Mathf.Log10(sliderValue)*20;
         Debug.Log(GameData.gamedata.bgmSlider);
         //Debug.Log(GameData.gamedata.bgmSound);
         mixer.SetFloat("BGM",Mathf.Log10(sliderValue)*20);
-        Debug.Log(Mathf.Log10(sliderValue)*20);
+        //Debug.Log(Mathf.Log10(sliderValue)*20);
         
     }
     public void SetStart(){

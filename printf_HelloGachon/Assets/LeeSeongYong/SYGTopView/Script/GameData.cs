@@ -13,17 +13,14 @@ public class GameData : MonoBehaviour
     public float stress;
     public float popular;
     public string groupname="";
-    public float h;
-    public float v;
     public Vector3 playerpos;
     public Vector3 mudangpos;
     public Vector3 friendpos;
-    public float mudangh;
-    public float mudangv;
     public bool talkend;
     public string loadscenename;
-    public float bgmSound;
-    public float bgmSlider;
+    public float bgmSound=0;
+    public float bgmSlider=-80;
+    public string month;
     void Awake()
     {
       if(gamedata!=null)

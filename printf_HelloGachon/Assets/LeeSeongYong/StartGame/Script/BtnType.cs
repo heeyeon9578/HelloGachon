@@ -15,24 +15,38 @@ public class BtnType : MonoBehaviour
     public InputField playerInputnickname;
     private string playernickname;
     public bool end=false;
+    public int exitCount=0;
     private void Awake() {
         sfxSource=SFX.GetComponent<AudioSource>();
     }
     void Start()
     {
-        bgm.sliderA.value=1;
-        bgm.sound=Mathf.Log10(bgm.sliderA.value)*20;
+        bgm.sliderA.value=GameData.gamedata.bgmSlider;
+        bgm.sound=GameData.gamedata.bgmSound;
         bgm.SetStart();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Escape)){
-            StopNickName();
-            StopOption();
-            StopLoad();
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            //Debug.Log(nicknamepanel.activeSelf);
+            nicknamepanel.SetActive(false);
+            Optionpanel.SetActive(false);
+            LoadPanel.SetActive(false);
+            if(nicknamepanel.activeSelf==false&&Optionpanel.activeSelf==false&&LoadPanel.activeSelf==false)
+            {
+                exitCount++;
+                if(exitCount==2)
+                   Application.Quit();
+            }
+            
+                //Application.Quit();
         }
+    }
+    void exitgame()
+    {
+        exitCount++;
     }
     void sfxButton()
     {
@@ -40,28 +54,32 @@ public class BtnType : MonoBehaviour
         sfxSource.Play();
     }
     public void MakeNickName(){
-        sfxButton();
+        //sfxButton();
+        exitCount--;
         nicknamepanel.SetActive(true);
     }
     public void StopNickName(){
         //sfxButton();
+        exitCount=0;
         nicknamepanel.SetActive(false);
         playerInputnickname.text=null;
     }
     public void StartGame(){
-        sfxButton();
+        //sfxButton();
         playernickname=playerInputnickname.text;
         
         if(playernickname.Length>0){
             GameData.gamedata.name=playernickname;
-            GameData.gamedata.health=50;
+            GameData.gamedata.health=10;
             GameData.gamedata.popular=0;
             GameData.gamedata.alchol=0;
             GameData.gamedata.stress=0;
             GameData.gamedata.major=0;
-            GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("SYGAbility");
+            GameData.gamedata.month="3월";
+            GameData.gamedata.groupname="Music";
+            GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("heeRoom1");
            
-            
+                //heeRoo1
                 //SceneManager.LoadScene("MiniGame2");
             
             
@@ -71,21 +89,25 @@ public class BtnType : MonoBehaviour
         Debug.Log("이어하기");
     }
     public void OptionGame(){
-        sfxButton();
+        //sfxButton();
+        exitCount--;
         Optionpanel.SetActive(true);
     }
     public void StopOption(){
         //sfxButton();
+        exitCount=0;
         Optionpanel.SetActive(false);
     }
     public void SetLoad()
     { 
-        sfxButton(); 
+        //sfxButton();
+        exitCount--;
         LoadPanel.SetActive(true);
     }
     public void StopLoad()
     {
         //sfxButton();
+        exitCount=0;
         LoadPanel.SetActive(false);
     }
 }

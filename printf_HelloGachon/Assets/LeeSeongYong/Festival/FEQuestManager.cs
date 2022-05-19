@@ -104,7 +104,7 @@ public class FEQuestManager : MonoBehaviour
         isInteract = false;
 
         //참가하면 오티에 가기 위해 가천대 맵으로 이동
-        SceneManager.LoadScene("SYGFestival");
+        GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("SYGFestival");
     }
 
     public void onNoBtnClick()

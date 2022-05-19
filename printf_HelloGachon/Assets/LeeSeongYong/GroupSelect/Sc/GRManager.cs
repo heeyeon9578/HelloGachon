@@ -32,7 +32,7 @@ public class GRManager : MonoBehaviour
     public string talkData2;
     public int IdData;
     public bool success=false;
-
+    public AudioPlay bgm;
 
   
     void Awake() {
@@ -43,6 +43,9 @@ public class GRManager : MonoBehaviour
 
     void Start(){
         //Debug.Log(GameData.gamedata.talkend);
+        bgm.sliderA.value=GameData.gamedata.bgmSlider;
+        bgm.sound=GameData.gamedata.bgmSound;
+        bgm.SetStart();
         success=GameData.gamedata.talkend;
         if(Count==0&&!success)
             TestSub();

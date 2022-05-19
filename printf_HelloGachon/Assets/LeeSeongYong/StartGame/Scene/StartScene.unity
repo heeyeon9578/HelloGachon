@@ -1610,12 +1610,14 @@ MonoBehaviour:
   stress: 0
   popular: 0
   groupname: 
-  h: 0
-  v: 0
-  mudangh: 0
-  mudangv: 0
+  playerpos: {x: 0, y: 0, z: 0}
+  mudangpos: {x: 0, y: 0, z: 0}
+  friendpos: {x: 0, y: 0, z: 0}
   talkend: 0
   loadscenename: 
+  bgmSound: 0
+  bgmSlider: -80
+  month: 
 --- !u!4 &917639815
 Transform:
   m_ObjectHideFlags: 0
@@ -3703,6 +3705,7 @@ MonoBehaviour:
   bgm: {fileID: 796691180}
   playerInputnickname: {fileID: 1294678928}
   end: 0
+  exitCount: 0
 --- !u!4 &1872240059
 Transform:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ public class FETalkManager : MonoBehaviour
 
         //room storyObj name
         //phone:2000
-        talkName.Add(2000, new string[] { "" });
+        talkName.Add(2000, new string[] { GameData.gamedata.name });
 
         //room Obj talk
         talkData.Add(100, new string[] { "(말랑말랑)" });

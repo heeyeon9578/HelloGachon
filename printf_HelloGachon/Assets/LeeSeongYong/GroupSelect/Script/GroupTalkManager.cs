@@ -501,7 +501,7 @@ public class GroupTalkManager : MonoBehaviour
                 selectPanel.SetActive(true);
             }
              if(EndStory){
-                       
+                        //Set_Activity_sk
                         GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("MTStart");
                     }
              if(id-id%10==3010)

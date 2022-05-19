@@ -17,8 +17,11 @@ public class GroupManager : MonoBehaviour
     public bool isGroup=false;
     public bool giveSel=false;
     public bool startTalk=false;
+    public AudioPlay bgm;
     private void Start() {
-        
+        bgm.sliderA.value=GameData.gamedata.bgmSlider;
+        bgm.sound=GameData.gamedata.bgmSound;
+        bgm.SetStart();
         //StartAction();
     }
     public void StartAction()
