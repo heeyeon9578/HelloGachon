@@ -60,31 +60,12 @@ public class SetActivityManager_sk : MonoBehaviour
 
         if(GameData.gamedata.groupname!="")
             clubBtn.SetActive(true);
-<<<<<<< HEAD
+
         bgmstart();
-=======
 
         schedulePanel.SetActive(true);
         activityPanel.SetActive(true);
         player.SetActive(true);
-
-        /*
-        getMajor = 0;
-        getStress = 0;
-        getHealth = 100;
-        getAlchol = 0;
-        getPopular = 0;        
-        getGroup = "Music";
-
-        //로직 확인용 더미데이터
-        majortext.text="전공 : " + getMajor;
-        stresstext.text="스트레스 : " + getStress;
-        healthtext.text="체력 : " + getHealth;
-        populartext.text="인기도 : " + getPopular;
-        alcholtext.text="알코올 분해력 : " + getAlchol;
-        infoTxt.text = " ";
-        */
->>>>>>> b4790b1 (Feat: 육성 로직 구현 및 씬과 GameData 연결)
     }
 
     private void Update() {
@@ -134,16 +115,9 @@ public class SetActivityManager_sk : MonoBehaviour
                     getHealth+=5;
                     getStress-=5;
 
-
-<<<<<<< HEAD
-                    w2Panel.GetComponent<Image>().color = new Color32(255, 99, 88, 225);
-                    w2Txt.text = "운동";
-                    infoTxt.text = "앉아만 있지 말고 운동 좀 해";
-=======
                     activityColor = new Color32(255, 99, 88, 225);
                     activityName = "운동";
                     infoTxt.text = "코딩하려면 일단 살아는 있어야겠지\n체력 +5, 스트레스 -5,";
->>>>>>> b4790b1 (Feat: 육성 로직 구현 및 씬과 GameData 연결)
                 }
                 break;
             case "Study":
@@ -182,27 +156,17 @@ public class SetActivityManager_sk : MonoBehaviour
                         getHealth-=3;
                         getPopular+=3;
                         getAlchol+=5;
-<<<<<<< HEAD
-=======
                         infoTxt.text = "동방가서 누워서 기타쳐야지~\n인기도 +3, 체력 -3,\n스트레스 -5, 알코올 분해력 +5";
->>>>>>> b4790b1 (Feat: 육성 로직 구현 및 씬과 GameData 연결)
-
-                    }else if(getGroup=="Religion"&&getHealth>2)
+                    }
+                    else if(getGroup=="Religion"&&getHealth>2)
                     {
                         Count--;
-<<<<<<< HEAD
-                        getStress+=3;
-                        getHealth-=3;
-                        getAlchol+=5;
-                        getMajor+=5;
-                    }else if(getGroup=="Major"&&getHealth>4)
-=======
                         getStress-=7;
                         getHealth-=3;
                         getAlchol-=5;
                         infoTxt.text = "비나이다 비나이다 오류없이 실행되게 해주세요\n체력 -3, 스트레스 -7,\n알코올 분해력 -5";
-                    }else if(getGroup=="Major")
->>>>>>> b4790b1 (Feat: 육성 로직 구현 및 씬과 GameData 연결)
+                    }
+                    else if(getGroup=="Major"&&getHealth>4)
                     {
                         Count--;
                         getHealth-=3;
@@ -210,39 +174,31 @@ public class SetActivityManager_sk : MonoBehaviour
                         getStress+=3;
                         getAlchol+=5;
                         infoTxt.text = "동아리 친구들이랑 공부하다 술마시러 가야지~\n인기도 +3, 체력 -3,\n스트레스 -5, 알코올 분해력 +5";
-                    }else if(getGroup=="Health")
+                    }
+                    else if(getGroup=="Health")
                     {
                         Count--;
                         getStress-=5;
                         getHealth+=5;
                         getAlchol-=3;
-<<<<<<< HEAD
-                    }else if(getGroup=="Perpormance"&&getHealth>4)
-=======
                         infoTxt.text = "아 근손실은 못참지 ㅋㅋ\n체력 +5, 스트레스 -5,\n알코올 분해력 -3";
-                    }else if(getGroup=="Perpormance")
->>>>>>> b4790b1 (Feat: 육성 로직 구현 및 씬과 GameData 연결)
+                    }
+                    else if(getGroup=="Perpormance"&&getHealth>4)
                     {
                         Count--;
                         getStress-=5;
                         getHealth-=5;
                         getPopular+=5;
                         getAlchol+=5;
-<<<<<<< HEAD
-                    }else if(getGroup=="Hobby"&&getHealth>2)
-=======
                         infoTxt.text = "동아리 공연 준비해야지~\n인기도 +5, 체력 -5,\n스트레스 -5, 알코올 분해력 +5";
-                    }else if(getGroup=="Hobby")
->>>>>>> b4790b1 (Feat: 육성 로직 구현 및 씬과 GameData 연결)
+                    }
+                    else if(getGroup=="Hobby"&&getHealth>2)
                     {
                         Count--;
                         getStress-=5;
                         getHealth-=3;
                         getAlchol+=5;
-<<<<<<< HEAD
-=======
                         infoTxt.text = "오늘은 동아리 친구들이랑 뭘 해볼까나~?\n체력 -3, 스트레스 -5,\n알코올 분해력 +5";
->>>>>>> b4790b1 (Feat: 육성 로직 구현 및 씬과 GameData 연결)
                     }
 
                     activityColor = new Color32(255, 167, 236, 225);
@@ -333,11 +289,8 @@ public class SetActivityManager_sk : MonoBehaviour
             GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("SYGFestivalStart");
         }else if(GameData.gamedata.month=="6월")
         {
-<<<<<<< HEAD
-            GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Game_Ending_Scene_sk");
-=======
+            //**임시조치 - 성재님 6월 수업 씬으로 넘어가야 함
             GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("heeRoom6");
->>>>>>> b4790b1 (Feat: 육성 로직 구현 및 씬과 GameData 연결)
         }
     }
 }

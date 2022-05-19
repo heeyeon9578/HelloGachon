@@ -6,7 +6,7 @@ public class GameData : MonoBehaviour
 {
     // Start is called before the first frame update
     public static GameData gamedata;
-    public string name;
+    public string playerName;
     public float major;
     public float alchol;
     public float health;

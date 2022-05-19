@@ -16,9 +16,11 @@ public class BtnType : MonoBehaviour
     private string playernickname;
     public bool end=false;
     public int exitCount=0;
+
     private void Awake() {
         sfxSource=SFX.GetComponent<AudioSource>();
     }
+
     void Start()
     {
         bgm.sliderA.value=GameData.gamedata.bgmSlider;
@@ -40,67 +42,72 @@ public class BtnType : MonoBehaviour
                 if(exitCount==2)
                    Application.Quit();
             }
-            
-                //Application.Quit();
         }
     }
+
     void exitgame()
     {
         exitCount++;
     }
+
     void sfxButton()
     {
         sfxSource.loop=false;
         sfxSource.Play();
     }
+
     public void MakeNickName(){
         //sfxButton();
         exitCount--;
         nicknamepanel.SetActive(true);
     }
+
     public void StopNickName(){
         //sfxButton();
         exitCount=0;
         nicknamepanel.SetActive(false);
         playerInputnickname.text=null;
     }
+
     public void StartGame(){
         //sfxButton();
         playernickname=playerInputnickname.text;
         
         if(playernickname.Length>0){
-            GameData.gamedata.name=playernickname;
-            GameData.gamedata.health=10;
+            GameData.gamedata.playerName=playernickname;
+            GameData.gamedata.health=100;
             GameData.gamedata.popular=0;
             GameData.gamedata.alchol=0;
             GameData.gamedata.stress=0;
             GameData.gamedata.major=0;
             GameData.gamedata.month="3월";
-            GameData.gamedata.groupname="Music";
             GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("heeRoom1");
-           
-                //heeRoo1
-                //SceneManager.LoadScene("MiniGame2");
+        }
     }
+
     public void ContinueGame(){
         Debug.Log("이어하기");
     }
+
     public void OptionGame(){
         //sfxButton();
         exitCount--;
         Optionpanel.SetActive(true);
     }
+
     public void StopOption(){
         //sfxButton();
         exitCount=0;
         Optionpanel.SetActive(false);
     }
+
     public void SetLoad()
     { 
         //sfxButton();
         exitCount--;
         LoadPanel.SetActive(true);
     }
+
     public void StopLoad()
     {
         //sfxButton();

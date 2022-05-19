@@ -33,7 +33,7 @@ public class TalkManager_ots : MonoBehaviour
 
         //room storyObj name
         //phone:2000
-        string playerName = GameData.gamedata.name;
+        string playerName = GameData.gamedata.playerName;
         talkName.Add(2000, new string[] { playerName });
 
         //room Obj talk
