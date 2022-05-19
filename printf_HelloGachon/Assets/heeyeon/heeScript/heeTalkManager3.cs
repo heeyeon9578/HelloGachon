@@ -250,9 +250,7 @@ public class heeTalkManager3 : MonoBehaviour
                 talkPanel4.SetActive(false);
                 SceneManager.LoadScene("heeFin3");
                 break;
-            case "n":
-                talkPanel4.SetActive(false);
-                break;
+
        }
 
    }

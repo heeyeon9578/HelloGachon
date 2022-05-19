@@ -15,6 +15,8 @@ public class heeMudangAction5 : MonoBehaviour
     private Animator anim;
     Vector3 dirVec;
     GameObject scanObject;
+    public GameObject MudangBorderline;
+    public GameObject controlKey; 
 
     //방향키나 스페이스가 아닌, 버튼으로 조종하기 위해 추가해주어야 하는 변수들
     int upValue=0;
@@ -29,12 +31,20 @@ public class heeMudangAction5 : MonoBehaviour
     bool rightUp=false;
     bool downDown=false;
     bool downUp=false;
-
+    
     void Awake(){
         rigid=GetComponent<Rigidbody2D>();       
         anim=GetComponent<Animator>();
     }
+
+    void Start(){
+        MudangBorderline.SetActive(true); 
+        controlKey.SetActive(false);
+    }
+
     void Update(){
+        MudangBorderline.SetActive(true);
+        controlKey.SetActive(false);
 
         //Move Value
         h=manager.isAction ? 0:rightValue+leftValue;

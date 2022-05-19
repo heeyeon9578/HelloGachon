@@ -25,6 +25,7 @@ public class heegameManager5 : MonoBehaviour
     public GameObject heenewStu; //newStu 오브젝트
     public GameObject heemudang; //mudang 오브젝트
     public GameObject friend; //friend 오브젝트
+    public GameObject controlKey; //무당이 탔을 때, 컨트롤 키를 없애기 위함 
     private Rigidbody2D rb2;
     
 
@@ -134,7 +135,8 @@ public class heegameManager5 : MonoBehaviour
         SetCameraTarget(heenewStu);
 
         heemudangAction5.enabled = false;
-
+        heemudangAction5.MudangBorderline.SetActive(false);
+        heemudangAction5.controlKey.SetActive(true);
         rb2.constraints = RigidbodyConstraints2D.FreezeAll;
         heenewStu.transform.position = new Vector3(pos2.x+1,pos2.y+1, 0);
         // heeQuestManager5.ControlObject();

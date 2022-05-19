@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class heeTalkManager5 : MonoBehaviour
 {
     
@@ -14,6 +16,7 @@ public class heeTalkManager5 : MonoBehaviour
 
     public GameObject talkPanel3; // 무당이 예/ 아니오 판넬
     public GameObject talkPanel4;
+    public GameObject talkPanel5;
     public Text talkText3;
     public GameObject newStu; //newStu 오브젝트
     public GameObject mudang; //mudang 오브젝트
@@ -28,6 +31,7 @@ public class heeTalkManager5 : MonoBehaviour
     public heegameManager5 gameManager;
 
     public int heeid;
+    public int heeid2;
 
     private Rigidbody2D rb;
     private Rigidbody2D rb2;
@@ -82,29 +86,26 @@ public class heeTalkManager5 : MonoBehaviour
        
        //친구 default 대사
        talkData.Add(1000, new string[] {"안녕? 나도 컴공 신입생이야!:0", 
-                                        "만나서 반가워~ 친하게 지내자!:2"});
+                                        "만나서 반가워~ 친하게 지내자!:2",
+                                        "가천관 쪽에 이길여 총장님께서 가끔 계신다던데..:0"});
        //선배 default 대사
        talkData.Add(2000, new string[] {"안녕?:0", 
-                                        "나는 선배야:2"});
+                                        "인피니티동상 쪽에 이길여 총장님께서 가끔 계신다던데..:2"});
        //무당이 default 대사
        talkData.Add(3000, new string[] {"탑승하시겠습니까?"});
 
        //교수님 default 대사
-       talkData.Add(8000, new string[] {"허허 밤낮으로 코딩만 해도 시간이 모자라요~:1"});
-
-
+       talkData.Add(8000, new string[] {"허허 밤낮으로 코딩만 해도 시간이 모자라요~:1",
+                                        "이길여 총장님께서 학교에 가끔 방문하십니다..:0"});
+       //이길여 총장님 대사
+       talkData.Add(6000, new string[] {"박애 봉사 애국^^:0"});
        //Quest Talk(퀘스트 넘버 + npc 넘버)
 
        //Quest_5 5월 간식행사 
        talkData.Add(10+ 1000, new string[] {"잘 찾아왔어!!:0","AI공학관까지 나랑 같이 걸어가거나 무당이를 타고 가자!:1"});
-       talkData.Add(11+2000, new string[] {"잘 찾아왔어!!:0", "여기 던킨도너츠랑 커피를 줄게!!:4", "기말고사 공부 화이팅해!!:2"});
-
-       //Quest_5 5월 이길여 총장님 이벤트
-       talkData.Add(20+2000, new string[] {"그거 아니?:0", "이길여총장님께서는 가끔 학교에 오셔 :1", "가천대학교에서 제일 높은 건물 쪽에 자주 보이신데:2"});
-       talkData.Add(21+6000, new string[] {"어서와요~^^ 호호호:0", " 저는 이길여 총장입니다~:0", "스가이에 드는 명문 가천에 오신걸 진심으로 축하드려요~^^ :0", 
-                                           "1학기 마지막 수업도 잘 듣고, 기말고사에서 좋은 성적 거두길 바랄게요~:0"});
-
-
+       talkData.Add(11+2000, new string[] {"오느라 고생했어!!:0", "여기 던킨도너츠랑 커피를 줄게!!:4", "기말고사 공부 화이팅!!:2","아 곧 이길여 총장님 오시나보네..:0"});
+       talkData.Add(20+6000 , new string[] {"어서오십시오~^^:0", " 저는 가천대 지킴이 이길여 총장입니다~:0", "스가이에 드는 명문 가천에 오신걸 진심으로 축하드려요~^^ :0"
+                                           });
 
        //portrait Data
        portraitData.Add(7000+0,portraitArr[0]); //플레이어 및 인트로에 쓰일 선배와 친구
@@ -141,16 +142,13 @@ public class heeTalkManager5 : MonoBehaviour
    }
 
    public string GetTalk(int id, int talkIndex)
-   {       
+   {   
+       heeid2=id;    
 
        Debug.Log(id);
 
-       if(id==2020){
-           gilyae.SetActive(true);
-       }
-
        if(!talkData.ContainsKey(id)){
-        //    Debug.Log(id);
+       
 
            
 
@@ -168,42 +166,61 @@ public class heeTalkManager5 : MonoBehaviour
 
                }
                  
-           }}
-           else{
+           }}else if((id-questManager.GetQuestTalkIndex(id))==500){
                if(!talkData.ContainsKey(id-id%10)){
                //퀘스트 맨 처음 대사 마저 없을 때,
                //기본 대사를 가져오기      
-               if(talkIndex == talkData[id-id%100].Length){                   
-                 
+               if(talkIndex == talkData[id-id%100].Length){
+                  
+                  talkPanel5.SetActive(true);
                   return null;
                }                 
                else{
                     return talkData[id - id%100][talkIndex];
 
                }
+           }}
+           else{
+
+               if(!talkData.ContainsKey(id-id%10)){
+
+               //퀘스트 맨 처음 대사 마저 없을 때,
+               //기본 대사를 가져오기      
+               if(talkIndex == talkData[id-id%100].Length){                   
+
+                  return null;
+               }                 
+               else{
+              
+                    return talkData[id - id%100][talkIndex];
+
+               }
                  
            }else{
+          
                //해당 퀘스트 진행 순서 중 대사가 없을 때
                //퀘스트 맨 처음 대사를 가져옴
                if(talkIndex == talkData[id-id%10].Length){                  
-
+               
                   return null;
                   }                 
                else{
                    return talkData[id - id%10][talkIndex];
-
+              
                   }
                   
                   
               }
              }
+
+            
              
             
        }
 
        if(talkIndex==talkData[id].Length){ 
 
-
+          
 
           //퀘스트 1000일때, 실행할 것
           if((id-questManager.GetQuestTalkIndex(id))==1000){
@@ -270,11 +287,13 @@ public class heeTalkManager5 : MonoBehaviour
 
        switch(type){
            case "y":
+                GameData.gamedata.health += 5;
+                Debug.Log("5월 간식 이벤트로 체력+5 ");
                 talkPanel4.SetActive(false);
+                //성재님의 6월수업씬으로 이동
+                SceneManager.LoadScene("");
                 break;
-            case "n":
-                talkPanel4.SetActive(false);
-                break;
+
        }
 
    }

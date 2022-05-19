@@ -267,9 +267,11 @@ public class heeTalkManager4 : MonoBehaviour
 
        switch(type){
            case "y":
+                GameData.gamedata.health += 5;
+                Debug.Log("간식 이벤트로 체력+5 ");
                 talkPanel4.SetActive(false);
                 //성재님의 중간고사 미니게임으로 이동
-                // SceneManager.LoadScene("heeFin3");
+                SceneManager.LoadScene("");
                 break;
 
        }

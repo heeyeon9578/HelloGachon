@@ -218,7 +218,7 @@ public class heeFinQuestManager3 : MonoBehaviour
 
         //3월 수업 씬으로 전환
         Debug.Log("수업 들으러 가기");
-        //SceneManager.LoadScene("Going_OT_sk");
+        SceneManager.LoadScene("");
     }
 
 

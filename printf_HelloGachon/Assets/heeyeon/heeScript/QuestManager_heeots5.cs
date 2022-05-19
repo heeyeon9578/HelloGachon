@@ -97,7 +97,7 @@ public class QuestManager_heeots5 : MonoBehaviour
         isInteract = false;
         Debug.Log("간다!");
         //참여한다고 하면 바로 메인맵으로 이동 후, 5월 수업 진행(성재님)
-        // SceneManager.LoadScene("");
+        SceneManager.LoadScene("");
     }
 
 

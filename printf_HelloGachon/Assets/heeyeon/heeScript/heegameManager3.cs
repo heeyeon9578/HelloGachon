@@ -131,7 +131,8 @@ public class heegameManager3 : MonoBehaviour
         SetCameraTarget(heenewStu);
 
         heemudangAction3.enabled = false;
-
+        heemudangAction3.MudangBorderline.SetActive(false);
+        heemudangAction3.controlKey.SetActive(true);
         rb2.constraints = RigidbodyConstraints2D.FreezeAll;
         heenewStu.transform.position = new Vector3(pos2.x+1,pos2.y+1, 0);
     }

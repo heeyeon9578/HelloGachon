@@ -25,7 +25,7 @@ public class heeQuestManager5 : MonoBehaviour
     void GenerateData()
     {
         questList.Add(10, new heeQuestData3("5월: 간식행사", new int[]{1000, 2000}));
-        questList.Add(20, new heeQuestData3("5월: 이길여 총장님 이벤트", new int[]{2000, 6000}));
+        questList.Add(20, new heeQuestData3("5월: 이길여 총장님 이벤트", new int[]{6000}));
         questList.Add(30, new heeQuestData3("끝", new int[]{0}));
 
     }
@@ -76,28 +76,18 @@ public class heeQuestManager5 : MonoBehaviour
                 if(questActionIndex ==1){
                     talkText3.text = "AI공학관 앞에서 선배 만나기";
                 }else if(questActionIndex==2){
-                    talkText3.text = "선배에게 말걸기";
+                    talkText3.text = "AI공학관에 가서 6월 수업 듣기(이길여 총장님이 학교에 오셨다고..?!)";
+                    questObject[2].SetActive(true);
                 }
-                                   
+
+
+
                 break;
 
-            case 20: 
-                if(questActionIndex ==0){
-                    talkText3.text = "선배에게 말걸기";
-                }else if(questActionIndex==1){
-                    talkText3.text = "이길여 총장님 찾기";
-                }else if(questActionIndex==2){
-                    questObject[1].SetActive(true);
-                }
-                                   
-                break;
 
         }
     }
 
-    public void clickYes(){
-        // 6월 수업씬으로 이동
-        // SceneManager.LoadScene("");
-    }
+
     
 }

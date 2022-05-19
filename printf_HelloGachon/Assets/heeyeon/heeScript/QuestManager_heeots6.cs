@@ -111,8 +111,11 @@ public class QuestManager_heeots6 : MonoBehaviour
 
     //종강파티 이미지를 클릭하면, 성적확인 엔딩 장면
     public void onApplyBtnClick6_1(){
+        GameData.gamedata.health -= 5;
+        GameData.gamedata.popular += 10;
+        GameData.gamedata.alchol += 10;
         FinishImage.SetActive(false);
-        // SceneManager.LoadScene("");
+        SceneManager.LoadScene("Game_Ending_Scene_sk");
     }
     
 
@@ -122,7 +125,7 @@ public class QuestManager_heeots6 : MonoBehaviour
         isInteract = false;
         Debug.Log("안가!");
         
-        //참여하지 않으면 성적 확인 엔딩 장면
-        // SceneManager.LoadScene("");
+        //참여하지 않으면  엔딩씬
+        SceneManager.LoadScene("Game_Ending_Scene_sk");
     }
 }

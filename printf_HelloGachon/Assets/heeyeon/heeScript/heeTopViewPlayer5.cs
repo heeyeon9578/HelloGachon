@@ -107,6 +107,15 @@ public class heeTopViewPlayer5 : MonoBehaviour
             heeFriendAction5.enabled = true;
         }
 
+         if(talkManager.heeid2==6020){
+            GameData.gamedata.health += 20;
+            Debug.Log("총장님과의 대화로 체력+20 ");
+     
+        }
+
+        
+
+
 
         
     }
