@@ -100,7 +100,7 @@ public class MG2Manager : MonoBehaviour
         Instantiate(listsoju[num],pos,Quaternion.identity);
     }
     public void NextStory(){
-        GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Set_Activity_sk");
+        GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Set_Activity_4April");
     }
    
 }
