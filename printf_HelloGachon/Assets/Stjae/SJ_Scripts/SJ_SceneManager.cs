@@ -173,7 +173,7 @@ public class SJ_SceneManager : MonoBehaviour
                     GameData.gamedata.month = "5월";
                     ModGameDataAfterClass();
                     Debug.Log("중간고사 종료");
-                    SceneManager.LoadScene("Set_Activity_May");
+                    SceneManager.LoadScene("Set_Activity_5May");
                 }
             break;
         }

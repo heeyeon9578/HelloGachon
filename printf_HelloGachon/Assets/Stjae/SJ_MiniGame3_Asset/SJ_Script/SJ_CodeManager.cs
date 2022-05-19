@@ -177,7 +177,7 @@ public class SJ_CodeManager : MonoBehaviour
         string Lvalue;
         string Rvalue;
 
-        switch(match.Value)
+        switch(match.Value.Trim())
         {
             case "=":
             values = value.Split('=');

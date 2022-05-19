@@ -3839,6 +3839,10 @@ PrefabInstance:
       value: newStu_0
       objectReference: {fileID: 0}
     - target: {fileID: 7377314999206979046, guid: 0426119f3cf6d86488734351a1b797d8, type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7377314999206979046, guid: 0426119f3cf6d86488734351a1b797d8, type: 3}
       propertyPath: manager
       value: 
       objectReference: {fileID: 1828721397}

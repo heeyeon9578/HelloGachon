@@ -23,9 +23,9 @@ public class BtnType : MonoBehaviour
 
     void Start()
     {
-        bgm.sliderA.value=GameData.gamedata.bgmSlider;
-        bgm.sound=GameData.gamedata.bgmSound;
-        bgm.SetStart();
+        // bgm.sliderA.value=GameData.gamedata.bgmSlider;
+        // bgm.sound=GameData.gamedata.bgmSound;
+        // bgm.SetStart();
     }
 
     // Update is called once per frame

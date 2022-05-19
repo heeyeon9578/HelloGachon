@@ -47,14 +47,17 @@ public class GRManager : MonoBehaviour
 
     void Start(){
         //Debug.Log(GameData.gamedata.talkend);
-        bgm.sliderA.value=GameData.gamedata.bgmSlider;
-        bgm.sound=GameData.gamedata.bgmSound;
-        bgm.SetStart();
+        // bgm.sliderA.value=GameData.gamedata.bgmSlider;
+        // bgm.sound=GameData.gamedata.bgmSound;
+        // bgm.SetStart();
         success=GameData.gamedata.talkend;
+        Debug.Log("Can you read me");
+
         if(Count==0&&!success)
             TestSub();
         else if(Count==1)
             TestSub();
+
         //TestSub();
     }
 
@@ -65,11 +68,11 @@ public class GRManager : MonoBehaviour
         else if(Count==1)
             IdData=40;
         else if(Count==3)
-            IdData=50;
-            //IdData=30;
-            //처음에 게임 시작 전에 인트로가 나올 수 있도록 구성
-            string talkData2 = talkManager.GetTalk(IdData, talkIndex);
-            string talkName2 = talkManager.getName(IdData, nameIndex);
+           IdData=50;
+        // IdData=40;
+        //처음에 게임 시작 전에 인트로가 나올 수 있도록 구성
+        string talkData2 = talkManager.GetTalk(IdData, talkIndex);
+        string talkName2 = talkManager.getName(IdData, nameIndex);
 
         //End Talk
         if(talkData2 ==null){
