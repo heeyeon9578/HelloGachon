@@ -286,8 +286,7 @@ public class SetActivityManager_sk : MonoBehaviour
             GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("SYGFestivalStart");
         }else if(GameData.gamedata.month=="6월")
         {
-            //**임시조치 - 성재님 6월 수업 씬으로 넘어가야 함
-            GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("heeRoom6");
+            GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("heeMonth5");
         }
     }
 }
