@@ -6,11 +6,14 @@ public class TalkManager_ots : MonoBehaviour
 {
     Dictionary<int, string[]> talkName;
     Dictionary<int, string[]> talkData;
+    Dictionary<int, Sprite> portraitData;
+    public Sprite[] portraitArr;
 
     void Awake()
     {
         talkName = new Dictionary<int, string[]>();
         talkData = new Dictionary<int, string[]>();
+        portraitData = new Dictionary<int, Sprite>();
         generateData();
     }
 
@@ -45,9 +48,12 @@ public class TalkManager_ots : MonoBehaviour
         //room Story Obj talk
         talkData.Add(2000, new string[] { "딱히 온 카톡은 없네.." });
 
+        portraitData.Add(2000 + 0, portraitArr[0]);
+        portraitData.Add(2000 + 1, portraitArr[1]);
+
         //Quest Talk
         //Quest1: 카톡을 확인하자! (questId: 10)
-        talkData.Add(10 + 2000, new string[] { "엇 컴공 공지방 카톡왔네.", "확인해보자." });
+        talkData.Add(10 + 2000, new string[] { "엇 컴공 공지방 카톡왔네.:0", "확인해보자.:1" });
     }
 
     public string getName(int id, int nameIndex)
@@ -76,5 +82,10 @@ public class TalkManager_ots : MonoBehaviour
         else {
             return talkData[id][talkIndex];
         }
+    }
+
+    public Sprite getPortrait(int id, int portraitIndex)
+    {
+        return portraitData[id + portraitIndex];
     }
 }

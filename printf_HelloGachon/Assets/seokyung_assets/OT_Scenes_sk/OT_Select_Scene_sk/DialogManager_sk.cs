@@ -14,6 +14,7 @@ public class DialogManager_sk : MonoBehaviour
     public AudioSource phoneAlarm;
     public Text dialogName;
     public Text dialogText;
+    public Image portraitImg;
     public bool isInteract;
     public int nameIndex;
     public int talkIndex;
@@ -60,11 +61,16 @@ public class DialogManager_sk : MonoBehaviour
         //Continue Talk
         if (isStoryObj) {
             dialogName.text = talkName;
-            dialogText.text = talkData;
+            dialogText.text = talkData.Split(':')[0];
+
+            portraitImg.sprite = tManager.getPortrait(id, int.Parse(talkData.Split(':')[1]));
+            portraitImg.color = new Color(1,1,1,1);
         }
         else {
             dialogName.text = talkName;
             dialogText.text = talkData;
+
+            portraitImg.color = new Color(1,1,1,0);
         }
 
         isInteract = true;
