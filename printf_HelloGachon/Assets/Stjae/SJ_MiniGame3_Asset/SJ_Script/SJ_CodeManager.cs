@@ -17,7 +17,7 @@ public class SJ_CodeManager : MonoBehaviour
 
     private static List<Function> funcList = new List<Function>();
     private static string[] reservedFunc = {"Loop","Print"};
-    private static Dictionary<string, string> varDict = new Dictionary<string, string>();
+    public static Dictionary<string, string> varDict = new Dictionary<string, string>();
     
     abstract class Function
     {
