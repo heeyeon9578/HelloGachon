@@ -17,11 +17,14 @@ public class GRManager : MonoBehaviour
     public GameObject talkPanel2;
     public GameObject mudangDown;
     public GameObject friend;
+    public Text dialogName;
+    public string[] talkNameList=new string[]{"선배","친구","선배","선배","선배","선배","선배","선배","친구"};
     public Text talkText;
     public Text talkText2;
     public GameObject scanObject;
     public bool isAction;
     public bool objectDetect = false; 
+    public int nameIndex;
     public int talkIndex;
     public Image portraitImg;
     public GameObject cmVcam;   // cm카메라 오브젝트
@@ -29,7 +32,8 @@ public class GRManager : MonoBehaviour
     public GameObject heenewStu; //newStu 오브젝트
     public GameObject heemudang; //mudang 오브젝트
     private Rigidbody2D rb2;
-    public string talkData2;
+    // public string talkData2;
+    // public string talkName2;
     public int IdData;
     public bool success=false;
     public AudioPlay bgm;
@@ -51,6 +55,7 @@ public class GRManager : MonoBehaviour
             TestSub();
         else if(Count==1)
             TestSub();
+        //TestSub();
     }
 
 
@@ -60,9 +65,11 @@ public class GRManager : MonoBehaviour
         else if(Count==1)
             IdData=40;
         else if(Count==3)
-            IdData=5;
+            IdData=50;
+            //IdData=30;
             //처음에 게임 시작 전에 인트로가 나올 수 있도록 구성
-            talkData2 = talkManager.GetTalk(IdData, talkIndex);
+            string talkData2 = talkManager.GetTalk(IdData, talkIndex);
+            string talkName2 = talkManager.getName(IdData, nameIndex);
 
         //End Talk
         if(talkData2 ==null){
@@ -76,9 +83,9 @@ public class GRManager : MonoBehaviour
             return; //void 에서 return 가능(강제 종료 기능)-> return 뒤에 아무것도 안쓰면 됌
 
         }
-        
+        dialogName.text = talkName2;
         talkText.text = talkData2.Split(':')[0];
-        //portraitImg.sprite = talkManager.GetPortrait(IdData,int.Parse(talkData2.Split(':')[1]));
+        portraitImg.sprite = talkManager.GetPortrait(IdData,int.Parse(talkData2.Split(':')[1]));
         portraitImg.color = new Color(1,1,1,1); //맨 끝이 투명도로, npc일때만 이미지가 나오도록 설정
 
         objectDetect = true;
@@ -104,6 +111,7 @@ public class GRManager : MonoBehaviour
         //Set Talk Data
         int questTalkIndex = questManager.GetQuestTalkIndex(id);
         string talkData = talkManager.GetTalk(id+questTalkIndex, talkIndex);
+        string talkName = talkManager.getName(id, nameIndex);
 
         //End Talk
         if(talkData ==null){
@@ -114,10 +122,17 @@ public class GRManager : MonoBehaviour
         }
 
         if(isNpc){
+            if(Count==3&&id==2000)
+                dialogName.text = talkNameList[talkIndex];
+            else if(Count==4&&id==2000)
+                dialogName.text=talkName;
+            else
+                dialogName.text = talkName;
             talkText.text = talkData.Split(':')[0];
             portraitImg.sprite = talkManager.GetPortrait(id,int.Parse(talkData.Split(':')[1]));
             portraitImg.color = new Color(1,1,1,1); //맨 끝이 투명도로, npc일때만 이미지가 나오도록 설정
         }else{
+            dialogName.text = talkName;
             talkText.text = talkData;
             portraitImg.color = new Color(1,1,1,0);
         }

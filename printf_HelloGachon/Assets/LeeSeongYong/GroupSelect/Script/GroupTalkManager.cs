@@ -6,6 +6,7 @@ public class GroupTalkManager : MonoBehaviour
 {
     
     Dictionary<int,string[]> groupTalk;
+    Dictionary<int, string[]> talkName;
     Dictionary<int,Sprite> traitData;
     string[] ezzz={"우리는 운동을 하면서 친목을 다지는 동아리야.:0","혹시 관심 있니?:2"};
     string[] firstTalk={"와 동아리 종류가 많은 걸? 무슨 동아리가 있는지 둘러보자!:1"};
@@ -75,7 +76,7 @@ public class GroupTalkManager : MonoBehaviour
     {
         groupTalk=new Dictionary<int, string[]>();
         traitData=new Dictionary<int,Sprite>();
-        
+        talkName = new Dictionary<int, string[]>();
         DataSet();
 
         
@@ -100,6 +101,16 @@ public class GroupTalkManager : MonoBehaviour
         groupTalk.Add(11+7000,aboutHealth);
         groupTalk.Add(11+8000,aboutHealth);
         groupTalk.Add(11+9000,aboutHealth);
+
+        talkName.Add(2000,new string[]{"친구"});
+        talkName.Add(3000,new string[]{"선배"});
+        talkName.Add(4000,new string[]{"선배"});
+        talkName.Add(5000,new string[]{"선배"});
+        talkName.Add(6000,new string[]{"선배"});
+        talkName.Add(7000,new string[]{"선배"});
+        talkName.Add(8000,new string[]{"선배"});
+        talkName.Add(9000,new string[]{"선배"});
+
         traitData.Add(1000+0,imgarr[0]);
         traitData.Add(1000+1,imgarr[1]);
         traitData.Add(1000+2,imgarr[2]);
@@ -136,8 +147,12 @@ public class GroupTalkManager : MonoBehaviour
         traitData.Add(9000+1,imgarr[5]);
         traitData.Add(9000+2,imgarr[6]);
         traitData.Add(9000+3,imgarr[7]);
+
     }
-   
+    public string getName(int id, int nameIndex)
+    {
+        return talkName[id][nameIndex];
+    }
     public void SelectClub(string i)
     {
         switch(i)
