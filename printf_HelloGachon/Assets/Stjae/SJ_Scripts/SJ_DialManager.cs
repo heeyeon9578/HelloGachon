@@ -8,7 +8,9 @@ public class SJ_DialManager : MonoBehaviour
     public Dialogue Dial_Class_1 = new Dialogue();
     public Dialogue Dial_Class_2 = new Dialogue();
     public Dialogue Dial_Class_3 = new Dialogue();
+    public Dialogue Dial_Class_4 = new Dialogue();
     public Dialogue Dial_Exam_1 = new Dialogue();
+    public Dialogue Dial_Exam_2 = new Dialogue();
 
     public class Dialogue
     {
@@ -55,13 +57,23 @@ public class SJ_DialManager : MonoBehaviour
 
         Dial_Exam_1.AddDial(Dial_Exam_1.dialNum, "중간고사: 변수와 Print() 함수를 사용하여 값을 출력하라!<color=red>(✻대화창 클릭시 답안 제출✻)</color>");
 
-        Dial_Class_3.AddDial(Dial_Class_3.dialNum, "세번째 프로그래밍 수업에 온 걸 환영한다");
+        Dial_Class_3.AddDial(Dial_Class_3.dialNum, "중간고사 보느라 고생했다\n너무 쉬웠지?^^*");
         Dial_Class_3.AddDial(++Dial_Class_3.dialNum, "이번 수업에서는 \"반복문\"이라는 것에 대해 배워보자");
-        Dial_Class_3.AddDial(++Dial_Class_3.dialNum, "반복문은 정해진 횟수만큼 원하는 작업을 반복해주는 아주 편리한 명령문");
-        Dial_Class_3.AddDial(++Dial_Class_3.dialNum, "그럼 바로 사용법을 알려주도록 하마");
+        Dial_Class_3.AddDial(++Dial_Class_3.dialNum, "반복문은 정해진 횟수만큼 원하는 작업을 반복해주는 아주 편리한 녀석이야");
+        Dial_Class_3.AddDial(++Dial_Class_3.dialNum, "설명은 줄이고 바로 사용법을 알려주도록 하마");
         Dial_Class_3.AddDial(++Dial_Class_3.dialNum, "저번 시간에 함수 사용했던거 기억하지?");
-        Dial_Class_3.AddDial(++Dial_Class_3.dialNum, "같은 형태로 Loop()를 입력하고 이번에는 그 뒤에 중괄호\"{}\"를 붙이고 중괄호 안에 반복하고 싶은 걸 입력하면 돼");
-        Dial_Class_3.AddDial(++Dial_Class_3.dialNum, "그럼 저번에 사용했던 Print 함수와 이번에 배운 Loop 반복문을 이용해서 원하는 값을 \"10번\" 출력해보자");
+        Dial_Class_3.AddDial(++Dial_Class_3.dialNum, "Loop()를 입력하고 이번에는 그 뒤에 중괄호\"{}\"를 붙이고 그 안에 반복하고 싶은 걸 입력하면 돼");
+        Dial_Class_3.AddDial(++Dial_Class_3.dialNum, "Print 함수와 이번에 배운 Loop 반복문을 이용해서 원하는 값을 \"10번\" 출력해보자");
         Dial_Class_3.AddDial(++Dial_Class_3.dialNum, "아주 훌륭해! 오늘 수업은 여기까지다");
+
+        Dial_Class_4.AddDial(Dial_Class_4.dialNum, "마지막 수업에 온 걸 환영한다");
+        Dial_Class_4.AddDial(++Dial_Class_4.dialNum, "마지막인 만큼 조금 어려운 걸 배워볼꺼야");
+        Dial_Class_4.AddDial(++Dial_Class_4.dialNum, "새로운 건 아니고, 지난번에 배웠던 반복문을 이용한\n\"중첩 반복문\"이라는 걸 배워볼거야");
+        Dial_Class_4.AddDial(++Dial_Class_4.dialNum, "이름 그대로 반복문이 여러번 반복되는 형태를 중첩 반복문이라고 해");
+        Dial_Class_4.AddDial(++Dial_Class_4.dialNum, "사용법은 아주 간단한데, 반복문의 중괄호\"{}\" 안에 또 반복문을 적으면 돼");
+        Dial_Class_4.AddDial(++Dial_Class_4.dialNum, "그럼 중첩 반복문을 이용해서 \"yeeeyeee\"라는 문장을 만들어보자");
+        Dial_Class_4.AddDial(++Dial_Class_4.dialNum, "아주 훌륭해! 오늘 수업은 여기까지다\n기말고사 준비 잘해서 유종의 미를 거두거라!");
+
+        Dial_Exam_2.AddDial(Dial_Exam_2.dialNum, "중간고사: 변수, Loop(), Print() 함수를 사용하여 \"yeeYeeYee\"라는 값을 출력하라!<color=red>(✻대화창 클릭시 답안 제출✻)</color>");
     }
 }
