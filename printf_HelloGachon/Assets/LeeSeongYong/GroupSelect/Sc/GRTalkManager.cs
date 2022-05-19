@@ -7,6 +7,7 @@ public class GRTalkManager : MonoBehaviour
 {
     
     Dictionary<int, string[]> talkData;
+    Dictionary<int, string[]> talkName;
     Dictionary<int, Sprite> portraitData;
     private AudioSource audioSource;
     public AudioClip audioClip; 
@@ -47,6 +48,7 @@ public class GRTalkManager : MonoBehaviour
         talkData = new Dictionary<int, string[]>(); //대화에 문장이 여러개 존재
         portraitData = new Dictionary<int, Sprite>();
         audioSource = this.GetComponent<AudioSource>();
+        talkName = new Dictionary<int, string[]>();
         GenerateData();
     }
     private void Start() {
@@ -130,7 +132,40 @@ public class GRTalkManager : MonoBehaviour
        //Quest_3 간식행사
        
        //Quest_4 종강파티
-        
+    talkName.Add(100, new string[] {"카페"});
+       talkName.Add(200, new string[] {"IT대학"});
+       talkName.Add(300, new string[] {"비전타워"});
+       talkName.Add(400, new string[] {"비전타워"});
+       talkName.Add(500, new string[] {"AI공학관"});
+       talkName.Add(600, new string[] {"바이오나노연구원"});
+       talkName.Add(700, new string[] {"한의과대학"});
+       talkName.Add(800, new string[] {"산학관"});
+       talkName.Add(900, new string[] {"바이오나노대학"});
+       talkName.Add(10000, new string[] {"체육대학2"});
+       talkName.Add(20000, new string[] {"학군단"});
+       talkName.Add(30000, new string[] {" 기숙사"});
+       talkName.Add(40000, new string[] {"편의점"});
+       talkName.Add(50000, new string[] {"학생회관"});
+       talkName.Add(60000, new string[] {"중앙도서관"});
+       talkName.Add(70000, new string[] {"교육대학원"});
+       talkName.Add(80000, new string[] {"전자정보도서관"});
+       talkName.Add(90000, new string[] {"글로벌센터"});
+       talkName.Add(100000, new string[] {"체육대학1"});
+       talkName.Add(200000, new string[] {"대학원"});
+       talkName.Add(300000, new string[] {"공과대학2"});
+       talkName.Add(400000, new string[] {"프리덤광장"});
+       talkName.Add(500000, new string[] {"가천관"});
+       talkName.Add(600000, new string[] {"인피니티동상"});
+       talkName.Add(700000, new string[] {"대운동장"});
+
+       string playerName = GameData.gamedata.playerName;
+       talkName.Add(30, new string[] {  playerName});
+       talkName.Add(40,new string[] {"선배"});
+       talkName.Add(50, new string[] {"선배"});
+       talkName.Add(3000, new string[] { "무당이" });
+       talkName.Add(1000,new string[] { "친구" });
+       talkName.Add(2000,new string[]{"친구"});
+       //talkName.Add(1010,new string[]{"친구"});
 
        //portrait Data
        portraitData.Add(7000+0,portraitArr[0]); //플레이어 및 인트로에 쓰일 선배와 친구
@@ -169,6 +204,11 @@ public class GRTalkManager : MonoBehaviour
         portraitData.Add(30+2,portraitArr[6]); 
         portraitData.Add(30+3,portraitArr[7]);
 
+        portraitData.Add(40+0,portraitArr[8]); 
+        portraitData.Add(40+1,portraitArr[9]); 
+        portraitData.Add(40+2,portraitArr[10]); 
+        portraitData.Add(40+3,portraitArr[11]);
+        
         portraitData.Add(50+0,portraitArr[8]); 
         portraitData.Add(50+1,portraitArr[9]); 
         portraitData.Add(50+2,portraitArr[10]); 
@@ -191,7 +231,10 @@ public class GRTalkManager : MonoBehaviour
 
 
    }
-
+    public string getName(int id, int nameIndex)
+    {
+        return talkName[id][nameIndex];
+    }
    public string GetTalk(int id, int talkIndex)
    {       
 
@@ -322,6 +365,7 @@ public class GRTalkManager : MonoBehaviour
                 GameData.gamedata.health-=5;
                 GameData.gamedata.popular+=5;
                 ChoicPanel.SetActive(false);
+                GameObject.Find("GRGameManager").GetComponent<GRManager>().Count=4;
                 GameObject.Find("GRGameManager").GetComponent<GRManager>().Talk(2000,true);
                 SeePan.SetActive(true);
             }
@@ -343,6 +387,7 @@ public class GRTalkManager : MonoBehaviour
             {
                 talkData[2012]=noHan;
                 ChoicPanel.SetActive(false);
+                GameObject.Find("GRGameManager").GetComponent<GRManager>().Count=4;
                 GameObject.Find("GRGameManager").GetComponent<GRManager>().Talk(2000,true);
                 SeePan.SetActive(true);
 
