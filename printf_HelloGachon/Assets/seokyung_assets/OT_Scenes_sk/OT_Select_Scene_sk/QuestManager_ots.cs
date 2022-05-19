@@ -19,6 +19,8 @@ public class QuestManager_ots : MonoBehaviour
     public int questActionIndex;
     public int nameIndex;
     public int talkIndex;
+    public float getHealth;
+    public float getPopular;
     
     void Awake()
     {
@@ -30,6 +32,9 @@ public class QuestManager_ots : MonoBehaviour
     {
         isInteract = false;
         questObject[0].SetActive(true);
+        
+        getPopular=GameData.gamedata.popular;
+        getHealth=GameData.gamedata.health;
     }
     
     void generateData()
@@ -103,6 +108,13 @@ public class QuestManager_ots : MonoBehaviour
     {
         questObject[2].SetActive(false);
         isInteract = false;
+
+        //능력치 부여 및 저장
+        getHealth-=5;
+        getPopular+=5;
+
+        GameData.gamedata.health=getHealth;
+        GameData.gamedata.popular=getPopular;
 
         //참가하면 오티에 가기 위해 가천대 맵으로 이동
         SceneManager.LoadScene("Going_OT_sk");

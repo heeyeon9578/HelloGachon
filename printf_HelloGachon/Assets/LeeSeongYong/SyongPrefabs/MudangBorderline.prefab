@@ -5544,7 +5544,7 @@ TilemapRenderer:
   m_SortOrder: 0
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
-  m_MaskInteraction: 0
+  m_MaskInteraction: 1
 --- !u!19719996 &4376888756306453761
 TilemapCollider2D:
   m_ObjectHideFlags: 0

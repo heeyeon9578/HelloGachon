@@ -42,13 +42,14 @@ public class TypeGameManager_mg1 : MonoBehaviour
     public int successCnt = 0;
     private int loop = 0;
     private int index = 0;
+    public float getMajor;
+    public float getStress;
 
     void Start()
     {
-        /*
-        ** [구현해야 할 것]
-        ** 3번 이상 성공시 성공시간표, 아니면 실패 시간표 부여
-        */
+        getMajor=GameData.gamedata.major;
+        getStress=GameData.gamedata.stress;
+
         typeGameBGM.Play();
         displayClassNum();
         getSetTime = setTime;
@@ -102,12 +103,10 @@ public class TypeGameManager_mg1 : MonoBehaviour
             if(successCnt > 3)
             {
                 resultTxt.text = "수강신청 성공!\n" + "성공 횟수 : " + successCnt;
-                //ex) 능력치: 전공능력 + 100
             }
             else
             {
-                resultTxt.text = "수강신청 실패..\n" + "성공 횟수 : " + successCnt;
-                //ex) 능력치: 전공능력 + 50
+                resultTxt.text = "수강신청 실패..\n" + "성공 횟수 : " + successCnt;                
             }
             registerResult.SetActive(true);
         }
@@ -171,10 +170,14 @@ public class TypeGameManager_mg1 : MonoBehaviour
         if(successCnt > 3)
         {
             if(index == successTalkList.Length){
+                //능력치 부여 및 저장
+                getMajor += successCnt * 5;
+                GameData.gamedata.major=getMajor;
+
                 dialogPanel.SetActive(false);
+
                 //다음 씬으로 넘어가기
-                fade.fadeOut();
-                SceneManager.LoadScene("heeRoom3"); 
+                GameObject.Find("GameUI").GetComponent<FadeINOUT>().LoadFadeOut("heeRoom3");
                 return;
             }
             dialogText.text = successTalkList[index];
@@ -197,9 +200,16 @@ public class TypeGameManager_mg1 : MonoBehaviour
         else
         {
             if(index == failTalkList.Length){
+                //능력치 부여 및 저장
+                getMajor += successCnt * 5;
+                getStress += 5;
+                GameData.gamedata.major=getMajor;
+                GameData.gamedata.stress=getStress;
+
                 dialogPanel.SetActive(false);
+                
                 //다음 씬으로 넘어가기
-                SceneManager.LoadScene("heeRoom3"); 
+                GameObject.Find("GameUI").GetComponent<FadeINOUT>().LoadFadeOut("heeRoom3");
                 return;
             }
             dialogText.text = failTalkList[index];

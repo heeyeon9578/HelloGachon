@@ -54,13 +54,14 @@ public class TalkManager_bmg1_sk : MonoBehaviour
 
         portraitData.Add(1000 + 0, portraitArr[2]);
         portraitData.Add(1000 + 1, portraitArr[3]);
+        portraitData.Add(1000 + 2, portraitArr[4]);
 
         //quest 시작 전 플레이어 독백
         talkData.Add(7000, new string[] { "오늘은 첫 수강신청하는 날!:0", "책상에 있는 노트북으로 해보자.:1" });
 
         //Quest Talk
         //Quest1: 컴퓨터를 확인하자! (questId: 10)
-        talkData.Add(10 + 1000, new string[] { "가즈아아아아:0" });
+        talkData.Add(10 + 1000, new string[] { "네이비즘 준비해뒀고.. 긴장하지 말구...:0", "헉 10시다!!!:1", "가즈아아아아아아아!:2", "(바로 수강신청이 진행되니 준비가 된 후에 터치하세요!):2" });
     }
 
     public string getName(int id, int nameIndex)

@@ -23,6 +23,9 @@ public class QuestManager_otl_sk : MonoBehaviour
     public int questActionIndex;
     public int nameIndex;
     public int talkIndex;
+    public float getHealth;
+    public float getPopular;
+    public float getAlchol;
     
     void Awake()
     {
@@ -35,6 +38,10 @@ public class QuestManager_otl_sk : MonoBehaviour
         isInteract = false;
         isTalking = false;
         isChoosing = false;
+
+        getPopular=GameData.gamedata.popular;
+        getHealth=GameData.gamedata.health;
+        getAlchol=GameData.gamedata.alchol;
     }
     
     void generateData()
@@ -219,8 +226,16 @@ public class QuestManager_otl_sk : MonoBehaviour
         questObject[2].SetActive(false);
         isChoosing = false;
 
+        //능력치 부여 및 저장
+        getHealth-=5;
+        getPopular+=10;
+        getAlchol+=10;
+
+        GameData.gamedata.health=getHealth;
+        GameData.gamedata.popular=getPopular;
+        GameData.gamedata.alchol=getAlchol;
+
         //참가하면 뒷풀이 씬으로 이동
-        Debug.Log("참가!");
         SceneManager.LoadScene("OT_AfterParty_sk");
     }
 
