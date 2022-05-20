@@ -51,8 +51,7 @@ public class SJ_SceneManager : MonoBehaviour
 
     void Awake()
     {
-        // month = GameData.gamedata.month;
-        month = "3월";
+        month = GameData.gamedata.month;
     }
 
     void Start()
@@ -246,7 +245,7 @@ public class SJ_SceneManager : MonoBehaviour
                     GameData.gamedata.month = "6월";
                     ModGameDataAfterClass();
                     Debug.Log("5월 수업 종료");
-                    GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("heeMonth4");
+                    GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Set_Activity_6June");
                 }
             break;
         }

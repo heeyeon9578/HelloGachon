@@ -9,7 +9,6 @@ public class SetActivityManager_sk : MonoBehaviour
     private AudioSource audioSource;
     public AudioClip audioClip;
     public int Count = 5;
-    public string getGroup;
     public GameObject clubBtn;
     public Text majortext;
     public Text stresstext;
@@ -31,7 +30,8 @@ public class SetActivityManager_sk : MonoBehaviour
     public float getPopular;
     public float getStress;
     public float getMajor;
-    public float getAlchol;  
+    public float getAlchol;
+    public string getGroup; 
     private Color32 activityColor;
     private string activityName;
     public GameObject schedulePanel;
@@ -53,12 +53,10 @@ public class SetActivityManager_sk : MonoBehaviour
         getHealth=GameData.gamedata.health;
         getAlchol=GameData.gamedata.alchol;
         getPopular=GameData.gamedata.popular;
-        getGroup=GameData.gamedata.groupname;
 
         if(GameData.gamedata.groupname!="")
             clubBtn.SetActive(true);
-
-        // bgmstart();
+            getGroup=GameData.gamedata.groupname;
 
         schedulePanel.SetActive(true);
         activityPanel.SetActive(true);
