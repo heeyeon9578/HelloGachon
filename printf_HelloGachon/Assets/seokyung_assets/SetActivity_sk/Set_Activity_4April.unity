@@ -5608,6 +5608,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BGM_prfb_sk
       objectReference: {fileID: 0}
+    - target: {fileID: 7439948479197336485, guid: 0985277e54e41e842ae57b9bd299fddc, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439948479197336485, guid: 0985277e54e41e842ae57b9bd299fddc, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2cebe5ef59f447d4d803665e3ecf1a2f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0985277e54e41e842ae57b9bd299fddc, type: 3}
 --- !u!1 &1523784588
@@ -6683,7 +6691,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClip: {fileID: 0}
   Count: 5
-  getGroup: 
   clubBtn: {fileID: 1086499487}
   majortext: {fileID: 28636757}
   stresstext: {fileID: 195959748}
@@ -6706,6 +6713,7 @@ MonoBehaviour:
   getStress: 0
   getMajor: 0
   getAlchol: 0
+  getGroup: 
   schedulePanel: {fileID: 673579213}
   activityPanel: {fileID: 1853858273}
   player: {fileID: 100870927}
