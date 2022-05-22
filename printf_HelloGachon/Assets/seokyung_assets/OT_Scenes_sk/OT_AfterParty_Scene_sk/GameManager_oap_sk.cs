@@ -26,7 +26,7 @@ public class GameManager_oap_sk : MonoBehaviour
         //End Talk
         if(index == talkTextList.Length){
             dialogPanel.SetActive(false);
-            SceneManager.LoadScene("BeforeMiniGame1");
+            GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("BeforeMiniGame1");
             return;
         }        
         

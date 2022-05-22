@@ -63,7 +63,7 @@ public class QuestManager_goot_sk : MonoBehaviour
     void ControlObject()
     {
         if(questId == 10 && questActionIndex == 1) {
-            SceneManager.LoadScene("OT_Listening_sk");
+            GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("OT_Listening_sk");
         }
     }
 }

@@ -178,7 +178,7 @@ public class TypeGameManager_mg1 : MonoBehaviour
                 dialogPanel.SetActive(false);
 
                 //다음 씬으로 넘어가기
-                GameObject.Find("GameUI").GetComponent<FadeINOUT>().LoadFadeOut("heeRoom3");
+                GameObject.Find("GameUI").GetComponent<FadeINOUT>().LoadFadeOut("Set_Activity_3March");
                 return;
             }
             dialogText.text = successTalkList[index];

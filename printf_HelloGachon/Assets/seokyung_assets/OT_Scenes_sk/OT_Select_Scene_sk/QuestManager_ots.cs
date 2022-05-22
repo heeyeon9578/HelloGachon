@@ -117,7 +117,7 @@ public class QuestManager_ots : MonoBehaviour
         GameData.gamedata.popular=getPopular;
 
         //참가하면 오티에 가기 위해 가천대 맵으로 이동
-        SceneManager.LoadScene("Going_OT_sk");
+        GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Going_OT_sk");
     }
 
     public void onNoBtnClick()
@@ -126,6 +126,6 @@ public class QuestManager_ots : MonoBehaviour
         isInteract = false;
         
         //참가하지 않으면 수강신청 게임 진행
-        SceneManager.LoadScene("BeforeMiniGame1");
+        GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("BeforeMiniGame1");
     }
 }

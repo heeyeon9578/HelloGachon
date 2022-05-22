@@ -75,7 +75,7 @@ public class QuestManager_bmg1_sk : MonoBehaviour
             case 10:
                 if(questActionIndex == 1) {
                     isInteract = false;
-                    SceneManager.LoadScene("MiniGame1");                
+                    GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("MiniGame1");     
                 }
                 break;
             default:

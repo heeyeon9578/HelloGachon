@@ -217,6 +217,6 @@ public class Ending_Credit_Manager_sk : MonoBehaviour
 
         //시작화면으로 전환
         Debug.Log("goto StartScene");
-        SceneManager.LoadScene("StartScene");
+        GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("StartScene");
     }
 }
