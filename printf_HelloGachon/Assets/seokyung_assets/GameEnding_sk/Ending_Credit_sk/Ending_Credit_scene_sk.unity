@@ -2348,6 +2348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: fade_in_out_panel
       objectReference: {fileID: 0}
+    - target: {fileID: 50044293166290481, guid: 4260fd65cf9c4d64d990602b50b0afba, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 50044293166290495, guid: 4260fd65cf9c4d64d990602b50b0afba, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

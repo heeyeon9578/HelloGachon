@@ -12,16 +12,19 @@ public class GameEndingManager_sk : MonoBehaviour
     public Text stressscore;
     public Text popularscore;
     public Text alcholscore;
+    public Text examscore;
     public Text majorgrade;
     public Text healthgrade;
     public Text stressgrade;
     public Text populargrade;
     public Text alcholgrade;
+    public Text examgrade;
     public Text majortotal;
     public Text healthtotal;
     public Text stresstotal;
     public Text populartotal;
     public Text alcholtotal;
+    public Text examtotal;
     private float total;
     private float endmajor;
     private float endhealth;
@@ -46,14 +49,16 @@ public class GameEndingManager_sk : MonoBehaviour
         endstress=100-GameData.gamedata.stress;
         endpopular=GameData.gamedata.popular;
         endalchol=GameData.gamedata.alchol;
-        testScore=(GameData.gamedata.scoreExam1+GameData.gamedata.scoreExam2)/2;
 
+        testScore=(GameData.gamedata.scoreExam1+GameData.gamedata.scoreExam2)/2;
+        examscore.text = testScore.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
         EndingScore();
+        SetPlayerName();
         SetTotal();
         SetMajor();
         SetPopular();
@@ -61,54 +66,15 @@ public class GameEndingManager_sk : MonoBehaviour
         SetStress();
         SetHealth();
         SetTestScore();
-        if(Input.GetMouseButtonDown(0))
-        {
-            GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Ending_Credit_scene_sk");
-        } 
-
     }
     void EndingScore()
     {
         total=endmajor*0.3f+endhealth*0.25f+endpopular*0.1f+endalchol*0.1f+endstress*0.25f;
         //Debug.Log(endmajor*0.3f+endhealth*0.25f+endpopular*0.1f+endalchol*0.1f);
     }
-    void SetTestScore()
+    void SetPlayerName()
     {
-        if(testScore>=90){
-            playerName.text=""+GameData.gamedata.playerName+" 시험 성적 : A+";
-            
-        }else if(testScore>=80&&testScore<90)
-        {
-            playerName.text=""+GameData.gamedata.playerName+" 시험 성적 : A";
-           
-        }else if(testScore>=75&&testScore<80)
-        {
-            playerName.text=""+GameData.gamedata.playerName+" 시험 성적 : B+";
-           
-        }else if(testScore>=70&&testScore<75)
-        {
-            playerName.text=""+GameData.gamedata.playerName+" 시험 성적 : B";
-           
-        }else if(testScore>=65&&testScore<70)
-        { 
-            playerName.text=""+GameData.gamedata.playerName+" 시험 성적 : C+";
-            
-        }else if(testScore>=60&&testScore<65)
-        {
-            playerName.text=""+GameData.gamedata.playerName+" 시험 성적 : C";
-            
-        }else if(testScore>=55&&testScore<60)
-        {
-            playerName.text=""+GameData.gamedata.playerName+" 시험 성적 : D+";
-            
-        }else if(testScore>=50&&testScore<55)
-        {
-            playerName.text=""+GameData.gamedata.playerName+" 시험 성적 : D";
-            
-        }else
-        {
-            playerName.text=""+GameData.gamedata.playerName+" 시험 성적 : F";
-        }
+        playerName.text="* "+GameData.gamedata.playerName+"의 학기 종합 성적";
     }
     void SetTotal()
     {
@@ -343,5 +309,57 @@ public class GameEndingManager_sk : MonoBehaviour
             stressgrade.text="F";
             stresstotal.text="0";
         }
+    }
+    void SetTestScore()
+    {
+        if(testScore>=90){
+            examgrade.text="A+";
+            examtotal.text="4.5";
+            
+        }else if(testScore>=80&&testScore<90)
+        {
+            examgrade.text="A";
+            examtotal.text="4.0";
+           
+        }else if(testScore>=75&&testScore<80)
+        {
+            examgrade.text="B+";
+            examtotal.text="3.5";
+           
+        }else if(testScore>=70&&testScore<75)
+        {
+            examgrade.text="B";
+            examtotal.text="3.0";
+           
+        }else if(testScore>=65&&testScore<70)
+        { 
+            examgrade.text="C+";
+            examtotal.text="2.5";
+            
+        }else if(testScore>=60&&testScore<65)
+        {
+            examgrade.text="C";
+            examtotal.text="2.0";
+            
+        }else if(testScore>=55&&testScore<60)
+        {
+            examgrade.text="D+";
+            examtotal.text="1.5";
+            
+        }else if(testScore>=50&&testScore<55)
+        {
+            examgrade.text="D";
+            examtotal.text="1.0";
+            
+        }else
+        {
+            examgrade.text="F";
+            examtotal.text="0";
+        }
+    }
+
+    public void gotoEndingCredit()
+    {
+        GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Ending_Credit_scene_sk");
     }
 }
