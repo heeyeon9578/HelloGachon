@@ -17,6 +17,11 @@ public class AudioPlay : MonoBehaviour
         sound=GameData.gamedata.bgmSound;
         SetStart();
     }
+
+    void Update() {
+        sliderA.value=GameData.gamedata.bgmSlider;
+        sound=GameData.gamedata.bgmSound;
+    }
     
     public void SetLever(float sliderValue){
         GameData.gamedata.bgmSlider=sliderA.value;

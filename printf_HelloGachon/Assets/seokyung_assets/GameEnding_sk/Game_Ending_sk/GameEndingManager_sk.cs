@@ -151,7 +151,7 @@ public class GameEndingManager_sk : MonoBehaviour
         }else
         {
             majorgrade.text="F";
-            majortotal.text="0";
+            majortotal.text="0.0";
         }
     }
     void SetHealth()
@@ -190,7 +190,7 @@ public class GameEndingManager_sk : MonoBehaviour
         }else
         {
             healthgrade.text="F";
-            healthtotal.text="0";
+            healthtotal.text="0.0";
         }
     }
     void SetPopular()
@@ -229,7 +229,7 @@ public class GameEndingManager_sk : MonoBehaviour
         }else
         {
             populargrade.text="F";
-            populartotal.text="0";
+            populartotal.text="0.0";
         }
     }
     void SetAlchol()
@@ -268,7 +268,7 @@ public class GameEndingManager_sk : MonoBehaviour
         }else
         {
             alcholgrade.text="F";
-            alcholtotal.text="0";
+            alcholtotal.text="0.0";
         }
     }
     void SetStress()
@@ -307,7 +307,7 @@ public class GameEndingManager_sk : MonoBehaviour
         }else
         {
             stressgrade.text="F";
-            stresstotal.text="0";
+            stresstotal.text="0.0";
         }
     }
     void SetTestScore()
@@ -354,7 +354,7 @@ public class GameEndingManager_sk : MonoBehaviour
         }else
         {
             examgrade.text="F";
-            examtotal.text="0";
+            examtotal.text="0.0";
         }
     }
 

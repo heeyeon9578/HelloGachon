@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class SetActivityManager_sk : MonoBehaviour
 {
-    private AudioSource audioSource;
-    public AudioClip audioClip;
     public int Count = 5;
     public GameObject clubBtn;
     public Text majortext;
@@ -37,6 +35,9 @@ public class SetActivityManager_sk : MonoBehaviour
     public GameObject schedulePanel;
     public GameObject activityPanel;
     public GameObject player;
+    public AudioSource touchSound;
+    public AudioSource resetSound;
+    public AudioSource decideSound;
     
     void Start()
     {
@@ -80,11 +81,6 @@ public class SetActivityManager_sk : MonoBehaviour
         if(getAlchol<0)
             getAlchol=0;
     }
-    // public void bgmstart()
-    // {
-    //     audioSource.clip=audioClip;
-    //     audioSource.Play();
-    // }
     public void abilityChange(string type)
     {
         switch(type)
@@ -92,6 +88,7 @@ public class SetActivityManager_sk : MonoBehaviour
             case "Drink":
                 if(Count>0&&getHealth>4)
                 {
+                    touchSound.Play();
                     Count--;
                     getHealth-=5;
                     getAlchol+=5;
@@ -106,6 +103,7 @@ public class SetActivityManager_sk : MonoBehaviour
             case "Health":
                 if(Count>0)
                 {
+                    touchSound.Play();
                     Count--;
                     getHealth+=5;
                     getStress-=5;
@@ -118,6 +116,7 @@ public class SetActivityManager_sk : MonoBehaviour
             case "Study":
                 if(Count>0&&getHealth>4)
                 {
+                    touchSound.Play();
                     Count--;
                     getHealth-=5;
                     getStress+=5;
@@ -131,7 +130,8 @@ public class SetActivityManager_sk : MonoBehaviour
             case "Interest":
                 if(Count>0&&getHealth>4)
                 {
-                   Count--;
+                    touchSound.Play();
+                    Count--;
                     getHealth-=5;
                     getStress-=3;
                     getPopular+=5;
@@ -196,6 +196,7 @@ public class SetActivityManager_sk : MonoBehaviour
                         infoTxt.text = "오늘은 동아리 친구들이랑 뭘 해볼까나~?\n체력 -3, 스트레스 -5,\n알코올 분해력 +5";
                     }
 
+                    touchSound.Play();
                     activityColor = new Color32(255, 167, 236, 225);
                     activityName = "동아리";
                 }
@@ -226,6 +227,7 @@ public class SetActivityManager_sk : MonoBehaviour
 
     public void resetChange()
     {
+        resetSound.Play();
         Count = 5;
 
         getHealth=GameData.gamedata.health;
@@ -264,6 +266,7 @@ public class SetActivityManager_sk : MonoBehaviour
 
     public void Complete()
     {
+        decideSound.Play();
         GameData.gamedata.health=getHealth;
         GameData.gamedata.alchol=getAlchol;
         GameData.gamedata.major=getMajor;
