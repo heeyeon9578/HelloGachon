@@ -10,7 +10,6 @@ public class GameManager_bmg1_sk : MonoBehaviour
     public GameObject dialogPanel;
     public GameObject scanObject;
     public GameObject controlSet;
-    public AudioSource playerRoomBGM;
     public Text dialogName;
     public Text dialogText;
     public Image portraitImg;
@@ -22,7 +21,6 @@ public class GameManager_bmg1_sk : MonoBehaviour
     void Start()
     {
         playerMonologue();
-        playerRoomBGM.Play();
         Debug.Log(qManager.checkQuest());
     }
 
