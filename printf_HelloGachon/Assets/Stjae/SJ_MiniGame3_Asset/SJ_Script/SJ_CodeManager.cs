@@ -80,7 +80,7 @@ public class SJ_CodeManager : MonoBehaviour
 
         public Loop(string argument) : base(argument)
         {
-            tmpError.text = "Error: function \"Loop()\" only supports integer as input";
+            UpdateErrorMsg("Error: function \"Loop()\" only supports integer as input");
         }
 
         public override dynamic Body(dynamic param)
@@ -163,7 +163,7 @@ public class SJ_CodeManager : MonoBehaviour
             ExecFunc(token);
         }
         else
-            tmpError.text = $"Error: no function name \"{token.Value}\" is found";
+            UpdateErrorMsg($"Error: no function name \"{token.Value}\" is found");
     }
 
     static void OperateValue(string value)
@@ -185,7 +185,7 @@ public class SJ_CodeManager : MonoBehaviour
             Rvalue = values[1].Trim();
 
             if(int.TryParse(Lvalue, out result))     // 좌측이 숫자일 경우
-                tmpError.text = "Error: Lvalue should be string or character";
+                UpdateErrorMsg("Error: Lvalue should be string or character");
             else
             {
                 try
@@ -197,6 +197,11 @@ public class SJ_CodeManager : MonoBehaviour
                 varDict[Lvalue] = Rvalue;
                 }
             }
+            break;
+
+            default:
+            UpdateOutput("");
+            UpdateErrorMsg("");
             break;
         }
 
@@ -245,11 +250,12 @@ public class SJ_CodeManager : MonoBehaviour
 
         if(requireBracket && acquiredBracket == false)
         {
-            tmpError.text = $"Error: function \"{funcName}()\" requires bracket";
+            UpdateErrorMsg($"Error: function \"{funcName}()\" requires bracket");
         }
         else if(requireBracket && acquiredBracket)
         {
             Body.Invoke(funcObj, new object[] { funcObj });
+            UpdateErrorMsg("");
         }
         else
             Body.Invoke(funcObj, new object[] { null });
@@ -262,5 +268,10 @@ public class SJ_CodeManager : MonoBehaviour
             tmpOutput.text = "";
             tmpOutput.text = output;
         }
+    }
+
+    static void UpdateErrorMsg(string message)
+    {
+        tmpError.text = message;
     }
 }

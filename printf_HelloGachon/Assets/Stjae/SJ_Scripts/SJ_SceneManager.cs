@@ -17,6 +17,8 @@ public class SJ_SceneManager : MonoBehaviour
     // internal
     string month;
     public Text dialText;
+    public Image optionBtn;
+    public GameObject optionPanel;
     public Class currentClass;
 
     public class Class
@@ -44,7 +46,8 @@ public class SJ_SceneManager : MonoBehaviour
 
     void Awake()
     {
-        month = GameData.gamedata.month;
+        // month = GameData.gamedata.month;
+        month = "5월";
     }
 
     void Start()
@@ -302,5 +305,10 @@ public class SJ_SceneManager : MonoBehaviour
             GameData.gamedata.stress += 10;
             GameData.gamedata.scoreExam2 += 50;
         }
+    }
+
+    public void OptionBtnOnClick()
+    {
+        optionPanel.SetActive(!optionPanel.activeSelf);
     }
 }
