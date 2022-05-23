@@ -18,8 +18,13 @@ public class SJ_SceneManager : MonoBehaviour
     string month;
     public Text dialText;
     public Image optionBtn;
+    public GameObject repeatBtn;
     public GameObject optionPanel;
     public Class currentClass;
+    public AudioSource classBGM;
+    public AudioSource clearSFX;
+    public AudioSource passSFX;
+    public AudioSource failSFX;
 
     public class Class
     {
@@ -47,21 +52,33 @@ public class SJ_SceneManager : MonoBehaviour
     void Awake()
     {
         // month = GameData.gamedata.month;
-        month = "5월";
+        month = "3월";
     }
 
     void Start()
     {
         if (month == "3월")
+        {
             currentClass = new Class(dialManager.Dial_Class_1);
+            classBGM.Play();
+        }
         else if(month == "4월")
+        {
             currentClass = new Class(dialManager.Dial_Class_2);
+            classBGM.Play();
+        }
         else if(month == "중간")
             currentClass = new Class(dialManager.Dial_Exam_1);
         else if(month == "5월")
+        {
             currentClass = new Class(dialManager.Dial_Class_3);
+            classBGM.Play();
+        }
         else if(month == "6월")
+        {
             currentClass = new Class(dialManager.Dial_Class_4);
+            classBGM.Play();
+        }
         else if(month == "기말")
             currentClass = new Class(dialManager.Dial_Exam_2);
 
@@ -85,11 +102,20 @@ public class SJ_SceneManager : MonoBehaviour
 
     public void EventHandlerClass1()
     {       
+        if (currentClass.dialNumber ==  5)
+        {
+            repeatBtn.SetActive(true);
+        }
+        
         switch(currentClass.dialNumber)
         {
             case 6:
                 if (varDict.Count > 0)
+                {
+                    classBGM.Stop();
+                    clearSFX.Play();
                     ++currentClass.dialNumber;
+                }
             break;
 
             default:
@@ -100,7 +126,7 @@ public class SJ_SceneManager : MonoBehaviour
                     GameData.gamedata.month = "4월";
                     ModGameDataAfterClass();
                     Debug.Log("3월 수업 종료");
-                    SceneManager.LoadScene("Group");
+                    GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Group");
                 }
             break;
         }
@@ -108,11 +134,20 @@ public class SJ_SceneManager : MonoBehaviour
 
     public void EventHandlerClass2()
     {
+        if (currentClass.dialNumber ==  6)
+        {
+            repeatBtn.SetActive(true);
+        }
+
         switch(currentClass.dialNumber)
         {
             case 7:
                 if (SJ_CodeManager.tmpOutput.text.Trim() != "")
+                {
+                    classBGM.Stop();
+                    clearSFX.Play();
                     ++currentClass.dialNumber;
+                }
             break;
 
             default:
@@ -123,7 +158,7 @@ public class SJ_SceneManager : MonoBehaviour
                     GameData.gamedata.month = "중간";
                     ModGameDataAfterClass();
                     Debug.Log("4월 수업 종료");
-                    SceneManager.LoadScene("heeMonth4");
+                    GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("heeMonth4");
                 }
             break;
         }
@@ -156,12 +191,14 @@ public class SJ_SceneManager : MonoBehaviour
                     if (result)
                     {
                         currentClass.AddDial(1, "<color=blue>정답입니다!</color>");
+                        passSFX.Play();
                         ++currentClass.dialNumber;
                         ModGameDataAfterExam1(true);
                     }
                     else
                     {
                         currentClass.AddDial(1, "<color=red>틀렸습니다!</color>");
+                        failSFX.Play();
                         ++currentClass.dialNumber;
                         ModGameDataAfterExam1(false);
                     }
@@ -176,20 +213,29 @@ public class SJ_SceneManager : MonoBehaviour
                     GameData.gamedata.month = "5월";
                     ModGameDataAfterClass();
                     Debug.Log("중간고사 종료");
-                    SceneManager.LoadScene("Set_Activity_5May");
+                    GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Set_Activity_5May");
                 }
             break;
         }
     }
 
     public void EventHandlerClass3()
-    {       
+    {
+        if (currentClass.dialNumber ==  5)
+        {
+            repeatBtn.SetActive(true);
+        }
+
         switch(currentClass.dialNumber)
         {
             case 6:
                 int numLines = SJ_CodeManager.tmpOutput.text.Trim().Split('\n').Length;
                 if (numLines == 10)
+                {
+                    classBGM.Stop();
+                    clearSFX.Play();
                     ++currentClass.dialNumber;
+                }
             break;
 
             default:
@@ -200,7 +246,7 @@ public class SJ_SceneManager : MonoBehaviour
                     GameData.gamedata.month = "6월";
                     ModGameDataAfterClass();
                     Debug.Log("5월 수업 종료");
-                    SceneManager.LoadScene("heeMonth4");
+                    GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("heeMonth4");
                 }
             break;
         }
@@ -208,6 +254,11 @@ public class SJ_SceneManager : MonoBehaviour
 
     public void EventHandlerClass4()
     {       
+        if (currentClass.dialNumber ==  4)
+        {
+            repeatBtn.SetActive(true);
+        }
+
         switch(currentClass.dialNumber)
         {
             case 5:
@@ -217,7 +268,11 @@ public class SJ_SceneManager : MonoBehaviour
                 newLineNumber = newLineNumber / newLine.Length;
                 string finalOutput = SJ_CodeManager.tmpOutput.text.Trim().Replace("\n", "");
                 if (newLineNumber == 7 && finalOutput == "yeeeyeee")
+                {
+                    classBGM.Stop();
+                    clearSFX.Play();
                     ++currentClass.dialNumber;
+                }
             break;
 
             default:
@@ -228,7 +283,7 @@ public class SJ_SceneManager : MonoBehaviour
                     GameData.gamedata.month = "기말";
                     ModGameDataAfterClass();
                     Debug.Log("6월 수업 종료");
-                    SceneManager.LoadScene("MiniGame3");
+                    GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("MiniGame3");
                 }
             break;
         }
@@ -247,12 +302,14 @@ public class SJ_SceneManager : MonoBehaviour
                 if (newLineNumber == 8 && finalOutput == "yeeYeeYee")
                 {
                     currentClass.AddDial(1, "<color=blue>정답입니다!</color>");
+                    passSFX.Play();
                     ++currentClass.dialNumber;
                     ModGameDataAfterExam2(true);
                 }
                 else
                 {
                     currentClass.AddDial(1, "<color=red>틀렸습니다!</color>");
+                    failSFX.Play();
                     ++currentClass.dialNumber;
                     ModGameDataAfterExam2(false);
                 }
@@ -266,7 +323,7 @@ public class SJ_SceneManager : MonoBehaviour
                     GameData.gamedata.month = "방학";
                     ModGameDataAfterClass();
                     Debug.Log("기말고사 종료");
-                    SceneManager.LoadScene("heeRoom6");
+                    GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("heeRoom6");
                 }
             break;
         }
@@ -310,5 +367,11 @@ public class SJ_SceneManager : MonoBehaviour
     public void OptionBtnOnClick()
     {
         optionPanel.SetActive(!optionPanel.activeSelf);
+    }
+
+    public void RepeatBtnOnClick()
+    {
+        currentClass.dialNumber = 1;
+        repeatBtn.SetActive(false);
     }
 }
