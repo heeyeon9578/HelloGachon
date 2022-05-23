@@ -10,7 +10,6 @@ public class DialogManager_sk : MonoBehaviour
     public GameObject dialogPanel;
     public GameObject controlSet;
     public GameObject scanObject;
-    public AudioSource playerRoomBGM;
     public AudioSource phoneAlarm;
     public Text dialogName;
     public Text dialogText;
@@ -21,7 +20,6 @@ public class DialogManager_sk : MonoBehaviour
     
     void Start()
     {
-        playerRoomBGM.Play();
         phoneAlarm.Play();
         Debug.Log(qManager.checkQuest());
     }

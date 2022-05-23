@@ -76,7 +76,7 @@ public class BtnType : MonoBehaviour
             GameData.gamedata.stress=0;
             GameData.gamedata.major=0;
             GameData.gamedata.month="3월";
-            GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("MiniGame1");
+            GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("OT_Select_sk");
         }
     }
 

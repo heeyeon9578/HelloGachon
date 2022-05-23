@@ -1199,6 +1199,14 @@ PrefabInstance:
         -5, \uC54C\uCF54\uC62C \uBD84\uD574\uB825 +5,\n\uC778\uAE30\uB3C4 +5, \uC804\uACF5
         -3"
       objectReference: {fileID: 0}
+    - target: {fileID: 5147844844070572175, guid: 8ee4882843eb5e943ada98152ca2bec9, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -400
+      objectReference: {fileID: 0}
+    - target: {fileID: 5147844844070572175, guid: 8ee4882843eb5e943ada98152ca2bec9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5147844844151524035, guid: 8ee4882843eb5e943ada98152ca2bec9, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

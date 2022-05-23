@@ -11,6 +11,7 @@ public class QuestManager_ots : MonoBehaviour
     public GameObject[] questObject;
     public GameObject dialogPanel;
     public GameObject controlSet;
+    public AudioSource phoneAlarm;
     public Text dialogName;
     public Text dialogText;
     public bool isInteract;
@@ -85,6 +86,7 @@ public class QuestManager_ots : MonoBehaviour
         {
             case 10:
                 if(questActionIndex == 1 && isTouched == false) {
+                    phoneAlarm.Stop();
                     questObject[0].SetActive(false);
                     questObject[1].SetActive(true);
                     isInteract = true;                 
