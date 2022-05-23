@@ -19,6 +19,7 @@ public class TypeGameManager_mg1 : MonoBehaviour
     public GameObject Register;
     public GameObject registerResult;
     public GameObject dialogPanel;
+    public GameObject optionPanel;
     public List<ClassNum_mg1> classNumList;
     public string[] successTalkList;
     public string[] failTalkList;
@@ -66,6 +67,7 @@ public class TypeGameManager_mg1 : MonoBehaviour
             if(setTime < 0 && !isApplyBtn)
             {
                 setZero();
+                typeGameBGM.Stop();
                 timeoverSound.Play(); 
                 resultTxt.text = "타임오버!";
                 registerResult.SetActive(true);
@@ -75,6 +77,8 @@ public class TypeGameManager_mg1 : MonoBehaviour
             if(isApplyBtn)
             {
                 setZero();
+                typeGameBGM.Stop();
+
                 if(inputClassNum.text == classNumList[currentClassNum].classNum)
                 {
                     successSound.Play();
@@ -127,7 +131,8 @@ public class TypeGameManager_mg1 : MonoBehaviour
     void resetTimer()
     {
         if(loop < 6)
-        {            
+        {
+            typeGameBGM.Play();
             registerResult.SetActive(false);
             setTime = getSetTime;
             remainingTime = CountdowmTimer(true);            
@@ -147,6 +152,18 @@ public class TypeGameManager_mg1 : MonoBehaviour
         remainingTime = @"00:00:000";
         setTime = 0;
         isPlaying = false;
+    }
+
+    public void openOption() {
+        isPlaying = false;
+        optionPanel.SetActive(true);
+        typeGameBGM.Stop();
+    }
+
+    public void closeOption() {
+        isPlaying = true;
+        optionPanel.SetActive(false);
+        typeGameBGM.Play();
     }
 
     //**수강신청 게임 로직
