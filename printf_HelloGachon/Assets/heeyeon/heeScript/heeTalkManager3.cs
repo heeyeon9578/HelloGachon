@@ -287,7 +287,8 @@ public class heeTalkManager3 : MonoBehaviour
        switch(type){
            case "y":
                 talkPanel4.SetActive(false);
-                SceneManager.LoadScene("heeFin3");
+                GameObject.Find("heeCanvas").GetComponent<FadeINOUT>().LoadFadeOut("heeFin3");
+
                 break;
 
        }

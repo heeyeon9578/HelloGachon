@@ -24,7 +24,7 @@ public class heeQuestManager : MonoBehaviour
         GenerateData();
     }
 
-    // 퀘스트 생성 - 퀘스트 코드 공유하기!!
+    // 퀘스트 생성
     void GenerateData()
     {
         questList.Add(10, new heeQuestData("1월: npc들과 대화하며 npc 위치익히기", new int[]{1000, 2000, 8000}));

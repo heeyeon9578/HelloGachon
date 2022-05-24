@@ -18,6 +18,7 @@ public class heegameManager4 : MonoBehaviour
 
     public GameObject talkPanel;
     public GameObject talkPanel2;
+    // public GameObject talkPanel5; //간식이벤트 진행할지 묻는 판넬
     public GameObject mudangDown;
     public Text talkText;
     public Text talkText2;
@@ -32,14 +33,13 @@ public class heegameManager4 : MonoBehaviour
     public GameObject heemudang; //mudang 오브젝트
     public GameObject friend; //friend 오브젝트
     private Rigidbody2D rb2;
-    private string[] talkNameList=new string[4]{"선배","선배","선배","친구"};
+    private string[] talkNameList=new string[5]{"선배","선배","선배","친구",GameData.gamedata.playerName};
 
 
   
     void Awake() {
         cmCamera = cmVcam.GetComponent<CinemachineVirtualCamera>();
         rb2 = heemudang.GetComponent<Rigidbody2D>();
-        // Debug.Log(questManager.CheckQuest());
     }
 
     void Start(){
@@ -58,7 +58,6 @@ public class heegameManager4 : MonoBehaviour
             talkIndex = 0;
             
             talkPanel.SetActive(false);
-            // Debug.Log(questManager.CheckQuest(id));
             return; //void 에서 return 가능(강제 종료 기능)-> return 뒤에 아무것도 안쓰면 됌
 
         }

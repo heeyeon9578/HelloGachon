@@ -21,23 +21,25 @@ public class DialogManager_hee1 : MonoBehaviour
 
     void Start()
     {
-        TestSub();
-        // Debug.Log(qManager.checkQuest());
+        TestSub(); //게임 시작에 독백부분을 위해 Start 함수에 넣음
+        
     }
-
+    //게임 시작에 독백부분 담당 함수
     public void TestSub(){
-        string talkData2 = tManager.getTalk(3000, talkIndex); //처음에 게임 시작 전에 인트로가 나올 수 있도록 구성
-        string talkName2 = tManager.getName(3000, nameIndex);
-        //End Talk
+        string talkData2 = tManager.getTalk(3000, talkIndex); //처음에 게임 시작 전에 독백 다이얼로그가 나올 수 있도록 구성
+        string talkName2 = tManager.getName(3000, nameIndex); //처음에 게임 시작 전에 나오는 독백에 이름이 나올 수 있도록 구성
+        //End Talk (독백 다이얼로그가 끝나면)
         if(talkData2 ==null){
             objectDetect = false;
             talkIndex = 0;
-            dialogPanel.SetActive(false);
+            dialogPanel.SetActive(false); //다이얼로그 패널을 끄기
 
             return; //void 에서 return 가능(강제 종료 기능)-> return 뒤에 아무것도 안쓰면 됌
 
         }
         
+        //이름부분에는 이름, 대사부분에는 대사넣기
+        //대사부분을 ':' 구분자를 이용하여 나누고, ':' 뒤에는 초상화 번호로 이용
         dialogName.text = talkName2;
         dialogText.text = talkData2.Split(':')[0];
         portraitImg.sprite = tManager.GetPortrait(3000,int.Parse(talkData2.Split(':')[1]));
@@ -45,8 +47,8 @@ public class DialogManager_hee1 : MonoBehaviour
 
         objectDetect = true;
 
-        dialogPanel.SetActive(true);
-        talkIndex++;
+        dialogPanel.SetActive(true); //독백 다이얼로그가 시작되면, 패널을 켜기
+        talkIndex++; 
         
     }
     // 조사대상이 있을 때만 대화창 띄우기

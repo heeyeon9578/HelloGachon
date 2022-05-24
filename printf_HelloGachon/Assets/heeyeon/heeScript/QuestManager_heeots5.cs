@@ -24,12 +24,7 @@ public class QuestManager_heeots5 : MonoBehaviour
         generateData();
     }
 
-    // void Start()
-    // {
-    //     isInteract = false;
-    //     questObject[0].SetActive(true);
-    // }
-    
+
     void generateData()
     {
         questList.Add(10, new QuestData_heeots3("수업을 들으러 학교에 가자", new int[] {800}));
@@ -97,7 +92,8 @@ public class QuestManager_heeots5 : MonoBehaviour
         isInteract = false;
         Debug.Log("간다!");
         //참여한다고 하면 바로 메인맵으로 이동 후, 5월 수업 진행(성재님)
-        SceneManager.LoadScene("MiniGame3");
+        GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("MiniGame3");
+        
     }
 
 

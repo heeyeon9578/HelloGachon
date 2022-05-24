@@ -71,7 +71,7 @@ public class heeFinTalkManager3 : MonoBehaviour
         //Quest1: 선배님께 말걸자! (questId: 10)
         talkData.Add(10 + 2000, new string[] { "안녕!:0", "입학식에 왔구나! 환영해~:0", "저기 자리에 앉으면 입학식이 시작될거야!:2" });
 
-        //Quest2: 오티 시작! (questId: 20)
+        //Quest2: 입학식 시작! (questId: 20)
         talkData.Add(20 + 200, new string[] { "신입생 여러분~ 가천대학교 컴퓨터공학과에 입학한 걸 진심으로 축하드립니다!:0",
                                                 "지금부터 신입생 입학식을 시작하겠습니다!:2",
                                                 "오늘은 여러분들께 MT, 동아리홍보전, 학생회가입, 간식행사, 한마음 페스티벌, 중간고사/기말고사에 대해 설명 드릴 예정입니다!:0",

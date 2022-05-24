@@ -102,9 +102,10 @@ public class QuestManager_heeots3 : MonoBehaviour
     {
         questObject[2].SetActive(false);
         isInteract = false;
-        Debug.Log("간다!");
+       
         //참여한다고 하면 바로 메인맵으로 이동 후, 입학식 진행
-        SceneManager.LoadScene("heeMonth3");
+        GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("heeMonth3");
+
     }
 
 
@@ -112,10 +113,11 @@ public class QuestManager_heeots3 : MonoBehaviour
     {
         questObject[2].SetActive(false);
         isInteract = false;
-        Debug.Log("안가!");
+        
         
         //참여하지 않으면 3월 수업 퀘스트 진행
-        SceneManager.LoadScene("MiniGame3");
+        GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("MiniGame3");
+
     }
 
 

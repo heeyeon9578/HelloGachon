@@ -17,6 +17,7 @@ public class heeTalkManager4 : MonoBehaviour
 
     public GameObject talkPanel3; // 무당이 예/ 아니오 판넬
     public GameObject talkPanel4;
+    public GameObject talkPanel5; //간식행사 예/아니오 판넬
     public Text talkText3;
     public GameObject newStu; //newStu 오브젝트
     public GameObject mudang; //mudang 오브젝트
@@ -53,7 +54,7 @@ public class heeTalkManager4 : MonoBehaviour
            //npcs
        //시작할 때 대사
        talkData.Add(7000, new string[] {"중간고사 공부하느라 많이 힘들지?:4"," 중간고사 보기전에 격려 차원에서 간식 이벤트가 있어~:4","AI공학관 앞으로 나를 찾아오면 햄버거랑 콜라를 받을 수 있어~:4", 
-                                         "나랑 같이 가자! AI공학관에 가기 전에 나를 먼저 찾아와~!:5"});
+                                         "나랑 같이 가자! AI공학관에 가기 전에 나를 먼저 찾아와~!:5","간식이벤트에 참여할까?:0"});
 
        //buildings
        talkData.Add(100, new string[] {"이곳은 카페다. 카페이름은 파스쿠치이다."});
@@ -184,12 +185,12 @@ public class heeTalkManager4 : MonoBehaviour
        Debug.Log(id);
 
        if(!talkData.ContainsKey(id)){
-        //    Debug.Log(id);
 
-           
 
            if((id-questManager.GetQuestTalkIndex(id))==3000){
                if(!talkData.ContainsKey(id-id%10)){
+
+                   
                //퀘스트 맨 처음 대사 마저 없을 때,
                //기본 대사를 가져오기      
                if(talkIndex == talkData[id-id%100].Length){
@@ -202,17 +203,21 @@ public class heeTalkManager4 : MonoBehaviour
 
                }
                  
-           }}
+           }
+                
+           }
            else{
                if(!talkData.ContainsKey(id-id%10)){
                //퀘스트 맨 처음 대사 마저 없을 때,
                //기본 대사를 가져오기      
                if(talkIndex == talkData[id-id%100].Length){
-                    
+
                  
                   return null;
                }                 
                else{
+
+  
                     return talkData[id - id%100][talkIndex];
 
                }
@@ -221,7 +226,7 @@ public class heeTalkManager4 : MonoBehaviour
                //해당 퀘스트 진행 순서 중 대사가 없을 때
                //퀘스트 맨 처음 대사를 가져옴
                if(talkIndex == talkData[id-id%10].Length){                  
-
+ 
                   return null;
                   }                 
                else{
@@ -237,7 +242,7 @@ public class heeTalkManager4 : MonoBehaviour
        }
 
        if(talkIndex==talkData[id].Length){ 
-
+           
 
           //퀘스트 1000일때, 실행할 것
           if((id-questManager.GetQuestTalkIndex(id))==1000){
@@ -248,14 +253,16 @@ public class heeTalkManager4 : MonoBehaviour
                 pos2 = newStu.transform.position;
                 friend.transform.position = new Vector3(pos2.x+1,pos2.y+1, 0);
 
+           }else if(id==7000){
+               talkPanel5.SetActive(true);
+               
+                
            }
-
-           
-
-           
+            
            return null;
        }
        else{
+
            return talkData[id][talkIndex];
 
        }
@@ -302,7 +309,7 @@ public class heeTalkManager4 : MonoBehaviour
                 break;    
        }
    }
-
+   //중간고사로 넘어가기 위한 함수
    public void SelectTalk2(string type){
 
        switch(type){
@@ -311,10 +318,36 @@ public class heeTalkManager4 : MonoBehaviour
                 Debug.Log("간식 이벤트로 체력+5 ");
                 talkPanel4.SetActive(false);
                 //성재님의 중간고사 미니게임으로 이동
-                SceneManager.LoadScene("MiniGame3");
+                GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("MiniGame3");
+                
                 break;
 
        }
 
    }
+
+   //간식이벤트를 진행할지 말지 결정하는 함수
+   //중간고사로 넘어가기 위한 함수
+   public void SelectTalk3(string type){
+
+       switch(type){
+           case "y":
+
+                talkPanel5.SetActive(false);
+                
+                break;
+
+            case "n":
+                
+                //성재님의 중간고사 미니게임으로 이동
+                GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("MiniGame3");
+                
+                break;
+
+
+
+       }
+
+   }
+
 }

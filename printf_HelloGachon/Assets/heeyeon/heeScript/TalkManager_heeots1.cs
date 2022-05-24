@@ -5,8 +5,6 @@ using UnityEngine;
 public class TalkManager_heeots1 : MonoBehaviour
 {
     Dictionary<int, string[]> talkName;
-    // Dictionary<int, string[]> talkData;
-
     Dictionary<int, string[]> talkData;
     Dictionary<int, Sprite> portraitData;
 

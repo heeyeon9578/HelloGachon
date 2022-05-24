@@ -30,7 +30,7 @@ public class heegameManager5 : MonoBehaviour
     public GameObject heemudang; //mudang 오브젝트
     public GameObject friend; //friend 오브젝트
     private Rigidbody2D rb2;
-    private string[] talkNameList=new string[4]{"선배","선배","선배","친구"};
+    private string[] talkNameList=new string[5]{"선배","선배","선배","친구",GameData.gamedata.playerName};
     
 
 
@@ -38,7 +38,6 @@ public class heegameManager5 : MonoBehaviour
     void Awake() {
         cmCamera = cmVcam.GetComponent<CinemachineVirtualCamera>();
         rb2 = heemudang.GetComponent<Rigidbody2D>();
-        // Debug.Log(questManager.CheckQuest());
     }
 
     void Start(){
@@ -55,7 +54,7 @@ public class heegameManager5 : MonoBehaviour
             objectDetect = false;
             talkIndex = 0;
             talkPanel.SetActive(false);
-            // Debug.Log(questManager.CheckQuest(id));
+
             return; //void 에서 return 가능(강제 종료 기능)-> return 뒤에 아무것도 안쓰면 됌
 
         }
@@ -144,7 +143,7 @@ public class heegameManager5 : MonoBehaviour
         heemudangAction5.controlKey.SetActive(true);
         rb2.constraints = RigidbodyConstraints2D.FreezeAll;
         heenewStu.transform.position = new Vector3(pos2.x+1,pos2.y+1, 0);
-        // heeQuestManager5.ControlObject();
+
     }
 
     //카메라를 위한 스크립트

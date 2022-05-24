@@ -40,9 +40,9 @@ public class heeFinQuestManager3 : MonoBehaviour
     {
         // 1.학번 및 홈페이지 2.수강신청 3.사이버캠퍼스 4.학사행정 5.비교과신청(WIND) 6.등록금 7.건너뛰기
         questList.Add(10, new heeFinQuestData3("선배님께 말걸자!", new int[] { 2000 }));
-        questList.Add(20, new heeFinQuestData3("오티 시작!", new int[] { 200, 2000 }));
-        questList.Add(30, new heeFinQuestData3("뒷풀이에 갈까?", new int[] { 2000 }));
-        questList.Add(40, new heeFinQuestData3("오티 씬 종료!", new int[] { 0 }));
+        questList.Add(20, new heeFinQuestData3("입학식 시작!", new int[] { 200, 2000 }));
+        questList.Add(30, new heeFinQuestData3("수업에 갈까?", new int[] { 2000 }));
+        questList.Add(40, new heeFinQuestData3("입학식 씬 종료!", new int[] { 0 }));
     }
 
     public int getQuestTalkIndex(int id)

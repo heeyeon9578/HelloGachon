@@ -9,7 +9,6 @@ public class heeFinManager3 : MonoBehaviour
     public heeFinQuestManager3 qManager;
     public GameObject dialogPanel;
     public GameObject scanObject;
-    //public AudioSource otBGM;
     public Text dialogName;
     public Text dialogText;
     public Image portraitImg;
@@ -21,7 +20,6 @@ public class heeFinManager3 : MonoBehaviour
     
     void Start()
     {
-        //otBGM.Play();
         playerMonologue();
         Debug.Log(qManager.checkQuest());
     }
@@ -35,7 +33,6 @@ public class heeFinManager3 : MonoBehaviour
             objectDetect = false;
             talkIndex = 0;
             dialogPanel.SetActive(false);
-            //Debug.Log(questManager.CheckQuest());
             return; //void 에서 return 가능(강제 종료 기능)-> return 뒤에 아무것도 안쓰면 됨
         }
         

@@ -37,13 +37,11 @@ public class heegameManager3 : MonoBehaviour
     void Awake() {
         cmCamera = cmVcam.GetComponent<CinemachineVirtualCamera>();
         rb2 = heemudang.GetComponent<Rigidbody2D>();
-        // Debug.Log(questManager.CheckQuest());
     }
 
     void Start(){
         TestSub();
     }
-
 
     public void TestSub(){
         string talkName2 = talkManager.getName(7000, nameIndex);
@@ -54,7 +52,6 @@ public class heegameManager3 : MonoBehaviour
             objectDetect = false;
             talkIndex = 0;
             talkPanel.SetActive(false);
-            // Debug.Log(questManager.CheckQuest(id));
             return; //void 에서 return 가능(강제 종료 기능)-> return 뒤에 아무것도 안쓰면 됌
 
         }
@@ -69,8 +66,6 @@ public class heegameManager3 : MonoBehaviour
         talkIndex++;
         
     }
-
-
     
     // 조사대상이 있을 때만 대화창 띄우기
     public void Action(GameObject scanObj)
@@ -115,7 +110,6 @@ public class heegameManager3 : MonoBehaviour
  //마우스 클릭시 퀘스트 마크가 팝업
     public void questionMark1(){
         talkPanel2.SetActive(true);
-
        
     }
  //마우스 클릭 후 떼어낼때 퀘스트 마크가 팝다운

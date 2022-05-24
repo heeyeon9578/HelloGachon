@@ -1,3 +1,7 @@
+// Fluffing a Duck Kevin MacLeod (incompetech.com)
+// Licensed under Creative Commons: By Attribution 3.0 License
+// http://creativecommons.org/licenses/by/3.0/
+// Music promoted by https://www.chosic.com/free-music/all/ 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,7 +47,6 @@ public class heegameManager : MonoBehaviour
         TestSub();
     }
 
-
     public void TestSub(){
 
         string talkName2 = talkManager.getName(7000, nameIndex);
@@ -54,7 +57,6 @@ public class heegameManager : MonoBehaviour
             objectDetect = false;
             talkIndex = 0;
             talkPanel.SetActive(false);
-            // Debug.Log(questManager.CheckQuest(id));
             return; //void 에서 return 가능(강제 종료 기능)-> return 뒤에 아무것도 안쓰면 됌
 
         }

@@ -116,6 +116,8 @@ public class QuestManager_heeots6 : MonoBehaviour
         GameData.gamedata.alchol += 10;
         FinishImage.SetActive(false);
         SceneManager.LoadScene("Game_Ending_Scene_sk");
+        
+        
     }
     
 
@@ -127,5 +129,7 @@ public class QuestManager_heeots6 : MonoBehaviour
         
         //참여하지 않으면  엔딩씬
         SceneManager.LoadScene("Game_Ending_Scene_sk");
+        
+        
     }
 }

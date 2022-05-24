@@ -18,6 +18,7 @@ public class DialogManager_hee4 : MonoBehaviour
 
     public Image portraitImg;
     public bool objectDetect = false; 
+    //독백부분 대사에 맞춰, 이름이 나오도록 배열 구성
     private string[] talkNameList=new string[3]{"교수님","교수님",GameData.gamedata.playerName};
 
     void Start()
