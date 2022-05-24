@@ -14,7 +14,6 @@ public class GRPlayerAction : MonoBehaviour
     public GameObject mudang;
     public GRQuestManager quset;
     public GRTalkManager talk;
-    //public GameObject option;
     Rigidbody2D rigid;
     public float speed;
     public GRManager manager;
@@ -93,21 +92,11 @@ public class GRPlayerAction : MonoBehaviour
             Vector3 pos2= play.transform.position;
             var heeFriendAction = friend.GetComponent<FEFriendAction>();
 
-            //Debug.Log("퀘스트번호가 1010일 때, 친구의 포지션을 주인공 옆으로 계속 업데이트");
-            // friend.transform.Translate(Vector3(pos2.x+1,pos2.y+1, 0));
+            
             friend.transform.position = new Vector3(pos2.x+1,pos2.y+1, 0);
             heeFriendAction.enabled = true;
         }
-        //  if(Input.GetKey(KeyCode.Escape))
-        // {
-        //     option.SetActive(true);
-        //     //Debug.Log(player.transform.position.x);
-        //    // Debug.Log(player.transform.position.y);
-        // }
-        // GameData.gamedata.h=play.transform.position.x;
-        // GameData.gamedata.v=play.transform.position.y;
-        // GameData.gamedata.mudangh=mudang.transform.position.x;
-        // GameData.gamedata.mudangv=mudang.transform.position.y;
+        
         GameData.gamedata.playerpos=play.transform.position;
         GameData.gamedata.mudangpos=mudang.transform.position;
         upDown=false;
@@ -119,15 +108,7 @@ public class GRPlayerAction : MonoBehaviour
         downDown=false;
         downUp=false;
         
-        // Scan Object
-        // if(Input.GetButtonDown("Jump"))
-        // {
-        //     if(scanObject != null){
-        //         manager.Action(scanObject);
-        //     }else if(manager.objectDetect){
-        //         manager.TestSub();
-        //     }           
-        // }
+        
     }
     void FixedUpdate() {
         Vector2 moveVec=isHorizonMove?new Vector2(h,0):new Vector2(0,v);
@@ -206,7 +187,7 @@ public class GRPlayerAction : MonoBehaviour
         
         if(collision.gameObject.tag=="Freedom")
         {
-            Debug.Log("free");
+            
             GameObject.Find("Canvas").GetComponent<FadeINOUT>().startFadeOut2();
         }
     }

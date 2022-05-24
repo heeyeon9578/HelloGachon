@@ -76,12 +76,7 @@ public class GRMudangAction : MonoBehaviour
         else if(hDown && h==1)
             dirVec=Vector3.right;
 
-        // if(Input.GetKey(KeyCode.Escape))
-        // {
-        //     option.SetActive(true);
-        //     //Debug.Log(player.transform.position.x);
-        //    // Debug.Log(player.transform.position.y);
-        // }
+       
         GameData.gamedata.mudangpos=mudang.transform.position;
         GameData.gamedata.playerpos.x=mudang.transform.position.x+1;
         GameData.gamedata.playerpos.y=mudang.transform.position.y+1;
@@ -109,12 +104,7 @@ public class GRMudangAction : MonoBehaviour
             scanObject=null;
         
     }
-       void Going()
-    {
-        // float x=GameData.gamedata.mudangh;
-        // float y=GameData.gamedata.mudangv;
-        //mudang.transform.position=new Vector3(x,y,0);
-    }
+    
     public void MUButtonDown(string type)
     {
         switch (type)

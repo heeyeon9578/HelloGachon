@@ -18,7 +18,8 @@ public class GRManager : MonoBehaviour
     public GameObject mudangDown;
     public GameObject friend;
     public Text dialogName;
-    public string[] talkNameList=new string[]{"선배","친구","선배","선배","선배","선배","선배","선배","친구"};
+    public string[] talkNameList=new string[]{"선배","친구","선배","선배","선배","선배","선배","선배","친구","친구"};
+    public string[] ts=new string[]{"clsrns"};
     public Text talkText;
     public Text talkText2;
     public GameObject scanObject;
@@ -32,8 +33,6 @@ public class GRManager : MonoBehaviour
     public GameObject heenewStu; //newStu 오브젝트
     public GameObject heemudang; //mudang 오브젝트
     private Rigidbody2D rb2;
-    // public string talkData2;
-    // public string talkName2;
     public int IdData;
     public bool success=false;
     public AudioPlay bgm;
@@ -42,23 +41,15 @@ public class GRManager : MonoBehaviour
     void Awake() {
         cmCamera = cmVcam.GetComponent<CinemachineVirtualCamera>();
         rb2 = heemudang.GetComponent<Rigidbody2D>();
-        //Debug.Log(questManager.CheckQuest());
     }
 
     void Start(){
-        //Debug.Log(GameData.gamedata.talkend);
-        // bgm.sliderA.value=GameData.gamedata.bgmSlider;
-        // bgm.sound=GameData.gamedata.bgmSound;
-        // bgm.SetStart();
         success=GameData.gamedata.talkend;
-        Debug.Log("Can you read me");
-
         if(Count==0&&!success)
             TestSub();
         else if(Count==1)
             TestSub();
 
-        //TestSub();
     }
 
 
@@ -69,7 +60,6 @@ public class GRManager : MonoBehaviour
             IdData=40;
         else if(Count==3)
            IdData=50;
-        // IdData=40;
         //처음에 게임 시작 전에 인트로가 나올 수 있도록 구성
         string talkData2 = talkManager.GetTalk(IdData, talkIndex);
         string talkName2 = talkManager.getName(IdData, nameIndex);
@@ -81,8 +71,6 @@ public class GRManager : MonoBehaviour
             talkIndex = 0;
             success=true;
             GameData.gamedata.talkend=success;
-            Debug.Log(GameData.gamedata.talkend);
-            // Debug.Log(questManager.CheckQuest(id));
             return; //void 에서 return 가능(강제 종료 기능)-> return 뒤에 아무것도 안쓰면 됌
 
         }
@@ -120,7 +108,7 @@ public class GRManager : MonoBehaviour
         if(talkData ==null){
             isAction = false;
             talkIndex = 0;
-            Debug.Log(questManager.CheckQuest(id));
+            questManager.CheckQuest(id);
             return; //void 에서 return 가능(강제 종료 기능)-> return 뒤에 아무것도 안쓰면 됌
         }
 

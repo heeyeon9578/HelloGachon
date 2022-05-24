@@ -98,8 +98,7 @@ public class FEPlayerAction : MonoBehaviour
         if(Input.GetKey(KeyCode.Escape))
         {
             option.SetActive(true);
-            //Debug.Log(player.transform.position.x);
-           // Debug.Log(player.transform.position.y);
+            
         }
         GameData.gamedata.playerpos=play.transform.position;
         upDown=false;
@@ -153,7 +152,9 @@ public class FEPlayerAction : MonoBehaviour
                 rightValue=1;
                 break;
             case "A":
+               if(scanObject != null){
                 dManager.interactDialog(scanObject);
+               }
                 break;
         }
     }

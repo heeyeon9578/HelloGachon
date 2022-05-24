@@ -11,17 +11,20 @@ public class GroupTalkManager : MonoBehaviour
     string[] ezzz={"우리는 운동을 하면서 친목을 다지는 동아리야.:0","혹시 관심 있니?:2"};
     string[] firstTalk={"와 동아리 종류가 많은 걸? 무슨 동아리가 있는지 둘러보자!:1"};
     string[] endTalk={"어떤 동아리에 가입할거니?:0"};
-    string[] selectBand={"재밌겠는걸? 나도 가입해봐야 겠다.:2"};
-    string[] selectMajor={"학과 공부까지 같이 할 수 있으니 정말 좋겠는걸?:0","나도 가입해야 겠다.:2"};
-    string[] selectEnglish={"영어공부를 할 수 있으니 좋을거야.:0","나도 가입해야 겠다.:2"};
-    string[] selectVoluteer={"봉사활동을 하면 굉장히 보람찰거야.:0","나도 가입해야 겠다.:2"};
+    string[] selectBand={"악기를 연주하며 스트레스도 풀고 재밌겠는걸? 나도 가입해봐야 겠다.:2"};
+    string[] selectPerform={"내가 만든 노래로 공연도 해보고 보람차고 재밌을거 같아!:0","나도 가입해야 겠다.:2"};
+    string[] selectEnglish={"사회나 내 전공과 관련된 동아리라 도움이 많을거 같아:0","나도 가입해야 겠다.:2"};
+    string[] selectVoluteer={"봉사활동을 하면 굉장히 보람찰거 같아.:0","나도 가입해야 겠다.:2"};
     string[] selectSports={"내가 좋아하는 운동을 하면서 건강과 재미를 챙기니 재밌을거야.:0","나도 가입해야 겠다.:2"};
     string[] selectHobby={"내가 좋아하는 것을 다른 사람들이랑 교류하면서 노는것은 재밌을 거 같아:0","나도 내 취미와 맞는 동아리를 찾아 봐야지:2"};
+    string[] selectReligion={"신앙생활을 하면서 대학생활도 같이 해야지!:0","함께 친목도 다지면서 재밌을거야!:2"};
     string[] aboutHealth={"우리는 운동을 하면서 친목을 다지는 동아리야.:0","혹시 관심 있니?:2"};
     string[] aboutBand={"혹시 노래부르는거나 기타나 드럼, 베이스 치는거에 관심 있니?:0","같이 악기도 배우고 공연도 해보면서 재밌게 놀지 않을래? 재밌을거야.:2"};
-    string[] aboutMajor={"우리는 어플을 만드는 동아리야. 우리가 만든 어플이 잘 작동되는 걸 보면 뿌듯함도 느낄 수 있어.:0","혹시 어플만드는 거에 관심이 있니?:2","같이 공부하면서 실려도 늘려보지 않을래?:2"};
+    string[] aboutPerform={"공연분야 동아리들이 많은데 혹시 관심 있니?:0","무슨 동아리가 있는지 알려줄게!:2"};
     string[] aboutVolunteer={"봉사활동을 하면서 뿌듯함을 느껴보지 않을래?.:2"};
-    string[] aboutEnglish={"우리는 영어를 좀 더 잘해보고 싶어서 모인 동아리야.:0"};
+    string[] aboutEnglish={"사회나 학술 관련 동아리에 대해 알아볼래?:0"};
+    string[] aboutReligion={"혹시 종교에 관심이 있니?:0"};
+    string[] aboutHobby={"만화나 여행등 취미활동에 관심이 있니?:0"};
     string[] aboutClimbing={"사랑, 도전, 극복!:2","산악부는 실내 또는 실외에서 클라이밍을 하거나 자연 암벽을 즐기는 동아리야:0","클라이밍에 관심 있으면 산악부에 가입해볼래?:2"};
     string[] aboutFakie={"FAKIE는 경험과 추억을 쌓는 가천대학교 익스트림 레저 스포츠 동아리야:0","번지점프, 수상레저, 패러글라이딩 등의 다양한 활동을 하고 있어:2","다양한 레저스포츠를 경험 하고 싶거나 관심이 있다면 FAKIE에 대해 생각해봐!:2"};
     string[] aboutgachonhealth={"가천헬스회는 헬스에 관심이 있는 사람들이 함께 운동하며 건강한 몸을 만들고 친목을 도모하는 동아리야:0","헬스에 대해 많이 공유하고 함께 운동하는거에 관심이 있으면 가입해볼래?:2"};
@@ -89,18 +92,18 @@ public class GroupTalkManager : MonoBehaviour
         groupTalk.Add(4000,aboutEnglish);
         groupTalk.Add(5000,aboutBand);
         groupTalk.Add(6000,aboutVolunteer);
-        groupTalk.Add(7000,aboutMajor);
-        groupTalk.Add(8000,aboutMajor);
-        groupTalk.Add(9000,aboutMajor);
+        groupTalk.Add(7000,aboutHealth);
+        groupTalk.Add(8000,aboutReligion);
+        groupTalk.Add(9000,aboutHobby);
         groupTalk.Add(10+2000,firstTalk);
         groupTalk.Add(11+2000,firstTalk);
-        groupTalk.Add(11+3000,ezzz);
+        groupTalk.Add(11+3000,aboutHealth);
         groupTalk.Add(11+4000,aboutEnglish);
         groupTalk.Add(11+5000,aboutBand);
-        groupTalk.Add(11+6000,aboutBand);
+        groupTalk.Add(11+6000,aboutVolunteer);
         groupTalk.Add(11+7000,aboutHealth);
-        groupTalk.Add(11+8000,aboutHealth);
-        groupTalk.Add(11+9000,aboutHealth);
+        groupTalk.Add(11+8000,aboutReligion);
+        groupTalk.Add(11+9000,aboutHobby);
 
         talkName.Add(2000,new string[]{"친구"});
         talkName.Add(3000,new string[]{"선배"});
@@ -169,7 +172,7 @@ public class GroupTalkManager : MonoBehaviour
                 EndStory=true;
                 GameData.gamedata.groupname="Religion";
                 selectPanel.SetActive(false);
-                groupTalk[2011]=selectVoluteer;
+                groupTalk[2011]=selectReligion;
                 groupmanager.GroupTalking(2000,true);
                 Panel.SetActive(true);
                 break;
@@ -193,7 +196,7 @@ public class GroupTalkManager : MonoBehaviour
                 EndStory=true;
                 GameData.gamedata.groupname="Performance";
                 selectPanel.SetActive(false);
-                groupTalk[2011]=selectMajor;
+                groupTalk[2011]=selectPerform;
                 groupmanager.GroupTalking(2000,true);
                 Panel.SetActive(true);
                 break;
@@ -215,23 +218,23 @@ public class GroupTalkManager : MonoBehaviour
                 break;
             case "stopmusic":
                 musicSelect.SetActive(false);
-                groupTalk[5011]=aboutHealth;
+                groupTalk[5011]=aboutBand;
                 break;
             case "stopperform":
                 performSelect.SetActive(false);
-                groupTalk[6011]=aboutHealth;
+                groupTalk[6011]=aboutPerform;
                 break;
             case "stopsociety":
                 societySelect.SetActive(false);
-                groupTalk[4011]=aboutHealth;
+                groupTalk[4011]=aboutEnglish;
                 break;
             case "stopreligion":
                 religionSelect.SetActive(false);
-                groupTalk[8011]=aboutHealth;
+                groupTalk[8011]=aboutReligion;
                 break;
             case "stophobby":
                 hobbySelect.SetActive(false);
-                groupTalk[9011]=aboutHealth;
+                groupTalk[9011]=aboutHobby;
                 break;
             case "climb":
                 sport1Select.SetActive(false);

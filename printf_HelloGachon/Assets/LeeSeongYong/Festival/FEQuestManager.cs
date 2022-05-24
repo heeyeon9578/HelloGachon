@@ -34,7 +34,7 @@ public class FEQuestManager : MonoBehaviour
     void generateData()
     {
         questList.Add(10, new QuestData_ots("카톡을 확인하자", new int[] { 2000 }));
-        questList.Add(20, new QuestData_ots("신입생 오티?", new int[] { 0 }));
+        questList.Add(20, new QuestData_ots("한마음 페스티벌?", new int[] { 0 }));
     }
 
     public int getQuestTalkIndex(int id)
@@ -103,7 +103,7 @@ public class FEQuestManager : MonoBehaviour
         questObject[2].SetActive(false);
         isInteract = false;
 
-        //참가하면 오티에 가기 위해 가천대 맵으로 이동
+       
         GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("SYGFestival");
     }
 
@@ -112,7 +112,7 @@ public class FEQuestManager : MonoBehaviour
         questObject[2].SetActive(false);
         isInteract = false;
         
-        //참가하지 않으면 수강신청 게임 진행
-        SceneManager.LoadScene("SYGAbility");
+       
+        GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("heeRoom5");
     }
 }

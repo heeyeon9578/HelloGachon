@@ -21,10 +21,8 @@ public class GroupManager : MonoBehaviour
     public bool startTalk=false;
     public AudioPlay bgm;
     private void Start() {
-        bgm.sliderA.value=GameData.gamedata.bgmSlider;
-        bgm.sound=GameData.gamedata.bgmSound;
-        bgm.SetStart();
-        //StartAction();
+        
+        
     }
     public void StartAction()
     {
@@ -35,7 +33,7 @@ public class GroupManager : MonoBehaviour
             groupIndex=0;
             return;
         }
-        //Debug.Log(exam.Length);
+        
         startTalk=true;
        
         groupTalking.text=examdata.Split(':')[0];

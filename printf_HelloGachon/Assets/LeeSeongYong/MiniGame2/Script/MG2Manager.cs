@@ -68,7 +68,6 @@ public class MG2Manager : MonoBehaviour
         Endtext.text="게임 오버";
        }
        if(isWin){
-            //player.SetActive(false);
             StopCoroutine(coroutine);
             panel.SetActive(true);
             GameData.gamedata.alchol+=10;

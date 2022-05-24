@@ -23,7 +23,6 @@ public class SYMG2Timer : MonoBehaviour
                 timerTxt.text="시간 : "+Mathf.Round(LimitTime);
                 EndTime=Mathf.Round(LimitTime);
                 if(EndTime==0){
-                    //player.SetActive(false);
                     GameObject.Find("MG2Manager").GetComponent<MG2Manager>().isWin=true;    
                     GameObject.Find("MG2Manager").GetComponent<MG2Manager>().GameOver();
                 }

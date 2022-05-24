@@ -25,7 +25,7 @@ public class FEDialoManager : MonoBehaviour
         bgm.SetStart();
         playerRoomBGM.Play();
         phoneAlarm.Play();
-        Debug.Log(qManager.checkQuest());
+        qManager.checkQuest();
     }
 
     public void interactDialog(GameObject scanObj)
@@ -50,7 +50,7 @@ public class FEDialoManager : MonoBehaviour
         if(talkData == null) {
             isInteract = false;
             talkIndex = 0;
-            Debug.Log(qManager.checkQuest(id));
+            qManager.checkQuest(id);
             return;
         }
         

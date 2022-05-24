@@ -66,21 +66,6 @@ public class GRQuestManager : MonoBehaviour
     //퀘스트에서 사용하는 오브젝트 관리!!
     void ControlObject()
     {
-        // switch (questId)
-        // {
-        //     case 10: 
-        //         if(questActionIndex ==1 ){
-        //             questObject[0].SetActive(true);
-        //         }else if(questActionIndex ==2){
-        //             questObject[0].SetActive(false);
-        //         }
-                                   
-        //         break;
-        //     case 20:
-        //         if(questActionIndex ==1)
-        //             questObject[0].SetActive(false);
-        //         break;
-
-        // }
+        
     }
 }

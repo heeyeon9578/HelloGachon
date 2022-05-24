@@ -83,16 +83,7 @@ public class FEFriendAction : MonoBehaviour
         downDown=false;
         downUp=false;
         GameData.gamedata.friendpos=friend.transform.position;
-        // //Scan Object
-        // if(Input.GetButtonDown("Jump"))
-        // {
-        //     if(scanObject != null){
-        //         manager.Action(scanObject);
-        //     }else if(manager.objectDetect){
-        //         manager.TestSub();
-        //     }
-           
-        // }
+       
     }
     public void ButtonDown3(string type)
     {
@@ -147,18 +138,5 @@ public class FEFriendAction : MonoBehaviour
                 break;
         }
     }
-    // void FixedUpdate() {
-    //     Vector2 moveVec=isHorizonMove?new Vector2(h,0):new Vector2(0,v);
-    //     rigid.velocity=moveVec*speed;
-
-    //     Debug.DrawRay(rigid.position,dirVec*0.7f,new Color(0,1,0));
-    //     RaycastHit2D rayHit=Physics2D.Raycast(rigid.position,dirVec,0.7f,LayerMask.GetMask("Object"));
-
-    //     if(rayHit.collider!=null){
-    //         scanObject=rayHit.collider.gameObject;
-    //     }
-    //     else
-    //         scanObject=null;
-        
-    // }
+    
 }

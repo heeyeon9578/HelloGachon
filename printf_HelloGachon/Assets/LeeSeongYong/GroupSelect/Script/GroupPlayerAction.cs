@@ -75,12 +75,6 @@ public class GroupPlayerAction : MonoBehaviour
         else if(hDown && h==1)
             dirVec=Vector3.right;
         
-        if(Input.GetKey(KeyCode.Escape))
-        {
-            option.SetActive(true);
-            //Debug.Log(player.transform.position.x);
-           // Debug.Log(player.transform.position.y);
-        }
         GameData.gamedata.playerpos=player.transform.position;
         upDown=false;
         upUp=false;

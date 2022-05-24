@@ -1453,7 +1453,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7cd55a180e589e4e89c12c790db7905, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Day: 3
+  playerName: 
+  major: 0
+  alchol: 0
+  health: 0
+  stress: 0
+  popular: 0
+  groupname: 
+  playerpos: {x: 0, y: 0, z: 0}
+  mudangpos: {x: 0, y: 0, z: 0}
+  friendpos: {x: 0, y: 0, z: 0}
+  talkend: 0
+  loadscenename: 
+  bgmSound: 0
+  bgmSlider: -80
+  month: 
+  scoreExam1: 0
+  scoreExam2: 0
 --- !u!4 &419451045
 Transform:
   m_ObjectHideFlags: 0
@@ -4372,7 +4388,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1f29bace790bc5478f9b6a95bef0587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeTime: 4
+  fadeTime: 1.5
   Panel: {fileID: 1078833065}
   percent: 0
   FadeEnd: 0
@@ -22456,6 +22472,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   speed: 3
+  player: {fileID: 0}
+  option: {fileID: 0}
+  curscene:
+    m_Handle: 0
 --- !u!114 &7248777389655775312
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -18,8 +18,8 @@ public class GameData : MonoBehaviour
     public Vector3 friendpos;
     public bool talkend;
     public string loadscenename;
-    public float bgmSound=0;
-    public float bgmSlider=-80;
+    public float bgmSound;
+    public float bgmSlider;
     public string month;
     public int scoreExam1;
     public int scoreExam2;

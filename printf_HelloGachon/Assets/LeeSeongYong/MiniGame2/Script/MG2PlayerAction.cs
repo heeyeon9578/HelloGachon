@@ -45,10 +45,8 @@ public class MG2PlayerAction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       //horizontal = Input.GetAxis("Horizontal");
        if(!isDie)
          PlayerMoveMobile();
-       //PlayerMove();
        if(isDie)
        {
            animator.SetTrigger("dead");
@@ -82,39 +80,14 @@ public class MG2PlayerAction : MonoBehaviour
         leftUp=false;
         rightDown=false;
         rightUp=false;
-        // animator.SetFloat("speed",Mathf.Abs(horizontal));
-        // if(!LeftMove&&!RightMove){
-        //     animator.SetBool("rightgo",false);
-        // }
-        // else if(LeftMove){
-        //     animator.SetBool("rightgo",true);
-        //     transform.localScale=new Vector3(-1,1,1);
-        //     rigidbody.velocity=new Vector2(-0.6f*speed,rigidbody.velocity.y);
-        // }
-        // else if(RightMove){
-        //     animator.SetBool("rightgo",true);
-        //     transform.localScale=new Vector3(1,1,1);
-        //     rigidbody.velocity=new Vector2(0.6f*speed,rigidbody.velocity.y);
-        // }
+        
 
     }
     void FixedUpdate() {
         Vector2 moveVec=isHorizonMove?new Vector2(h,0):new Vector2(0,v);
         rigidbody.velocity=moveVec*speed;
     }
-    // public void PlayerMove()
-    // {
-    //     animator.SetFloat("speed",Mathf.Abs(horizontal));
-    //     if(horizontal<0)
-    //     {
-    //         renderer.flipX=true;
-    //     }
-    //     else
-    //     {
-    //         renderer.flipX=false;
-    //     }
-    //     rigidbody.velocity=new Vector2(horizontal*speed,rigidbody.velocity.y);
-    // }
+    
     private void ScreenRange()
     {
         Vector3 a=Camera.main.WorldToViewportPoint(this.transform.position);
@@ -134,7 +107,6 @@ public class MG2PlayerAction : MonoBehaviour
             
             if(life<=0){
                 sfxButton();
-                //player.SetActive(false);
                 GameObject.Find("MG2Manager").GetComponent<MG2Manager>().GameOver();
             }
             Destroy(collision.gameObject);

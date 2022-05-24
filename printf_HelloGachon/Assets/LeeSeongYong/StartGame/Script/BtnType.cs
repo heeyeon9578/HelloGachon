@@ -23,16 +23,13 @@ public class BtnType : MonoBehaviour
 
     void Start()
     {
-        // bgm.sliderA.value=GameData.gamedata.bgmSlider;
-        // bgm.sound=GameData.gamedata.bgmSound;
-        // bgm.SetStart();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)){
-            //Debug.Log(nicknamepanel.activeSelf);
             nicknamepanel.SetActive(false);
             Optionpanel.SetActive(false);
             LoadPanel.SetActive(false);
@@ -57,20 +54,18 @@ public class BtnType : MonoBehaviour
     }
 
     public void MakeNickName(){
-        //sfxButton();
+        sfxButton();
         exitCount--;
         nicknamepanel.SetActive(true);
     }
 
     public void StopNickName(){
-        //sfxButton();
         exitCount=0;
         nicknamepanel.SetActive(false);
         playerInputnickname.text=null;
     }
 
     public void StartGame(){
-        //sfxButton();
         playernickname=playerInputnickname.text;
         
         if(playernickname.Length>0){
@@ -85,32 +80,24 @@ public class BtnType : MonoBehaviour
         }
     }
 
-    public void ContinueGame(){
-        Debug.Log("이어하기");
-    }
-
     public void OptionGame(){
-        //sfxButton();
         exitCount--;
         Optionpanel.SetActive(true);
     }
 
     public void StopOption(){
-        //sfxButton();
         exitCount=0;
         Optionpanel.SetActive(false);
     }
 
     public void SetLoad()
     { 
-        //sfxButton();
         exitCount--;
         LoadPanel.SetActive(true);
     }
 
     public void StopLoad()
     {
-        //sfxButton();
         exitCount=0;
         LoadPanel.SetActive(false);
     }

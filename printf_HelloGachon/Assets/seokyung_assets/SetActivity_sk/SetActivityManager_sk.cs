@@ -58,7 +58,7 @@ public class SetActivityManager_sk : MonoBehaviour
         if(GameData.gamedata.groupname!="")
             clubBtn.SetActive(true);
 
-        bgmstart();
+        // bgmstart();
 
         schedulePanel.SetActive(true);
         activityPanel.SetActive(true);
@@ -82,11 +82,11 @@ public class SetActivityManager_sk : MonoBehaviour
         if(getAlchol<0)
             getAlchol=0;
     }
-    public void bgmstart()
-    {
-        audioSource.clip=audioClip;
-        audioSource.Play();
-    }
+    // public void bgmstart()
+    // {
+    //     audioSource.clip=audioClip;
+    //     audioSource.Play();
+    // }
     public void abilityChange(string type)
     {
         switch(type)
