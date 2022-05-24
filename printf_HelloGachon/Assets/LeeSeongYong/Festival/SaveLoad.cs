@@ -54,7 +54,7 @@ public class SaveLoad : MonoBehaviour
         string code=System.Convert.ToBase64String(bytes);
         File.WriteAllText(filePath,code);
 
-        SceneManager.LoadScene("StartScene");
+        //SceneManager.LoadScene("StartScene");
     }
     public void Load()
     {
