@@ -9,16 +9,22 @@ public class AudioPlay : MonoBehaviour
   
     public AudioMixer mixer;
     public AudioMixer sfxMixer;
-    public Slider sliderA; 
+    public Slider sliderA;
+    public Slider sliderB; 
     public float sound;
+    public float sfxSound;
 
     void Start(){
         sliderA.value=GameData.gamedata.bgmSlider;
         sound=GameData.gamedata.bgmSound;
+        sfxSound=GameData.gamedata.SFXsound;
+        sliderB.value=GameData.gamedata.sfxSlider;
         SetStart();
     }
 
     void Update() {
+        sliderB.value=GameData.gamedata.sfxSlider;
+        sfxSound=GameData.gamedata.SFXsound;
         sliderA.value=GameData.gamedata.bgmSlider;
         sound=GameData.gamedata.bgmSound;
     }
@@ -30,6 +36,8 @@ public class AudioPlay : MonoBehaviour
         
     }
     public void SfxLever(float sliderValue){
+        GameData.gamedata.sfxSlider=sliderB.value;
+        GameData.gamedata.SFXsound=Mathf.Log10(sliderValue)*20;
         sfxMixer.SetFloat("SFX",Mathf.Log10(sliderValue)*20);
     }
     public void SetStart(){

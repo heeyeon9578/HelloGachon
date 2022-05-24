@@ -20,6 +20,8 @@ public class GameData : MonoBehaviour
     public string loadscenename;
     public float bgmSound;
     public float bgmSlider;
+    public float SFXsound;
+    public float sfxSlider;
     public string month;
     public int scoreExam1;
     public int scoreExam2;

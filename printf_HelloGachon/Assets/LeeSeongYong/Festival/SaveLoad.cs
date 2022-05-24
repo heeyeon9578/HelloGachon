@@ -23,6 +23,8 @@ public class Data
     public bool Endtalk;
     public float svbgmSound;
     public float svbgmSlider;
+    public float svsfxSound;
+    public float svsfxSlider;
 }
 [System.Serializable]
 public class SaveLoad : MonoBehaviour
@@ -43,6 +45,8 @@ public class SaveLoad : MonoBehaviour
         loaddata.Endtalk=GameData.gamedata.talkend;
         loaddata.svbgmSlider=GameData.gamedata.bgmSlider;
         loaddata.svbgmSound=GameData.gamedata.bgmSound;
+        loaddata.svsfxSlider=GameData.gamedata.sfxSlider;
+        loaddata.svsfxSound=GameData.gamedata.SFXsound;
         loaddata.svExam1=GameData.gamedata.scoreExam1;
         loaddata.svExam2=GameData.gamedata.scoreExam2;
         string json=JsonUtility.ToJson(loaddata);
@@ -78,6 +82,8 @@ public class SaveLoad : MonoBehaviour
             GameData.gamedata.loadscenename=data4.savescene;
             GameData.gamedata.bgmSlider=data4.svbgmSlider;
             GameData.gamedata.bgmSound=data4.svbgmSound;
+            GameData.gamedata.sfxSlider=data4.svsfxSlider;
+            GameData.gamedata.SFXsound=data4.svsfxSound;
             GameData.gamedata.scoreExam1=data4.svExam1;
             GameData.gamedata.scoreExam2=data4.svExam2;
             GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut(data4.savescene);
