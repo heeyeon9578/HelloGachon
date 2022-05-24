@@ -14,6 +14,7 @@ public class heeQuestManager3 : MonoBehaviour
     
 
 
+
     void Awake()
     {
         questList = new Dictionary<int, heeQuestData3>();
