@@ -16,6 +16,7 @@ public class TalkManager_goot_sk : MonoBehaviour
     public GameObject mudangQuest; // 무당이 내릴때 누르는 버튼
     public GameObject mudangBorderline;
     public GameObject actionKey;
+    public AudioSource mudangSound;
     public QuestManager_goot_sk questManager;
     public GoingOTManager_sk gameManager;
     private Rigidbody2D rb;
@@ -181,7 +182,8 @@ public class TalkManager_goot_sk : MonoBehaviour
        Vector3 pos;
        pos = this.mudang.transform.position;
        switch(type){
-           case "y": 
+           case "y":
+                mudangSound.Play();
                 talkPanel3.SetActive(false);
                 mudangQuest.SetActive(true);
                 actionKey.SetActive(false);

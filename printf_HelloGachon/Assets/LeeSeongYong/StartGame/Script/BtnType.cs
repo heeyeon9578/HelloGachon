@@ -11,8 +11,10 @@ public class BtnType : MonoBehaviour
     public GameObject LoadPanel;
     public GameObject SFX;
     public GameObject SFX_startBtn;
+    public GameObject SFX_startFail;
     private AudioSource sfxSource;
     private AudioSource startBtnSfx;
+    private AudioSource startFailSfx;
     public AudioPlay bgm;
     public InputField playerInputnickname;
     private string playernickname;
@@ -20,8 +22,10 @@ public class BtnType : MonoBehaviour
     public int exitCount=0;
 
     private void Awake() {
-        sfxSource=SFX.GetComponent<AudioSource>();
-        startBtnSfx=SFX_startBtn.GetComponent<AudioSource>();
+        sfxSource = SFX.GetComponent<AudioSource>();
+        startBtnSfx = SFX_startBtn.GetComponent<AudioSource>();
+        startFailSfx = SFX_startFail.GetComponent<AudioSource>();
+
     }
 
     void Start()
@@ -69,11 +73,11 @@ public class BtnType : MonoBehaviour
     }
 
     public void StartGame(){
-        startBtnSfx.loop=false;
-        startBtnSfx.Play();
         playernickname=playerInputnickname.text;
         
         if(playernickname.Length>0){
+            startBtnSfx.loop=false;
+            startBtnSfx.Play();
             GameData.gamedata.playerName=playernickname;
             GameData.gamedata.health=100;
             GameData.gamedata.popular=0;
@@ -81,9 +85,11 @@ public class BtnType : MonoBehaviour
             GameData.gamedata.stress=0;
             GameData.gamedata.major=0;
             GameData.gamedata.month="3월";
-            GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("heeRoom1"); 
-           
-
+            GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Going_OT_sk");
+        }
+        else {
+            startFailSfx.loop=false;
+            startFailSfx.Play();
         }
     }
 
