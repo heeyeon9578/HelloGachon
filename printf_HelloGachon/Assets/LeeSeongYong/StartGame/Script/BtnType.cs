@@ -10,7 +10,9 @@ public class BtnType : MonoBehaviour
     public GameObject Optionpanel;
     public GameObject LoadPanel;
     public GameObject SFX;
+    public GameObject SFX_startBtn;
     private AudioSource sfxSource;
+    private AudioSource startBtnSfx;
     public AudioPlay bgm;
     public InputField playerInputnickname;
     private string playernickname;
@@ -19,6 +21,7 @@ public class BtnType : MonoBehaviour
 
     private void Awake() {
         sfxSource=SFX.GetComponent<AudioSource>();
+        startBtnSfx=SFX_startBtn.GetComponent<AudioSource>();
     }
 
     void Start()
@@ -47,7 +50,7 @@ public class BtnType : MonoBehaviour
         exitCount++;
     }
 
-    void sfxButton()
+    public void sfxButton()
     {
         sfxSource.loop=false;
         sfxSource.Play();
@@ -66,6 +69,8 @@ public class BtnType : MonoBehaviour
     }
 
     public void StartGame(){
+        startBtnSfx.loop=false;
+        startBtnSfx.Play();
         playernickname=playerInputnickname.text;
         
         if(playernickname.Length>0){
@@ -83,6 +88,7 @@ public class BtnType : MonoBehaviour
     }
 
     public void OptionGame(){
+        sfxButton();
         exitCount--;
         Optionpanel.SetActive(true);
     }
