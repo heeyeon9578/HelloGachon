@@ -16,7 +16,7 @@ public class SJ_CodeManager : MonoBehaviour
     public static string output = "";
 
     private static List<Function> funcList = new List<Function>();
-    private static string[] reservedFunc = {"Loop","Print"};
+    private static string[] reservedFunc = {"loop","print"};
     public static Dictionary<string, string> varDict = new Dictionary<string, string>();
     public static List<object> objList = new List<object>();
     
@@ -141,22 +141,21 @@ public class SJ_CodeManager : MonoBehaviour
         Regex regex = new Regex(@"(\w+ *[^\d()]? *\w+)|\(([^()]*)\)|\{([\s\S]*)\}");
         MatchCollection matches = regex.Matches(inputCode);
 
-        parseCode(matches);
+        ParseCode(matches);
     }
 
-    static void parseCode(MatchCollection tokens)   // 코드 분석
+    static void ParseCode(MatchCollection tokens)   // 코드 분석
     {
         foreach(Match token in tokens)  // Group[1]: 함수 이름, Group[2]: 함수 인풋, Group[3]: 함수 바디
         {
-            // Debug.Log($"토큰 값: {token}, 다음 토큰 값: {token.NextMatch()}, {token.NextMatch().Groups[1].Success}");
             if(token.NextMatch().Groups[2].Success)     // 문자열 우측에 ()이 존재한다면 문자열로 함수를 검색
-                searchFunc(token);
+                SearchFunc(token);
             else if(token.Groups[1].Success)
                 OperateValue(token.Value);
         }
     }
 
-    static void searchFunc(Match token)
+    static void SearchFunc(Match token)
     {
         if(funcList.Exists(x => x.GetName() == token.Value) || Array.Exists(reservedFunc, x => x == token.Value))
         {
@@ -204,12 +203,6 @@ public class SJ_CodeManager : MonoBehaviour
             UpdateErrorMsg("");
             break;
         }
-
-        // foreach(KeyValuePair<string, string> variable in varDict)
-        // {
-        //     Debug.Log($"{variable.Key}, {variable.Value}");
-        // }
-
     }
 
     static void ExecFunc(Match token)
@@ -222,7 +215,8 @@ public class SJ_CodeManager : MonoBehaviour
         bool acquiredBracket = false;
         string varInDict = "";
 
-        Type funcType = Type.GetType($"SJ_CodeManager+{funcName}");
+        Type funcType = Type.GetType($"SJ_CodeManager+{char.ToUpper(funcName[0]) + funcName.Substring(1)}");
+        Debug.Log(funcType);
         MethodInfo Body = funcType.GetMethod("Body");
         PropertyInfo bracketInfo = funcType.GetProperty("requireBracket");
         PropertyInfo bodyInfo = funcType.GetProperty("bodyInput");

@@ -51,7 +51,8 @@ public class SJ_SceneManager : MonoBehaviour
 
     void Awake()
     {
-        month = GameData.gamedata.month;
+        // month = GameData.gamedata.month;
+        month = "3월";
     }
 
     void Start()
