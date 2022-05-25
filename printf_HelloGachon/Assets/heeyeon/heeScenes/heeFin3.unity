@@ -533,8 +533,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 9edb3116e0efe7145b0c9bd9222a52ac, type: 2}
+  sfxMixer: {fileID: 0}
   sliderA: {fileID: 145865220}
+  sliderB: {fileID: 0}
   sound: 0
+  sfxSound: 0
 --- !u!1 &462538153 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4972684461118105812, guid: da3a07d9ced76e344aec6cec062f9457, type: 3}
@@ -2040,6 +2043,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1148674980}
     m_Modifications:
+    - target: {fileID: 1637752243279529198, guid: da3a07d9ced76e344aec6cec062f9457, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 609c6136bcdd86a4782e5f4b2accf9bc, type: 3}
     - target: {fileID: 2781284749719879331, guid: da3a07d9ced76e344aec6cec062f9457, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1

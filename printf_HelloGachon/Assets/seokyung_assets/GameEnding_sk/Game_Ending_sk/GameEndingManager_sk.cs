@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class GameEndingManager_sk : MonoBehaviour
 {
+    public GameObject skipBtn;
     public Text playerName;
     public Text totalscore;
     public Text majorscore;
@@ -356,6 +357,10 @@ public class GameEndingManager_sk : MonoBehaviour
             examgrade.text="F";
             examtotal.text="0.0";
         }
+    }
+
+    public void showSkipBtn() {
+        skipBtn.SetActive(true);
     }
 
     public void gotoEndingCredit()
