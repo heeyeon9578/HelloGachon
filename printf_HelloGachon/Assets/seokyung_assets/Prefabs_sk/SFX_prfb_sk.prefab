@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4223024254855660254}
   - component: {fileID: 4223024254855660249}
-  - component: {fileID: 6763055985927131518}
   m_Layer: 0
   m_Name: SFX_prfb_sk
   m_TagString: Untagged
@@ -41,7 +40,7 @@ AudioSource:
   m_GameObject: {fileID: 4223024254855660248}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -2030904056418469813, guid: e19995286f7649f43ba2395fc4c32c20, type: 2}
   m_audioClip: {fileID: 8300000, guid: f1d7ed3bd6620b34cb6431ab5a9d1c6b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -128,18 +127,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6763055985927131518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4223024254855660248}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 467c1fe360226304abf08d87257da392, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mixer: {fileID: 24100000, guid: 9edb3116e0efe7145b0c9bd9222a52ac, type: 2}
-  sliderA: {fileID: 0}
-  sound: 0

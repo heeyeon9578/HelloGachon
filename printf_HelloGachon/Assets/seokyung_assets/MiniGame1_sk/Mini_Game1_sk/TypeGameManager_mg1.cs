@@ -15,7 +15,6 @@ public class TypeGameManager_mg1 : MonoBehaviour
     private float getSetTime;
 
     //**수강신청 게임 변수들 선언
-    public FadeInOut_sk fade;
     public GameObject Register;
     public GameObject registerResult;
     public GameObject dialogPanel;
@@ -37,6 +36,8 @@ public class TypeGameManager_mg1 : MonoBehaviour
     public AudioSource successSound;
     public AudioSource failedSound;
     public AudioSource timeoverSound;
+    public AudioSource gameSuccess;
+    public AudioSource gameFail;
     public AudioSource typeGameBGM;
     public bool isApplyBtn = false;
     public int currentClassNum;
@@ -104,6 +105,7 @@ public class TypeGameManager_mg1 : MonoBehaviour
         {
             typeGameBGM.Stop();
             classNumTxt.text = "";
+
             if(successCnt > 3)
             {
                 resultTxt.text = "수강신청 성공!\n" + "성공 횟수 : " + successCnt;
@@ -112,6 +114,7 @@ public class TypeGameManager_mg1 : MonoBehaviour
             {
                 resultTxt.text = "수강신청 실패..\n" + "성공 횟수 : " + successCnt;                
             }
+            
             registerResult.SetActive(true);
         }
     }
@@ -202,6 +205,10 @@ public class TypeGameManager_mg1 : MonoBehaviour
             portraitImg.sprite = portraitArr[0];
             scheduleImg.sprite = scheduleArr[0];
 
+            if(index == 0) {
+                gameSuccess.Play();
+            }
+
             dialogPanel.SetActive(true);
             index++;
 
@@ -233,6 +240,10 @@ public class TypeGameManager_mg1 : MonoBehaviour
             dialogText.text = failTalkList[index];
             portraitImg.sprite = portraitArr[1];
             scheduleImg.sprite = scheduleArr[1];
+
+            if(index == 0) {
+                gameFail.Play();
+            }
 
             dialogPanel.SetActive(true);
             index++;

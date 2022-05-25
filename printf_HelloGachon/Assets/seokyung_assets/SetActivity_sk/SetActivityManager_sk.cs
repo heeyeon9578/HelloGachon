@@ -35,6 +35,7 @@ public class SetActivityManager_sk : MonoBehaviour
     public GameObject schedulePanel;
     public GameObject activityPanel;
     public GameObject player;
+    public GameObject healthTalk;
     public AudioSource touchSound;
     public AudioSource resetSound;
     public AudioSource decideSound;
@@ -65,6 +66,7 @@ public class SetActivityManager_sk : MonoBehaviour
     }
 
     private void Update() {
+
         majortext.text="전공 : "+getMajor;
         stresstext.text="스트레스 : "+getStress;
         healthtext.text="체력 : "+getHealth;
@@ -80,6 +82,13 @@ public class SetActivityManager_sk : MonoBehaviour
             getPopular=0;
         if(getAlchol<0)
             getAlchol=0;
+
+        if(getHealth < 5) {
+            healthTalk.SetActive(true);
+        }
+        else {
+            healthTalk.SetActive(false);
+        }
     }
     public void abilityChange(string type)
     {
@@ -161,7 +170,7 @@ public class SetActivityManager_sk : MonoBehaviour
                         getAlchol-=5;
                         infoTxt.text = "비나이다 비나이다 오류없이 실행되게 해주세요\n체력 -3, 스트레스 -7,\n알코올 분해력 -5";
                     }
-                    else if(getGroup=="Major"&&getHealth>4)
+                    else if(getGroup=="Major"&&getHealth>2)
                     {
                         Count--;
                         getHealth-=3;
@@ -201,6 +210,7 @@ public class SetActivityManager_sk : MonoBehaviour
                     activityName = "동아리";
                 }
                 break;
+            default: break;
         }
 
         if(Count == 4) {
