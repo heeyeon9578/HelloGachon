@@ -11,6 +11,8 @@ public class QuestManager_heeots4 : MonoBehaviour
     private bool isTouched = false;
     public int questId;
     public int questActionIndex;
+    
+
 
     //참여할지 말지 클릭하는 판넬
     public GameObject talkPanel;
@@ -73,7 +75,7 @@ public class QuestManager_heeots4 : MonoBehaviour
         {
             case 10:
                 if(questActionIndex == 1 ) {
-                  
+                    
                     questObject[0].SetActive(true);             
                 }
 

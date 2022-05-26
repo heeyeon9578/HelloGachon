@@ -25,6 +25,7 @@ public class heeTalkManager5 : MonoBehaviour
     public GameObject gilyae; //gilyae 오브젝트
     private AudioSource audioSource;
     public AudioClip audioClip;
+    public AudioClip audioClip2; //이길여 총장님 이벤트에 총장님한테 대화걸면 나오는 소리
     public GameObject mudangQuest; // 무당이 내릴때 누르는 버튼
 
 
@@ -120,6 +121,7 @@ public class heeTalkManager5 : MonoBehaviour
        talkName.Add(3000, new string[] { "무당이" });
        talkName.Add(8000, new string[] { "교수님" });
        talkName.Add(6000, new string[] { "이길여 총장님" });
+
        //친구 default 대사
        talkData.Add(1000, new string[] {"안녕? 나도 컴공 신입생이야!:0", 
                                         "만나서 반가워~ 친하게 지내자!:2",
@@ -187,7 +189,6 @@ public class heeTalkManager5 : MonoBehaviour
        heeid2=id;    
 
        Debug.Log(id);
-
        if(!talkData.ContainsKey(id)){
        
 
@@ -265,8 +266,8 @@ public class heeTalkManager5 : MonoBehaviour
 
           //퀘스트 1000일때, 실행할 것
           if((id-questManager.GetQuestTalkIndex(id))==1000){
-
                 heeid = id;
+                
                 rb2.constraints = RigidbodyConstraints2D.None;
                 rb2.constraints = RigidbodyConstraints2D.FreezeRotation;
                 pos2 = newStu.transform.position;
@@ -275,7 +276,7 @@ public class heeTalkManager5 : MonoBehaviour
            }else if(id==7000){
                talkPanel6.SetActive(true);
                
-                
+                  
            }
 
            return null;
@@ -308,8 +309,10 @@ public class heeTalkManager5 : MonoBehaviour
                 mudangQuest.SetActive(true);
 
                 newStu.SetActive(false);
-                friend.SetActive(false);
-
+                
+                if(heeid==1010){
+                    friend.SetActive(false);
+                }
                 gameManager.SetCameraTarget(mudang);
                 
                 heemudangAction5.enabled = true;

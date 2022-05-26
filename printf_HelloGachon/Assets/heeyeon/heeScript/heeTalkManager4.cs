@@ -22,10 +22,12 @@ public class heeTalkManager4 : MonoBehaviour
     public GameObject newStu; //newStu 오브젝트
     public GameObject mudang; //mudang 오브젝트
     public GameObject friend; //friend 오브젝트
-
     public GameObject mudangQuest; // 무당이 내릴때 누르는 버튼
+
     private AudioSource audioSource;
-    public AudioClip audioClip;
+    public AudioClip audioClip; //무당이 탈 때 소리 
+  
+
 
     public heeQuestManager4 questManager;
     public heegameManager4 gameManager;
@@ -252,11 +254,11 @@ public class heeTalkManager4 : MonoBehaviour
                 rb2.constraints = RigidbodyConstraints2D.FreezeRotation;
                 pos2 = newStu.transform.position;
                 friend.transform.position = new Vector3(pos2.x+1,pos2.y+1, 0);
-
+            //독백 부분에 켜기
            }else if(id==7000){
                talkPanel5.SetActive(true);
                
-                
+             
            }
             
            return null;
@@ -290,7 +292,11 @@ public class heeTalkManager4 : MonoBehaviour
                 mudangQuest.SetActive(true);
 
                 newStu.SetActive(false);
-                friend.SetActive(false);
+                
+
+                if(heeid==1010){
+                    friend.SetActive(false);
+                }
 
                 gameManager.SetCameraTarget(mudang);
                 

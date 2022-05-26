@@ -14,12 +14,15 @@ public class DialogManager_hee6 : MonoBehaviour
     public bool isInteract;
     public int nameIndex;
     public int talkIndex;
+    //폰 알람음 
+    public AudioSource phoneAlarm;
 
     public Image portraitImg;
     public bool objectDetect = false;
     
     void Start()
     {
+        phoneAlarm.Play(); //게임시작에 폰 알람 시작
         Debug.Log(qManager.checkQuest());
     }
 

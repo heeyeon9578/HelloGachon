@@ -23,6 +23,7 @@ public class DialogManager_hee4 : MonoBehaviour
 
     void Start()
     {
+        
         TestSub();
         // Debug.Log(qManager.checkQuest());
     }

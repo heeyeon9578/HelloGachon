@@ -48,7 +48,7 @@ public class heegameManager4 : MonoBehaviour
 
 
     public void TestSub(){
-        string talkName2 = talkManager.getName(7000, nameIndex);
+        
         string talkData2 = talkManager.GetTalk(7000, talkIndex); //처음에 게임 시작 전에 인트로가 나올 수 있도록 구성
 
 

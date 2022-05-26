@@ -14,6 +14,9 @@ public class QuestManager_heeots3 : MonoBehaviour
 
     //참여할지 말지 클릭하는 판넬
     public GameObject talkPanel;
+
+    //폰 알람
+    public AudioSource phoneAlarm;
     
     void Awake()
     {
@@ -77,6 +80,7 @@ public class QuestManager_heeots3 : MonoBehaviour
             case 10:
                 if(questActionIndex == 1 && isTouched == false) {
 
+                    phoneAlarm.Stop(); //폰 알람
                     
                     questObject[0].SetActive(false);
                     questObject[1].SetActive(true);

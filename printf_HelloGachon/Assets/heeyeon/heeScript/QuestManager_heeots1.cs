@@ -11,6 +11,8 @@ public class QuestManager_heeots1 : MonoBehaviour
     private bool isTouched = false;
     public int questId;
     public int questActionIndex;
+    //폰 알람
+    public AudioSource phoneAlarm;
 
     //참여할지 말지 클릭하는 판넬
     public GameObject talkPanel;
@@ -80,7 +82,7 @@ public class QuestManager_heeots1 : MonoBehaviour
             case 10:
                 if(questActionIndex == 1 ) {
 
-                   
+                    phoneAlarm.Stop(); //폰 알람
                     questObject[0].SetActive(false);
                     questObject[1].SetActive(true);
                     isInteract = true;                 

@@ -102,7 +102,7 @@ public class heeTopViewPlayer5 : MonoBehaviour
             var heeFriendAction5 = friend.GetComponent<heeFriendAction5>();
 
             Debug.Log("퀘스트번호가 1010일 때, 친구의 포지션을 주인공 옆으로 계속 업데이트");
-            // friend.transform.Translate(Vector3(pos2.x+1,pos2.y+1, 0));
+            
             friend.transform.position = new Vector3(pos2.x+1,pos2.y+1, 0);
             heeFriendAction5.enabled = true;
         }
@@ -124,7 +124,7 @@ public class heeTopViewPlayer5 : MonoBehaviour
         rigid.velocity=moveVec*speed;
 
         Debug.DrawRay(rigid.position,dirVec*0.7f,new Color(0,1,0));
-        RaycastHit2D rayHit=Physics2D.Raycast(rigid.position,dirVec,0.7f,LayerMask.GetMask("Object"));
+        RaycastHit2D rayHit=Physics2D.Raycast(rigid.position,dirVec,1.0f,LayerMask.GetMask("Object"));
 
         if(rayHit.collider!=null){
             scanObject=rayHit.collider.gameObject;

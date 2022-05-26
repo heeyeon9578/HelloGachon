@@ -18,9 +18,12 @@ public class DialogManager_hee1 : MonoBehaviour
 
     public Image portraitImg;
     public bool objectDetect = false; 
+    //폰 알람음 
+    public AudioSource phoneAlarm;
 
     void Start()
     {
+        phoneAlarm.Play(); //게임시작에 폰 알람 시작
         TestSub(); //게임 시작에 독백부분을 위해 Start 함수에 넣음
         
     }

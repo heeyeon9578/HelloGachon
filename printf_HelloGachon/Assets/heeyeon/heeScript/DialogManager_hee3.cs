@@ -17,9 +17,12 @@ public class DialogManager_hee3 : MonoBehaviour
     
     public Image portraitImg;
     public bool objectDetect = false; 
-    
+    //폰 알람음 
+    public AudioSource phoneAlarm;
+
     void Start()
     {
+        phoneAlarm.Play(); //게임시작에 폰 알람 시작
         Debug.Log(qManager.checkQuest());
     }
 
