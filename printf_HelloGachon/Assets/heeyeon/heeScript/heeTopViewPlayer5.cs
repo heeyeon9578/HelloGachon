@@ -108,8 +108,9 @@ public class heeTopViewPlayer5 : MonoBehaviour
         }
 
          if(talkManager.heeid2==6020){
-            GameData.gamedata.health += 20;
-            Debug.Log("총장님과의 대화로 체력+20 ");
+            
+            Debug.Log("총장님과의 대화");
+            talkManager.gilyaeMeet = true;
      
         }
 

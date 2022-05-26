@@ -33,7 +33,8 @@ public class heeTalkManager5 : MonoBehaviour
     public heegameManager5 gameManager;
 
     public int heeid;
-    public int heeid2;
+    public int heeid2; 
+    public bool gilyaeMeet;
 
     private Rigidbody2D rb;
     private Rigidbody2D rb2;
@@ -41,6 +42,7 @@ public class heeTalkManager5 : MonoBehaviour
 
     void Awake()
     {        
+        gilyaeMeet = false;
         talkName = new Dictionary<int, string[]>();
         rb = mudang.GetComponent<Rigidbody2D>();
         rb2 = friend.GetComponent<Rigidbody2D>();
@@ -338,6 +340,11 @@ public class heeTalkManager5 : MonoBehaviour
                 GameData.gamedata.health += 5;
                 Debug.Log("5월 간식 이벤트로 체력+5 ");
                 talkPanel4.SetActive(false);
+
+                if(gilyaeMeet == true){
+                    GameData.gamedata.health += 20;
+                   Debug.Log("이길여 여사님  체력+20 ");
+                }
                 //성재님의 6월수업씬으로 이동
                 GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("MiniGame3");
                 break;
