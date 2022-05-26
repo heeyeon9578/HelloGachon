@@ -123,67 +123,53 @@ public class QuestManager_otl_sk : MonoBehaviour
     // 1.학번 및 홈페이지 2.수강신청 3.사이버캠퍼스 4.학사행정 5.비교과신청(WIND) 6.등록금 7.건너뛰기
     public void on1BtnClick()
     {
+        //1번 누르면 학번 및 홈페이지 설명
         questObject[0].SetActive(false);
         btnId = 3000;
         introduceTalk();
-
-        //1번 누르면 학번 및 홈페이지 설명
-        Debug.Log("1번 누르면 학번 및 홈페이지 설명");
     }
     public void on2BtnClick()
     {
+        //2번 누르면 수강신청 설명
         questObject[0].SetActive(false);
         btnId = 4000;
         introduceTalk();
-
-        //2번 누르면 수강신청 설명
-        Debug.Log("2번 누르면 수강신청 설명");
     }
     public void on3BtnClick()
     {
+        //3번 누르면 사이버캠퍼스 설명
         questObject[0].SetActive(false);
         btnId = 5000;
         introduceTalk();
-
-        //3번 누르면 사이버캠퍼스 설명
-        Debug.Log("3번 누르면 사이버캠퍼스 설명");
     }
     public void on4BtnClick()
     {
+        //4번 누르면 학사행정 설명
         questObject[0].SetActive(false);
         btnId = 6000;
         introduceTalk();
-
-        //4번 누르면 학사행정 설명
-        Debug.Log("4번 누르면 학사행정 설명");
     }
     public void on5BtnClick()
     {
+        //5번 누르면 비교과신청(WIND) 설명
         questObject[0].SetActive(false);
         btnId = 7000;
         introduceTalk();
-
-        //5번 누르면 비교과신청(WIND) 설명
-        Debug.Log("5번 누르면 비교과신청(WIND) 설명");
     }
     public void on6BtnClick()
     {
+        //6번 누르면 등록금 설명
         questObject[0].SetActive(false);
         btnId = 8000;
         introduceTalk();
-
-        //6번 누르면 등록금 설명
-        Debug.Log("6번 누르면 등록금 설명");
     }
     public void onSkipBtnClick()
     {
+        //건너뛰기 누르면 오티 씬 종료
         questObject[0].SetActive(false);
         btnId = 9000;
         isTalking = false;
         introduceTalk();
-
-        //건너뛰기 누르면 오티 씬 종료
-        Debug.Log("건너뛰기");
     }
 
     public void introduceTalk(){

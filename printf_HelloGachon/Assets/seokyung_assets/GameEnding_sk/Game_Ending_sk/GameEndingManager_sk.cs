@@ -34,16 +34,9 @@ public class GameEndingManager_sk : MonoBehaviour
     private float endalchol;
     private string endname;
     private int testScore;
-    // Start is called before the first frame update
+    
     void Start()
     {
-        playerName.text=""+GameData.gamedata.name;
-        majorscore.text=""+GameData.gamedata.major;
-        healthscore.text=""+GameData.gamedata.health;
-        stressscore.text=""+GameData.gamedata.stress;
-        popularscore.text=""+GameData.gamedata.popular;
-        alcholscore.text=""+GameData.gamedata.alchol;
-
         endname=GameData.gamedata.name;
         endmajor=GameData.gamedata.major;
         endhealth=GameData.gamedata.health;
@@ -51,11 +44,17 @@ public class GameEndingManager_sk : MonoBehaviour
         endpopular=GameData.gamedata.popular;
         endalchol=GameData.gamedata.alchol;
 
+        playerName.text=""+GameData.gamedata.name;
+        majorscore.text=""+GameData.gamedata.major;
+        healthscore.text=""+GameData.gamedata.health;
+        stressscore.text=""+endstress.ToString();
+        popularscore.text=""+GameData.gamedata.popular;
+        alcholscore.text=""+GameData.gamedata.alchol;
+
         testScore=(GameData.gamedata.scoreExam1+GameData.gamedata.scoreExam2)/2;
         examscore.text = testScore.ToString();
     }
 
-    // Update is called once per frame
     void Update()
     {
         EndingScore();

@@ -117,10 +117,8 @@ public class TalkManager_goot_sk : MonoBehaviour
     }
 
    public string GetTalk(int id, int talkIndex)
-   {       
-       Debug.Log(id);
+   {
        if(!talkData.ContainsKey(id)){
-           Debug.Log(id);
            if((id-questManager.GetQuestTalkIndex(id))==3000){
                if(!talkData.ContainsKey(id-id%10)){
                     //퀘스트 맨 처음 대사 마저 없을 때,

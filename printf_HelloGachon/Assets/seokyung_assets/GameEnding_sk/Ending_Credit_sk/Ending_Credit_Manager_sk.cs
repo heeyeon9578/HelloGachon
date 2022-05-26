@@ -138,7 +138,7 @@ public class Ending_Credit_Manager_sk : MonoBehaviour
         }
 
         time = 0f;
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
 
         //페이드아웃
         while (alpha.a < 1f)

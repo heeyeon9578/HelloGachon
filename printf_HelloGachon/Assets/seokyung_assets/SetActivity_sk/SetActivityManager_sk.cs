@@ -106,7 +106,7 @@ public class SetActivityManager_sk : MonoBehaviour
 
                     activityColor = new Color32(138, 255, 143, 255);
                     activityName = "술약속";
-                    infoTxt.text = "오늘 먹고 죽는거야~~~\n전공 -3, 인기도 +5,\n체력 -5, 알코올 분해력 +5";
+                    infoTxt.text = "술약속\n오늘 먹고 죽는거야~~~\n전공 -3, 인기도 +5,\n체력 -5, 알코올 분해력 +5";
                 }
                 break;
             case "Health":
@@ -119,7 +119,7 @@ public class SetActivityManager_sk : MonoBehaviour
 
                     activityColor = new Color32(255, 99, 88, 225);
                     activityName = "운동";
-                    infoTxt.text = "코딩하려면 일단 살아는 있어야겠지\n체력 +5, 스트레스 -5,";
+                    infoTxt.text = "운동\n코딩하려면 일단 살아는 있어야겠지\n체력 +5, 스트레스 -5,";
                 }
                 break;
             case "Study":
@@ -133,7 +133,7 @@ public class SetActivityManager_sk : MonoBehaviour
 
                     activityColor = new Color32(104, 142, 225, 225);
                     activityName = "스터디";
-                    infoTxt.text = "공부에는 왕도가 없다!\n전공 +5, 체력 -5,\n스트레스 +5";
+                    infoTxt.text = "스터디\n공부에는 왕도가 없다!\n전공 +5, 체력 -5,\n스트레스 +5";
                 }
                 break;
             case "Interest":
@@ -147,7 +147,7 @@ public class SetActivityManager_sk : MonoBehaviour
 
                     activityColor = new Color32(255, 227, 88, 255);
                     activityName = "취미\n활동";
-                    infoTxt.text = "하고 싶었던거 다 해볼거야!!\n인기도 +5, 체력 -5,\n스트레스 -3";
+                    infoTxt.text = "취미 활동\n하고 싶었던거 다 해볼거야!!\n인기도 +5, 체력 -5,\n스트레스 -3";
                 }
                 break;
             case "Club":
@@ -160,7 +160,7 @@ public class SetActivityManager_sk : MonoBehaviour
                         getHealth-=3;
                         getPopular+=3;
                         getAlchol+=5;
-                        infoTxt.text = "동방가서 누워서 기타쳐야지~\n인기도 +3, 체력 -3,\n스트레스 -5, 알코올 분해력 +5";
+                        infoTxt.text = "음악 동아리\n동방가서 누워서 기타쳐야지~\n인기도 +3, 체력 -3,\n스트레스 -5, 알코올 분해력 +5";
                     }
                     else if(getGroup=="Religion"&&getHealth>2)
                     {
@@ -168,7 +168,7 @@ public class SetActivityManager_sk : MonoBehaviour
                         getStress-=7;
                         getHealth-=3;
                         getAlchol-=5;
-                        infoTxt.text = "비나이다 비나이다 오류없이 실행되게 해주세요\n체력 -3, 스트레스 -7,\n알코올 분해력 -5";
+                        infoTxt.text = "종교 동아리\n비나이다 비나이다 오류없이 실행되게 해주세요\n체력 -3, 스트레스 -7,\n알코올 분해력 -5";
                     }
                     else if(getGroup=="Major"&&getHealth>2)
                     {
@@ -177,7 +177,7 @@ public class SetActivityManager_sk : MonoBehaviour
                         getMajor+=5;
                         getStress+=3;
                         getAlchol+=5;
-                        infoTxt.text = "동아리 친구들이랑 공부하다 술마시러 가야지~\n인기도 +3, 체력 -3,\n스트레스 -5, 알코올 분해력 +5";
+                        infoTxt.text = "학술 동아리\n동아리 친구들이랑 공부하다 술마시러 가야지~\n인기도 +3, 체력 -3,\n스트레스 -5, 알코올 분해력 +5";
                     }
                     else if(getGroup=="Health")
                     {
@@ -185,7 +185,7 @@ public class SetActivityManager_sk : MonoBehaviour
                         getStress-=5;
                         getHealth+=5;
                         getAlchol-=3;
-                        infoTxt.text = "아 근손실은 못참지 ㅋㅋ\n체력 +5, 스트레스 -5,\n알코올 분해력 -3";
+                        infoTxt.text = "운동 동아리\n아 근손실은 못참지 ㅋㅋ\n체력 +5, 스트레스 -5,\n알코올 분해력 -3";
                     }
                     else if(getGroup=="Perpormance"&&getHealth>4)
                     {
@@ -194,7 +194,7 @@ public class SetActivityManager_sk : MonoBehaviour
                         getHealth-=5;
                         getPopular+=5;
                         getAlchol+=5;
-                        infoTxt.text = "동아리 공연 준비해야지~\n인기도 +5, 체력 -5,\n스트레스 -5, 알코올 분해력 +5";
+                        infoTxt.text = "공연 동아리\n동아리 공연 준비해야지~\n인기도 +5, 체력 -5,\n스트레스 -5, 알코올 분해력 +5";
                     }
                     else if(getGroup=="Hobby"&&getHealth>2)
                     {
@@ -202,7 +202,7 @@ public class SetActivityManager_sk : MonoBehaviour
                         getStress-=5;
                         getHealth-=3;
                         getAlchol+=5;
-                        infoTxt.text = "오늘은 동아리 친구들이랑 뭘 해볼까나~?\n체력 -3, 스트레스 -5,\n알코올 분해력 +5";
+                        infoTxt.text = "취미 동아리\n오늘은 동아리 친구들이랑 뭘 해볼까나~?\n체력 -3, 스트레스 -5,\n알코올 분해력 +5";
                     }
 
                     touchSound.Play();
