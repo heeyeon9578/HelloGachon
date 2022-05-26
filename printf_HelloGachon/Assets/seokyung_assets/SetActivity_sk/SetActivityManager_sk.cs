@@ -114,7 +114,7 @@ public class SetActivityManager_sk : MonoBehaviour
                 {
                     touchSound.Play();
                     Count--;
-                    getHealth+=5;
+                    getHealth+=10;
                     getStress-=5;
 
                     activityColor = new Color32(255, 99, 88, 225);
