@@ -33,7 +33,8 @@ public class SaveLoad : MonoBehaviour
     private void Start() {
         filePath=Application.persistentDataPath+"/LocalDB.json";
         Debug.Log(filePath);
-        
+    }
+    private void Update() {
         
     }
     public void Save()
@@ -55,6 +56,7 @@ public class SaveLoad : MonoBehaviour
         byte[] bytes=System.Text.Encoding.UTF8.GetBytes(json);
         string code=System.Convert.ToBase64String(bytes);
         File.WriteAllText(filePath,code);
+        SceneManager.LoadScene("StartScene");
 
     }
     public void Load()
@@ -64,31 +66,33 @@ public class SaveLoad : MonoBehaviour
             GameObject.Find("MenuManager").GetComponent<BtnType>().SetLoad();
         }
         else{
-            string str2=File.ReadAllText(filePath);
-            byte[] bytes=System.Convert.FromBase64String(str2);
-            string jdata=System.Text.Encoding.UTF8.GetString(bytes);
-            Data data4=JsonUtility.FromJson<Data>(jdata);
-            GameData.gamedata.playerName=data4.svname;
-            GameData.gamedata.month=data4.svmonth;
-            GameData.gamedata.major=data4.svmajor;
-            GameData.gamedata.alchol=data4.svalchol;
-            GameData.gamedata.health=data4.svhealth;
-            GameData.gamedata.stress=data4.svstress;
-            GameData.gamedata.popular=data4.svpopular;
-            GameData.gamedata.groupname=data4.svgroupname;
-            GameData.gamedata.playerpos=data4.PlayerPos;
-            GameData.gamedata.mudangpos=data4.MudangPos;
-            GameData.gamedata.friendpos=data4.FriendPos;
-            GameData.gamedata.talkend=data4.Endtalk;
-            GameData.gamedata.loadscenename=data4.savescene;
-            GameData.gamedata.bgmSlider=data4.svbgmSlider;
-            GameData.gamedata.bgmSound=data4.svbgmSound;
-            GameData.gamedata.sfxSlider=data4.svsfxSlider;
-            GameData.gamedata.SFXsound=data4.svsfxSound;
-            GameData.gamedata.scoreExam1=data4.svExam1;
-            GameData.gamedata.scoreExam2=data4.svExam2;
-            GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut(data4.savescene);
-        }
+                string str2=File.ReadAllText(filePath);
+                byte[] bytes=System.Convert.FromBase64String(str2);
+                string jdata=System.Text.Encoding.UTF8.GetString(bytes);
+                Data data4=JsonUtility.FromJson<Data>(jdata);
+                GameData.gamedata.playerName=data4.svname;
+                GameData.gamedata.month=data4.svmonth;
+                GameData.gamedata.major=data4.svmajor;
+                GameData.gamedata.alchol=data4.svalchol;
+                GameData.gamedata.health=data4.svhealth;
+                GameData.gamedata.stress=data4.svstress;
+                GameData.gamedata.popular=data4.svpopular;
+                GameData.gamedata.groupname=data4.svgroupname;
+                GameData.gamedata.playerpos=data4.PlayerPos;
+                GameData.gamedata.mudangpos=data4.MudangPos;
+                GameData.gamedata.friendpos=data4.FriendPos;
+                GameData.gamedata.talkend=data4.Endtalk;
+                GameData.gamedata.loadscenename=data4.savescene;
+                GameData.gamedata.bgmSlider=data4.svbgmSlider;
+                GameData.gamedata.bgmSound=data4.svbgmSound;
+                GameData.gamedata.sfxSlider=data4.svsfxSlider;
+                GameData.gamedata.SFXsound=data4.svsfxSound;
+                GameData.gamedata.scoreExam1=data4.svExam1;
+                GameData.gamedata.scoreExam2=data4.svExam2;
+                GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut(data4.savescene);
+            }
+           
+        
        
     }
     

@@ -279,8 +279,11 @@ public class GRTalkManager : MonoBehaviour
            if(talkData[id]==No)
                 GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("MTStart");
             
-           if(talkData[id]==GoMT)
+           if(talkData[id]==GoMT){
+                GameData.gamedata.health-=5;
+                GameData.gamedata.popular+=10;
                 GameObject.Find("Canvas").GetComponent<FadeINOUT>().MTstartFadeOut();
+           }
             else if(talkData[id]==NoMT)
                 GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Set_Activity_4April");
             if(talkData[id]==StartaHan)
@@ -330,8 +333,6 @@ public class GRTalkManager : MonoBehaviour
             else if(ChoiceCount==1)
             {
                 talkData[40]=YesMT;
-                GameData.gamedata.health-=5;
-                GameData.gamedata.popular+=10;
                 Portal.SetActive(true);
                 ChoicPanel.SetActive(false);
                 GameObject.Find("GRGameManager").GetComponent<GRManager>().TestSub();
