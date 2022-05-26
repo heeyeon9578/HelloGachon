@@ -2196,19 +2196,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2031403126273435179, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 2031403126273435179, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 2031403126273435179, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2031403126273435179, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2031403126273435179, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
       propertyPath: m_SizeDelta.x
@@ -2372,6 +2372,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: heebarImage
       objectReference: {fileID: 0}
+    - target: {fileID: 2613295631182428278, guid: b024afc83d3516541af2c9bc277b2f11, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b024afc83d3516541af2c9bc277b2f11, type: 3}
 --- !u!1001 &2776650006613425637
@@ -2395,15 +2399,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2776650006662771878, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.20784314
       objectReference: {fileID: 0}
     - target: {fileID: 2776650006662771878, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0.20784314
       objectReference: {fileID: 0}
     - target: {fileID: 2776650006662771878, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.20784314
       objectReference: {fileID: 0}
     - target: {fileID: 2776650006662771879, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
       propertyPath: m_Pivot.x
@@ -2419,19 +2423,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2776650006662771879, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 2776650006662771879, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 1.01
       objectReference: {fileID: 0}
     - target: {fileID: 2776650006662771879, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2776650006662771879, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 2776650006662771879, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
       propertyPath: m_SizeDelta.x
