@@ -74,6 +74,6 @@ public class SJ_DialManager : MonoBehaviour
         Dial_Class_4.AddDial(++Dial_Class_4.dialNum, "그럼 중첩 반복문을 이용해서 \"yeeeyeee\"라는 문장을 만들어보자");
         Dial_Class_4.AddDial(++Dial_Class_4.dialNum, "아주 훌륭해! 오늘 수업은 여기까지다\n기말고사 준비 잘해서 유종의 미를 거두거라!");
 
-        Dial_Exam_2.AddDial(Dial_Exam_2.dialNum, "중간고사: 변수, loop(), print() 함수를 사용하여 \"yeeYeeYee\"라는 값을 출력하라!");
+        Dial_Exam_2.AddDial(Dial_Exam_2.dialNum, "기말고사: 변수, loop(), print() 함수를 사용하여 \"yeeYeeYee\"라는 값을 출력하라!");
     }
 }
