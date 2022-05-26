@@ -139,7 +139,12 @@ public class GRManager : MonoBehaviour
         if(Count==1)
             talkText2.text="종합운동장으로 이동하여 선배와 대화해보자!";
         if(Count==3)
-            talkText2.text = "AI공학관으로 가서 선배님을 만나보자!";
+        {
+            talkText2.text = "AI 공학관 앞 선배를 만나자!";
+        }
+        if(Count==4)
+            talkText2.text="무당이 앞 친구를 만나자!";
+            
        
     }
  //마우스 클릭 후 떼어낼때 퀘스트 마크가 팝다운

@@ -18,6 +18,7 @@ public class FEQuestManager : MonoBehaviour
     public int questActionIndex;
     public int nameIndex;
     public int talkIndex;
+    public AudioSource phoneAlarm;
     
     void Awake()
     {
@@ -66,7 +67,6 @@ public class FEQuestManager : MonoBehaviour
         //Quest Name
         return questList[questId].questName;
     }
-
     void nextQuest()
     {
         questId += 10;

@@ -9,21 +9,15 @@ public class FEDialoManager : MonoBehaviour
     public FEQuestManager qManager;
     public GameObject dialogPanel;
     public GameObject scanObject;
-    public AudioSource playerRoomBGM;
     public AudioSource phoneAlarm;
     public Text dialogName;
     public Text dialogText;
     public bool isInteract;
     public int nameIndex;
     public int talkIndex;
-    public AudioPlay bgm;
 
     void Start()
     {
-        bgm.sliderA.value=GameData.gamedata.bgmSlider;
-        bgm.sound=GameData.gamedata.bgmSound;
-        bgm.SetStart();
-        playerRoomBGM.Play();
         phoneAlarm.Play();
         qManager.checkQuest();
     }

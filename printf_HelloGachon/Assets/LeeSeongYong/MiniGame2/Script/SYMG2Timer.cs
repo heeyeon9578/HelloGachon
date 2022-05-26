@@ -10,12 +10,17 @@ public class SYMG2Timer : MonoBehaviour
     public int stopTime;
     public float EndTime;
     public GameObject player;
+    public bool IsPause;
+    
     // Start is called before the first frame update
     void Start(){
+
     }
     // Update is called once per frame
     void Update()
     {
+       
+        
         if(isStart){
             if(LimitTime>0)
             {
@@ -36,4 +41,5 @@ public class SYMG2Timer : MonoBehaviour
     public void TimerStart(){
        isStart=true;
     }
+    
 }

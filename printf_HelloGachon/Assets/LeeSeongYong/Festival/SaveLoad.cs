@@ -30,9 +30,11 @@ public class Data
 public class SaveLoad : MonoBehaviour
 {
     string filePath;
-
     private void Start() {
         filePath=Application.persistentDataPath+"/LocalDB.json";
+        Debug.Log(filePath);
+        
+        
     }
     public void Save()
     {
@@ -54,7 +56,6 @@ public class SaveLoad : MonoBehaviour
         string code=System.Convert.ToBase64String(bytes);
         File.WriteAllText(filePath,code);
 
-        //SceneManager.LoadScene("StartScene");
     }
     public void Load()
     {
@@ -88,6 +89,8 @@ public class SaveLoad : MonoBehaviour
             GameData.gamedata.scoreExam2=data4.svExam2;
             GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut(data4.savescene);
         }
+       
     }
+    
 
 }

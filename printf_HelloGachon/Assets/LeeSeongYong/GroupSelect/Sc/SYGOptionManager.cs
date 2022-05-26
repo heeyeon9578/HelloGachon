@@ -7,6 +7,12 @@ public class SYGOptionManager : MonoBehaviour
     // Start is called before the first frame update
     public GameObject Option;
 
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            OpenOption();
+        }
+    }
     public void OpenOption()
     {
         Option.SetActive(true);

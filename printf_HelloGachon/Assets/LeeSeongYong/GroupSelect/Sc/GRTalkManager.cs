@@ -342,6 +342,7 @@ public class GRTalkManager : MonoBehaviour
            case "n":
             if(ChoiceCount==0){
                 talkData[30]=No;
+                fadePanel.GetComponent<Image>().color=new Color(0,0,0);
                 ChoicPanel.SetActive(false);
                 GameObject.Find("GRGameManager").GetComponent<GRManager>().TestSub();
             }

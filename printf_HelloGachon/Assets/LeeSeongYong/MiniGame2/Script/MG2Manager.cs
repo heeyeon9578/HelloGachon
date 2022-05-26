@@ -15,7 +15,7 @@ public class MG2Manager : MonoBehaviour
             return _instance;
         }
     }
-    IEnumerator coroutine;
+    public IEnumerator coroutine;
     [SerializeField]
     private GameObject soju;
     [SerializeField]
@@ -33,6 +33,7 @@ public class MG2Manager : MonoBehaviour
     private float GameTime;
     public Text Endtext;
     public bool isWin=false;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -60,9 +61,6 @@ public class MG2Manager : MonoBehaviour
         
         StopCoroutine(coroutine);
         panel.SetActive(true);
-        GameData.gamedata.alchol+=15;
-        GameData.gamedata.health-=10;
-        GameData.gamedata.popular-=10;
         panelbutton.SetActive(false);
         panelbutton2.SetActive(true);
         Endtext.text="게임 오버";
@@ -70,8 +68,6 @@ public class MG2Manager : MonoBehaviour
        if(isWin){
             StopCoroutine(coroutine);
             panel.SetActive(true);
-            GameData.gamedata.alchol+=10;
-            GameData.gamedata.popular+=3;
             panelbutton.SetActive(false);
             panelbutton2.SetActive(true);
             Endtext.text="게임 승리";
@@ -99,6 +95,17 @@ public class MG2Manager : MonoBehaviour
         Instantiate(listsoju[num],pos,Quaternion.identity);
     }
     public void NextStory(){
+        if(playerlife==0)
+        {
+            GameData.gamedata.alchol+=15;
+            GameData.gamedata.health-=10;
+            GameData.gamedata.popular-=10;
+        }
+        if(isWin)
+        {
+            GameData.gamedata.alchol+=10;
+            GameData.gamedata.popular+=3;
+        }
         GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Set_Activity_4April");
     }
    
