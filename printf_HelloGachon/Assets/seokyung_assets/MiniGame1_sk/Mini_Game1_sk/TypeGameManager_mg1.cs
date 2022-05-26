@@ -19,12 +19,14 @@ public class TypeGameManager_mg1 : MonoBehaviour
     public GameObject registerResult;
     public GameObject dialogPanel;
     public GameObject optionPanel;
+    public GameObject qBox;
     public List<ClassNum_mg1> classNumList;
     public string[] successTalkList;
     public string[] failTalkList;
     public Sprite[] portraitArr;
     public Sprite[] scheduleArr;
     public Text classNumTxt;
+    public Text classNumTxt2;
     public Text resultTxt;
     public Text dialogName;
     public Text dialogText;
@@ -68,6 +70,7 @@ public class TypeGameManager_mg1 : MonoBehaviour
             if(setTime < 0 && !isApplyBtn)
             {
                 setZero();
+                qBox.SetActive(false);
                 typeGameBGM.Stop();
                 timeoverSound.Play(); 
                 resultTxt.text = "타임오버!";
@@ -79,6 +82,7 @@ public class TypeGameManager_mg1 : MonoBehaviour
             {
                 setZero();
                 typeGameBGM.Stop();
+                qBox.SetActive(false);
 
                 if(inputClassNum.text == classNumList[currentClassNum].classNum)
                 {
@@ -104,7 +108,9 @@ public class TypeGameManager_mg1 : MonoBehaviour
         else
         {
             typeGameBGM.Stop();
+            qBox.SetActive(false);
             classNumTxt.text = "";
+            classNumTxt2.text = "";
 
             if(successCnt > 3)
             {
@@ -146,6 +152,7 @@ public class TypeGameManager_mg1 : MonoBehaviour
         else
         {
             dialogPanel.SetActive(true);
+            qBox.SetActive(false);
             resultTalk();
         }        
     }
@@ -172,8 +179,10 @@ public class TypeGameManager_mg1 : MonoBehaviour
     //**수강신청 게임 로직
     void displayClassNum()
     {
+        qBox.SetActive(true);
         currentClassNum = UnityEngine.Random.Range(0, classNumList.Count);
         classNumTxt.text = classNumList[currentClassNum].className + ": " + classNumList[currentClassNum].classNum;
+        classNumTxt2.text = classNumList[currentClassNum].className + ": " + classNumList[currentClassNum].classNum;
         //classNumList.RemoveAt(currentClassNum);
     }
     
