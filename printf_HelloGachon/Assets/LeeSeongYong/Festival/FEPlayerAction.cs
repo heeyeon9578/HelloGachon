@@ -37,10 +37,10 @@ public class FEPlayerAction : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-         if(GameData.gamedata.loadscenename==curscene.name)
-        {
-            Going();
-        }
+        //  if(GameData.gamedata.loadscenename==curscene.name)
+        // {
+        //     Going();
+        // }
     }
 
     // Update is called once per frame

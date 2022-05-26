@@ -40,10 +40,10 @@ public class GRPlayerAction : MonoBehaviour
         curscene=SceneManager.GetActiveScene();
     }
     private void Start() {
-        if(GameData.gamedata.loadscenename==curscene.name)
-        {
-            Going();
-        }
+        // if(GameData.gamedata.loadscenename==curscene.name)
+        // {
+        //     Going();
+        // }
     }
     void Update(){
 

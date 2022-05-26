@@ -37,10 +37,10 @@ public class GroupPlayerAction : MonoBehaviour
         
     }
     private void Start() {
-        if(GameData.gamedata.loadscenename==curscene.name)
-        {
-            Going();
-        }
+        // if(GameData.gamedata.loadscenename==curscene.name)
+        // {
+        //     Going();
+        // }
     }
     void Update(){
         h=manager.isGroup ? 0 :rightValue+leftValue;
