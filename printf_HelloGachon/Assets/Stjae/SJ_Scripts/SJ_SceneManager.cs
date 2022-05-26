@@ -1,10 +1,8 @@
 using System;
-using System.Collections;
 using System.Reflection;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class SJ_SceneManager : MonoBehaviour
 {
@@ -18,6 +16,9 @@ public class SJ_SceneManager : MonoBehaviour
     string month;
     public Text dialText;
     public Image optionBtn;
+    public Image dialToggleBtn;
+    private Color dialToggleBtnColor;
+    public GameObject dialogue;
     public GameObject repeatBtn;
     public GameObject optionPanel;
     public Class currentClass;
@@ -114,8 +115,11 @@ public class SJ_SceneManager : MonoBehaviour
                 {
                     classBGM.Stop();
                     clearSFX.Play();
+                    dialToggleBtn.enabled = false;
                     ++currentClass.dialNumber;
                 }
+                else
+                    DialToggleBtnOnClick();
             break;
 
             default:
@@ -373,5 +377,13 @@ public class SJ_SceneManager : MonoBehaviour
     {
         currentClass.dialNumber = 1;
         repeatBtn.SetActive(false);
+    }
+
+    public void DialToggleBtnOnClick()
+    {
+        dialToggleBtnColor = dialToggleBtn.color;
+        dialToggleBtnColor.a = Math.Abs(dialToggleBtnColor.a - 1.5f);
+        dialToggleBtn.color = dialToggleBtnColor;
+        dialogue.SetActive(!dialogue.activeSelf);
     }
 }

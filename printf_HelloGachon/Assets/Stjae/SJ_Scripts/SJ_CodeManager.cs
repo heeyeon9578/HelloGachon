@@ -144,9 +144,9 @@ public class SJ_CodeManager : MonoBehaviour
         ParseCode(matches);
     }
 
-    static void ParseCode(MatchCollection tokens)   // 코드 분석
+    static void ParseCode(MatchCollection tokens)       // 코드 분석
     {
-        foreach(Match token in tokens)  // Group[1]: 함수 이름, Group[2]: 함수 인풋, Group[3]: 함수 바디
+        foreach(Match token in tokens)                  // Group[1]: 함수 이름, Group[2]: 함수 인풋, Group[3]: 함수 바디
         {
             if(token.NextMatch().Groups[2].Success)     // 문자열 우측에 ()이 존재한다면 문자열로 함수를 검색
                 SearchFunc(token);
@@ -216,7 +216,6 @@ public class SJ_CodeManager : MonoBehaviour
         string varInDict = "";
 
         Type funcType = Type.GetType($"SJ_CodeManager+{char.ToUpper(funcName[0]) + funcName.Substring(1)}");
-        Debug.Log(funcType);
         MethodInfo Body = funcType.GetMethod("Body");
         PropertyInfo bracketInfo = funcType.GetProperty("requireBracket");
         PropertyInfo bodyInfo = funcType.GetProperty("bodyInput");

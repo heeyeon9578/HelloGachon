@@ -42,7 +42,7 @@ public class SJ_DialManager : MonoBehaviour
         Dial_Class_1.AddDial(++Dial_Class_1.dialNum, "변수는 값을 저장할 수 있는 저장소라고 생각하면 돼");
         Dial_Class_1.AddDial(++Dial_Class_1.dialNum, "변수의 이름은 마음대로 설정할 수 있어, 다만 숫자만 아니면 돼");
         Dial_Class_1.AddDial(++Dial_Class_1.dialNum, "\"변수이름 = 값\" 이라고 입력하면 변수에 값을 저장할 수 있어");   
-        Dial_Class_1.AddDial(++Dial_Class_1.dialNum, "원하는 변수 이름을 짓고 값을 넣어보자");  // event
+        Dial_Class_1.AddDial(++Dial_Class_1.dialNum, "원하는 변수 이름을 짓고 값을 넣어보자");
         Dial_Class_1.AddDial(++Dial_Class_1.dialNum, "아주 훌륭해! 오늘 수업은 여기까지다");
 
         Dial_Class_2.AddDial(Dial_Class_2.dialNum, "두번째 프로그래밍 수업에 온 걸 환영한다");
