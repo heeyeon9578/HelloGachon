@@ -773,7 +773,7 @@ PrefabInstance:
     - target: {fileID: 6077164811330443205, guid: d5b4bdd24423fab49b14c6b1c5c8a83f, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 851647347}
     - target: {fileID: 6077164811330443205, guid: d5b4bdd24423fab49b14c6b1c5c8a83f, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetLever
@@ -857,7 +857,7 @@ PrefabInstance:
     - target: {fileID: 6077164812894090799, guid: d5b4bdd24423fab49b14c6b1c5c8a83f, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 851647347}
     - target: {fileID: 6077164812894090799, guid: d5b4bdd24423fab49b14c6b1c5c8a83f, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1648,6 +1648,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3ec7285ad76b224a90f58a693e290ca, type: 3}
+--- !u!1 &851647346 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3510027554840340078, guid: f3ec7285ad76b224a90f58a693e290ca, type: 3}
+  m_PrefabInstance: {fileID: 851647345}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &851647347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851647346}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 467c1fe360226304abf08d87257da392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24100000, guid: 9edb3116e0efe7145b0c9bd9222a52ac, type: 2}
+  sfxMixer: {fileID: 24100000, guid: e19995286f7649f43ba2395fc4c32c20, type: 2}
+  sliderA: {fileID: 420530232}
+  sliderB: {fileID: 420530231}
+  sound: 0
+  sfxSound: 0
 --- !u!1 &855350923
 GameObject:
   m_ObjectHideFlags: 0

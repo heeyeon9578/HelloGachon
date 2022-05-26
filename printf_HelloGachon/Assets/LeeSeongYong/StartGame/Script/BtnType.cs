@@ -22,6 +22,7 @@ public class BtnType : MonoBehaviour
     public int exitCount=0;
 
     private void Awake() {
+        Screen.SetResolution(1920, 1080, true);
         sfxSource = SFX.GetComponent<AudioSource>();
         startBtnSfx = SFX_startBtn.GetComponent<AudioSource>();
         startFailSfx = SFX_startFail.GetComponent<AudioSource>();
