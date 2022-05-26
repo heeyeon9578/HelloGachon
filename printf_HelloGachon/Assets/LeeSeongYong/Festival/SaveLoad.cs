@@ -56,7 +56,6 @@ public class SaveLoad : MonoBehaviour
         byte[] bytes=System.Text.Encoding.UTF8.GetBytes(json);
         string code=System.Convert.ToBase64String(bytes);
         File.WriteAllText(filePath,code);
-        SceneManager.LoadScene("StartScene");
 
     }
     public void Load()
