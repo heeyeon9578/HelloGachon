@@ -883,7 +883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1362cf6c695cd849be0a4890695afff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 15
   manager: {fileID: 328871646}
   MudangBorderline: {fileID: 8692833471206761667}
   controlKey: {fileID: 905695304}

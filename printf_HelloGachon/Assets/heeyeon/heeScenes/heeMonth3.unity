@@ -2346,7 +2346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8975cce431f949c449890bd66126524b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 15
   manager: {fileID: 328871646}
   MudangBorderline: {fileID: 8692833471206761667}
   controlKey: {fileID: 448260833}
