@@ -79,6 +79,7 @@ public class FEQuestManager : MonoBehaviour
         {
             case 10:
                 if(questActionIndex == 1 && isTouched == false) {
+                    phoneAlarm.Stop();
                     questObject[0].SetActive(false);
                     questObject[1].SetActive(true);
                     isInteract = true;                 
