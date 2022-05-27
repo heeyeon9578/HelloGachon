@@ -20,6 +20,7 @@ public class TypeGameManager_mg1 : MonoBehaviour
     public GameObject dialogPanel;
     public GameObject optionPanel;
     public GameObject qBox;
+    public GameObject readyPanel;
     public List<ClassNum_mg1> classNumList;
     public string[] successTalkList;
     public string[] failTalkList;
@@ -30,6 +31,7 @@ public class TypeGameManager_mg1 : MonoBehaviour
     public Text resultTxt;
     public Text dialogName;
     public Text dialogText;
+    public Text loginId;
     public Image portraitImg;
     public Image scheduleImg;
     public InputField inputClassNum;
@@ -41,6 +43,7 @@ public class TypeGameManager_mg1 : MonoBehaviour
     public AudioSource gameSuccess;
     public AudioSource gameFail;
     public AudioSource typeGameBGM;
+    public AudioSource loginSfx;
     public bool isApplyBtn = false;
     public int currentClassNum;
     public int successCnt = 0;
@@ -54,10 +57,14 @@ public class TypeGameManager_mg1 : MonoBehaviour
         getMajor=GameData.gamedata.major;
         getStress=GameData.gamedata.stress;
 
-        typeGameBGM.Play();
-        displayClassNum();
-        getSetTime = setTime;
-        resetTimer();
+        loginId.text = GameData.gamedata.playerName;
+
+        isPlaying = false;
+
+        // typeGameBGM.Play();
+        // displayClassNum();
+        // getSetTime = setTime;
+        // resetTimer();
     }
 
     void Update() {
@@ -177,9 +184,24 @@ public class TypeGameManager_mg1 : MonoBehaviour
     }
 
     //**수강신청 게임 로직
+    public void startGame()
+    {
+        readyPanel.SetActive(false);
+        loginSfx.Play();
+        typeGameBGM.Play();
+        displayClassNum();
+        getSetTime = setTime;
+        isPlaying = true;
+        resetTimer();
+    }
+
     void displayClassNum()
     {
+        //for Android
         qBox.SetActive(true);
+        //for Windows
+        //qBox.SetActive(false);
+
         currentClassNum = UnityEngine.Random.Range(0, classNumList.Count);
         classNumTxt.text = classNumList[currentClassNum].className + ": " + classNumList[currentClassNum].classNum;
         classNumTxt2.text = classNumList[currentClassNum].className + ": " + classNumList[currentClassNum].classNum;

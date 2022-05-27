@@ -62,7 +62,7 @@ public class TalkManager_bmg1_sk : MonoBehaviour
 
         //Quest Talk
         //Quest1: 컴퓨터를 확인하자! (questId: 10)
-        talkData.Add(10 + 1000, new string[] { "네이비즘 준비해뒀고.. 긴장하지 말구...:0", "헉 10시다!!!:1", "가즈아아아아아아아!:2", "(바로 수강신청이 진행되니 준비가 된 후에 터치하세요!):2" });
+        talkData.Add(10 + 1000, new string[] { "네이비즘 준비해뒀고.. 긴장하지 말구...:0", "헉 10시다!!!:1", "가즈아아아아아아아!:2" });
     }
 
     public string getName(int id, int nameIndex)
