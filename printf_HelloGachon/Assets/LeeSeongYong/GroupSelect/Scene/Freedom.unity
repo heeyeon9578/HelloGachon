@@ -12841,23 +12841,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2795754033363677731, guid: e1dd6f2cd40583d42afee59bc5036841, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.354
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2795754033363677731, guid: e1dd6f2cd40583d42afee59bc5036841, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2795754033511569106, guid: e1dd6f2cd40583d42afee59bc5036841, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.54
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2795754033511569106, guid: e1dd6f2cd40583d42afee59bc5036841, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2795754033511569106, guid: e1dd6f2cd40583d42afee59bc5036841, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.54
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2795754033672030121, guid: e1dd6f2cd40583d42afee59bc5036841, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -12905,23 +12905,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2795754034124542699, guid: e1dd6f2cd40583d42afee59bc5036841, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.54
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2795754034124542699, guid: e1dd6f2cd40583d42afee59bc5036841, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2795754034637729754, guid: e1dd6f2cd40583d42afee59bc5036841, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.354
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2795754034637729754, guid: e1dd6f2cd40583d42afee59bc5036841, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2795754034637729754, guid: e1dd6f2cd40583d42afee59bc5036841, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.354
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2795754034768459532, guid: e1dd6f2cd40583d42afee59bc5036841, type: 3}
       propertyPath: m_MinValue

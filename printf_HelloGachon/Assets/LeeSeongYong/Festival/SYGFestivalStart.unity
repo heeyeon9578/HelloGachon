@@ -1839,15 +1839,55 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2776650006968819752, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776650006968819752, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776650006968819752, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -25
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776650006968819752, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776650007039046772, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -60
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776650007039046772, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776650007039046772, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776650007039046772, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -80
+      objectReference: {fileID: 0}
     - target: {fileID: 2776650007045952389, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
       propertyPath: m_Text
       value: "\uBB54\uC9C0 \uAD81\uAE08\uD55C\uB370 \uAC19\uC774 \uD559\uAD50\uC5D0
         \uAC00\uBCFC\uB798?"
       objectReference: {fileID: 0}
+    - target: {fileID: 2776650007045952389, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2776650007387821135, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
       propertyPath: m_Text
       value: "\uD55C\uB9C8\uC74C \uD398\uC2A4\uD2F0\uBC8C\uC774\uB77C\uB294\uAC8C
         \uC5F4\uB9B0\uB2E4\uACE0 \uD574!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2776650007387821135, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd28ec0201977dd458e65a3d1f60fa0f, type: 3}
