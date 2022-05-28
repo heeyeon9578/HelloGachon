@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class QuestManager_heeots1 : MonoBehaviour
@@ -11,15 +12,22 @@ public class QuestManager_heeots1 : MonoBehaviour
     private bool isTouched = false;
     public int questId;
     public int questActionIndex;
+
     //폰 알람
     public AudioSource phoneAlarm;
+
+    string playerNameTxt;
+    public Text kakaoEnter;
+    public Text kakaoName1;
+    public Text kakaoName2;
+    public Text kakaoName3;
+    public Text kakaoName4;
 
     //참여할지 말지 클릭하는 판넬
     public GameObject talkPanel;
     
     void Awake()
     {
-
         isInteract = false;
         questObject[0].SetActive(true);
         questList = new Dictionary<int, QuestData_heeots3>();
@@ -37,6 +45,14 @@ public class QuestManager_heeots1 : MonoBehaviour
         questList.Add(10, new QuestData_heeots3("카톡을 확인하자", new int[] {1000}));
         questList.Add(20, new QuestData_heeots3("인트로 종료", new int[] {0}));
 
+        //카카오톡 이름 설정
+        playerNameTxt = GameData.gamedata.playerName;
+
+        kakaoEnter.text = playerNameTxt + "님이 입장하셨습니다.";
+        kakaoName1.text = playerNameTxt;
+        kakaoName2.text = playerNameTxt;
+        kakaoName3.text = playerNameTxt;
+        kakaoName4.text = playerNameTxt;
     }
 
     public int getQuestTalkIndex(int id)
@@ -93,18 +109,23 @@ public class QuestManager_heeots1 : MonoBehaviour
                 break;
         }
     }
+
     //phonePanel에서 phonePanel2로 넘어가기 위한 함수
     public void touchPhone()
     {
-        
+        questObject[3].SetActive(false);
+        questObject[4].SetActive(true);
+    }
 
-        questObject[3].SetActive(true);
+    //phonePane2에서 phonePanel3으로 넘어가기 위한 함수
+    public void touchPhone2()
+    {
         questObject[4].SetActive(false);
-
+        questObject[5].SetActive(true);
     }
 
     //phonePanel2를 끄기 위한 함수
-    public void touchPhone2()
+    public void touchPhone3()
     {
         questObject[1].SetActive(false);
 

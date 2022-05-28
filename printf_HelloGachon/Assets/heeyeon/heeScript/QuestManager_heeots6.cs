@@ -14,6 +14,8 @@ public class QuestManager_heeots6 : MonoBehaviour
 
     //폰 알람
     public AudioSource phoneAlarm;
+    public AudioSource roomBGM;
+    public AudioSource barBGM;
 
     //참여할지 말지 클릭하는 판넬
     public GameObject talkPanel;
@@ -25,6 +27,7 @@ public class QuestManager_heeots6 : MonoBehaviour
     void Awake()
     {
         questList = new Dictionary<int, QuestData_heeots3>();
+        roomBGM.Play();
         generateData();
     }
 
@@ -109,9 +112,12 @@ public class QuestManager_heeots6 : MonoBehaviour
     {
         questObject[2].SetActive(false);
         isInteract = false;
-        Debug.Log("간다!");
+
+        roomBGM.Stop();
+
         //참여한다고 하면 종강파티 이미지 보여줌
         FinishImage.SetActive(true);
+        barBGM.Play();
     }
 
     //종강파티 이미지를 클릭하면, 성적확인 엔딩 장면
@@ -119,22 +125,15 @@ public class QuestManager_heeots6 : MonoBehaviour
         GameData.gamedata.health -= 5;
         GameData.gamedata.popular += 10;
         GameData.gamedata.alchol += 10;
-        FinishImage.SetActive(false);
         SceneManager.LoadScene("Game_Ending_Scene_sk");
-        
-        
     }
-    
 
     public void onNoBtnClick6()
     {
         questObject[2].SetActive(false);
         isInteract = false;
-        Debug.Log("안가!");
         
         //참여하지 않으면  엔딩씬
         SceneManager.LoadScene("Game_Ending_Scene_sk");
-        
-        
     }
 }

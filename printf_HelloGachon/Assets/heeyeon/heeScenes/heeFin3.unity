@@ -2237,6 +2237,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4972684461667351521, guid: da3a07d9ced76e344aec6cec062f9457, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -540
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972684461667351521, guid: da3a07d9ced76e344aec6cec062f9457, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -450
+      objectReference: {fileID: 0}
     - target: {fileID: 4972684461824308876, guid: da3a07d9ced76e344aec6cec062f9457, type: 3}
       propertyPath: m_Text
       value: "2. \uB3D9\uC544\uB9AC\uD64D\uBCF4\uC804"
@@ -2268,6 +2276,14 @@ PrefabInstance:
     - target: {fileID: 4972684461967342940, guid: da3a07d9ced76e344aec6cec062f9457, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972684461967342941, guid: da3a07d9ced76e344aec6cec062f9457, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -540
+      objectReference: {fileID: 0}
+    - target: {fileID: 4972684461967342941, guid: da3a07d9ced76e344aec6cec062f9457, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 6427331879607153053, guid: da3a07d9ced76e344aec6cec062f9457, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -3171,7 +3187,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -110}
+  m_AnchoredPosition: {x: 0, y: -230}
   m_SizeDelta: {x: -400, y: 250}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &8635402292516511365
@@ -3196,7 +3212,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f04b7e375fc355a4ba7020b55ca06dfa, type: 3}
-    m_FontSize: 100
+    m_FontSize: 95
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -3206,6 +3222,6 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.3
+    m_LineSpacing: 1.4
   m_Text: "3\uC6D4 \uC785\uD559\uC2DD\uC774 \uB05D\uB0AC\uB2E4!! \n\uC218\uC5C5 \uB4E4\uC73C\uB7EC
     \uAC00\uBCFC\uAE4C?"
