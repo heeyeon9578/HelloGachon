@@ -80,8 +80,8 @@ public class TalkManager_otl_sk : MonoBehaviour
                                             });
         talkData.Add(21 + 2000, new string[] { "모두 오티 듣느라 고생했어~:2" });
 
-        //Quest3: 뒷풀이에 갈까? (questId: 30)
-        talkData.Add(30 + 2000, new string[] { "뒷풀이 갈거지?:0" });
+        //Quest3: 뒤풀이에 갈까? (questId: 30)
+        talkData.Add(30 + 2000, new string[] { "뒤풀이 갈거지?:0" });
 
         //Quest2.1~7: 설명듣기
         // 1.학번 및 홈페이지 2.수강신청 3.사이버캠퍼스 4.학사행정 5.비교과신청(WIND) 6.등록금 7.건너뛰기
@@ -130,7 +130,7 @@ public class TalkManager_otl_sk : MonoBehaviour
                                         });
         talkData.Add(9000, new string[] { "이상으로 오리엔테이션을 마치겠습니다! 모두 수고하셨습니다.:0",
                                             "신입생 여러분, 앞으로 가천대학교에서 좋은 추억 많이 만들고 알찬 학교생활하길 바랄게요~!! 감사합니다!!!:0",
-                                            "끝나고 뒷풀이가 있으니 참석하실 분들은 저에게 와주시면 됩니다!!:0"
+                                            "끝나고 뒤풀이가 있으니 참석하실 분들은 저에게 와주시면 됩니다!!:0"
                                         });
     }
 

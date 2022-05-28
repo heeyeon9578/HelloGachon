@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   remainingTime: 00:00:000
   timerTxt: {fileID: 342809952}
-  setTime: 6
+  setTime: 10
   Register: {fileID: 21542258}
   registerResult: {fileID: 1734747828}
   dialogPanel: {fileID: 1895487094}

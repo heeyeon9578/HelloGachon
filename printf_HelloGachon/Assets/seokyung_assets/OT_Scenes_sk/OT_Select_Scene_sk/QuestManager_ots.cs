@@ -112,8 +112,8 @@ public class QuestManager_ots : MonoBehaviour
         isInteract = false;
 
         //능력치 부여 및 저장
-        getHealth-=5;
-        getPopular+=5;
+        getHealth-=2;
+        getPopular+=8;
 
         GameData.gamedata.health=getHealth;
         GameData.gamedata.popular=getPopular;

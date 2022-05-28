@@ -49,7 +49,7 @@ public class QuestManager_otl_sk : MonoBehaviour
         // 1.학번 및 홈페이지 2.수강신청 3.사이버캠퍼스 4.학사행정 5.비교과신청(WIND) 6.등록금 7.건너뛰기
         questList.Add(10, new QuestData_otl_sk("선배님께 말걸자!", new int[] { 2000 }));
         questList.Add(20, new QuestData_otl_sk("오티 시작!", new int[] { 200, 2000 }));
-        questList.Add(30, new QuestData_otl_sk("뒷풀이에 갈까?", new int[] { 2000 }));
+        questList.Add(30, new QuestData_otl_sk("뒤풀이에 갈까?", new int[] { 2000 }));
         questList.Add(40, new QuestData_otl_sk("오티 씬 종료!", new int[] { 0 }));
     }
 
@@ -213,15 +213,15 @@ public class QuestManager_otl_sk : MonoBehaviour
         isChoosing = false;
 
         //능력치 부여 및 저장
-        getHealth-=5;
-        getPopular+=10;
-        getAlchol+=10;
+        getHealth-=2;
+        getPopular+=15;
+        getAlchol+=15;
 
         GameData.gamedata.health=getHealth;
         GameData.gamedata.popular=getPopular;
         GameData.gamedata.alchol=getAlchol;
 
-        //참가하면 뒷풀이 씬으로 이동
+        //참가하면 뒤풀이 씬으로 이동
         GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("OT_AfterParty_sk");
     }
 

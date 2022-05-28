@@ -60,11 +60,6 @@ public class TypeGameManager_mg1 : MonoBehaviour
         loginId.text = GameData.gamedata.playerName;
 
         isPlaying = false;
-
-        // typeGameBGM.Play();
-        // displayClassNum();
-        // getSetTime = setTime;
-        // resetTimer();
     }
 
     void Update() {
@@ -153,7 +148,6 @@ public class TypeGameManager_mg1 : MonoBehaviour
             setTime = getSetTime;
             remainingTime = CountdowmTimer(true);            
             isPlaying = true;
-            loop++;
             displayClassNum();
         }
         else
@@ -161,7 +155,7 @@ public class TypeGameManager_mg1 : MonoBehaviour
             dialogPanel.SetActive(true);
             qBox.SetActive(false);
             resultTalk();
-        }        
+        }     
     }
 
     void setZero()
@@ -189,7 +183,6 @@ public class TypeGameManager_mg1 : MonoBehaviour
         readyPanel.SetActive(false);
         loginSfx.Play();
         typeGameBGM.Play();
-        displayClassNum();
         getSetTime = setTime;
         isPlaying = true;
         resetTimer();
@@ -205,6 +198,7 @@ public class TypeGameManager_mg1 : MonoBehaviour
         currentClassNum = UnityEngine.Random.Range(0, classNumList.Count);
         classNumTxt.text = classNumList[currentClassNum].className + ": " + classNumList[currentClassNum].classNum;
         classNumTxt2.text = classNumList[currentClassNum].className + ": " + classNumList[currentClassNum].classNum;
+        loop++;
         //classNumList.RemoveAt(currentClassNum);
     }
     
