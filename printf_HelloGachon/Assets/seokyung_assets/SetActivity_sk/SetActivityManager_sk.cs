@@ -36,6 +36,7 @@ public class SetActivityManager_sk : MonoBehaviour
     public GameObject activityPanel;
     public GameObject player;
     public GameObject healthTalk;
+    public GameObject touchTalk;
     public AudioSource touchSound;
     public AudioSource resetSound;
     public AudioSource decideSound;
@@ -85,9 +86,11 @@ public class SetActivityManager_sk : MonoBehaviour
 
         if(getHealth < 5) {
             healthTalk.SetActive(true);
+            touchTalk.SetActive(false);
         }
         else {
             healthTalk.SetActive(false);
+            touchTalk.SetActive(true);
         }
     }
     public void abilityChange(string type)
