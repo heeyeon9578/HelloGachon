@@ -76,7 +76,7 @@ public class heeQuestManager5 : MonoBehaviour
                 if(questActionIndex ==1){
                     talkText3.text = "AI공학관 앞에서 선배 만나기";
                 }else if(questActionIndex==2){
-                    talkText3.text = "AI공학관에 가서 6월 수업 듣기(이길여 총장님이 학교에 오셨다고..?!)";
+                    talkText3.text = "AI공학관에 가서 6월 수업 듣기(이길여 총장님이 가천관 쪽에 계신다고..?! 한 번 가볼까? )";
                     questObject[2].SetActive(true);
                 }
 

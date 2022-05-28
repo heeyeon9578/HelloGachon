@@ -27,7 +27,7 @@ public class heeQuestManager3 : MonoBehaviour
     // 퀘스트 생성 - 퀘스트 코드 공유하기!!
     void GenerateData()
     {
-        questList.Add(10, new heeQuestData3("3월: 입학식", new int[]{2000, 500}));
+        questList.Add(10, new heeQuestData3("3월: 입학식", new int[]{2000}));
         questList.Add(20, new heeQuestData3("3월: 입학식끝", new int[]{0}));
 
     }
@@ -77,13 +77,12 @@ public class heeQuestManager3 : MonoBehaviour
             case 10: 
                 if(questActionIndex ==1){
                     talkText3.text = "AI공학관에 들어가기";
-                }
-                                   
+                }                
                 break;
 
             case 20: 
                 if(questActionIndex ==0){
-                  questObject[0].SetActive(true);
+                    GameObject.Find("heeCanvas").GetComponent<FadeINOUT>().LoadFadeOut("heeFin3");
                 }
                                    
                 break;

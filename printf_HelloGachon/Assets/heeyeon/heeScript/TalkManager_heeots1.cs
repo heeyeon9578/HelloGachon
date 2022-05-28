@@ -56,9 +56,9 @@ public class TalkManager_heeots1 : MonoBehaviour
 
         //npcs
        //시작할때 intro 대사 , 튜토리얼, npc들 익히기
-        talkData.Add(3000, new string[] {"와!!! 가천대학교 컴퓨터공학과에 합격했다!!! 아싸!!!!:1",
-                                        "입학하기 전에 학과별로 단체톡방에 미리 들어갈 수 있구나!!!!!:3",
-                                        "방에 있는 핸드폰에 가까이 다가가서 눌러보자!!:0"                                         
+        talkData.Add(3000, new string[] {"와!!! 가천대학교 컴퓨터공학과에 합격했다!!! 아싸!!!!:3",
+                                        "입학하기 전에 학과별로 단체톡방에 미리 들어갈 수 있구나!!!!!:2",
+                                        "방에 있는 핸드폰에 가까이 다가가서 눌러보자!!:1"                                         
                                         });
         //room Story Obj talk
         talkData.Add(1000, new string[] { "딱히 온 카톡은 없네.." });

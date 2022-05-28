@@ -26,7 +26,7 @@ public class heeFinTalkManager3 : MonoBehaviour
         //bigclassroom storyObj name
         //bigclassroom_playerSeat:200, sunabe:2000, player:7000
         string playerName = GameData.gamedata.playerName;
-        talkName.Add(200, new string[] { "" });
+        talkName.Add(200, new string[] { "컴공 회장" });
         talkName.Add(2000, new string[] { "선배" });
         talkName.Add(300, new string[] {  playerName});
 
@@ -114,9 +114,10 @@ public class heeFinTalkManager3 : MonoBehaviour
                                             "학생증을 꼭 소지해야 받을 수 있으며, 조기소진 시 행사가 종료됩니다.:0"
                                         });
         talkData.Add(7000, new string[] { "5.한마음 페스티벌:0",
-                                            "비교과신청(WIND)은 메인 홈페이지의 오른쪽 메뉴바의 USER SERVICE를 통해 진행할 수 있습니다.:0",
-                                            "WIND는 우리대학에 개설된 비교과 프로그램을 관리하고 운영하기 위한 통합 시스템이며, 본인이 원하는 다양한 비교과 프로그램에 참여할 수 있습니다.:0",
-                                            "교내 대회, 설명회, 특강, 봉사 등을 신청할 수 있습니다. 프로그램을 수료하면 마일리지를 받을 수 있으며 마일리지가 많이 모으면 상도 받을 수 있습니다.:0"
+                                            "한마음 페스티벌은 5월 초에 진행합니다.:0",
+                                            "더워진 날씨에 시원하게 즐길 수 있도록 물총 이벤트를 합니다.:0",
+                                            "사전 참가 예약시, 한정된 수량의 한마음 페스티벌 티셔츠를 배부받을 수 있습니다. :0",
+                                            "가천대학교 글로벌캠퍼스 대운동장에서 진행하며, 가수 초정 공연도 있습니다.:0 "
                                         });
         talkData.Add(8000, new string[] { "6.중간고사/기말고사:0",
                                             "중간고사/기말고사를 치르기 1달전쯤부터 강의실을 24시간 개방합니다.:0",

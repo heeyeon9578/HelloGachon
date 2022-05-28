@@ -26,9 +26,10 @@ public class QuestManager_otl_sk : MonoBehaviour
     public float getHealth;
     public float getPopular;
     public float getAlchol;
-    
+     public Text questText;
     void Awake()
     {
+        questText.text ="선배에게 말걸기";
         questList = new Dictionary<int, QuestData_otl_sk>();
         generateData();
     }
@@ -95,7 +96,8 @@ public class QuestManager_otl_sk : MonoBehaviour
         {
             case 10:
                 if(questActionIndex == 0) {
-                    questObject[1].SetActive(true);                            
+                    questObject[1].SetActive(true);   
+                    questText.text ="지정석에 앉기";                         
                 }
                 break;
             case 20:
@@ -106,6 +108,7 @@ public class QuestManager_otl_sk : MonoBehaviour
                 }
                 if(questActionIndex == 1) {
                     questObject[1].SetActive(false);
+                    questText.text ="선배에게 말 걸기";
                 }
                 break;
             case 30:

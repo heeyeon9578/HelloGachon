@@ -22,11 +22,15 @@ public class heeFinQuestManager3 : MonoBehaviour
     public int questActionIndex;
     public int nameIndex;
     public int talkIndex;
+
+    public Text questText;
     
     void Awake()
     {
+        questText.text ="선배에게 말걸기";
         questList = new Dictionary<int, heeFinQuestData3>();
         generateData();
+        
     }
 
     void Start()
@@ -87,17 +91,20 @@ public class heeFinQuestManager3 : MonoBehaviour
         {
             case 10:
                 if(questActionIndex == 0) {
-                    questObject[1].SetActive(true);                            
+                    questObject[1].SetActive(true);    
+                    questText.text ="지정석에 앉기";                        
                 }
                 break;
             case 20:
                 if(questActionIndex == 0 && oManager.objDataId == 200) {
                     isTalking = true;
                     oManager.isInteract = true;
-                    questObject[0].SetActive(true);                                  
+                    questObject[0].SetActive(true);  
+                                                    
                 }
                 if(questActionIndex == 1) {
                     questObject[1].SetActive(false);
+                    questText.text ="선배에게 말 걸기";
                 }
                 break;
             case 30:

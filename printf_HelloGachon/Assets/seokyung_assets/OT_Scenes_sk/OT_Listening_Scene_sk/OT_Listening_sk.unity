@@ -790,6 +790,7 @@ MonoBehaviour:
   getHealth: 0
   getPopular: 0
   getAlchol: 0
+  questText: {fileID: 442983097}
 --- !u!1 &842506165
 GameObject:
   m_ObjectHideFlags: 0
@@ -846,6 +847,7 @@ MonoBehaviour:
   nameIndex: 0
   talkIndex: 0
   objDataId: 0
+  questPanel: {fileID: 442983098}
 --- !u!1001 &876905339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1592,6 +1594,9 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 975787162}
+  - {fileID: 614649700}
+  - {fileID: 407289153}
+  - {fileID: 442983099}
   - {fileID: 1467703721}
   - {fileID: 614649700}
   - {fileID: 876905340}
@@ -1938,7 +1943,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4972684461118105815, guid: da3a07d9ced76e344aec6cec062f9457, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4972684461118105815, guid: da3a07d9ced76e344aec6cec062f9457, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2284,7 +2289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8815060028070490282, guid: d5b4bdd24423fab49b14c6b1c5c8a83f, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8815060028070490282, guid: d5b4bdd24423fab49b14c6b1c5c8a83f, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2421,7 +2426,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8888494490410369223, guid: 01717d51f4672754a9a7449e024bf28e, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8888494490410369223, guid: 01717d51f4672754a9a7449e024bf28e, type: 3}
       propertyPath: m_AnchorMax.x

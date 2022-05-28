@@ -59,7 +59,7 @@ public class heeTalkManager5 : MonoBehaviour
            //npcs
        //시작할 때 대사
        talkData.Add(7000, new string[] {"기말고사 공부하느라 많이 힘들지? 간식 받고 힘내~:4","AI공학관 앞으로 나를 찾아오면 던킨도너츠랑 커피를 받을 수 있어~:4", 
-                                        "총장님이 학교에 방문하신다는 소문도.....:4", "나랑 같이 가자! AI공학관에 가기 전에 나를 먼저 찾아와~!:5", "간식이벤트에 참여할까?:0"});
+                                        "총장님이 오늘 학교에 방문하신다는 소문도.....:4", "나랑 같이 가자! AI공학관에 가기 전에 나를 먼저 찾아와~!:5", "간식이벤트에 참여할까?:0"});
 
        //buildings
        talkData.Add(100, new string[] {"이곳은 카페다. 카페이름은 파스쿠치이다."});
@@ -143,7 +143,7 @@ public class heeTalkManager5 : MonoBehaviour
 
        //Quest_5 5월 간식행사 
        talkData.Add(10+ 1000, new string[] {"잘 찾아왔어!!:0","AI공학관까지 나랑 같이 걸어가거나 무당이를 타고 가자!:1"});
-       talkData.Add(11+2000, new string[] {"오느라 고생했어!!:0", "여기 던킨도너츠랑 커피를 줄게!!:4", "기말고사 공부 화이팅!!:2","아 곧 이길여 총장님 오시나보네..:0"});
+       talkData.Add(11+2000, new string[] {"오느라 고생했어!!:0", "여기 던킨도너츠랑 커피를 줄게!!:4", "기말고사 공부 화이팅!!:2","엇! 이길여 총장님이 지금 가천관 쪽에 계신다고? 가봐야겠다!! 대박!!:0"});
        talkData.Add(20+6000 , new string[] {"어서오십시오~^^:0", " 저는 가천대 지킴이 이길여 총장입니다~:0", "스가이에 드는 명문 가천에 오신걸 진심으로 축하드려요~^^ :0"
                                            });
 
@@ -217,6 +217,7 @@ public class heeTalkManager5 : MonoBehaviour
                if(talkIndex == talkData[id-id%100].Length){
                   
                   talkPanel5.SetActive(true);
+                  talkPanel3.SetActive(false);
                   return null;
                }                 
                else{

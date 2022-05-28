@@ -19,7 +19,7 @@ public class OTManager_sk : MonoBehaviour
     public int nameIndex;
     public int talkIndex;
     public int objDataId;
-    
+    public GameObject questPanel;
     void Start()
     {
         //otBGM.Play();
@@ -109,4 +109,17 @@ public class OTManager_sk : MonoBehaviour
         isInteract = true;
         talkIndex++;
     }
+    //마우스 클릭시 퀘스트 마크가 팝업
+    public void questionMark1(){
+        questPanel.SetActive(true);
+
+       
+    }
+ //마우스 클릭 후 떼어낼때 퀘스트 마크가 팝다운
+    public void questionMark2(){
+        questPanel.SetActive(false);
+       
+       
+    }
+
 }

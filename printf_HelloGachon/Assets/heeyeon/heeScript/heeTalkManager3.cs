@@ -125,7 +125,7 @@ public class heeTalkManager3 : MonoBehaviour
        //Quest Talk(퀘스트 넘버 + npc 넘버)
        //3월 입학식    
        talkData.Add(10+ 2000, new string[] {"잘 찾아왔어!!:0","AI공학관에 들어가서 입학식에 참여해!!:1"});
-       talkData.Add(11+500, new string[] {"AI공학관에 들어가시겠습니까?"});
+    
 
         
 

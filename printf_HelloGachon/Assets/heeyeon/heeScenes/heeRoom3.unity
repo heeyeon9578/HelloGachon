@@ -494,6 +494,10 @@ PrefabInstance:
       value: SFX_prfb_sk
       objectReference: {fileID: 0}
     - target: {fileID: 4223024254855660249, guid: 6e67b122ce24a004a90661d9f307c60e, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223024254855660249, guid: 6e67b122ce24a004a90661d9f307c60e, type: 3}
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 76af1274a29df8341acb8a1599074b3e, type: 3}

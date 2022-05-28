@@ -2010,8 +2010,8 @@ MonoBehaviour:
   portraitArr:
   - {fileID: 6830411675861614133, guid: f02e508d9c9810c49957b9609ec98520, type: 3}
   - {fileID: 7877403105803776743, guid: f02e508d9c9810c49957b9609ec98520, type: 3}
-  - {fileID: 1572790241719009093, guid: f02e508d9c9810c49957b9609ec98520, type: 3}
   - {fileID: 2458176920941387167, guid: f02e508d9c9810c49957b9609ec98520, type: 3}
+  - {fileID: 5379483723916235220, guid: 7c4288b03ff4f3543b45335bf9cac01e, type: 3}
 --- !u!4 &900946056
 Transform:
   m_ObjectHideFlags: 0
