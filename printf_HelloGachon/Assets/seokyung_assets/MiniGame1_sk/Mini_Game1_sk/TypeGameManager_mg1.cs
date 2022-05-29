@@ -65,11 +65,6 @@ public class TypeGameManager_mg1 : MonoBehaviour
     void Update() {
         if(loop < 6)
         {
-            if(Input.GetKeyDown(KeyCode.Escape))
-            {
-                openOption();
-            }
-            
             if(isPlaying) {
                 remainingTime = CountdowmTimer();
             }

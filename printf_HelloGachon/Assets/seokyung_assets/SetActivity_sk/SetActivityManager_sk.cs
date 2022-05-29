@@ -190,7 +190,7 @@ public class SetActivityManager_sk : MonoBehaviour
                         getAlchol-=3;
                         infoTxt.text = "운동 동아리\n아 근손실은 못참지 ㅋㅋ\n체력 +8, 스트레스 -5,\n알코올 분해력 -3";
                     }
-                    else if(getGroup=="Perpormance"&&getHealth>4)
+                    else if(getGroup=="Performance"&&getHealth>4)
                     {
                         Count--;
                         getStress-=5;
