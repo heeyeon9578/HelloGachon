@@ -122,7 +122,7 @@ public class QuestManager_heeots6 : MonoBehaviour
 
     //종강파티 이미지를 클릭하면, 성적확인 엔딩 장면
     public void onApplyBtnClick6_1(){
-        GameData.gamedata.health -= 5;
+        GameData.gamedata.health -= 2;
         GameData.gamedata.popular += 10;
         GameData.gamedata.alchol += 10;
         SceneManager.LoadScene("Game_Ending_Scene_sk");

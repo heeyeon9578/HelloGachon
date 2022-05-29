@@ -216,6 +216,8 @@ public class SJ_SceneManager : MonoBehaviour
                 string finalOutput1 = SJ_CodeManager.tmpOutput.text.Trim().Replace("\n", "");
                 if (newLineNumber1 == 8 && finalOutput1 == "yeeYeeYee")
                 {
+                    dialogue.SetActive(true);
+                    dialToggleBtn.enabled = false;
                     currentClass.AddDial(1, "<color=blue>정답입니다!</color>");
                     passSFX.Play();
                     ++currentClass.dialNumber;
@@ -223,6 +225,8 @@ public class SJ_SceneManager : MonoBehaviour
                 }
                 else
                 {
+                    dialogue.SetActive(true);
+                    dialToggleBtn.enabled = false;
                     currentClass.AddDial(1, "<color=red>틀렸습니다!</color>");
                     failSFX.Play();
                     ++currentClass.dialNumber;
@@ -376,6 +380,7 @@ public class SJ_SceneManager : MonoBehaviour
         } 
         else
         {
+            GameData.gamedata.major += 5;
             GameData.gamedata.stress += 10;
             GameData.gamedata.scoreExam1 += 50;
         }
@@ -390,6 +395,7 @@ public class SJ_SceneManager : MonoBehaviour
         } 
         else
         {
+            GameData.gamedata.major += 5;
             GameData.gamedata.stress += 10;
             GameData.gamedata.scoreExam2 += 50;
         }

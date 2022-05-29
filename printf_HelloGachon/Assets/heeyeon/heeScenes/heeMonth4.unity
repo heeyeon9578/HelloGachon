@@ -1578,7 +1578,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2031403125217027708, guid: 60734b5c0b45d034b81b1df2f51d9699, type: 3}
       propertyPath: m_Text
-      value: "\uAC04\uC2DD \uBA39\uACE0 \uCCB4\uB825 \uBCF4\uCDA9\uD574\uC57C\uC9C0~~"
+      value: "\uAC04\uC2DD \uBA39\uACE0 \uCCB4\uB825 \uBCF4\uCDA9\uD574\uC57C\uC9C0~~\n(\uCCB4\uB825
+        +8, \uC2A4\uD2B8\uB808\uC2A4 -3)"
       objectReference: {fileID: 0}
     - target: {fileID: 2031403125217027708, guid: 60734b5c0b45d034b81b1df2f51d9699, type: 3}
       propertyPath: m_FontData.m_MinSize
@@ -1586,7 +1587,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2031403125217027708, guid: 60734b5c0b45d034b81b1df2f51d9699, type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 75
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031403125217027708, guid: 60734b5c0b45d034b81b1df2f51d9699, type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 2031403125634349168, guid: 60734b5c0b45d034b81b1df2f51d9699, type: 3}
       propertyPath: m_Text
@@ -1598,7 +1603,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2031403125634349168, guid: 60734b5c0b45d034b81b1df2f51d9699, type: 3}
       propertyPath: m_FontData.m_FontSize
-      value: 75
+      value: 70
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031403125634349168, guid: 60734b5c0b45d034b81b1df2f51d9699, type: 3}
+      propertyPath: m_FontData.m_LineSpacing
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 2031403125748839708, guid: 60734b5c0b45d034b81b1df2f51d9699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1633,8 +1642,12 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2031403125748839709, guid: 60734b5c0b45d034b81b1df2f51d9699, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031403125748839709, guid: 60734b5c0b45d034b81b1df2f51d9699, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -280
+      value: -270
       objectReference: {fileID: 0}
     - target: {fileID: 2031403126044701600, guid: 60734b5c0b45d034b81b1df2f51d9699, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -1669,8 +1682,12 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2031403126044701601, guid: 60734b5c0b45d034b81b1df2f51d9699, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 240
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031403126044701601, guid: 60734b5c0b45d034b81b1df2f51d9699, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -280
+      value: -330
       objectReference: {fileID: 0}
     - target: {fileID: 2031403126273435176, guid: 60734b5c0b45d034b81b1df2f51d9699, type: 3}
       propertyPath: m_Name
@@ -1764,9 +1781,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7104946397259935706, guid: 60734b5c0b45d034b81b1df2f51d9699, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104946397259935706, guid: 60734b5c0b45d034b81b1df2f51d9699, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -100
+      objectReference: {fileID: 0}
     - target: {fileID: 8635402291782802942, guid: 60734b5c0b45d034b81b1df2f51d9699, type: 3}
       propertyPath: m_Text
       value: "\uAC04\uC2DD\uD589\uC0AC\uC5D0 \uCC38\uC5EC\uD560\uAE4C?"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8635402291782802942, guid: 60734b5c0b45d034b81b1df2f51d9699, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60734b5c0b45d034b81b1df2f51d9699, type: 3}
