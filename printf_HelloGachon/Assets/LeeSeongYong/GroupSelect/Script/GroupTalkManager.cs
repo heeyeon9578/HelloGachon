@@ -73,6 +73,8 @@ public class GroupTalkManager : MonoBehaviour
     public GameObject hobbySelect;
     public GameObject sport1Select;
     public GameObject sport2Select;
+    public GameObject frAnim;
+    private Animator friendAnimation;
     public Sprite[] imgarr;
     // Start is called before the first frame update
     void Awake()
@@ -80,6 +82,7 @@ public class GroupTalkManager : MonoBehaviour
         groupTalk=new Dictionary<int, string[]>();
         traitData=new Dictionary<int,Sprite>();
         talkName = new Dictionary<int, string[]>();
+        friendAnimation=frAnim.GetComponent<Animator>();
         DataSet();
 
         
@@ -459,6 +462,7 @@ public class GroupTalkManager : MonoBehaviour
     {
         if(id==2010)
         {
+            
             if(groupTalk[id]==endTalk)
             {
                 if(talkIndex==groupTalk[id].Length)
@@ -476,6 +480,7 @@ public class GroupTalkManager : MonoBehaviour
             {
                 if(talkIndex==groupTalk[id].Length)
                     {
+                        friendAnimation.SetBool("start",true);
                         return null;
                     }
                 else

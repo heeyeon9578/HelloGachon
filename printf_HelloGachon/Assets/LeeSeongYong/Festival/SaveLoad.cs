@@ -29,6 +29,7 @@ public class Data
 [System.Serializable]
 public class SaveLoad : MonoBehaviour
 {
+    public GameObject savePanel;
     string filePath;
     private void Start() {
         filePath=Application.persistentDataPath+"/LocalDB.json";
@@ -52,10 +53,13 @@ public class SaveLoad : MonoBehaviour
         loaddata.svsfxSound=GameData.gamedata.SFXsound;
         loaddata.svExam1=GameData.gamedata.scoreExam1;
         loaddata.svExam2=GameData.gamedata.scoreExam2;
-        string json=JsonUtility.ToJson(loaddata);
+        string json=JsonUtility.ToJson(loaddata,true);
         byte[] bytes=System.Text.Encoding.UTF8.GetBytes(json);
         string code=System.Convert.ToBase64String(bytes);
         File.WriteAllText(filePath,code);
+        
+        savePanel.SetActive(true);
+
 
     }
     public void Load()

@@ -280,7 +280,7 @@ public class GRTalkManager : MonoBehaviour
                 GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("MTStart");
             
            if(talkData[id]==GoMT){
-                GameData.gamedata.health-=5;
+                GameData.gamedata.health-=2;
                 GameData.gamedata.popular+=10;
                 GameObject.Find("Canvas").GetComponent<FadeINOUT>().MTstartFadeOut();
            }
@@ -298,9 +298,9 @@ public class GRTalkManager : MonoBehaviour
             if(talkData[id]==talkHan)
             {
                 //ChoicPanel.SetActive(true);
-                GameData.gamedata.stress-=5;
+                GameData.gamedata.stress-=8;
                 GameData.gamedata.health-=5;
-                GameData.gamedata.popular+=5;
+                GameData.gamedata.popular+=8;
                 GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("heeRoom5");
             }
            

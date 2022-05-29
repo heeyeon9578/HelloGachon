@@ -6,6 +6,7 @@ public class SYGOptionManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject Option;
+    public GameObject savepanel;
     private void Update() {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
@@ -23,5 +24,9 @@ public class SYGOptionManager : MonoBehaviour
     public void EndGame()
     {
         Application.Quit();
+    }
+    public void ExitPanel()
+    {
+        savepanel.SetActive(false);
     }
 }

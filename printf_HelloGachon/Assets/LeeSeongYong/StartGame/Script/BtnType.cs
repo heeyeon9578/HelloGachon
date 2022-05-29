@@ -9,6 +9,7 @@ public class BtnType : MonoBehaviour
     public GameObject nicknamepanel;
     public GameObject Optionpanel;
     public GameObject LoadPanel;
+    public GameObject TutorialPanel;
     public GameObject SFX;
     public GameObject SFX_startBtn;
     public GameObject SFX_startFail;
@@ -86,7 +87,7 @@ public class BtnType : MonoBehaviour
             GameData.gamedata.stress=0;
             GameData.gamedata.major=0;
             GameData.gamedata.month="3월";
-            GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("heeRoom1");
+            GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Freedom");
         }
         else {
             startFailSfx.loop=false;
@@ -115,5 +116,17 @@ public class BtnType : MonoBehaviour
     {
         exitCount=0;
         LoadPanel.SetActive(false);
+    }
+    public void GameEnd()
+    {
+        Application.Quit();
+    }
+    public void OpenTutorial()
+    {
+        TutorialPanel.SetActive(true);
+    }
+    public void EndTutorial()
+    {
+        TutorialPanel.SetActive(false);
     }
 }
