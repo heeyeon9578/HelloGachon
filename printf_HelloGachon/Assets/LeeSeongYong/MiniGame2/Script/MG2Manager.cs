@@ -63,14 +63,14 @@ public class MG2Manager : MonoBehaviour
         panel.SetActive(true);
         panelbutton.SetActive(false);
         panelbutton2.SetActive(true);
-        Endtext.text="게임 오버";
+        Endtext.text="게임 오버\n(알코올 분해력 +10,\n인기도 -5, 체력 -5)";
        }
        if(isWin){
             StopCoroutine(coroutine);
             panel.SetActive(true);
             panelbutton.SetActive(false);
             panelbutton2.SetActive(true);
-            Endtext.text="게임 승리";
+            Endtext.text="게임 승리\n(인기도 +10,\n알코올 분해력 +15)";
        }
 
     }
@@ -97,14 +97,14 @@ public class MG2Manager : MonoBehaviour
     public void NextStory(){
         if(playerlife==0)
         {
-            GameData.gamedata.alchol+=15;
-            GameData.gamedata.health-=10;
-            GameData.gamedata.popular-=10;
+            GameData.gamedata.alchol+=10;
+            GameData.gamedata.health-=5;
+            GameData.gamedata.popular-=5;
         }
         if(isWin)
         {
-            GameData.gamedata.alchol+=10;
-            GameData.gamedata.popular+=3;
+            GameData.gamedata.alchol+=15;
+            GameData.gamedata.popular+=10;
         }
         GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Set_Activity_4April");
     }

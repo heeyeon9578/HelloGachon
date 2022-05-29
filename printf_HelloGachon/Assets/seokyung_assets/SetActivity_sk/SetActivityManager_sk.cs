@@ -49,7 +49,7 @@ public class SetActivityManager_sk : MonoBehaviour
         healthtext.text="체력 : "+GameData.gamedata.health;
         populartext.text="인기도 : "+GameData.gamedata.popular;
         alcholtext.text="알코올 분해력 : "+GameData.gamedata.alchol;
-        infoTxt.text = " ";
+        infoTxt.text = "버튼을 클릭해 이번 달의 계획들을 정해보세요!\n- 활동에 따라 다른 능력치를 얻을 수 있습니다.\n- 체력이 0이 되면 더 이상 활동을 할 수 없습니다.\n- 리셋버튼으로 활동을 초기화 할 수 있습니다.";
 
         getMajor=GameData.gamedata.major;
         getStress=GameData.gamedata.stress;
@@ -102,14 +102,14 @@ public class SetActivityManager_sk : MonoBehaviour
                 {
                     touchSound.Play();
                     Count--;
-                    getHealth-=5;
-                    getAlchol+=5;
-                    getPopular+=5;
+                    getHealth-=3;
+                    getAlchol+=10;
+                    getPopular+=8;
                     getMajor-=3;
 
                     activityColor = new Color32(138, 255, 143, 255);
                     activityName = "술약속";
-                    infoTxt.text = "술약속\n오늘 먹고 죽는거야~~~\n전공 -3, 인기도 +5,\n체력 -5, 알코올 분해력 +5";
+                    infoTxt.text = "술약속\n오늘 먹고 죽는거야~~~\n전공 -3, 인기도 +8,\n체력 -3, 알코올 분해력 +10";
                 }
                 break;
             case "Health":
@@ -122,7 +122,7 @@ public class SetActivityManager_sk : MonoBehaviour
 
                     activityColor = new Color32(255, 99, 88, 225);
                     activityName = "운동";
-                    infoTxt.text = "운동\n코딩하려면 일단 살아는 있어야겠지\n체력 +5, 스트레스 -5,";
+                    infoTxt.text = "운동\n코딩하려면 일단 살아는 있어야겠지\n체력 +10, 스트레스 -5,";
                 }
                 break;
             case "Study":
@@ -130,13 +130,13 @@ public class SetActivityManager_sk : MonoBehaviour
                 {
                     touchSound.Play();
                     Count--;
-                    getHealth-=5;
-                    getStress+=5;
-                    getMajor+=5;
+                    getHealth-=2;
+                    getStress+=4;
+                    getMajor+=8;
 
                     activityColor = new Color32(104, 142, 225, 225);
                     activityName = "스터디";
-                    infoTxt.text = "스터디\n공부에는 왕도가 없다!\n전공 +5, 체력 -5,\n스트레스 +5";
+                    infoTxt.text = "스터디\n공부에는 왕도가 없다!\n전공 +8, 체력 -2,\n스트레스 +4";
                 }
                 break;
             case "Interest":
@@ -144,13 +144,13 @@ public class SetActivityManager_sk : MonoBehaviour
                 {
                     touchSound.Play();
                     Count--;
-                    getHealth-=5;
-                    getStress-=3;
-                    getPopular+=5;
+                    getHealth-=2;
+                    getStress-=6;
+                    getPopular+=6;
 
                     activityColor = new Color32(255, 227, 88, 255);
                     activityName = "취미\n활동";
-                    infoTxt.text = "취미 활동\n하고 싶었던거 다 해볼거야!!\n인기도 +5, 체력 -5,\n스트레스 -3";
+                    infoTxt.text = "취미 활동\n하고 싶었던거 다 해볼거야!!\n인기도 +6, 체력 -2,\n스트레스 -6";
                 }
                 break;
             case "Club":
@@ -160,52 +160,52 @@ public class SetActivityManager_sk : MonoBehaviour
                     {
                         Count--;
                         getStress-=5;
-                        getHealth-=3;
-                        getPopular+=3;
-                        getAlchol+=5;
-                        infoTxt.text = "음악 동아리\n동방가서 누워서 기타쳐야지~\n인기도 +3, 체력 -3,\n스트레스 -5, 알코올 분해력 +5";
+                        getHealth-=2;
+                        getPopular+=5;
+                        getAlchol+=6;
+                        infoTxt.text = "음악 동아리\n동방가서 누워서 기타쳐야지~\n인기도 +5, 체력 -2,\n스트레스 -5, 알코올 분해력 +6";
                     }
                     else if(getGroup=="Religion"&&getHealth>2)
                     {
                         Count--;
                         getStress-=7;
-                        getHealth-=3;
+                        getHealth-=2;
                         getAlchol-=5;
-                        infoTxt.text = "종교 동아리\n비나이다 비나이다 오류없이 실행되게 해주세요\n체력 -3, 스트레스 -7,\n알코올 분해력 -5";
+                        infoTxt.text = "종교 동아리\n비나이다 비나이다 오류없이 실행되게 해주세요\n체력 -2, 스트레스 -7,\n알코올 분해력 -5";
                     }
                     else if(getGroup=="Major"&&getHealth>2)
                     {
                         Count--;
-                        getHealth-=3;
-                        getMajor+=5;
-                        getStress+=3;
-                        getAlchol+=5;
-                        infoTxt.text = "학술 동아리\n동아리 친구들이랑 공부하다 술마시러 가야지~\n인기도 +3, 체력 -3,\n스트레스 -5, 알코올 분해력 +5";
+                        getHealth-=2;
+                        getMajor+=8;
+                        getStress+=4;
+                        getAlchol+=7;
+                        infoTxt.text = "학술 동아리\n동아리 친구들이랑 공부하다 술마시러 가야지~\n전공 +8, 체력 -2,\n스트레스 -4, 알코올 분해력 +7";
                     }
                     else if(getGroup=="Health")
                     {
                         Count--;
                         getStress-=5;
-                        getHealth+=5;
+                        getHealth+=8;
                         getAlchol-=3;
-                        infoTxt.text = "운동 동아리\n아 근손실은 못참지 ㅋㅋ\n체력 +5, 스트레스 -5,\n알코올 분해력 -3";
+                        infoTxt.text = "운동 동아리\n아 근손실은 못참지 ㅋㅋ\n체력 +8, 스트레스 -5,\n알코올 분해력 -3";
                     }
                     else if(getGroup=="Perpormance"&&getHealth>4)
                     {
                         Count--;
                         getStress-=5;
-                        getHealth-=5;
-                        getPopular+=5;
-                        getAlchol+=5;
-                        infoTxt.text = "공연 동아리\n동아리 공연 준비해야지~\n인기도 +5, 체력 -5,\n스트레스 -5, 알코올 분해력 +5";
+                        getHealth-=4;
+                        getPopular+=8;
+                        getAlchol+=6;
+                        infoTxt.text = "공연 동아리\n동아리 공연 준비해야지~\n인기도 +8, 체력 -4,\n스트레스 -5, 알코올 분해력 +6";
                     }
                     else if(getGroup=="Hobby"&&getHealth>2)
                     {
                         Count--;
-                        getStress-=5;
-                        getHealth-=3;
-                        getAlchol+=5;
-                        infoTxt.text = "취미 동아리\n오늘은 동아리 친구들이랑 뭘 해볼까나~?\n체력 -3, 스트레스 -5,\n알코올 분해력 +5";
+                        getStress-=4;
+                        getHealth-=2;
+                        getAlchol+=8;
+                        infoTxt.text = "취미 동아리\n오늘은 동아리 친구들이랑 뭘 해볼까나~?\n체력 -2, 스트레스 -7,\n알코올 분해력 +8";
                     }
 
                     touchSound.Play();

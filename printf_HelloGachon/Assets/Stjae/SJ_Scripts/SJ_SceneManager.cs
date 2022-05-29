@@ -363,7 +363,7 @@ public class SJ_SceneManager : MonoBehaviour
     void ModGameDataAfterClass()
     {
         GameData.gamedata.major += 5;
-        GameData.gamedata.health -= 5;
+        GameData.gamedata.health -= 2;
         GameData.gamedata.stress += 5;
     }
 

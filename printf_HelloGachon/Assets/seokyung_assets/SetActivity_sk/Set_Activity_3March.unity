@@ -7190,6 +7190,15 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1808488001}
+    - target: {fileID: 6128946421643647053, guid: e6cc456e3ac54954e9693829935bba4d, type: 3}
+      propertyPath: m_Text
+      value: "\uBC84\uD2BC\uC744 \uD074\uB9AD\uD574 \uC774\uBC88 \uB2EC\uC758 \uACC4\uD68D\uB4E4\uC744
+        \uC815\uD574\uBCF4\uC138\uC694!\n- \uD65C\uB3D9\uC5D0 \uB530\uB77C \uB2E4\uB978
+        \uB2A5\uB825\uCE58\uB97C \uC5BB\uC744 \uC218 \uC788\uC2B5\uB2C8\uB2E4.\n-
+        \uCCB4\uB825\uC774 0\uC774 \uB418\uBA74 \uB354 \uC774\uC0C1 \uD65C\uB3D9\uC744
+        \uD560 \uC218 \uC5C6\uC2B5\uB2C8\uB2E4.\n- \uB9AC\uC14B\uBC84\uD2BC\uC73C\uB85C
+        \uD65C\uB3D9\uC744 \uCD08\uAE30\uD654 \uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
+      objectReference: {fileID: 0}
     - target: {fileID: 6128946421808419920, guid: e6cc456e3ac54954e9693829935bba4d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

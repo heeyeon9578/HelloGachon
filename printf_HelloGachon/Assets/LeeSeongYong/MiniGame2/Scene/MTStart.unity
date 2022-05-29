@@ -3433,7 +3433,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2031403125217027708, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
       propertyPath: m_Text
-      value: "\uCC38\uC5EC\uD55C\uB2E4."
+      value: "\uCC38\uC5EC\uD55C\uB2E4.\n(\uC778\uAE30\uB3C4 +10, \uCCB4\uB825 -2)"
       objectReference: {fileID: 0}
     - target: {fileID: 2031403125634349168, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
       propertyPath: m_Text
@@ -3472,8 +3472,12 @@ PrefabInstance:
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2031403125748839709, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031403125748839709, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -280
+      value: -270
       objectReference: {fileID: 0}
     - target: {fileID: 2031403126044701600, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -3506,6 +3510,14 @@ PrefabInstance:
     - target: {fileID: 2031403126044701600, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031403126044701601, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 2031403126044701601, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -320
       objectReference: {fileID: 0}
     - target: {fileID: 2031403126273435176, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
       propertyPath: m_Name
@@ -3599,9 +3611,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7104946397259935706, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -100
+      objectReference: {fileID: 0}
     - target: {fileID: 8635402291782802942, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
       propertyPath: m_Text
-      value: "MT\uC5D0 \uCC38\uC5EC \uD560\uB798?"
+      value: "MT\uC5D0 \uCC38\uC5EC\uD560\uAE4C?"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f59e8fa0ee98de740a67e89cbfd9598a, type: 3}
