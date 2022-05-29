@@ -87,7 +87,7 @@ public class BtnType : MonoBehaviour
             GameData.gamedata.stress=0;
             GameData.gamedata.major=0;
             GameData.gamedata.month="3월";
-            GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Freedom");
+            GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("heeRoom1");
         }
         else {
             startFailSfx.loop=false;
