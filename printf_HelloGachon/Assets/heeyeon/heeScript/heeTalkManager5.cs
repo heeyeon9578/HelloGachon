@@ -40,6 +40,8 @@ public class heeTalkManager5 : MonoBehaviour
     private Rigidbody2D rb2;
     Vector3 pos2;
 
+    //  private string[] gilyaeTalk =new string[4]{"이길여 총장님","이길여 총장님","이길여 총장님",GameData.gamedata.playerName};
+
     void Awake()
     {        
         gilyaeMeet = false;
@@ -117,12 +119,13 @@ public class heeTalkManager5 : MonoBehaviour
 
   
        
-       talkName.Add(2000, new string[] { "선배" });
+       talkName.Add(2000, new string[] { "선배","선배","선배","선배","선배" });
        talkName.Add(7000, new string[] { ""});
-       talkName.Add(1000, new string[] { "친구" });
-       talkName.Add(3000, new string[] { "무당이" });
-       talkName.Add(8000, new string[] { "교수님" });
-       talkName.Add(6000, new string[] { "이길여 총장님" });
+       talkName.Add(1000, new string[] { "친구","친구","친구","친구","친구" });
+       talkName.Add(3000, new string[] { "무당이","무당이","무당이","무당이" });
+       talkName.Add(8000, new string[] { "교수님","교수님","교수님","교수님" });
+       talkName.Add(6000, new string[] { "이길여 총장님","이길여 총장님","이길여 총장님",GameData.gamedata.playerName});
+       
 
        //친구 default 대사
        talkData.Add(1000, new string[] {"안녕? 나도 컴공 신입생이야!:0", 
@@ -144,7 +147,8 @@ public class heeTalkManager5 : MonoBehaviour
        //Quest_5 5월 간식행사 
        talkData.Add(10+ 1000, new string[] {"잘 찾아왔어!!:0","AI공학관까지 나랑 같이 걸어가거나 무당이를 타고 가자!:1"});
        talkData.Add(11+2000, new string[] {"오느라 고생했어!!:0", "여기 던킨도너츠랑 커피를 줄게!!:4", "기말고사 공부 화이팅!!:2","엇! 이길여 총장님이 지금 가천관 쪽에 계신다고? 가봐야겠다!! 대박!!:0"});
-       talkData.Add(20+6000 , new string[] {"어서오십시오~^^:0", " 저는 가천대 지킴이 이길여 총장입니다~:0", "스가이에 드는 명문 가천에 오신걸 진심으로 축하드려요~^^ :0"
+       talkData.Add(20+6000 , new string[] {"어서오십시오~^^:0", " 저는 가천대 지킴이 이길여 총장입니다~:0", "스가이에 드는 명문 가천에 오신걸 진심으로 축하드려요~^^ :0",
+                                            "이길여 총장님을 뵙고 체력+25, 스트레스-10, 인기도+10 되었다!!:1"
                                            });
 
        //portrait Data
@@ -176,6 +180,7 @@ public class heeTalkManager5 : MonoBehaviour
 
 
        portraitData.Add(6000+0,portraitArr[16]); //이길여 총장님
+       portraitData.Add(6000+1,portraitArr[20]); // 나
 
 
 
@@ -184,6 +189,7 @@ public class heeTalkManager5 : MonoBehaviour
    public string getName(int id, int nameIndex)
     {
         return talkName[id][nameIndex];
+        
     }
 
    public string GetTalk(int id, int talkIndex)
@@ -338,13 +344,18 @@ public class heeTalkManager5 : MonoBehaviour
 
        switch(type){
            case "y":
-                GameData.gamedata.health += 5;
-                Debug.Log("5월 간식 이벤트로 체력+5 ");
+                GameData.gamedata.health += 8;
+                GameData.gamedata.stress -= 3;
+                Debug.Log("5월 간식 이벤트로 체력+8, 스트레스-3 ");
                 talkPanel4.SetActive(false);
 
                 if(gilyaeMeet == true){
-                    GameData.gamedata.health += 20;
-                   Debug.Log("이길여 여사님  체력+20 ");
+                    GameData.gamedata.health += 25;
+                    GameData.gamedata.stress -= 10;
+                    GameData.gamedata.popular += 10;
+
+
+                   Debug.Log("이길여 여사님  체력+25, 스트레스-10, 인기도+10");
                 }
                 //성재님의 6월수업씬으로 이동
                 GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("MiniGame3");

@@ -31,7 +31,7 @@ public class heegameManager5 : MonoBehaviour
     public GameObject friend; //friend 오브젝트
     private Rigidbody2D rb2;
     private string[] talkNameList=new string[5]{"선배","선배","선배","친구",GameData.gamedata.playerName};
-    
+   
 
 
   
@@ -85,13 +85,16 @@ public class heegameManager5 : MonoBehaviour
 
     public void Talk(int id, bool isNpc)
     {
+
         //Set Talk Data
         int questTalkIndex = questManager.GetQuestTalkIndex(id);
         string talkName = talkManager.getName(id, nameIndex);
         string talkData = talkManager.GetTalk(id+questTalkIndex, talkIndex);
+       
 
         //End Talk
         if(talkData ==null){
+            nameIndex =0;
             isAction = false;
             talkIndex = 0;
             Debug.Log(questManager.CheckQuest(id));
@@ -111,6 +114,7 @@ public class heegameManager5 : MonoBehaviour
 
         isAction = true;
         talkIndex++;
+        nameIndex++;
     }
  //마우스 클릭시 퀘스트 마크가 팝업
     public void questionMark1(){
