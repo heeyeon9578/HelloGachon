@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SJ_SceneManager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class SJ_SceneManager : MonoBehaviour
     public SJ_CodeManager codeManager;
     public Dictionary<string, string> varDict = SJ_CodeManager.varDict;
     public List<object> funcObjList = SJ_CodeManager.objList;
+    public static GameObject[] tmpObj;
+    public static TMP_Text tmpOutput;
+    public TMP_InputField userInputCode;
 
     // internal
     string month;
@@ -58,6 +62,9 @@ public class SJ_SceneManager : MonoBehaviour
 
     void Start()
     {
+        tmpObj = GameObject.FindGameObjectsWithTag("TMP_text");
+        tmpOutput = tmpObj[0].GetComponent<TMP_Text>();
+        
         if (month == "3월")
         {
             currentClass = new Class(dialManager.Dial_Class_1);
@@ -65,23 +72,33 @@ public class SJ_SceneManager : MonoBehaviour
         }
         else if(month == "4월")
         {
+            varDict.Clear();
             currentClass = new Class(dialManager.Dial_Class_2);
             classBGM.Play();
         }
         else if(month == "중간")
+        {
+            varDict.Clear();
+            funcObjList.Clear();
             currentClass = new Class(dialManager.Dial_Exam_1);
+        }
         else if(month == "5월")
         {
+            varDict.Clear();
             currentClass = new Class(dialManager.Dial_Class_3);
             classBGM.Play();
         }
         else if(month == "6월")
         {
+            varDict.Clear();
             currentClass = new Class(dialManager.Dial_Class_4);
             classBGM.Play();
         }
         else if(month == "기말")
+        {
+            varDict.Clear();
             currentClass = new Class(dialManager.Dial_Exam_2);
+        }
 
         dialText.text = currentClass.GetDial(0);
     }
@@ -106,7 +123,7 @@ public class SJ_SceneManager : MonoBehaviour
         switch(month)
         {
             case "3월":
-                if (varDict.Count > 0)
+                if (varDict.Count > 0 && currentClass.dialNumber != 5)
                 {
                     classBGM.Stop();
                     clearSFX.Play();
@@ -120,7 +137,7 @@ public class SJ_SceneManager : MonoBehaviour
             break;
 
             case "4월":
-                if (SJ_CodeManager.tmpOutput.text.Trim() != "")
+                if (SJ_CodeManager.tmpOutput.text.Trim() != "" && currentClass.dialNumber != 6)
                 {
                     classBGM.Stop();
                     clearSFX.Play();
@@ -150,6 +167,7 @@ public class SJ_SceneManager : MonoBehaviour
                     try
                     {
                         result = varDict.TryGetValue(str, out variable);
+                        Debug.Log(str);
                     }
                     catch {}
                     
@@ -164,6 +182,7 @@ public class SJ_SceneManager : MonoBehaviour
                     }
                     else
                     {
+                        Debug.Log(variable);
                         dialogue.SetActive(true);
                         dialToggleBtn.enabled = false;
                         currentClass.AddDial(1, "<color=red>틀렸습니다..</color>");
@@ -238,9 +257,6 @@ public class SJ_SceneManager : MonoBehaviour
 
     public void DialHandlerClass1()
     {
-        if (currentClass.dialNumber == 5)
-            repeatBtn.SetActive(true);
-
         switch(currentClass.dialNumber)
         {
             case 7:
@@ -252,6 +268,15 @@ public class SJ_SceneManager : MonoBehaviour
             break;
 
             default:
+                if (currentClass.dialNumber == 4)
+                {
+                    userInputCode.text = "x=1";
+                }
+                if (currentClass.dialNumber == 5)
+                {
+                    userInputCode.text = "";
+                    repeatBtn.SetActive(true);
+                }
                 if (currentClass.dialNumber < currentClass.dialSize-2)
                     ++currentClass.dialNumber;
                 else
@@ -262,9 +287,6 @@ public class SJ_SceneManager : MonoBehaviour
 
     public void DialHandlerClass2()
     {
-        if (currentClass.dialNumber == 6)
-            repeatBtn.SetActive(true);
-
         switch(currentClass.dialNumber)
         {
             case 8:
@@ -276,6 +298,16 @@ public class SJ_SceneManager : MonoBehaviour
             break;
 
             default:
+                if (currentClass.dialNumber == 5)
+                {
+                    userInputCode.text = "print(안녕)";
+                }
+                if (currentClass.dialNumber == 6)
+                {
+                    userInputCode.text = "";
+                    tmpOutput.text = "";
+                    repeatBtn.SetActive(true);
+                }
                 if (currentClass.dialNumber < currentClass.dialSize-2)
                     ++currentClass.dialNumber;
                 else
@@ -302,9 +334,6 @@ public class SJ_SceneManager : MonoBehaviour
 
     public void DialHandlerClass3()
     {
-        if (currentClass.dialNumber == 5)
-            repeatBtn.SetActive(true);
-
         switch(currentClass.dialNumber)
         {
             case 7:
@@ -316,6 +345,16 @@ public class SJ_SceneManager : MonoBehaviour
             break;
 
             default:
+                if (currentClass.dialNumber == 4)
+                {
+                    userInputCode.text = "loop(5)\n{\n  <color=blue>반복하고 싶은 명령문</color>\n}";
+                }
+                if (currentClass.dialNumber == 5)
+                {
+                    userInputCode.text = "";
+                    tmpOutput.text = "";
+                    repeatBtn.SetActive(true);
+                }
                 if (currentClass.dialNumber < currentClass.dialSize-2)
                     ++currentClass.dialNumber;
                 else
@@ -326,9 +365,6 @@ public class SJ_SceneManager : MonoBehaviour
 
     public void DialHandlerClass4()
     {
-        if (currentClass.dialNumber == 4)
-            repeatBtn.SetActive(true);
-
         switch(currentClass.dialNumber)
         {
             case 6:
@@ -336,10 +372,20 @@ public class SJ_SceneManager : MonoBehaviour
                 GameData.gamedata.month = "기말";
                 ModGameDataAfterClass();
                 Debug.Log("6월 수업 종료");
-                GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("MiniGame3");
+                GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("heeRoom5_2");
             break;
 
             default:
+                if (currentClass.dialNumber == 3)
+                {
+                    userInputCode.text = "loop(2)\n{\n  <color=blue>반복하고 싶은 명령문1</color>\n  loop(3)\n  {\n    <color=blue>반복하고 싶은 명령문2</color>\n  }\n}";
+                }
+                if (currentClass.dialNumber == 4)
+                {
+                    userInputCode.text = "";
+                    tmpOutput.text = "";
+                    repeatBtn.SetActive(true);
+                }
                 if (currentClass.dialNumber < currentClass.dialSize-2)
                     ++currentClass.dialNumber;
                 else
