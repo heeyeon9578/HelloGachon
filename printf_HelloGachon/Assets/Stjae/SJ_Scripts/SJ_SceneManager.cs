@@ -175,7 +175,7 @@ public class SJ_SceneManager : MonoBehaviour
                     {
                         dialogue.SetActive(true);
                         dialToggleBtn.enabled = false;
-                        currentClass.AddDial(1, "<color=blue>정답입니다!</color>");
+                        currentClass.AddDial(1, "<color=blue>정답입니다!</color>\n(전공 +15, 중간고사 점수: 100)");
                         passSFX.Play();
                         ++currentClass.dialNumber;
                         ModGameDataAfterExam1(true);
@@ -185,7 +185,7 @@ public class SJ_SceneManager : MonoBehaviour
                         Debug.Log(variable);
                         dialogue.SetActive(true);
                         dialToggleBtn.enabled = false;
-                        currentClass.AddDial(1, "<color=red>틀렸습니다..</color>");
+                        currentClass.AddDial(1, "<color=red>틀렸습니다..</color>\n(전공 +5, 스트레스 +10, 중간고사 점수: 50)");
                         failSFX.Play();
                         ++currentClass.dialNumber;
                         ModGameDataAfterExam1(false);
@@ -237,7 +237,7 @@ public class SJ_SceneManager : MonoBehaviour
                 {
                     dialogue.SetActive(true);
                     dialToggleBtn.enabled = false;
-                    currentClass.AddDial(1, "<color=blue>정답입니다!</color>");
+                    currentClass.AddDial(1, "<color=blue>정답입니다!</color>\n(전공 +15, 기말고사 점수: 100)");
                     passSFX.Play();
                     ++currentClass.dialNumber;
                     ModGameDataAfterExam2(true);
@@ -246,7 +246,7 @@ public class SJ_SceneManager : MonoBehaviour
                 {
                     dialogue.SetActive(true);
                     dialToggleBtn.enabled = false;
-                    currentClass.AddDial(1, "<color=red>틀렸습니다!</color>");
+                    currentClass.AddDial(1, "<color=red>틀렸습니다..</color>\n(전공 +5, 스트레스 + 10, 기말고사 점수: 50)");
                     failSFX.Play();
                     ++currentClass.dialNumber;
                     ModGameDataAfterExam2(false);
