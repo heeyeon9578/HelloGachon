@@ -197,7 +197,7 @@ public class TypeGameManager_mg1 : MonoBehaviour
     {
         //for Android
         qBox.SetActive(true);
-        //for Windows
+        //for Pc
         //qBox.SetActive(false);
 
         currentClassNum = UnityEngine.Random.Range(0, classNumList.Count);
