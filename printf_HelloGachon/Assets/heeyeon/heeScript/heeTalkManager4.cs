@@ -307,7 +307,7 @@ public class heeTalkManager4 : MonoBehaviour
 
                 rb.constraints = RigidbodyConstraints2D.None;
                 rb.constraints = RigidbodyConstraints2D.FreezeRotation;
-                talkText3.text += "\n무당이에서 내리고 싶을 때 하단 초록색 버튼을 클릭하면 됩니다.";
+                
                
                 break;
            case "n":  

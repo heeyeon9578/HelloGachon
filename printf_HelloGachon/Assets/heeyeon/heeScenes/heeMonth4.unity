@@ -1151,9 +1151,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2119473869}
     - target: {fileID: 3359339566469457416, guid: 06f6664e1dccaa44b822d16e9850ba95, type: 3}
-      propertyPath: savepanel
-      value: 
-      objectReference: {fileID: 1642079079}
       propertyPath: camera2
       value: 
       objectReference: {fileID: 2128885472}
@@ -1165,6 +1162,10 @@ PrefabInstance:
       propertyPath: canvas2
       value: 
       objectReference: {fileID: 1827177511}
+    - target: {fileID: 3359339566469457416, guid: 06f6664e1dccaa44b822d16e9850ba95, type: 3}
+      propertyPath: savepanel
+      value: 
+      objectReference: {fileID: 1642079079}
     - target: {fileID: 3359339566469457417, guid: 06f6664e1dccaa44b822d16e9850ba95, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -1420,7 +1421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6231395451663788455, guid: 73019e6fde5db7c439e53b3414d05a9d, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6231395451663788455, guid: 73019e6fde5db7c439e53b3414d05a9d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1929,7 +1930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7648119133184742777, guid: b421e3ee0e2b9ce488581eda163c52c5, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7648119133184742777, guid: b421e3ee0e2b9ce488581eda163c52c5, type: 3}
       propertyPath: m_AnchorMax.x

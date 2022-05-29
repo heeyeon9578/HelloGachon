@@ -37,12 +37,22 @@ public class GameEndingManager_sk : MonoBehaviour
     
     void Start()
     {
+        if(GameData.gamedata.major >100){GameData.gamedata.major=100;}
+        if(GameData.gamedata.health >100){GameData.gamedata.health=100;}
+        if(GameData.gamedata.alchol >100){GameData.gamedata.alchol=100;}
+        if(GameData.gamedata.popular >100){GameData.gamedata.popular=100;}
+        if(GameData.gamedata.stress<0){GameData.gamedata.stress=0;}
+
+
+
         endname=GameData.gamedata.name;
         endmajor=GameData.gamedata.major;
         endhealth=GameData.gamedata.health;
         endstress=100-GameData.gamedata.stress;
         endpopular=GameData.gamedata.popular;
         endalchol=GameData.gamedata.alchol;
+
+        
 
         playerName.text=""+GameData.gamedata.name;
         majorscore.text=""+GameData.gamedata.major;

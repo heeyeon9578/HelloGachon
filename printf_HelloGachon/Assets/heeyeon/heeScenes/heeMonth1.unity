@@ -884,7 +884,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7648119133184742777, guid: b421e3ee0e2b9ce488581eda163c52c5, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7648119133184742777, guid: b421e3ee0e2b9ce488581eda163c52c5, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1826,8 +1826,8 @@ RectTransform:
   - {fileID: 844211821}
   - {fileID: 293766193}
   - {fileID: 100392765}
-  - {fileID: 326780025}
   - {fileID: 2039949329}
+  - {fileID: 326780025}
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2530,9 +2530,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 100392764}
     - target: {fileID: 3359339566469457416, guid: 06f6664e1dccaa44b822d16e9850ba95, type: 3}
-      propertyPath: savepanel
-      value: 
-      objectReference: {fileID: 326780024}
       propertyPath: camera2
       value: 
       objectReference: {fileID: 70877943}
@@ -2544,6 +2541,10 @@ PrefabInstance:
       propertyPath: canvas2
       value: 
       objectReference: {fileID: 1441489168}
+    - target: {fileID: 3359339566469457416, guid: 06f6664e1dccaa44b822d16e9850ba95, type: 3}
+      propertyPath: savepanel
+      value: 
+      objectReference: {fileID: 326780024}
     - target: {fileID: 3359339566469457417, guid: 06f6664e1dccaa44b822d16e9850ba95, type: 3}
       propertyPath: m_RootOrder
       value: 17
