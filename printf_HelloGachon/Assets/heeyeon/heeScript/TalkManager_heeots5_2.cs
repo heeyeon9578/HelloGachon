@@ -8,7 +8,7 @@ public class TalkManager_heeots5_2 : MonoBehaviour
     Dictionary<int, string[]> talkData;
     Dictionary<int, Sprite> portraitData;
 
-    public DialogManager_hee5 gameManager;
+    public DialogManager_hee5_2 gameManager;
     public QuestManager_heeots5 questManager;
 
     //초상화 스프라이트를 저장할 배열 생성

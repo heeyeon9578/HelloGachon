@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogManager_hee5 : MonoBehaviour
+public class DialogManager_hee5_2 : MonoBehaviour
 {
-    public TalkManager_heeots5 tManager;
+    public TalkManager_heeots5_2 tManager;
     public QuestManager_heeots5 qManager;
     public GameObject dialogPanel;
     public GameObject scanObject;

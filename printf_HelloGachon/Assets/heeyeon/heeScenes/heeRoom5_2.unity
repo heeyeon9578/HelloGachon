@@ -288,7 +288,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 112576735}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2d1386544c18d64db1b2dfae543332e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4b3f143692618454a8039e96351330c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   dManager: {fileID: 1307315337}
@@ -362,11 +362,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7088387057386552668, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerAction_hee5, Assembly-CSharp
+      value: PlayerAction_hee5_2, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7088387057386552668, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerAction_hee5, Assembly-CSharp
+      value: PlayerAction_hee5_2, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7088387057386552669, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
       propertyPath: m_SizeDelta.x
@@ -514,11 +514,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7088387058034747109, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerAction_hee5, Assembly-CSharp
+      value: PlayerAction_hee5_2, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7088387058034747109, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerAction_hee5, Assembly-CSharp
+      value: PlayerAction_hee5_2, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7088387058073162000, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
       propertyPath: m_SizeDelta.x
@@ -562,11 +562,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7088387058073162003, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerAction_hee5, Assembly-CSharp
+      value: PlayerAction_hee5_2, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7088387058073162003, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerAction_hee5, Assembly-CSharp
+      value: PlayerAction_hee5_2, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7088387059032195158, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
       propertyPath: m_SizeDelta.x
@@ -610,11 +610,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7088387059032195161, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerAction_hee5, Assembly-CSharp
+      value: PlayerAction_hee5_2, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7088387059032195161, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerAction_hee5, Assembly-CSharp
+      value: PlayerAction_hee5_2, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8740067716b0f6642bc7897fe321f99f, type: 3}
@@ -1813,7 +1813,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 900946056}
-  - component: {fileID: 900946055}
   - component: {fileID: 900946057}
   m_Layer: 0
   m_Name: TalkManager
@@ -1822,25 +1821,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &900946055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 900946054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67bca6ba24558cc44b7cf85745ee2a58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 1307315337}
-  questManager: {fileID: 665724735}
-  portraitArr:
-  - {fileID: 6830411675861614133, guid: f02e508d9c9810c49957b9609ec98520, type: 3}
-  - {fileID: -7022570500316909758, guid: 50924a93c146e854c8e6b416254f842f, type: 3}
-  - {fileID: 1572790241719009093, guid: f02e508d9c9810c49957b9609ec98520, type: 3}
-  - {fileID: 2458176920941387167, guid: f02e508d9c9810c49957b9609ec98520, type: 3}
 --- !u!4 &900946056
 Transform:
   m_ObjectHideFlags: 0
@@ -1897,7 +1877,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 112576736}
-          m_TargetAssemblyTypeName: PlayerAction_hee5, Assembly-CSharp
+          m_TargetAssemblyTypeName: PlayerAction_hee5_2, Assembly-CSharp
           m_MethodName: ButtonDown2
           m_Mode: 5
           m_Arguments:
@@ -2063,10 +2043,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1307315335}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3632be5823576df43ad0310148abbde2, type: 3}
+  m_Script: {fileID: 11500000, guid: 34109e39de9a07a498787d3f8dd62f66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tManager: {fileID: 900946055}
+  tManager: {fileID: 900946057}
   qManager: {fileID: 665724735}
   dialogPanel: {fileID: 6872252872992678788}
   scanObject: {fileID: 0}
@@ -2189,7 +2169,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2896216346604749691, guid: 1883a23fb7313be42b2fe1ca8771e737, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PlayerAction_hee5, Assembly-CSharp
+      value: PlayerAction_hee5_2, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2896216347470033665, guid: 1883a23fb7313be42b2fe1ca8771e737, type: 3}
       propertyPath: m_Name
