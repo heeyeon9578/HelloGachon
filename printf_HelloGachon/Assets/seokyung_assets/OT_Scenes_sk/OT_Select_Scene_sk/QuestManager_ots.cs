@@ -118,6 +118,23 @@ public class QuestManager_ots : MonoBehaviour
         GameData.gamedata.health=getHealth;
         GameData.gamedata.popular=getPopular;
 
+        //능력치 보정
+        //전공
+        if(GameData.gamedata.major>100){GameData.gamedata.major=100;}
+        else if(GameData.gamedata.major<0){GameData.gamedata.major=0;}
+        //체력
+        if(GameData.gamedata.health>100){GameData.gamedata.health=100;}
+        else if(GameData.gamedata.health<0){GameData.gamedata.health=0;}
+        //알코올 분해력
+        if(GameData.gamedata.alchol>100){GameData.gamedata.alchol=100;}
+        else if(GameData.gamedata.alchol<0){GameData.gamedata.alchol=0;}
+        //인기도
+        if(GameData.gamedata.popular>100){GameData.gamedata.popular=100;}
+        else if(GameData.gamedata.popular<0){GameData.gamedata.popular=0;}
+        //스트레스
+        if(GameData.gamedata.stress<0){GameData.gamedata.stress=0;}
+        else if(GameData.gamedata.stress>100){GameData.gamedata.stress=100;}
+
         //참가하면 오티에 가기 위해 가천대 맵으로 이동
         GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("Going_OT_sk");
     }

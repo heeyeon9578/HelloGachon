@@ -282,6 +282,24 @@ public class GRTalkManager : MonoBehaviour
            if(talkData[id]==GoMT){
                 GameData.gamedata.health-=2;
                 GameData.gamedata.popular+=10;
+                
+                //능력치 보정
+                //전공
+                if(GameData.gamedata.major>100){GameData.gamedata.major=100;}
+                else if(GameData.gamedata.major<0){GameData.gamedata.major=0;}
+                //체력
+                if(GameData.gamedata.health>100){GameData.gamedata.health=100;}
+                else if(GameData.gamedata.health<0){GameData.gamedata.health=0;}
+                //알코올 분해력
+                if(GameData.gamedata.alchol>100){GameData.gamedata.alchol=100;}
+                else if(GameData.gamedata.alchol<0){GameData.gamedata.alchol=0;}
+                //인기도
+                if(GameData.gamedata.popular>100){GameData.gamedata.popular=100;}
+                else if(GameData.gamedata.popular<0){GameData.gamedata.popular=0;}
+                //스트레스
+                if(GameData.gamedata.stress<0){GameData.gamedata.stress=0;}
+                else if(GameData.gamedata.stress>100){GameData.gamedata.stress=100;}
+
                 GameObject.Find("Canvas").GetComponent<FadeINOUT>().MTstartFadeOut();
            }
             else if(talkData[id]==NoMT)
@@ -301,6 +319,24 @@ public class GRTalkManager : MonoBehaviour
                 GameData.gamedata.stress-=8;
                 GameData.gamedata.health-=5;
                 GameData.gamedata.popular+=8;
+
+                //능력치 보정
+                //전공
+                if(GameData.gamedata.major>100){GameData.gamedata.major=100;}
+                else if(GameData.gamedata.major<0){GameData.gamedata.major=0;}
+                //체력
+                if(GameData.gamedata.health>100){GameData.gamedata.health=100;}
+                else if(GameData.gamedata.health<0){GameData.gamedata.health=0;}
+                //알코올 분해력
+                if(GameData.gamedata.alchol>100){GameData.gamedata.alchol=100;}
+                else if(GameData.gamedata.alchol<0){GameData.gamedata.alchol=0;}
+                //인기도
+                if(GameData.gamedata.popular>100){GameData.gamedata.popular=100;}
+                else if(GameData.gamedata.popular<0){GameData.gamedata.popular=0;}
+                //스트레스
+                if(GameData.gamedata.stress<0){GameData.gamedata.stress=0;}
+                else if(GameData.gamedata.stress>100){GameData.gamedata.stress=100;}
+                
                 GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("heeRoom5");
             }
            

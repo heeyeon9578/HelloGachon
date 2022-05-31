@@ -73,16 +73,33 @@ public class SetActivityManager_sk : MonoBehaviour
         healthtext.text="체력 : "+getHealth;
         populartext.text="인기도 : "+getPopular;
         alcholtext.text="알코올 분해력 : "+getAlchol;
+
+        //능력치 보정
+        //전공
         if(getMajor<0)
             getMajor=0;
+        else if(getMajor>100)
+            getMajor=100;
+        //스트레스
         if(getStress<0)
             getStress=0;
+        else if(getStress>100)
+            getStress=100;
+        //체력
         if(getHealth<0)
             getHealth=0;
+        else if(getHealth>100)
+            getHealth=100;
+        //인기도
         if(getPopular<0)
             getPopular=0;
+        else if(getPopular>100)
+            getPopular=100;
+        //알코올 분해력
         if(getAlchol<0)
             getAlchol=0;
+        else if(getAlchol>100)
+            getAlchol=100;
 
         if(getHealth < 5) {
             healthTalk.SetActive(true);
@@ -117,12 +134,12 @@ public class SetActivityManager_sk : MonoBehaviour
                 {
                     touchSound.Play();
                     Count--;
-                    getHealth+=10;
+                    getHealth+=7;
                     getStress-=5;
 
                     activityColor = new Color32(255, 99, 88, 225);
                     activityName = "운동";
-                    infoTxt.text = "운동\n코딩하려면 일단 살아는 있어야겠지\n체력 +10, 스트레스 -5,";
+                    infoTxt.text = "운동\n코딩하려면 일단 살아는 있어야겠지\n체력 +7, 스트레스 -5,";
                 }
                 break;
             case "Study":
@@ -249,14 +266,6 @@ public class SetActivityManager_sk : MonoBehaviour
         getMajor=GameData.gamedata.major;
         getStress=GameData.gamedata.stress;
         
-        /*
-        getMajor = 0;
-        getStress = 0;
-        getHealth = 100;
-        getAlchol = 0;
-        getPopular = 0;
-        */
-        
         w1Panel.GetComponent<Image>().color = new Color32(255, 255, 255, 225);
         w1Txt.text = "";
         w2Panel.GetComponent<Image>().color = new Color32(255, 255, 255, 225);
@@ -285,6 +294,24 @@ public class SetActivityManager_sk : MonoBehaviour
         GameData.gamedata.major=getMajor;
         GameData.gamedata.popular=getPopular;
         GameData.gamedata.stress=getStress;
+
+        //능력치 보정
+        //전공
+        if(GameData.gamedata.major>100){GameData.gamedata.major=100;}
+        else if(GameData.gamedata.major<0){GameData.gamedata.major=0;}
+        //체력
+        if(GameData.gamedata.health>100){GameData.gamedata.health=100;}
+        else if(GameData.gamedata.health<0){GameData.gamedata.health=0;}
+        //알코올 분해력
+        if(GameData.gamedata.alchol>100){GameData.gamedata.alchol=100;}
+        else if(GameData.gamedata.alchol<0){GameData.gamedata.alchol=0;}
+        //인기도
+        if(GameData.gamedata.popular>100){GameData.gamedata.popular=100;}
+        else if(GameData.gamedata.popular<0){GameData.gamedata.popular=0;}
+        //스트레스
+        if(GameData.gamedata.stress<0){GameData.gamedata.stress=0;}
+        else if(GameData.gamedata.stress>100){GameData.gamedata.stress=100;}
+
         if(GameData.gamedata.month=="3월"){
             // GameData.gamedata.month="4월";
             GameObject.Find("UI_Canvas").GetComponent<FadeINOUT>().LoadFadeOut("heeRoom3");

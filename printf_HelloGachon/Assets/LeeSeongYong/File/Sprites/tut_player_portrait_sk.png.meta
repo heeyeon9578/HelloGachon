@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: 707e073bc874957428e56e8abc919361
+guid: ab727cb6db0afa74a8cf3e5032515ad1
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -3856503471262881004
-    second: SYG_newStuDot_0
-  - first:
-      213: -5937695722466317268
-    second: SYG_newStuDot_1
-  - first:
-      213: 6622864371866556400
-    second: SYG_newStuDot_2
-  - first:
-      213: -3169893385070268138
-    second: SYG_newStuDot_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -53,12 +41,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,91 +101,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: SYG_newStuDot_0
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 46
-        width: 30
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 41ba0588682fa7ac0800000000000000
-      internalID: -3856503471262881004
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SYG_newStuDot_1
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 46
-        width: 30
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2ce90e1331199da0800000000000000
-      internalID: -5937695722466317268
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SYG_newStuDot_2
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 0
-        width: 30
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f752b88e0429eb50800000000000000
-      internalID: 6622864371866556400
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SYG_newStuDot_3
-      rect:
-        serializedVersion: 2
-        x: 38
-        y: 0
-        width: 30
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 611b607d2c64204d0800000000000000
-      internalID: -3169893385070268138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []

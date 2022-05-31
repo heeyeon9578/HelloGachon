@@ -148,7 +148,7 @@ public class heeTalkManager5 : MonoBehaviour
        talkData.Add(10+ 1000, new string[] {"잘 찾아왔어!!:0","AI공학관까지 나랑 같이 걸어가거나 무당이를 타고 가자!:1"});
        talkData.Add(11+2000, new string[] {"오느라 고생했어!!:0", "여기 던킨도너츠랑 커피를 줄게!!:4", "기말고사 공부 화이팅!!:2","엇! 이길여 총장님이 지금 가천관 쪽에 계신다고? 가봐야겠다!! 대박!!:0"});
        talkData.Add(20+6000 , new string[] {"어서오십시오~^^:0", " 저는 가천대 지킴이 이길여 총장입니다~:0", "스가이에 드는 명문 가천에 오신걸 진심으로 축하드려요~^^ :0",
-                                            "이길여 총장님을 뵙고 체력+25, 스트레스-10, 인기도+10 되었다!!:1"
+                                            "이길여 총장님을 뵙고 체력 +25, 스트레스 +10, 인기도 +10 증가했다!!:1"
                                            });
 
        //portrait Data
@@ -196,11 +196,7 @@ public class heeTalkManager5 : MonoBehaviour
    {   
        heeid2=id;    
 
-       Debug.Log(id);
        if(!talkData.ContainsKey(id)){
-       
-
-           
 
            if((id-questManager.GetQuestTalkIndex(id))==3000){
                if(!talkData.ContainsKey(id-id%10)){
@@ -357,6 +353,24 @@ public class heeTalkManager5 : MonoBehaviour
 
                    Debug.Log("이길여 여사님  체력+25, 스트레스-10, 인기도+10");
                 }
+
+                //능력치 보정
+                //전공
+                if(GameData.gamedata.major>100){GameData.gamedata.major=100;}
+                else if(GameData.gamedata.major<0){GameData.gamedata.major=0;}
+                //체력
+                if(GameData.gamedata.health>100){GameData.gamedata.health=100;}
+                else if(GameData.gamedata.health<0){GameData.gamedata.health=0;}
+                //알코올 분해력
+                if(GameData.gamedata.alchol>100){GameData.gamedata.alchol=100;}
+                else if(GameData.gamedata.alchol<0){GameData.gamedata.alchol=0;}
+                //인기도
+                if(GameData.gamedata.popular>100){GameData.gamedata.popular=100;}
+                else if(GameData.gamedata.popular<0){GameData.gamedata.popular=0;}
+                //스트레스
+                if(GameData.gamedata.stress<0){GameData.gamedata.stress=0;}
+                else if(GameData.gamedata.stress>100){GameData.gamedata.stress=100;}
+                
                 //성재님의 6월수업씬으로 이동
                 GameObject.Find("Canvas").GetComponent<FadeINOUT>().LoadFadeOut("MiniGame3");
                 break;

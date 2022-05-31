@@ -540,7 +540,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1584411789}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: -0.01, y: -0.01}
   m_AnchorMax: {x: 1.01, y: 1.01}
@@ -1953,6 +1953,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Option: {fileID: 787010328}
   savepanel: {fileID: 21752027}
+  Map: {fileID: 0}
+  camera2: {fileID: 0}
+  canvas1: {fileID: 0}
+  canvas2: {fileID: 0}
 --- !u!4 &1559421387
 Transform:
   m_ObjectHideFlags: 0
@@ -2868,7 +2872,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7648119133184742777, guid: b421e3ee0e2b9ce488581eda163c52c5, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7648119133184742777, guid: b421e3ee0e2b9ce488581eda163c52c5, type: 3}
       propertyPath: m_AnchorMax.x
