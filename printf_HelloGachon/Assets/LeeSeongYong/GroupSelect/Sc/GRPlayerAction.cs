@@ -93,7 +93,7 @@ public class GRPlayerAction : MonoBehaviour
             var heeFriendAction = friend.GetComponent<FEFriendAction>();
 
             
-            friend.transform.position = new Vector3(pos2.x+1,pos2.y, 0);
+            friend.transform.position = new Vector3(pos2.x+1.0f,pos2.y-0.6f, 0);
             heeFriendAction.enabled = true;
         }
         

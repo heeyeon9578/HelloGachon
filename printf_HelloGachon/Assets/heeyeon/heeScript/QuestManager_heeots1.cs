@@ -9,7 +9,6 @@ public class QuestManager_heeots1 : MonoBehaviour
     Dictionary<int, QuestData_heeots3> questList;
     public GameObject[] questObject;
     public bool isInteract;
-    private bool isTouched = false;
     public int questId;
     public int questActionIndex;
 
@@ -130,7 +129,6 @@ public class QuestManager_heeots1 : MonoBehaviour
         questObject[1].SetActive(false);
 
         isInteract = false;
-        isTouched = true;
         talkPanel.SetActive(true);
     }
 

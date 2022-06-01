@@ -103,7 +103,7 @@ public class heeTopViewPlayer5 : MonoBehaviour
 
             Debug.Log("퀘스트번호가 1010일 때, 친구의 포지션을 주인공 옆으로 계속 업데이트");
             
-            friend.transform.position = new Vector3(pos2.x+1,pos2.y, 0);
+            friend.transform.position = new Vector3(pos2.x+1.0f,pos2.y-0.6f, 0);
             heeFriendAction5.enabled = true;
         }
 

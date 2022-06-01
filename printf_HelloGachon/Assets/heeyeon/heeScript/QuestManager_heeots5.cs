@@ -8,7 +8,6 @@ public class QuestManager_heeots5 : MonoBehaviour
     Dictionary<int, QuestData_heeots3> questList;
     public GameObject[] questObject;
     public bool isInteract;
-    private bool isTouched = false;
     public int questId;
     public int questActionIndex;
 

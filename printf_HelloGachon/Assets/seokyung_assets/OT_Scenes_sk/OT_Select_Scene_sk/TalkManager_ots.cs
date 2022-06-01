@@ -30,6 +30,7 @@ public class TalkManager_ots : MonoBehaviour
         talkName.Add(600, new string[] { "책가방" });
         talkName.Add(700, new string[] { "책상" });
         talkName.Add(800, new string[] { "방 문" });
+        talkName.Add(900, new string[] { "옷장" });
 
         //room storyObj name
         //phone:2000
@@ -45,6 +46,7 @@ public class TalkManager_ots : MonoBehaviour
         talkData.Add(600, new string[] { "돌덩이같은 내 가방.." });
         talkData.Add(700, new string[] { "공부하기 싫다!" });
         talkData.Add(800, new string[] { "아직은 방에 있고 싶어." });
+        talkData.Add(900, new string[] { "후드티와 체크셔츠밖에 없다" });
 
         //room Story Obj talk
         talkData.Add(2000, new string[] { "딱히 온 카톡은 없네.." });

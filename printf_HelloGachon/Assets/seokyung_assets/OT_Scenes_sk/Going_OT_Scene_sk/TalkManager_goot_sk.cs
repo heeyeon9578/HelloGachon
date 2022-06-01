@@ -92,6 +92,8 @@ public class TalkManager_goot_sk : MonoBehaviour
 
        string playerName = GameData.gamedata.playerName;
        talkName.Add(7000, new string[] {  playerName });
+       talkName.Add(2000, new string[] { "선배" });
+       talkName.Add(8000, new string[] { "교수님" });
        talkName.Add(3000, new string[] { "무당이" });
        
 
@@ -99,16 +101,25 @@ public class TalkManager_goot_sk : MonoBehaviour
        //시작할때 intro 대사 , 튜토리얼, npc들 익히기
        talkData.Add(7000, new string[] {"오티 장소가 AI공학관이었지?:0", "무당이를 타고 이동하자!:1"});
 
+       //선배 default 대사
+       talkData.Add(2000, new string[] {"안녕?:0", 
+                                        "나는 선배야:1"});
        //무당이 default 대사
        talkData.Add(3000, new string[] {"탑승하시겠습니까?"});
+
+       //교수님 default 대사
+       talkData.Add(8000, new string[] {"허허 밤낮으로 코딩만 해도 시간이 모자라요~:0"});
 
        //Quest Talk(퀘스트 넘버 + npc 넘버)
        //Quest_1 AI공학관까지 이동하자!      
        talkData.Add(10 + 500, new string[] {"안으로 들어가자"});
 
        //portrait Data
-       portraitData.Add(7000+0,portraitArr[0]);
+       portraitData.Add(7000+0,portraitArr[0]); //플레이어
        portraitData.Add(7000+1,portraitArr[1]);
+       portraitData.Add(2000+0,portraitArr[2]); //선배
+       portraitData.Add(2000+1,portraitArr[3]);
+       portraitData.Add(8000+0,portraitArr[4]); //교수
    }
 
     public string getName(int id, int nameIndex)

@@ -4741,12 +4741,20 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5815366154132943818, guid: ad605c93bfdeafd4dbd2ead4ebdc82cc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6879595486196732443, guid: ad605c93bfdeafd4dbd2ead4ebdc82cc, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7829949761282429274, guid: ad605c93bfdeafd4dbd2ead4ebdc82cc, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8185820411754307164, guid: ad605c93bfdeafd4dbd2ead4ebdc82cc, type: 3}
+      propertyPath: m_ColliderPaths.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8562741806828609401, guid: ad605c93bfdeafd4dbd2ead4ebdc82cc, type: 3}
