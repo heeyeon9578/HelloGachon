@@ -961,9 +961,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.2
-  m_Text: "\uD50C\uB808\uC774\uC5B4\uAC00 \uC120\uD0DD\uD55C \uC120\uD0DD\uC9C0\uC5D0
-    \uB530\uB77C\uC11C \uB2A5\uB825\uCE58\uAC00 \uB2E4\uB974\uAC8C \uC0C1\uC2B9\uD558\uAC70\uB098
-    \uAC10\uC18C\uD569\uB2C8\uB2E4."
+  m_Text: "\uAC00\uCC9C\uB300\uC640 \uCE90\uB9AD\uD130 \uBC29\uC5D0 \uC788\uB294
+    \uD2B9\uC815 \uC624\uBE0C\uC81D\uD2B8\uB4E4\uACFC \uC0C1\uD638\uC791\uC6A9 \uD560
+    \uC218 \uC788\uC2B5\uB2C8\uB2E4."
 --- !u!222 &472558746
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1633,7 +1633,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ab727cb6db0afa74a8cf3e5032515ad1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5dc1563ad5f6c3f4fb87d625006e643b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3125,11 +3125,13 @@ MonoBehaviour:
   tuto: {fileID: 750106788}
   tutoImage:
   - {fileID: 21300000, guid: ac3291ed64f6c9a4696d2ceb3e43bff0, type: 3}
-  - {fileID: 21300000, guid: d677db95b31c9c946ad7705d100fb60e, type: 3}
-  - {fileID: 21300000, guid: ab727cb6db0afa74a8cf3e5032515ad1, type: 3}
-  - {fileID: 21300000, guid: 2becb06fe1e9c474ea4e725d71f55043, type: 3}
-  - {fileID: 21300000, guid: 3c238b58feddab44788c35e80de6c59c, type: 3}
-  - {fileID: 21300000, guid: 06f7ef39a6cc41749834f0ed2bc4b74e, type: 3}
+  - {fileID: 21300000, guid: 8baa76f130a34ff41b30e6f5b82446a3, type: 3}
+  - {fileID: 21300000, guid: 0b13eeaa8c32ff84991e0d2beb0d3e69, type: 3}
+  - {fileID: 21300000, guid: 94c6212bb6e15cd48a8fe3cbe30df8c0, type: 3}
+  - {fileID: 21300000, guid: 1e3ca2aea8d43604480e606c0244363f, type: 3}
+  - {fileID: 21300000, guid: 1f2c2b50f9bf82341a5267ab1eac11d9, type: 3}
+  - {fileID: 21300000, guid: 5dc1563ad5f6c3f4fb87d625006e643b, type: 3}
+  - {fileID: 21300000, guid: e191f582cfa47df4b91df4601e9787a8, type: 3}
 --- !u!4 &1287478694
 Transform:
   m_ObjectHideFlags: 0
