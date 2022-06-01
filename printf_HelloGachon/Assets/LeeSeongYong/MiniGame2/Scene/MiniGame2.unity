@@ -743,7 +743,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -2030904056418469813, guid: e19995286f7649f43ba2395fc4c32c20, type: 2}
   m_audioClip: {fileID: 8300000, guid: 11971e7df9d86104fa2d0263ce100662, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1801,6 +1801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a21f20554a44804d8ae1f71de38ae40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  savePanel: {fileID: 0}
 --- !u!4 &1538320374
 Transform:
   m_ObjectHideFlags: 0
@@ -1925,6 +1926,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Option: {fileID: 2136833397}
+  savepanel: {fileID: 0}
+  Map: {fileID: 0}
+  camera2: {fileID: 0}
+  canvas1: {fileID: 0}
+  canvas2: {fileID: 0}
 --- !u!4 &1781382529
 Transform:
   m_ObjectHideFlags: 0

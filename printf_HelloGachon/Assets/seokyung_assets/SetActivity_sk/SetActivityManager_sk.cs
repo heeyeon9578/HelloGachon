@@ -120,13 +120,13 @@ public class SetActivityManager_sk : MonoBehaviour
                     touchSound.Play();
                     Count--;
                     getHealth-=3;
-                    getAlchol+=10;
-                    getPopular+=8;
+                    getAlchol+=8;
+                    getPopular+=7;
                     getMajor-=3;
 
                     activityColor = new Color32(138, 255, 143, 255);
                     activityName = "술약속";
-                    infoTxt.text = "술약속\n오늘 먹고 죽는거야~~~\n전공 -3, 인기도 +8,\n체력 -3, 알코올 분해력 +10";
+                    infoTxt.text = "술약속\n오늘 먹고 죽는거야~~~\n전공 -3, 인기도 +7,\n체력 -3, 알코올 분해력 +8";
                 }
                 break;
             case "Health":
@@ -148,12 +148,12 @@ public class SetActivityManager_sk : MonoBehaviour
                     touchSound.Play();
                     Count--;
                     getHealth-=2;
-                    getStress+=4;
+                    getStress+=5;
                     getMajor+=8;
 
                     activityColor = new Color32(104, 142, 225, 225);
                     activityName = "스터디";
-                    infoTxt.text = "스터디\n공부에는 왕도가 없다!\n전공 +8, 체력 -2,\n스트레스 +4";
+                    infoTxt.text = "스터디\n공부에는 왕도가 없다!\n전공 +8, 체력 -2,\n스트레스 +5";
                 }
                 break;
             case "Interest":
@@ -162,12 +162,12 @@ public class SetActivityManager_sk : MonoBehaviour
                     touchSound.Play();
                     Count--;
                     getHealth-=2;
-                    getStress-=6;
+                    getStress-=7;
                     getPopular+=6;
 
                     activityColor = new Color32(255, 227, 88, 255);
                     activityName = "취미\n활동";
-                    infoTxt.text = "취미 활동\n하고 싶었던거 다 해볼거야!!\n인기도 +6, 체력 -2,\n스트레스 -6";
+                    infoTxt.text = "취미 활동\n하고 싶었던거 다 해볼거야!!\n인기도 +6, 체력 -2,\n스트레스 -7";
                 }
                 break;
             case "Club":
